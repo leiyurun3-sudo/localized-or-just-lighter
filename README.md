@@ -1,45 +1,47 @@
-# Localized, or Just Lighter?
+<h1 align="center">Localized, or Just Lighter?</h1>
+<p align="center"><strong>Attributing Background Preservation in Flow-Based Image Editing</strong></p>
+<p align="center">
+  <a href="manuscript/A_ICME_Main.pdf">Paper (PDF, with references)</a> ·
+  <a href="REFERENCES.md">All 43 references</a> ·
+  <a href="manuscript/A_ICME_Supplement.pdf">Supplement</a> ·
+  <a href="reproduction/Atlas_900_outputs.pdf">Image gallery</a> ·
+  <a href="https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v21.1/Localized-or-Just-Lighter-v21.1-complete.zip">Download everything</a> ·
+  <a href="docs/research-guide.md">中文导读</a>
+</p>
 
-**[一键下载全部材料（v21 完整 ZIP）](https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v21/Localized-or-Just-Lighter-v21-complete.zip)**
+A spatial mask can keep the background of an edited image closer to the source. How much of that gain comes from **where** the editor acts, and how much comes from **how strongly** it acts? We study both effects in two training-free editors built on FLUX.1-dev. One pulls an image toward its source trajectory. The other, SAM-Flow, gates an editing displacement away from the source.
 
-整包含论文、LaTeX 源码、可编辑图稿、实验与 CPU 复现代码、900 张原生输出 PNG 和三份空白盲评问卷。解压后打开本页；论文在 `manuscript/`，原生图像包与问卷在 `downloads/`。
+![Source images, four edits, aligned crops and change maps for a blue shirt, flowers in a dog's mouth, and opening a jar.](data/edit-examples.png)
 
-**空间掩码带来的背景保持收益，有多少来自把编辑放对位置，又有多少来自整体改得更轻？** 这篇分析论文在 FLUX.1-dev 上研究两种免训练图像编辑算子，用逐步幅度回放分析组件，用等响应比较评估完整配置。
+All four configurations turn the shirt blue. The crops reveal a gray patch below the sleeve under uniform editing. The dog gains red texture with no clearly identifiable flowers, and the jar stays closed in every output. The heatmaps use the same RGB-change scale across rows. [Browse all 900 outputs](reproduction/Atlas_900_outputs.pdf)
 
-[阅读主文（6 页）](manuscript/A_ICME_Main.pdf) · [补充材料（53 页）](manuscript/A_ICME_Supplement.pdf) · [900 张输出图册](reproduction/Atlas_900_outputs.pdf) · [下载审阅包](manuscript/A_ICME_Review_Supplement.zip)
+## What changes when we match strength?
 
-## 两个编辑器揭示了什么
+**A correction toward the source.** Across 40 source images, spatial weighting raises background LPIPS by 0.0362 at the default coefficient. Matching the actual correction magnitude at each step reverses the ranking. Spatial weighting lowers background LPIPS by 0.0100 under either reference profile.
 
-| 比较 | 观测结果 | 如何解读 |
-|---|---|---|
-| 恢复型校正，40 个源图 | 默认系数下，空间减均匀的背景 LPIPS 差为 **+0.0362**。在两个参考幅度序列下分别回放，均为 **−0.0100**（四位小数）。 | 默认配置下均匀校正更强。控制实际幅度后，空间分配的背景保持收益才显现。 |
-| SAM-Flow，两分支校准 | 对每张图分别拟合两个空间常数，在有背景像素的 42 张图上保留 **84.5%** 的默认背景收益。在全部 50 张图上，平均 directional CLIP 从 **0.0841** 降至 **0.0521**。 | 仅调节幅度就能获得很大一部分背景收益，同时会改变编辑响应。 |
-| SAM-Flow，在相同响应下比较 | 默认点的编辑区/背景 MAE 比为 **4.00**（空间）和 **2.11**（均匀）。对默认及以下四档，在响应区间重叠的 40 张图上，平均背景 LPIPS 差为 **+0.0263**，95% CI **[0.0169, 0.0370]**。 | 这里按均匀减空间计差，正值有利于空间分配。匹配同图 directional CLIP 后，保留同组默认差距的 **21.3%**。 |
+**SAM-Flow.** Two spatially constant gains, fitted separately for each image, recover 84.5% of the default background gain on the 42 images with background pixels. Across all 50 images, mean directional CLIP falls from 0.0841 to 0.0521. Spatial allocation also changes *where* pixels move. At the default setting, the edit-to-background MAE ratio averages 4.00 for spatial allocation and 2.11 for uniform allocation.
 
-40 张恢复型源图与 50 张 SAM 源图属于两个队列。SAM 扫描使用 seed 0。加入 1.25 扩展档后，41 张图有共同响应区间，保留比例为 32.4%。正文分别报告两个扫描范围及其分母。
+**At comparable edit response.** Matching directional CLIP within each image over four strengths from 0.25 to 1.0 leaves 40 images with overlapping response ranges. Spatial allocation retains 21.3% of the default background gain on these same images. The mean difference in background LPIPS (uniform minus spatial) is 0.0263, with a 95% interval of [0.0169, 0.0370]. [Figure and per-source results](data/README.md)
 
-![SAM 和 FlowEdit 的响应、空间选择性与逐源匹配差异](docs/media/Fig4.png)
+## Reproduce the results
 
-**如何读图 4。** 左侧看背景保持与文本响应，中间看变化的大小和集中程度，右侧看同一图像在等响应条件下的背景差。右下角把四档和含 1.25 的五档分开呈现。
-
-## 从哪里开始
-
-| 想做什么 | 入口 |
-|---|---|
-| 理解问题、实验设计和数字如何互相印证 | [中文研究导读](docs/research-guide.md) |
-| 用已归档分数复算均值、置信区间与敏感性结果 | [CPU 复现说明](docs/reproduction.md) · [完整证据索引](reproduction/EVIDENCE_INDEX.md) |
-| 查看四张主图的图稿、绘图说明及数据 | [图表目录](figures/) |
-| 阅读、修改、编译两篇 PDF | [主文 TeX](paper/main.tex) · [补充 TeX](paper/supplement.tex) · [编译说明](docs/reproduction.md#编译论文) |
-| 追溯实验实现、设置和生成数量 | [实验索引](experiments/README.md) · [文献逐篇编码](reproduction/literature/control_audit.csv) |
-| 查看版本材料和原生输出 | [v21 版本下载](https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/tag/v21) |
-| 了解论文怎样从单算子案例发展成双算子评测研究 | [研究大计划](docs/history/paper_strategy.md) · [v18 修订计划](docs/history/A_v18_review_and_revision_plan.md) · [叙事与绘图蓝图](docs/history/A_v18_deep_overhaul_blueprint.md) |
-| 准备最后的人工盲评 | [评测说明](human-evaluation/README.md) · [统计口径](human-evaluation/统计口径与回填.md) |
-
-从仓库根目录运行以下两行即可复算主要点估计。Python 标准库即可执行。
+From the repository root, run the following command to recover the main estimates from the archived scores. It requires only the Python standard library.
 
 ```bash
-cd reproduction
-python reproduce.py
+python reproduction/reproduce.py
 ```
 
-**版本状态**　v21 为投稿准备稿。文献编码、轨迹测量和像素指标均有记录。人工指令成功率尚待独立评分者完成，仓库提供的是评测方案与空白问卷。数据、第三方代码与模型的来源见[来源说明](docs/sources.md)。
+For paired bootstrap intervals, install NumPy and run `python reproduction/reproduce.py --ci`. Each paper figure can also be regenerated from the included measurements and image layers. For example, to redraw the qualitative comparison and the matched-response results:
+
+```bash
+python -m pip install -r figures/requirements.txt
+python redraw.py 3 4
+```
+
+The editable SVGs are written to `figures/generated/`. [Figure scripts](scripts/) · [Plot inputs](data/figures/) · [Reproduction guide](docs/reproduction.md) · [Experiment implementations](experiments/README.md)
+
+## Paper and references
+
+The six-page [paper](manuscript/A_ICME_Main.pdf) includes its full bibliography on page 6. The [43 references](REFERENCES.md) are also readable on GitHub in the paper’s citation order. The [LaTeX manuscript](paper/main.tex) and [bibliography source](paper/references.tex) are provided alongside the [53-page supplement](manuscript/A_ICME_Supplement.pdf). A separate [literature coding sheet](reproduction/literature/control_audit.csv) records which comparisons were reported in the 24 papers sampled for the audit.
+
+[Data and upstream credits](docs/sources.md) · [Evidence index](reproduction/EVIDENCE_INDEX.md) · [Human-evaluation protocol and blank forms](human-evaluation/README.md)

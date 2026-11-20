@@ -11,9 +11,9 @@ from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "data"
-ARCHIVE = ROOT / "archive"
-OUTPUT = ROOT / "generated"
+DATA = ROOT / "data" / "figures"
+ARCHIVE = ROOT / "figures" / "archive"
+OUTPUT = ROOT / "figures" / "generated"
 
 
 def select_font():
