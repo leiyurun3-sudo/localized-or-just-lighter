@@ -1,0 +1,36 @@
+% Generated only from the archived R88 statistics and manifest; no tests rerun.
+% Preamble dependencies: \usepackage{booktabs,tabularx,array}
+% Natural 8 pt text in a 6.9 in-wide table; no resizebox scaling.
+\begin{table*}[!t]
+\centering
+\begin{minipage}{6.9in}
+\fontsize{8}{9.2}\selectfont
+\caption{Source-level metric improvements at every planned threshold.}
+\label{tab:r88-source-wins}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\linewidth}{@{}l *{4}{>{\centering\arraybackslash}X} c@{}}
+\toprule
+Metric & $g>0$ & $g\geq0.005$ & $g\geq0.010$ & $g\geq0.020$ & Ties \\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{$\mathrm{REQ\_U}-\mathrm{U25}$}} \\
+LPIPS preserved $\downarrow$ & 31 (77.5\%) & 22 (55.0\%) & 14 (35.0\%) & 7 (17.5\%) & 0 \\
+CLIP target $\uparrow$ & 14 (35.0\%) & 7 (17.5\%) & 5 (12.5\%) & 1 (2.5\%) & 0 \\
+CLIP directional $\uparrow$ & 16 (40.0\%) & 13 (32.5\%) & 9 (22.5\%) & 6 (15.0\%) & 0 \\
+DINO full $\uparrow$ & 21 (52.5\%) & 18 (45.0\%) & 14 (35.0\%) & 8 (20.0\%) & 0 \\
+LPIPS full $\downarrow$ & 26 (65.0\%) & 17 (42.5\%) & 11 (27.5\%) & 7 (17.5\%) & 0 \\
+Preserved MAE $\downarrow$ & 30 (75.0\%) & 15 (37.5\%) & 6 (15.0\%) & 0 (0.0\%) & 0 \\
+\midrule
+\multicolumn{6}{@{}l}{\textbf{$\mathrm{REQ}-\mathrm{GLB\_R}$}} \\
+LPIPS preserved $\downarrow$ & 33 (82.5\%) & 23 (57.5\%) & 17 (42.5\%) & 4 (10.0\%) & 0 \\
+CLIP target $\uparrow$ & 14 (35.0\%) & 9 (22.5\%) & 3 (7.5\%) & 0 (0.0\%) & 0 \\
+CLIP directional $\uparrow$ & 18 (45.0\%) & 11 (27.5\%) & 7 (17.5\%) & 4 (10.0\%) & 0 \\
+DINO full $\uparrow$ & 19 (47.5\%) & 17 (42.5\%) & 14 (35.0\%) & 11 (27.5\%) & 0 \\
+LPIPS full $\downarrow$ & 34 (85.0\%) & 22 (55.0\%) & 12 (30.0\%) & 3 (7.5\%) & 0 \\
+Preserved MAE $\downarrow$ & 32 (80.0\%) & 15 (37.5\%) & 3 (7.5\%) & 0 (0.0\%) & 0 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+{\raggedright Each cell reports count (percentage) among 40 paired sources; available-source and planned-source denominators both equal 40. For a displayed contrast $A-B$, source improvement is $g=B-A$ for lower-is-better metrics (LPIPS and MAE), and $g=A-B$ for higher-is-better metrics (CLIP and DINO), after averaging the two seeds within each source. Zero-threshold wins use strict $g>0$; positive thresholds use $g\geq\tau$. Ties mean exact zero difference and are excluded from strict wins. The preserved-LPIPS row of REQ\_U--U25 is the primary endpoint; other rows retain their planned secondary or sensitivity roles. Arrows indicate preferred metric direction. LPIPS is a dimensionless perceptual-distance score; CLIP and DINO are dimensionless cosine similarities. Preserved MAE is mean absolute RGB error on the official preserved region, in normalized $[0,1]$ channel units. All differences and thresholds use raw metric units, without percentage or $100\times$ scaling.\par}
+\end{minipage}
+\end{table*}

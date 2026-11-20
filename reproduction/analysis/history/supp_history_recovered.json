@@ -1,0 +1,1287 @@
+{
+  "fixed_archived_aggregates": {
+    "r88_native_paths": {
+      "archive": "R88_AnalysisClosure_Fast_results.zip",
+      "member": "evidence/r88_native_decomposition.csv",
+      "results": {
+        "native_REQ-U25": {
+          "n": 40,
+          "mean": 0.0362135611474514,
+          "ci95": [
+            0.030425154711119836,
+            0.04223602374549955
+          ]
+        },
+        "path1_direction_REQ-GLB_R": {
+          "n": 40,
+          "mean": -0.009959122166037563,
+          "ci95": [
+            -0.013888223832473158,
+            -0.006386922216042877
+          ]
+        },
+        "path1_profile_GLB_R-U25": {
+          "n": 40,
+          "mean": 0.04617268331348896,
+          "ci95": [
+            0.03934174403548241,
+            0.05377864555921406
+          ]
+        },
+        "path2_profile_REQ-REQ_U": {
+          "n": 40,
+          "mean": 0.04624158460646868,
+          "ci95": [
+            0.04014529339037835,
+            0.05250857903156427
+          ]
+        },
+        "path2_direction_REQ_U-U25": {
+          "n": 40,
+          "mean": -0.010028023459017274,
+          "ci95": [
+            -0.015309609253890813,
+            -0.005110362488776454
+          ]
+        },
+        "profile_request_UminusR": {
+          "n": 40,
+          "mean": -0.04624158460646868,
+          "ci95": [
+            -0.05250857903156429,
+            -0.04014529339037837
+          ]
+        },
+        "profile_global_UminusR": {
+          "n": 40,
+          "mean": -0.04617268331348896,
+          "ci95": [
+            -0.05377864555921406,
+            -0.03934174403548242
+          ]
+        },
+        "interaction": {
+          "n": 40,
+          "mean": -6.890129297971756e-05,
+          "ci95": [
+            -0.003764954679645598,
+            0.0037194662913680016
+          ]
+        },
+        "path1_sum": {
+          "n": 40,
+          "mean": 0.0362135611474514,
+          "ci95": [
+            0.030425154711119836,
+            0.04223602374549955
+          ]
+        },
+        "path2_sum": {
+          "n": 40,
+          "mean": 0.0362135611474514,
+          "ci95": [
+            0.030425154711119836,
+            0.04223602374549955
+          ]
+        }
+      }
+    },
+    "old_equal_lpips_cohort_mean": {
+      "path": "iso_preservation_summary.json",
+      "estimand": "mean global-minus-request directional CLIP over the overlap of observed mean LPIPS ranges; overlap is recomputed in each resample; no extrapolation",
+      "point": 0.006524130789244119,
+      "overlap_low": 0.43297177022323013,
+      "overlap_high": 0.5318594139069319,
+      "valid_bootstraps": 20000,
+      "planned_bootstraps": 20000,
+      "ci95": [
+        0.0008578735833637254,
+        0.012660089383200224
+      ],
+      "ci_status": "all draws supported"
+    }
+  },
+  "recovered_measurements": {
+    "r88_native_req": {
+      "archive": "R88_AnalysisClosure_Fast_results.zip",
+      "scores": "evaluation.csv: object_mae",
+      "pixel_definition": "code/runtime_base/reporting.py:330-347; mean channel-absolute RGB/255 difference weighted by the edit mask.",
+      "e_definition": "Within each native REQ step, (candidate_global_rms/current_correction_global_rms)^2. Average by h within trajectory, then equally across seeds and sources.",
+      "later_comparator": "combined_outcomes.csv",
+      "n_sources": 40,
+      "n_trajectories": 80,
+      "n_steps": 2240,
+      "overlap_with_later_edit_mae": {
+        "arms": [
+          "REQ_U",
+          "U25"
+        ],
+        "rows": 160,
+        "max_abs_difference": 9.71445146547012e-17
+      },
+      "native_req_edit_mae": 0.16457118192751033,
+      "sc_edit_mae": 0.14814615172025924,
+      "sc_minus_native_req_edit_mae": -0.016425030207251085,
+      "mean_native_e": 0.49806821844588445,
+      "source_mean_e_range": [
+        0.4224291626059435,
+        0.6273878125850203
+      ],
+      "pearson_e_vs_req_minus_glb_r_lpips": -0.1974227086395192,
+      "native_trajectory_rows": [
+        {
+          "job": "R88_pie_000000000001_s0_REQ",
+          "case": "000000000001",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_000000000001_s0_REQ/step_summary.json",
+          "object_mae": 0.09638834574081052,
+          "h_weighted_squared_rms_ratio": 0.4973179476209818,
+          "sc_edit_mae": 0.0859247461424636
+        },
+        {
+          "job": "R88_pie_000000000001_s17_REQ",
+          "case": "000000000001",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_000000000001_s17_REQ/step_summary.json",
+          "object_mae": 0.09819482069793145,
+          "h_weighted_squared_rms_ratio": 0.5401252696340041,
+          "sc_edit_mae": 0.0881563065614658
+        },
+        {
+          "job": "R88_pie_000000000009_s0_REQ",
+          "case": "000000000009",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_000000000009_s0_REQ/step_summary.json",
+          "object_mae": 0.16452794812036195,
+          "h_weighted_squared_rms_ratio": 0.501950830113566,
+          "sc_edit_mae": 0.1483174074237472
+        },
+        {
+          "job": "R88_pie_000000000009_s17_REQ",
+          "case": "000000000009",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_000000000009_s17_REQ/step_summary.json",
+          "object_mae": 0.1820888664036041,
+          "h_weighted_squared_rms_ratio": 0.48535101883706183,
+          "sc_edit_mae": 0.1602367855821196
+        },
+        {
+          "job": "R88_pie_000000000094_s0_REQ",
+          "case": "000000000094",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_000000000094_s0_REQ/step_summary.json",
+          "object_mae": 0.11475038248536269,
+          "h_weighted_squared_rms_ratio": 0.44746220715578533,
+          "sc_edit_mae": 0.0992322803458093
+        },
+        {
+          "job": "R88_pie_000000000094_s17_REQ",
+          "case": "000000000094",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_000000000094_s17_REQ/step_summary.json",
+          "object_mae": 0.1422277141681564,
+          "h_weighted_squared_rms_ratio": 0.4465035388828683,
+          "sc_edit_mae": 0.12349463633741
+        },
+        {
+          "job": "R88_pie_000000000115_s0_REQ",
+          "case": "000000000115",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_000000000115_s0_REQ/step_summary.json",
+          "object_mae": 0.1121850320495112,
+          "h_weighted_squared_rms_ratio": 0.5826911609067433,
+          "sc_edit_mae": 0.1041895250805989
+        },
+        {
+          "job": "R88_pie_000000000115_s17_REQ",
+          "case": "000000000115",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_000000000115_s17_REQ/step_summary.json",
+          "object_mae": 0.12587574991564582,
+          "h_weighted_squared_rms_ratio": 0.5501122349225248,
+          "sc_edit_mae": 0.1162286586514587
+        },
+        {
+          "job": "R88_pie_000000000117_s0_REQ",
+          "case": "000000000117",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_000000000117_s0_REQ/step_summary.json",
+          "object_mae": 0.24798831043313918,
+          "h_weighted_squared_rms_ratio": 0.4356789498561683,
+          "sc_edit_mae": 0.2264678099556335
+        },
+        {
+          "job": "R88_pie_000000000117_s17_REQ",
+          "case": "000000000117",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_000000000117_s17_REQ/step_summary.json",
+          "object_mae": 0.22796024801612905,
+          "h_weighted_squared_rms_ratio": 0.4458891851441529,
+          "sc_edit_mae": 0.2098097111449523
+        },
+        {
+          "job": "R88_pie_111000000000_s0_REQ",
+          "case": "111000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_111000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.3068235883201916,
+          "h_weighted_squared_rms_ratio": 0.43942894283811795,
+          "sc_edit_mae": 0.2763739379879075
+        },
+        {
+          "job": "R88_pie_111000000000_s17_REQ",
+          "case": "111000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_111000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.3226384891875122,
+          "h_weighted_squared_rms_ratio": 0.4462162119334606,
+          "sc_edit_mae": 0.2876783207171119
+        },
+        {
+          "job": "R88_pie_111000000003_s0_REQ",
+          "case": "111000000003",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_111000000003_s0_REQ/step_summary.json",
+          "object_mae": 0.16053550413582612,
+          "h_weighted_squared_rms_ratio": 0.5195781920335598,
+          "sc_edit_mae": 0.1484318774749772
+        },
+        {
+          "job": "R88_pie_111000000003_s17_REQ",
+          "case": "111000000003",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_111000000003_s17_REQ/step_summary.json",
+          "object_mae": 0.2044727651037916,
+          "h_weighted_squared_rms_ratio": 0.4619579203112133,
+          "sc_edit_mae": 0.1872374363478791
+        },
+        {
+          "job": "R88_pie_112000000005_s0_REQ",
+          "case": "112000000005",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_112000000005_s0_REQ/step_summary.json",
+          "object_mae": 0.32143146926312643,
+          "h_weighted_squared_rms_ratio": 0.5022527693794017,
+          "sc_edit_mae": 0.3098531578411904
+        },
+        {
+          "job": "R88_pie_112000000005_s17_REQ",
+          "case": "112000000005",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_112000000005_s17_REQ/step_summary.json",
+          "object_mae": 0.295189959484744,
+          "h_weighted_squared_rms_ratio": 0.5365123728269753,
+          "sc_edit_mae": 0.2791236110954108
+        },
+        {
+          "job": "R88_pie_113000000007_s0_REQ",
+          "case": "113000000007",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_113000000007_s0_REQ/step_summary.json",
+          "object_mae": 0.15541878664248782,
+          "h_weighted_squared_rms_ratio": 0.4444694211173273,
+          "sc_edit_mae": 0.1403720462543992
+        },
+        {
+          "job": "R88_pie_113000000007_s17_REQ",
+          "case": "113000000007",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_113000000007_s17_REQ/step_summary.json",
+          "object_mae": 0.153204627536959,
+          "h_weighted_squared_rms_ratio": 0.4599632900635423,
+          "sc_edit_mae": 0.1428774002582504
+        },
+        {
+          "job": "R88_pie_122000000001_s0_REQ",
+          "case": "122000000001",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_122000000001_s0_REQ/step_summary.json",
+          "object_mae": 0.16842061410067832,
+          "h_weighted_squared_rms_ratio": 0.6361383774781266,
+          "sc_edit_mae": 0.1621741345870538
+        },
+        {
+          "job": "R88_pie_122000000001_s17_REQ",
+          "case": "122000000001",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_122000000001_s17_REQ/step_summary.json",
+          "object_mae": 0.16726495361828783,
+          "h_weighted_squared_rms_ratio": 0.6186372476919139,
+          "sc_edit_mae": 0.1604713432947744
+        },
+        {
+          "job": "R88_pie_213000000001_s0_REQ",
+          "case": "213000000001",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_213000000001_s0_REQ/step_summary.json",
+          "object_mae": 0.1295793378572424,
+          "h_weighted_squared_rms_ratio": 0.5384717152346379,
+          "sc_edit_mae": 0.1017898629611961
+        },
+        {
+          "job": "R88_pie_213000000001_s17_REQ",
+          "case": "213000000001",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_213000000001_s17_REQ/step_summary.json",
+          "object_mae": 0.15079396258888864,
+          "h_weighted_squared_rms_ratio": 0.5236371772024491,
+          "sc_edit_mae": 0.1143827353700278
+        },
+        {
+          "job": "R88_pie_214000000001_s0_REQ",
+          "case": "214000000001",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_214000000001_s0_REQ/step_summary.json",
+          "object_mae": 0.19317692612042722,
+          "h_weighted_squared_rms_ratio": 0.44809356428533687,
+          "sc_edit_mae": 0.170462916979258
+        },
+        {
+          "job": "R88_pie_214000000001_s17_REQ",
+          "case": "214000000001",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_214000000001_s17_REQ/step_summary.json",
+          "object_mae": 0.18748981803367415,
+          "h_weighted_squared_rms_ratio": 0.43732577967130476,
+          "sc_edit_mae": 0.1647883477683031
+        },
+        {
+          "job": "R88_pie_223000000006_s0_REQ",
+          "case": "223000000006",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_223000000006_s0_REQ/step_summary.json",
+          "object_mae": 0.07765319751231156,
+          "h_weighted_squared_rms_ratio": 0.546844962032475,
+          "sc_edit_mae": 0.0641522185467751
+        },
+        {
+          "job": "R88_pie_223000000006_s17_REQ",
+          "case": "223000000006",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_223000000006_s17_REQ/step_summary.json",
+          "object_mae": 0.08948497988127478,
+          "h_weighted_squared_rms_ratio": 0.5216698301977373,
+          "sc_edit_mae": 0.0623284573302882
+        },
+        {
+          "job": "R88_pie_224000000006_s0_REQ",
+          "case": "224000000006",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_224000000006_s0_REQ/step_summary.json",
+          "object_mae": 0.10652212301218271,
+          "h_weighted_squared_rms_ratio": 0.5059730309628253,
+          "sc_edit_mae": 0.0984932573231361
+        },
+        {
+          "job": "R88_pie_224000000006_s17_REQ",
+          "case": "224000000006",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_224000000006_s17_REQ/step_summary.json",
+          "object_mae": 0.10148347584889005,
+          "h_weighted_squared_rms_ratio": 0.505475175817241,
+          "sc_edit_mae": 0.0936711947548232
+        },
+        {
+          "job": "R88_pie_224000000009_s0_REQ",
+          "case": "224000000009",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_224000000009_s0_REQ/step_summary.json",
+          "object_mae": 0.1770168668820539,
+          "h_weighted_squared_rms_ratio": 0.4929576886095884,
+          "sc_edit_mae": 0.1589191428196153
+        },
+        {
+          "job": "R88_pie_224000000009_s17_REQ",
+          "case": "224000000009",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_224000000009_s17_REQ/step_summary.json",
+          "object_mae": 0.17205181686953763,
+          "h_weighted_squared_rms_ratio": 0.5060427045947659,
+          "sc_edit_mae": 0.149506852207446
+        },
+        {
+          "job": "R88_pie_312000000003_s0_REQ",
+          "case": "312000000003",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_312000000003_s0_REQ/step_summary.json",
+          "object_mae": 0.27225191650336816,
+          "h_weighted_squared_rms_ratio": 0.5285285189443725,
+          "sc_edit_mae": 0.2600037668858673
+        },
+        {
+          "job": "R88_pie_312000000003_s17_REQ",
+          "case": "312000000003",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_312000000003_s17_REQ/step_summary.json",
+          "object_mae": 0.23940867906533142,
+          "h_weighted_squared_rms_ratio": 0.5543670660582286,
+          "sc_edit_mae": 0.2295902509787892
+        },
+        {
+          "job": "R88_pie_313000000001_s0_REQ",
+          "case": "313000000001",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_313000000001_s0_REQ/step_summary.json",
+          "object_mae": 0.14334917288762508,
+          "h_weighted_squared_rms_ratio": 0.4375568656024735,
+          "sc_edit_mae": 0.13328984936497
+        },
+        {
+          "job": "R88_pie_313000000001_s17_REQ",
+          "case": "313000000001",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_313000000001_s17_REQ/step_summary.json",
+          "object_mae": 0.13950759030926865,
+          "h_weighted_squared_rms_ratio": 0.43535123975218604,
+          "sc_edit_mae": 0.1277156808048282
+        },
+        {
+          "job": "R88_pie_313000000006_s0_REQ",
+          "case": "313000000006",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_313000000006_s0_REQ/step_summary.json",
+          "object_mae": 0.1659442110177404,
+          "h_weighted_squared_rms_ratio": 0.4972991301906926,
+          "sc_edit_mae": 0.1424404761904762
+        },
+        {
+          "job": "R88_pie_313000000006_s17_REQ",
+          "case": "313000000006",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_313000000006_s17_REQ/step_summary.json",
+          "object_mae": 0.16701787659508247,
+          "h_weighted_squared_rms_ratio": 0.477989199501601,
+          "sc_edit_mae": 0.1483418923124805
+        },
+        {
+          "job": "R88_pie_322000000000_s0_REQ",
+          "case": "322000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_322000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.20589357827000845,
+          "h_weighted_squared_rms_ratio": 0.5782283212191293,
+          "sc_edit_mae": 0.1997875606518548
+        },
+        {
+          "job": "R88_pie_322000000000_s17_REQ",
+          "case": "322000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_322000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.22562854825628545,
+          "h_weighted_squared_rms_ratio": 0.5543230881191634,
+          "sc_edit_mae": 0.205222584239077
+        },
+        {
+          "job": "R88_pie_323000000008_s0_REQ",
+          "case": "323000000008",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_323000000008_s0_REQ/step_summary.json",
+          "object_mae": 0.17339410291405802,
+          "h_weighted_squared_rms_ratio": 0.5125637871488079,
+          "sc_edit_mae": 0.1460626662521998
+        },
+        {
+          "job": "R88_pie_323000000008_s17_REQ",
+          "case": "323000000008",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_323000000008_s17_REQ/step_summary.json",
+          "object_mae": 0.15837279672830243,
+          "h_weighted_squared_rms_ratio": 0.5178011666590775,
+          "sc_edit_mae": 0.1352083707729644
+        },
+        {
+          "job": "R88_pie_414000000004_s0_REQ",
+          "case": "414000000004",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_414000000004_s0_REQ/step_summary.json",
+          "object_mae": 0.1650816917991215,
+          "h_weighted_squared_rms_ratio": 0.5067092325962013,
+          "sc_edit_mae": 0.1530147926761158
+        },
+        {
+          "job": "R88_pie_414000000004_s17_REQ",
+          "case": "414000000004",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_414000000004_s17_REQ/step_summary.json",
+          "object_mae": 0.18538377937780193,
+          "h_weighted_squared_rms_ratio": 0.49068718314172627,
+          "sc_edit_mae": 0.1671749611314887
+        },
+        {
+          "job": "R88_pie_422000000002_s0_REQ",
+          "case": "422000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_422000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.1237211179497528,
+          "h_weighted_squared_rms_ratio": 0.5146112381909332,
+          "sc_edit_mae": 0.1127165102747788
+        },
+        {
+          "job": "R88_pie_422000000002_s17_REQ",
+          "case": "422000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_422000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.1340544176504221,
+          "h_weighted_squared_rms_ratio": 0.4876130460270772,
+          "sc_edit_mae": 0.1166990661330284
+        },
+        {
+          "job": "R88_pie_424000000000_s0_REQ",
+          "case": "424000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_424000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.041607337033094376,
+          "h_weighted_squared_rms_ratio": 0.4500782279149449,
+          "sc_edit_mae": 0.0310448460697652
+        },
+        {
+          "job": "R88_pie_424000000000_s17_REQ",
+          "case": "424000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_424000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.040385503242274044,
+          "h_weighted_squared_rms_ratio": 0.4530619359312327,
+          "sc_edit_mae": 0.030178064280085
+        },
+        {
+          "job": "R88_pie_424000000002_s0_REQ",
+          "case": "424000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_424000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.17490003565117251,
+          "h_weighted_squared_rms_ratio": 0.4831162866357522,
+          "sc_edit_mae": 0.1637887585803078
+        },
+        {
+          "job": "R88_pie_424000000002_s17_REQ",
+          "case": "424000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_424000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.1776341773292036,
+          "h_weighted_squared_rms_ratio": 0.4817733885913392,
+          "sc_edit_mae": 0.1693181151256775
+        },
+        {
+          "job": "R88_pie_512000000000_s0_REQ",
+          "case": "512000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_512000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.09370159302546051,
+          "h_weighted_squared_rms_ratio": 0.4826377614065774,
+          "sc_edit_mae": 0.0997756957189006
+        },
+        {
+          "job": "R88_pie_512000000000_s17_REQ",
+          "case": "512000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_512000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.12725762080055522,
+          "h_weighted_squared_rms_ratio": 0.5049763449916534,
+          "sc_edit_mae": 0.1120149464638984
+        },
+        {
+          "job": "R88_pie_513000000000_s0_REQ",
+          "case": "513000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_513000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.14484801176109774,
+          "h_weighted_squared_rms_ratio": 0.5052377451128297,
+          "sc_edit_mae": 0.1328094743575353
+        },
+        {
+          "job": "R88_pie_513000000000_s17_REQ",
+          "case": "513000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_513000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.1572394208419738,
+          "h_weighted_squared_rms_ratio": 0.5001437376624498,
+          "sc_edit_mae": 0.1401013162099034
+        },
+        {
+          "job": "R88_pie_521000000003_s0_REQ",
+          "case": "521000000003",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_521000000003_s0_REQ/step_summary.json",
+          "object_mae": 0.15701114250004894,
+          "h_weighted_squared_rms_ratio": 0.4283913692177794,
+          "sc_edit_mae": 0.1384559768199408
+        },
+        {
+          "job": "R88_pie_521000000003_s17_REQ",
+          "case": "521000000003",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_521000000003_s17_REQ/step_summary.json",
+          "object_mae": 0.1563540784010331,
+          "h_weighted_squared_rms_ratio": 0.4341770902111683,
+          "sc_edit_mae": 0.1335649946019184
+        },
+        {
+          "job": "R88_pie_522000000002_s0_REQ",
+          "case": "522000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_522000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.11206548605780432,
+          "h_weighted_squared_rms_ratio": 0.45679791406341863,
+          "sc_edit_mae": 0.0991671471542238
+        },
+        {
+          "job": "R88_pie_522000000002_s17_REQ",
+          "case": "522000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_522000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.13059277639538353,
+          "h_weighted_squared_rms_ratio": 0.4648867156131564,
+          "sc_edit_mae": 0.1118514763963053
+        },
+        {
+          "job": "R88_pie_612000000002_s0_REQ",
+          "case": "612000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_612000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.15113220600576938,
+          "h_weighted_squared_rms_ratio": 0.5193886139913098,
+          "sc_edit_mae": 0.1311257161645714
+        },
+        {
+          "job": "R88_pie_612000000002_s17_REQ",
+          "case": "612000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_612000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.17508980291560833,
+          "h_weighted_squared_rms_ratio": 0.5379629773442743,
+          "sc_edit_mae": 0.1533585801429022
+        },
+        {
+          "job": "R88_pie_613000000000_s0_REQ",
+          "case": "613000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_613000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.31375357101841034,
+          "h_weighted_squared_rms_ratio": 0.540471534344839,
+          "sc_edit_mae": 0.2938625795893088
+        },
+        {
+          "job": "R88_pie_613000000000_s17_REQ",
+          "case": "613000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_613000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.3276812045127881,
+          "h_weighted_squared_rms_ratio": 0.5247976847320027,
+          "sc_edit_mae": 0.3071223620697156
+        },
+        {
+          "job": "R88_pie_613000000001_s0_REQ",
+          "case": "613000000001",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_613000000001_s0_REQ/step_summary.json",
+          "object_mae": 0.20241116965922296,
+          "h_weighted_squared_rms_ratio": 0.4782653145193715,
+          "sc_edit_mae": 0.1794475013348013
+        },
+        {
+          "job": "R88_pie_613000000001_s17_REQ",
+          "case": "613000000001",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_613000000001_s17_REQ/step_summary.json",
+          "object_mae": 0.1801037207972482,
+          "h_weighted_squared_rms_ratio": 0.48815824162182675,
+          "sc_edit_mae": 0.1630796936740392
+        },
+        {
+          "job": "R88_pie_624000000002_s0_REQ",
+          "case": "624000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_624000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.048194213019367306,
+          "h_weighted_squared_rms_ratio": 0.47705686870205094,
+          "sc_edit_mae": 0.0442394695113287
+        },
+        {
+          "job": "R88_pie_624000000002_s17_REQ",
+          "case": "624000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_624000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.03822983916312897,
+          "h_weighted_squared_rms_ratio": 0.5039007522232251,
+          "sc_edit_mae": 0.0366681531873828
+        },
+        {
+          "job": "R88_pie_711000000002_s0_REQ",
+          "case": "711000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_711000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.2197203030432471,
+          "h_weighted_squared_rms_ratio": 0.446657620961044,
+          "sc_edit_mae": 0.2003915535370691
+        },
+        {
+          "job": "R88_pie_711000000002_s17_REQ",
+          "case": "711000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_711000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.24162429751774922,
+          "h_weighted_squared_rms_ratio": 0.398200704250843,
+          "sc_edit_mae": 0.2109836645953289
+        },
+        {
+          "job": "R88_pie_712000000002_s0_REQ",
+          "case": "712000000002",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_712000000002_s0_REQ/step_summary.json",
+          "object_mae": 0.11709249120232046,
+          "h_weighted_squared_rms_ratio": 0.5242559179079721,
+          "sc_edit_mae": 0.1088673461746295
+        },
+        {
+          "job": "R88_pie_712000000002_s17_REQ",
+          "case": "712000000002",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_712000000002_s17_REQ/step_summary.json",
+          "object_mae": 0.12220324258652408,
+          "h_weighted_squared_rms_ratio": 0.5135510870339046,
+          "sc_edit_mae": 0.11069350069691
+        },
+        {
+          "job": "R88_pie_713000000000_s0_REQ",
+          "case": "713000000000",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_713000000000_s0_REQ/step_summary.json",
+          "object_mae": 0.21607798055995933,
+          "h_weighted_squared_rms_ratio": 0.5568083133998352,
+          "sc_edit_mae": 0.1975903232242784
+        },
+        {
+          "job": "R88_pie_713000000000_s17_REQ",
+          "case": "713000000000",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_713000000000_s17_REQ/step_summary.json",
+          "object_mae": 0.19859173938802466,
+          "h_weighted_squared_rms_ratio": 0.5338839013993308,
+          "sc_edit_mae": 0.1939996844311872
+        },
+        {
+          "job": "R88_pie_713000000004_s0_REQ",
+          "case": "713000000004",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_713000000004_s0_REQ/step_summary.json",
+          "object_mae": 0.17878960222610946,
+          "h_weighted_squared_rms_ratio": 0.5106104710001691,
+          "sc_edit_mae": 0.162037231584404
+        },
+        {
+          "job": "R88_pie_713000000004_s17_REQ",
+          "case": "713000000004",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_713000000004_s17_REQ/step_summary.json",
+          "object_mae": 0.1982985215431441,
+          "h_weighted_squared_rms_ratio": 0.4850623524134101,
+          "sc_edit_mae": 0.1801660834464755
+        },
+        {
+          "job": "R88_pie_811000000003_s0_REQ",
+          "case": "811000000003",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_811000000003_s0_REQ/step_summary.json",
+          "object_mae": 0.1085568766315139,
+          "h_weighted_squared_rms_ratio": 0.49421032949895427,
+          "sc_edit_mae": 0.0860722011499594
+        },
+        {
+          "job": "R88_pie_811000000003_s17_REQ",
+          "case": "811000000003",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_811000000003_s17_REQ/step_summary.json",
+          "object_mae": 0.08348280268187006,
+          "h_weighted_squared_rms_ratio": 0.49344173391990254,
+          "sc_edit_mae": 0.0694112943595394
+        },
+        {
+          "job": "R88_pie_814000000004_s0_REQ",
+          "case": "814000000004",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_814000000004_s0_REQ/step_summary.json",
+          "object_mae": 0.10742914687418526,
+          "h_weighted_squared_rms_ratio": 0.5101121706566928,
+          "sc_edit_mae": 0.0968413498873485
+        },
+        {
+          "job": "R88_pie_814000000004_s17_REQ",
+          "case": "814000000004",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_814000000004_s17_REQ/step_summary.json",
+          "object_mae": 0.1101542766244481,
+          "h_weighted_squared_rms_ratio": 0.5184368108846559,
+          "sc_edit_mae": 0.10024065977415
+        },
+        {
+          "job": "R88_pie_822000000005_s0_REQ",
+          "case": "822000000005",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_822000000005_s0_REQ/step_summary.json",
+          "object_mae": 0.1439955691289145,
+          "h_weighted_squared_rms_ratio": 0.4650205633499191,
+          "sc_edit_mae": 0.1188899452162913
+        },
+        {
+          "job": "R88_pie_822000000005_s17_REQ",
+          "case": "822000000005",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_822000000005_s17_REQ/step_summary.json",
+          "object_mae": 0.16892983386650842,
+          "h_weighted_squared_rms_ratio": 0.481108050435125,
+          "sc_edit_mae": 0.1364656469372467
+        },
+        {
+          "job": "R88_pie_822000000006_s0_REQ",
+          "case": "822000000006",
+          "seed": 0,
+          "steps": 28,
+          "step_member": "R88_pie_822000000006_s0_REQ/step_summary.json",
+          "object_mae": 0.18358030090337804,
+          "h_weighted_squared_rms_ratio": 0.5467410737058688,
+          "sc_edit_mae": 0.1567450044330629
+        },
+        {
+          "job": "R88_pie_822000000006_s17_REQ",
+          "case": "822000000006",
+          "seed": 17,
+          "steps": 28,
+          "step_member": "R88_pie_822000000006_s17_REQ/step_summary.json",
+          "object_mae": 0.16512449993737538,
+          "h_weighted_squared_rms_ratio": 0.5337180695143995,
+          "sc_edit_mae": 0.1389072329059451
+        }
+      ]
+    },
+    "directedit_replay": {
+      "archive": "R89_DirectEdit_Results.zip",
+      "gain": "requested_delta_rms / direction_rms, from each edit step",
+      "above_one_threshold": 1.000001,
+      "arms": {
+        "GLOBAL_AT_LOCAL": {
+          "n_sources": 20,
+          "n_steps": 600,
+          "extrapolating_sources": 1,
+          "extrapolating_steps": 8,
+          "max_gain": 3.5660467599075103,
+          "per_source": [
+            {
+              "case": "000000000009",
+              "member": "external_directedit/results/DE_000000000009_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.016165637997446584,
+              "max_gain": 0.2314183646172366,
+              "above_one": 0
+            },
+            {
+              "case": "000000000115",
+              "member": "external_directedit/results/DE_000000000115_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.1658741742064908,
+              "max_gain": 3.5660467599075103,
+              "above_one": 8
+            },
+            {
+              "case": "111000000000",
+              "member": "external_directedit/results/DE_111000000000_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.03503206981954036,
+              "max_gain": 0.17047859382921948,
+              "above_one": 0
+            },
+            {
+              "case": "113000000007",
+              "member": "external_directedit/results/DE_113000000007_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.13979225640735515,
+              "max_gain": 0.22500118314629117,
+              "above_one": 0
+            },
+            {
+              "case": "223000000006",
+              "member": "external_directedit/results/DE_223000000006_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.16165305663794674,
+              "max_gain": 0.2184747423738791,
+              "above_one": 0
+            },
+            {
+              "case": "224000000009",
+              "member": "external_directedit/results/DE_224000000009_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.0679742469173072,
+              "max_gain": 0.2027587427317664,
+              "above_one": 0
+            },
+            {
+              "case": "313000000001",
+              "member": "external_directedit/results/DE_313000000001_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.02987087943047576,
+              "max_gain": 0.1898847861410714,
+              "above_one": 0
+            },
+            {
+              "case": "313000000006",
+              "member": "external_directedit/results/DE_313000000006_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2346464328416129,
+              "max_gain": 0.4314106827138417,
+              "above_one": 0
+            },
+            {
+              "case": "414000000004",
+              "member": "external_directedit/results/DE_414000000004_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.10153728951741404,
+              "max_gain": 0.20309449479754632,
+              "above_one": 0
+            },
+            {
+              "case": "422000000002",
+              "member": "external_directedit/results/DE_422000000002_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2440126775389716,
+              "max_gain": 0.26829687796897644,
+              "above_one": 0
+            },
+            {
+              "case": "513000000000",
+              "member": "external_directedit/results/DE_513000000000_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.14852811603055793,
+              "max_gain": 0.2270841821313087,
+              "above_one": 0
+            },
+            {
+              "case": "522000000002",
+              "member": "external_directedit/results/DE_522000000002_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.06979177346857972,
+              "max_gain": 0.20903569591871185,
+              "above_one": 0
+            },
+            {
+              "case": "612000000002",
+              "member": "external_directedit/results/DE_612000000002_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.13475713336845055,
+              "max_gain": 0.2314895679488333,
+              "above_one": 0
+            },
+            {
+              "case": "613000000000",
+              "member": "external_directedit/results/DE_613000000000_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.07023816209635134,
+              "max_gain": 0.19591290439836104,
+              "above_one": 0
+            },
+            {
+              "case": "624000000002",
+              "member": "external_directedit/results/DE_624000000002_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.0998798367334537,
+              "max_gain": 0.20277760765105,
+              "above_one": 0
+            },
+            {
+              "case": "711000000002",
+              "member": "external_directedit/results/DE_711000000002_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.026497624706566598,
+              "max_gain": 0.16968490534900238,
+              "above_one": 0
+            },
+            {
+              "case": "713000000000",
+              "member": "external_directedit/results/DE_713000000000_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.16774123374230004,
+              "max_gain": 0.24063911351246642,
+              "above_one": 0
+            },
+            {
+              "case": "811000000003",
+              "member": "external_directedit/results/DE_811000000003_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.07913982090602482,
+              "max_gain": 0.20833394615889692,
+              "above_one": 0
+            },
+            {
+              "case": "814000000004",
+              "member": "external_directedit/results/DE_814000000004_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.0075985364041115085,
+              "max_gain": 0.10009279544587034,
+              "above_one": 0
+            },
+            {
+              "case": "822000000005",
+              "member": "external_directedit/results/DE_822000000005_GLOBAL_AT_LOCAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.02718936827658191,
+              "max_gain": 0.10006418448819736,
+              "above_one": 0
+            }
+          ]
+        },
+        "LOCAL_AT_GLOBAL": {
+          "n_sources": 20,
+          "n_steps": 600,
+          "extrapolating_sources": 10,
+          "extrapolating_steps": 149,
+          "max_gain": 16.524218655774423,
+          "per_source": [
+            {
+              "case": "000000000009",
+              "member": "external_directedit/results/DE_000000000009_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2700729880863792,
+              "max_gain": 6.538280244080818,
+              "above_one": 21
+            },
+            {
+              "case": "000000000115",
+              "member": "external_directedit/results/DE_000000000115_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.03232180734384723,
+              "max_gain": 0.3399869010629675,
+              "above_one": 0
+            },
+            {
+              "case": "111000000000",
+              "member": "external_directedit/results/DE_111000000000_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.292652199939306,
+              "max_gain": 3.131146591055162,
+              "above_one": 16
+            },
+            {
+              "case": "113000000007",
+              "member": "external_directedit/results/DE_113000000007_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.11727864957451169,
+              "max_gain": 0.4624508189423648,
+              "above_one": 0
+            },
+            {
+              "case": "223000000006",
+              "member": "external_directedit/results/DE_223000000006_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.15163937505190755,
+              "max_gain": 0.40441952498474054,
+              "above_one": 0
+            },
+            {
+              "case": "224000000009",
+              "member": "external_directedit/results/DE_224000000009_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.3082422653387568,
+              "max_gain": 4.9952479844761895,
+              "above_one": 11
+            },
+            {
+              "case": "313000000001",
+              "member": "external_directedit/results/DE_313000000001_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.32982473303233456,
+              "max_gain": 2.2918497845541186,
+              "above_one": 13
+            },
+            {
+              "case": "313000000006",
+              "member": "external_directedit/results/DE_313000000006_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.19516762028276982,
+              "max_gain": 0.26453272808907824,
+              "above_one": 0
+            },
+            {
+              "case": "414000000004",
+              "member": "external_directedit/results/DE_414000000004_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.30773530517050246,
+              "max_gain": 1.1418681381334101,
+              "above_one": 5
+            },
+            {
+              "case": "422000000002",
+              "member": "external_directedit/results/DE_422000000002_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.22844192284183248,
+              "max_gain": 0.2548439823759,
+              "above_one": 0
+            },
+            {
+              "case": "513000000000",
+              "member": "external_directedit/results/DE_513000000000_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.21238634599284414,
+              "max_gain": 0.3732005757317092,
+              "above_one": 0
+            },
+            {
+              "case": "522000000002",
+              "member": "external_directedit/results/DE_522000000002_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.23932809713959596,
+              "max_gain": 0.4560674175742232,
+              "above_one": 0
+            },
+            {
+              "case": "612000000002",
+              "member": "external_directedit/results/DE_612000000002_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2709768297751914,
+              "max_gain": 0.5611222748781995,
+              "above_one": 0
+            },
+            {
+              "case": "613000000000",
+              "member": "external_directedit/results/DE_613000000000_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2553502318597625,
+              "max_gain": 0.6117795752702637,
+              "above_one": 0
+            },
+            {
+              "case": "624000000002",
+              "member": "external_directedit/results/DE_624000000002_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.3082142701193877,
+              "max_gain": 1.4948113115551818,
+              "above_one": 12
+            },
+            {
+              "case": "711000000002",
+              "member": "external_directedit/results/DE_711000000002_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2417568494626522,
+              "max_gain": 4.043942278685081,
+              "above_one": 16
+            },
+            {
+              "case": "713000000000",
+              "member": "external_directedit/results/DE_713000000000_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.2187031952033297,
+              "max_gain": 0.3429449816061457,
+              "above_one": 0
+            },
+            {
+              "case": "811000000003",
+              "member": "external_directedit/results/DE_811000000003_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.30218434130271377,
+              "max_gain": 2.740987156135166,
+              "above_one": 9
+            },
+            {
+              "case": "814000000004",
+              "member": "external_directedit/results/DE_814000000004_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.6244106563423436,
+              "max_gain": 16.524218655774423,
+              "above_one": 27
+            },
+            {
+              "case": "822000000005",
+              "member": "external_directedit/results/DE_822000000005_LOCAL_AT_GLOBAL/steps.json",
+              "steps": 30,
+              "min_gain": 0.6347068005644005,
+              "max_gain": 5.889437141239975,
+              "above_one": 19
+            }
+          ]
+        }
+      }
+    }
+  },
+  "archived_r92_model_provenance": {
+    "path": "execution_audit.json",
+    "expected": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "inventory_scope": "headers and exact data length; not full weight content hashes",
+    "same_inventory_as_R91": true,
+    "revision_directory_matches": false
+  }
+}

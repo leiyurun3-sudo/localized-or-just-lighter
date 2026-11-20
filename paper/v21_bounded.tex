@@ -1,0 +1,25 @@
+\subsection{Bounded-range SAM matched response}
+\label{sec:v21-bounded}
+The specified SAM sweep extends to scale 1.25. As a post hoc sensitivity analysis, we retain scales 0.25, 0.50, 0.75 and 1.00 on both arms, keeping their model and visible projection coefficients in $[0,1]$. Each source contributes its mean uniform-minus-spatial background LPIPS difference over the positive-width directional-CLIP overlap, using the first crossing in increasing scale order. The retained fraction divides this cohort mean by the mean scale-1 difference on exactly the same sources. Each of 10,000 paired source-bootstrap draws recomputes both means and their ratio.
+
+\begin{table*}[t]
+\centering\footnotesize
+\caption{SAM matched-response estimates by scale range and background scorer. Positive differences favor spatial allocation. The common-source row evaluates the full grid on the 40 sources supported by the bounded grid. Brackets give percentile 95\% intervals.}
+\label{tab:v21-bounded}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llrrrrl@{}}
+\hline
+Background scorer & Range & Supported & $+/-$ & Default $U-S$ & Matched $U-S$ [95\% CI] & Retained [95\% CI]\\
+\hline
+Feature map & Full & 41/42 & 37/4 & 0.1207 & $0.0390\ [0.0106,0.0632]$ & 32.4\% [7.7, 57.4]\\
+ & Bounded & 40/42 & 37/3 & 0.1233 & $0.0263\ [0.0169,0.0370]$ & 21.3\% [13.2, 30.5]\\
+ & Full, common sources & 40/42 & 37/3 & 0.1233 & $0.0413\ [0.0121,0.0656]$ & 33.5\% [8.4, 58.9]\\
+\hline
+Masked input & Full & 41/42 & 37/4 & 0.0658 & $0.0326\ [0.0204,0.0462]$ & 49.4\% [34.5, 64.4]\\
+ & Bounded & 40/42 & 36/4 & 0.0672 & $0.0179\ [0.0109,0.0262]$ & 26.7\% [18.5, 34.5]\\
+ & Full, common sources & 40/42 & 37/3 & 0.0672 & $0.0345\ [0.0224,0.0479]$ & 51.4\% [37.1, 65.8]\\
+\hline
+\end{tabular}
+\end{table*}
+
+Removing scale 1.25 eliminates the jar's overlap and narrows the interval on 29 of the 40 remaining sources. On those 40 sources, the feature-map contrast changes by $-0.0150$ $[-0.0337,0.0098]$ and the retained fraction by $-12.2$ percentage points $[-31.3,6.7]$. Two source contrasts exchange signs. Restricting both grids to the same bounded response intervals recovers every bounded estimate: within those intervals, an earlier segment already reaches each response.

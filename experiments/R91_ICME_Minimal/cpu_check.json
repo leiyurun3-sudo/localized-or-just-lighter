@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "checks": [
+    "all Python syntax",
+    "724 frozen jobs and dependencies",
+    "source/profile input integrity",
+    "4096-cell bijection and exact histogram",
+    "both floor formulas",
+    "exact packed candidate and RMS normalization",
+    "archived profile schedules",
+    "source-stratified interval and Holm arithmetic",
+    "40 generation inputs equal archived evaluation-source pixels",
+    "end-to-end analyzer with explicitly synthetic fixture (reduced Monte Carlo counts; crossed mixed model executed)"
+  ],
+  "counts": {
+    "sentinel": 4,
+    "maps": 240,
+    "seed1": 160,
+    "seed2": 160,
+    "seed3": 160
+  },
+  "gpu_generation": "not run locally",
+  "synthetic_data_in_deliverable": false
+}

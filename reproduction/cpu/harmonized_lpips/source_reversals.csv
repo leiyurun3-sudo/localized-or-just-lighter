@@ -1,0 +1,15 @@
+panel,metric,comparison,sources,signs_reversed,positive_to_negative,negative_to_positive
+SAM_core,black,native_to_at_spatial,42,2,0,2
+SAM_core,black,native_to_at_uniform,42,1,0,1
+SAM_core,spatial,native_to_at_spatial,42,4,0,4
+SAM_core,spatial,native_to_at_uniform,42,1,0,1
+R88_original_archived,spatial,native_to_at_spatial,40,32,32,0
+R88_original_archived,spatial,native_to_at_uniform,40,30,30,0
+R91_additional,black,native_to_at_spatial,40,31,31,0
+R91_additional,black,native_to_at_uniform,40,26,26,0
+R91_additional,spatial,native_to_at_spatial,40,33,33,0
+R91_additional,spatial,native_to_at_uniform,40,30,30,0
+DirectEdit_deterministic,black,native_to_at_spatial,20,15,15,0
+DirectEdit_deterministic,black,native_to_at_uniform,20,2,2,0
+DirectEdit_deterministic,spatial,native_to_at_spatial,20,7,7,0
+DirectEdit_deterministic,spatial,native_to_at_uniform,20,1,1,0

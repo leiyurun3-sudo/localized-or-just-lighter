@@ -1,0 +1,67 @@
+{
+  "version": "R91-v1",
+  "new_scientific_outputs": 720,
+  "sentinels": 4,
+  "seeds": [
+    0,
+    17,
+    1,
+    2,
+    3
+  ],
+  "new_seeds": [
+    1,
+    2,
+    3
+  ],
+  "floor_cases": [
+    "000000000117",
+    "000000000009",
+    "000000000094",
+    "111000000000",
+    "111000000003",
+    "122000000001",
+    "223000000006",
+    "213000000001",
+    "313000000001",
+    "312000000003",
+    "422000000002",
+    "414000000004",
+    "522000000002",
+    "512000000000",
+    "613000000001",
+    "612000000002",
+    "713000000000",
+    "713000000004",
+    "814000000004",
+    "822000000006"
+  ],
+  "floor_selection": "SHA256(R91-floor-v1:case), 3 cases each from categories 0/1; 2 each from 2..8; independent of scores",
+  "permutation": "Two SHA256-index permutations of all 4096 values, keyed by case, generation seed and draw 9001/9002; fixed across steps; target-derived histogram retained",
+  "stages": [
+    "sentinel",
+    "maps",
+    "seed1",
+    "seed2",
+    "seed3"
+  ],
+  "inference": "Average seeds/draws within source; source is sampling unit. Added-seed replication primary is REQ_U-U25. Original two-seed result stays separate. Five-seed pooled estimate is an updated sensitivity result. Mixed model on paired differences is secondary; five seeds give imprecise seed-variance estimation.",
+  "families": {
+    "new_seed_lpips": [
+      "REQ_U-U25",
+      "REQ-GLB_R"
+    ],
+    "permutation_lpips": [
+      "REQ-RAND",
+      "GLB_R-RAND",
+      "SOURCE_R-RAND"
+    ],
+    "floor_lpips_clip": [
+      "FLOOR_000-REQ_U",
+      "FLOOR_050-REQ_U"
+    ]
+  },
+  "restrictions": "No new editor, dataset, beta, net displacement, executed dose arm or human/model ratings. No claim of perceptual equivalence from nonsignificance. No regeneration of the missing 960 historical images.",
+  "historical_reuse": "Old seeds use archived exact per-pair profiles. Baseline scores are archived, not rerun; four native sentinels check environment compatibility. A failure stops new generation.",
+  "outputs": "Every new native 512 PNG, map, config, profile and evaluator row retained. Compact and full-native ZIPs exported separately."
+}

@@ -1,0 +1,16 @@
+% Source: analysis/records/map_strength_summary.csv; 64x64 scalar maps.
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Map perturbations relative to the correct request map: seed averages followed by 40-source averages. Relative $L_2$ is $\|P_a-P\|_2/\|P\|_2$; sorted MAE compares sorted map values. These describe scalar weight maps.}
+\label{tab:map-controls}
+\begin{tabular}{lrrrr}
+\toprule
+Control & Pearson $r$ & Spearman $\rho$ & Relative $L_2$ & Sorted MAE\\
+\midrule
+SOURCE-R & 0.116115 & 0.110832 & 0.341908 & 0.000000 \\
+SHUF2-R & 0.780937 & 0.765779 & 0.165598 & 0.000000 \\
+SHUF2-RAW & 0.781829 & 0.765785 & 0.167846 & 0.020915 \\
+REV-HIST-R & $-0.893027$ & $-0.999988$ & 0.508826 & 0.000000 \\
+\bottomrule
+\end{tabular}
+\end{table*}

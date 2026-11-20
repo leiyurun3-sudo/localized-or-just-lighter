@@ -1,0 +1,17 @@
+﻿ICME 2027 Regular Paper 填报草稿（作者留存）
+
+Title
+Localized, or Just Lighter? Attributing Background Preservation in Flow-Based Image Editing
+
+Abstract
+Spatial masks change both where an editor acts and the magnitude of its updates. We separate these effects in two FLUX.1-dev editors. For a correction toward the source, spatial weighting raises background LPIPS by 0.0362 at the default coefficient. Replaying either native magnitude profile reverses the difference to −0.0100. In SAM-Flow at seed 0, two spatially constant gains fitted per image recover 84.5% of the default background gain on 42 images. Across all 50 images, mean directional CLIP falls from 0.0841 to 0.0521. At default strength, the edit-to-background MAE ratio averages 4.00 for spatial and 2.11 for uniform allocation. Matching directional CLIP within each image over scales up to one retains 21.3% of the default gap on 40 images with overlap. Replay measures the contribution of placement at prescribed magnitudes. Response matching compares complete configurations.
+
+建议主题（以 CMT 下拉选项为准）
+Primary: Multimedia quality assessment and metrics
+Secondary，如可选: Multimedia analysis and generation
+
+正文上传：A_ICME_Main.pdf
+匿名补充上传：A_ICME_Review_Supplement.zip。内附 Supplement.pdf、900 图图册、数据和可运行分析。
+作者姓名、单位、顺序、利益冲突与系统声明由作者在正式提交时填写。正式提交之前，若纳入人工评测，应同步更新正文、摘要和补充包。
+官网作者指引 https://2027.ieeeicme.org/authors/initial-author-instructions
+常规论文入口 https://cmt3.research.microsoft.com/IEEEICME2027

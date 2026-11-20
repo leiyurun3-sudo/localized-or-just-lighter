@@ -1,0 +1,25 @@
+% Sources: analysis/directedit_native_20261106/{per_arm_metrics.csv,
+% paired_descriptive_ci.csv,evaluation_config.json}.
+\begin{table*}[!t]
+\centering\footnotesize
+\setlength{\tabcolsep}{5pt}
+\caption{DirectEdit metrics from all 100 recovered native outputs (20 sources, five arms). Top: source means. Bottom: paired local-minus-global effects at each profile origin and their local-origin-minus-global-origin interaction, with marginal 95\% intervals from 20,000 category-stratified source bootstraps. These are descriptive post hoc summaries; no new $p$ values or Holm family are introduced. Original pixel MAE is retained in Table~\ref{tab:directedit}.}
+\label{tab:directedit-native-20261106}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Configuration & Pres. LPIPS $\downarrow$ & Full LPIPS $\downarrow$ & Target CLIP $\uparrow$ & Dir. CLIP $\uparrow$\\
+\midrule
+Native local, coefficient 1 & 0.039628 & 0.103094 & 0.237792 & 0.077952\\
+Local, coefficient 0.25 & 0.052474 & 0.120747 & 0.240882 & 0.084875\\
+Global, coefficient 0.25 & 0.014584 & 0.015596 & 0.231284 & 0.001113\\
+Local at global profile & 0.051670 & 0.118606 & 0.239640 & 0.086342\\
+Global at local profile & 0.049477 & 0.063773 & 0.240979 & 0.047243\\
+\midrule
+Contrast & \multicolumn{2}{c}{Preservation LPIPS: difference [95\% CI]} & \multicolumn{2}{c}{Directional CLIP: difference [95\% CI]}\\
+\midrule
+Local $-$ global, global origin & \multicolumn{2}{c}{$+0.037086\;[+0.025736,+0.048793]$} & \multicolumn{2}{c}{$+0.085229\;[+0.050198,+0.121419]$}\\
+Local $-$ global, local origin & \multicolumn{2}{c}{$+0.002996\;[-0.004826,+0.011051]$} & \multicolumn{2}{c}{$+0.037632\;[-0.000510,+0.076920]$}\\
+Interaction & \multicolumn{2}{c}{$-0.034090\;[-0.046356,-0.021526]$} & \multicolumn{2}{c}{$-0.047597\;[-0.075788,-0.020358]$}\\
+\bottomrule
+\end{tabular}
+\end{table*}

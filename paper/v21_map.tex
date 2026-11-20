@@ -1,0 +1,7 @@
+\subsection{Map placement, smoothness and correction energy}
+\label{sec:v21-map}
+Across 40 restoring sources, the native protection map ranked preservation pixels above edit pixels with mean AUROC 0.721. Rotating or reflecting each map on its square grid preserved its histogram and total variation (TV) exactly. Averaging the seven other orientations reduced AUROC to 0.550 (paired difference 0.171 [0.107, 0.231]). Conversely, shuffling cells with identical edit and preservation pixel counts preserved AUROC exactly while raising mean neighboring-cell variation from 0.076 to 0.188. An independent, prompt-free RGB center--surround contrast map gave edit-mask AUROC 0.575 [0.503, 0.642]. It measures local appearance contrast.
+
+At the same initial state, archived pre-gain norms give the fraction of correction energy retained by a map, $q=\lVert P c_0\rVert_2^2/\lVert c_0\rVert_2^2$. Mean $q$ was 0.510 for the native map, 0.570 for cell permutation and 0.623 for histogram-matched reversal. The native-minus-permuted difference was $-0.060$ [$-0.080$, $-0.044$].
+
+Across six archived map families at the native spatial RMS profile, a 0.10 higher AUROC was associated with a 0.00195 [0.00063, 0.00311] larger background-LPIPS gain over uniform, adjusting for source, map family and TV. Of 38 sources showing both wins and losses, 14 had a lower-AUROC map that beat uniform and a higher-AUROC map that lost. This ordering precludes a single AUROC cutoff for those sources. Intervals resample sources after averaging seeds 0 and 17.

@@ -1,0 +1,170 @@
+{
+  "lpips_preservation": {
+    "native_spatial_minus_uniform": {
+      "n": 42,
+      "mean": -0.06495737451024026,
+      "ci": [
+        -0.08063578575965949,
+        -0.05058867979010066
+      ],
+      "positive": 0
+    },
+    "allocation_at_spatial_profile": {
+      "n": 42,
+      "mean": -0.012579288641496706,
+      "ci": [
+        -0.0167886665131456,
+        -0.008944856632362124
+      ],
+      "positive": 2
+    },
+    "allocation_at_uniform_profile": {
+      "n": 42,
+      "mean": -0.03950482746326348,
+      "ci": [
+        -0.05065561617410432,
+        -0.0293224141494994
+      ],
+      "positive": 1
+    },
+    "change_profile_with_uniform_allocation": {
+      "n": 42,
+      "mean": -0.05237808586874356,
+      "ci": [
+        -0.06604756974723257,
+        -0.039953860200780796
+      ],
+      "positive": 0
+    },
+    "change_profile_with_spatial_allocation": {
+      "n": 42,
+      "mean": -0.025452547046976786,
+      "ci": [
+        -0.03363504848287751,
+        -0.01809402784108118
+      ],
+      "positive": 1
+    },
+    "interaction_spatial_minus_uniform_profile": {
+      "n": 42,
+      "mean": 0.026925538821766775,
+      "ci": [
+        0.01855758440838794,
+        0.03631121853929167
+      ],
+      "positive": 41
+    }
+  },
+  "clip_directional": {
+    "native_spatial_minus_uniform": {
+      "n": 50,
+      "mean": -0.008598996950313449,
+      "ci": [
+        -0.02778793286473956,
+        0.010053868332994136
+      ],
+      "positive": 24
+    },
+    "allocation_at_spatial_profile": {
+      "n": 50,
+      "mean": 0.029470390439528274,
+      "ci": [
+        0.011540089189213176,
+        0.04906845238973617
+      ],
+      "positive": 32
+    },
+    "allocation_at_uniform_profile": {
+      "n": 50,
+      "mean": 0.01737658591940999,
+      "ci": [
+        -0.004441561597399413,
+        0.03980184360081314
+      ],
+      "positive": 31
+    },
+    "change_profile_with_uniform_allocation": {
+      "n": 50,
+      "mean": -0.038069387389841725,
+      "ci": [
+        -0.053925043253268086,
+        -0.023214728988277783
+      ],
+      "positive": 13
+    },
+    "change_profile_with_spatial_allocation": {
+      "n": 50,
+      "mean": -0.02597558286972344,
+      "ci": [
+        -0.044652032543323,
+        -0.009185760798282002
+      ],
+      "positive": 20
+    },
+    "interaction_spatial_minus_uniform_profile": {
+      "n": 50,
+      "mean": 0.012093804520118283,
+      "ci": [
+        -0.00574063777477204,
+        0.031458702382766164
+      ],
+      "positive": 29
+    }
+  },
+  "mae_edit": {
+    "native_spatial_minus_uniform": {
+      "n": 50,
+      "mean": -0.02764504293246661,
+      "ci": [
+        -0.03372159178814684,
+        -0.021802507685667872
+      ],
+      "positive": 1
+    },
+    "allocation_at_spatial_profile": {
+      "n": 50,
+      "mean": 0.009666168148884264,
+      "ci": [
+        0.004710369365152665,
+        0.015137640351946617
+      ],
+      "positive": 31
+    },
+    "allocation_at_uniform_profile": {
+      "n": 50,
+      "mean": 0.013370437694091606,
+      "ci": [
+        0.00529597675635022,
+        0.021776639265761726
+      ],
+      "positive": 30
+    },
+    "change_profile_with_uniform_allocation": {
+      "n": 50,
+      "mean": -0.03731121108135088,
+      "ci": [
+        -0.043519538746972425,
+        -0.03130839612013864
+      ],
+      "positive": 0
+    },
+    "change_profile_with_spatial_allocation": {
+      "n": 50,
+      "mean": -0.041015480626558215,
+      "ci": [
+        -0.048405467575483356,
+        -0.033957823819605194
+      ],
+      "positive": 0
+    },
+    "interaction_spatial_minus_uniform_profile": {
+      "n": 50,
+      "mean": -0.0037042695452073433,
+      "ci": [
+        -0.008821379615707595,
+        0.0012570375817869612
+      ],
+      "positive": 22
+    }
+  }
+}

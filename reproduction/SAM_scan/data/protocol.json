@@ -1,0 +1,317 @@
+{
+  "selection_date": "2026-11-17",
+  "core_archive_utc": "2026-11-18T02:30:32+00:00",
+  "scan_started_utc": "2026-11-18T02:54:21+00:00",
+  "scan_completed_utc": "2026-11-19T01:25:31+00:00",
+  "scan_reports_collected_utc": "2026-11-19T01:25:39+00:00",
+  "score_evaluation_date": "2026-11-19",
+  "dataset": "PIE-Bench",
+  "selection_id": "A-dose-lens-pilot-20261117-v1",
+  "protocol_sha256": "855b1e69403e05951aaf23804b926d5f6d52d17410a6271b6a6e5f89e1fb3459",
+  "source_count": 50,
+  "per_category": 5,
+  "source_categories": 10,
+  "seed": 0,
+  "native_size": [
+    512,
+    512
+  ],
+  "grid": {
+    "sam_native": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "uniform": [
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25
+    ],
+    "flowedit": [
+      12,
+      16,
+      20,
+      24,
+      28
+    ]
+  },
+  "curve_defaults": {
+    "sam_native": 1.0,
+    "uniform": 1.0,
+    "flowedit": 24
+  },
+  "settings": [
+    {
+      "method": "flowedit_24",
+      "arm": "flowedit",
+      "stage": "core",
+      "scale": 1.0,
+      "n_max": 24,
+      "curve_rank": 4,
+      "anchor_method": null,
+      "dependencies": []
+    },
+    {
+      "method": "sam_native",
+      "arm": "sam_native",
+      "stage": "core",
+      "scale": 1.0,
+      "n_max": null,
+      "curve_rank": 4,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "uniform",
+      "arm": "uniform",
+      "stage": "core",
+      "scale": 1.0,
+      "n_max": null,
+      "curve_rank": 4,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "two_constant",
+      "arm": "two_constant",
+      "stage": "core",
+      "scale": 1.0,
+      "n_max": null,
+      "curve_rank": null,
+      "anchor_method": "sam_native",
+      "dependencies": [
+        "sam_native"
+      ]
+    },
+    {
+      "method": "uniform_at_local",
+      "arm": "uniform_replay",
+      "stage": "core",
+      "scale": 1.0,
+      "n_max": null,
+      "curve_rank": null,
+      "anchor_method": "sam_native",
+      "dependencies": [
+        "sam_native"
+      ]
+    },
+    {
+      "method": "spatial_at_uniform",
+      "arm": "spatial_replay",
+      "stage": "core",
+      "scale": 1.0,
+      "n_max": null,
+      "curve_rank": null,
+      "anchor_method": "uniform",
+      "dependencies": [
+        "uniform"
+      ]
+    },
+    {
+      "method": "sam_native_scale0.25",
+      "arm": "sam_native",
+      "stage": "scan",
+      "scale": 0.25,
+      "n_max": null,
+      "curve_rank": 1,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "sam_native_scale0.5",
+      "arm": "sam_native",
+      "stage": "scan",
+      "scale": 0.5,
+      "n_max": null,
+      "curve_rank": 2,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "sam_native_scale0.75",
+      "arm": "sam_native",
+      "stage": "scan",
+      "scale": 0.75,
+      "n_max": null,
+      "curve_rank": 3,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "sam_native_scale1.25",
+      "arm": "sam_native",
+      "stage": "scan",
+      "scale": 1.25,
+      "n_max": null,
+      "curve_rank": 5,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "uniform_scale0.25",
+      "arm": "uniform",
+      "stage": "scan",
+      "scale": 0.25,
+      "n_max": null,
+      "curve_rank": 1,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "uniform_scale0.5",
+      "arm": "uniform",
+      "stage": "scan",
+      "scale": 0.5,
+      "n_max": null,
+      "curve_rank": 2,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "uniform_scale0.75",
+      "arm": "uniform",
+      "stage": "scan",
+      "scale": 0.75,
+      "n_max": null,
+      "curve_rank": 3,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "uniform_scale1.25",
+      "arm": "uniform",
+      "stage": "scan",
+      "scale": 1.25,
+      "n_max": null,
+      "curve_rank": 5,
+      "anchor_method": null,
+      "dependencies": [
+        "flowedit_24"
+      ]
+    },
+    {
+      "method": "flowedit_12",
+      "arm": "flowedit",
+      "stage": "scan",
+      "scale": 1.0,
+      "n_max": 12,
+      "curve_rank": 1,
+      "anchor_method": null,
+      "dependencies": []
+    },
+    {
+      "method": "flowedit_16",
+      "arm": "flowedit",
+      "stage": "scan",
+      "scale": 1.0,
+      "n_max": 16,
+      "curve_rank": 2,
+      "anchor_method": null,
+      "dependencies": []
+    },
+    {
+      "method": "flowedit_20",
+      "arm": "flowedit",
+      "stage": "scan",
+      "scale": 1.0,
+      "n_max": 20,
+      "curve_rank": 3,
+      "anchor_method": null,
+      "dependencies": []
+    },
+    {
+      "method": "flowedit_28",
+      "arm": "flowedit",
+      "stage": "scan",
+      "scale": 1.0,
+      "n_max": 28,
+      "curve_rank": 5,
+      "anchor_method": null,
+      "dependencies": []
+    }
+  ],
+  "generation_defaults": {
+    "dtype": "bfloat16 by declared default; upstream auto uses float16",
+    "n_avg": 8,
+    "text_tokens": 512,
+    "defaults": {
+      "sam_n_max": 26,
+      "flowedit_n_max": 24,
+      "steps": 28
+    },
+    "intervention": "source-relative accumulated latent displacement projected separately into model and visible state",
+    "profile_target": "FP32 projection RMS before state dtype cast; source-relative realized cast RMS additionally logged",
+    "normalization_tolerance": "absolute 1e-6 + relative 1e-4 (FP32 projection)",
+    "realized_state_diagnostic_tolerance": "absolute 1e-6 + relative 0.01; each profile must pass at every active step to claim realized-state match",
+    "constant_calibration": "two constants: sum(native projected RMS) / sum(native residual RMS), one per model/visible profile; no outcomes used",
+    "map_source": "automatic source/scout attention with prompt-only tokens; no GT mask"
+  },
+  "default_sam_flow_config": {
+    "T_steps": 28,
+    "n_avg": 8,
+    "src_guidance_scale": 1.5,
+    "tgt_guidance_scale": 10.5,
+    "n_min": 0,
+    "n_max": 26,
+    "ref_noise_seed": 999,
+    "blur_sigma_start": 2.0,
+    "blur_sigma_end": 0.6,
+    "q_start": 0.6,
+    "q_end": 0.8,
+    "alpha_min": 5.0,
+    "alpha_max": 20.0,
+    "tau_core": 0.85,
+    "ring_radius_start": 6,
+    "ring_radius_end": 3,
+    "w_ring": 0.35,
+    "slack": 0.05,
+    "anchor_rho": 1.0,
+    "ring_blend": 0.35
+  },
+  "default_flowedit_config": {
+    "negative_prompt": "",
+    "T_steps": 28,
+    "n_avg": 8,
+    "src_guidance_scale": 1.5,
+    "tar_guidance_scale": 5.5,
+    "n_min": 0,
+    "n_max": 24
+  },
+  "generation_environment": {
+    "torch": "2.8.0+cu128",
+    "diffusers": "0.35.1",
+    "transformers": "4.56.2",
+    "dtype": "bfloat16",
+    "offload": "model",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "upstream_commit": "8167978666e6df11e987a453934b89ec422bd3a4"
+  },
+  "backbone": "FLUX.1-dev",
+  "control_sha256": "99a803aa9ae2bd67ac0fa53f2418ab411c08d246c154660c2ee1cd91a2297028",
+  "upstream_repository": "https://github.com/chwbob/Sam-Flow",
+  "upstream_commit": "8167978666e6df11e987a453934b89ec422bd3a4",
+  "upstream_license": "MIT (control/LICENSE.upstream)",
+  "scope": "Frozen 50-source, single-seed panel. Source-bootstrap uncertainty is conditional on these settings. Primary overlap restricts to eligible sources with positive common observed response width."
+}

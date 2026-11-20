@@ -1,0 +1,7 @@
+Public upstream: SAM-Flow
+Repository: https://github.com/chwbob/Sam-Flow
+Revision: 8167978666e6df11e987a453934b89ec422bd3a4
+Upstream license: MIT. The original copyright and license text is included in LICENSE.upstream.
+
+projection_control.py is the experimental two-projection control used alongside the pinned upstream implementation. The frozen generation protocol records its SHA-256 in data/protocol.json. The experiment's runtime adapter inserted observation/control calls after both native projections. Upstream attribution applies to SAM-Flow; this package does not assign authorship of the experimental control to the upstream copyright holder. The hook imports PyTorch when used inside the generation runtime. The statistical reproduction uses the recorded scalar measurements.
+

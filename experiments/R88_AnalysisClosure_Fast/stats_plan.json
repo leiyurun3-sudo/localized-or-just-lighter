@@ -1,0 +1,92 @@
+{
+  "schema": "r88-analysis-closure-statistics-v1",
+  "created_local_date": "2026-11-04",
+  "status": "analysis specification; archive with the generation manifest before inspecting outcomes",
+  "arms": ["REQ", "GLB_R", "U25", "REQ_U", "SHUF_R", "REV_R"],
+  "seeds": [0, 17],
+  "population": {
+    "sources": 40,
+    "planned_outputs": 480,
+    "historical_source_exclusions": 90,
+    "eligibility": "Previously unused source image; nonempty official edit and preservation regions; exclude historical IDs and image-content duplicates.",
+    "category_counts": {"0": 5, "1": 5, "2": 5, "3": 5, "4": 4, "5": 4, "6": 4, "7": 4, "8": 4, "9": 0},
+    "allocation_rule": "Four per eligible category 0-8, then allocate the four remaining slots in category order to 0-3; independent of outcomes.",
+    "category9_reason": "After excluding the 90 historical sources, all remaining change-style sources have empty official preservation regions. Do not invent regions or reuse historical sources.",
+    "manifest_requirement": "Record category counts, eligibility, exclusion roster, and the outcome-independent remainder allocation in the selection manifest.",
+    "estimand": "Mean over the planned 40-source category mixture: weight each eligible category by its manifest count / 40; inference applies to the eligible nine-category population."
+  },
+  "metrics": ["lpips_preserved", "clip_target_similarity", "clip_directional_similarity", "dino_full_feature_similarity", "lpips_full", "bg_mae"],
+  "metric_directions": {
+    "lpips_preserved": "lower", "clip_target_similarity": "higher",
+    "clip_directional_similarity": "higher", "dino_full_feature_similarity": "higher",
+    "lpips_full": "lower", "bg_mae": "lower"
+  },
+  "contrasts": [
+    {"id": "REQ_U-U25", "coefficients": {"REQ_U": 1, "U25": -1}, "preservation_role": "primary"},
+    {"id": "REQ-GLB_R", "coefficients": {"REQ": 1, "GLB_R": -1}, "preservation_role": "secondary"},
+    {"id": "interaction", "coefficients": {"REQ_U": 1, "U25": -1, "REQ": -1, "GLB_R": 1}, "preservation_role": "secondary"},
+    {"id": "REQ-SHUF_R", "coefficients": {"REQ": 1, "SHUF_R": -1}, "preservation_role": "secondary"},
+    {"id": "REQ-REV_R", "coefficients": {"REQ": 1, "REV_R": -1}, "preservation_role": "secondary"}
+  ],
+  "primary": {"contrast": "REQ_U-U25", "metric": "lpips_preserved", "alpha": 0.05, "alternative": "two-sided", "improvement_sign": "negative"},
+  "signflip": {
+    "draws": 1000000, "seed": 88001, "generator": "PCG64", "batch_size": 10000,
+    "statistic": "absolute category-weighted mean of source differences",
+    "tie_tolerance": 1e-12,
+    "sampling": "Independent uniform +/-1 signs for each planned source; identical sign draws for every contrast and metric. Missing sources have zero coefficient, not imputed outcomes.",
+    "p_value": "(extreme_count + 1) / (draws + 1)",
+    "mcse": "sqrt(p_mc * (1 - p_mc) / draws), approximate plug-in Monte Carlo standard error",
+    "assumption": "Independent source differences with sign-invariant joint distribution under the null; zero mean alone is insufficient.",
+    "exhaustive": false
+  },
+  "bootstrap": {
+    "draws": 20000, "seed": 88002, "generator": "PCG64",
+    "method": "Stratified paired source percentile bootstrap; 2.5/97.5 percentiles with linear interpolation; pointwise intervals.",
+    "stratum_sizes": "Read actual category_counts from the generation plan tasks and validate against the frozen allocation. For complete data, resample those actual counts (5 for 0-3; 4 for 4-8) with replacement.",
+    "seed_handling": "Average both planned seeds 0 and 17 within source before contrasts; retain all arms together in resampling.",
+    "incomplete_stratum": "Resample the observed complete-source count within each category, retaining the planned category weight in the estimator. Do not inflate the bootstrap sample size to replace missing sources. Explicitly flag incomplete strata and report the unweighted available-source mean separately.",
+    "empty_planned_stratum": "If any positive-quota category has no complete sources for this contrast, the planned-mixture estimate, CI and p are unavailable; retain descriptive available-source mean and all missingness records.",
+    "stream": "SeedSequence([bootstrap_seed, cohort_size, sorted planned-source positions + 1]); reuse identical bootstrap weights for the same cohort."
+  },
+  "multiplicity": {
+    "primary_family_size": 1,
+    "secondary_family_size": 4,
+    "secondary_metric": "lpips_preserved",
+    "secondary_gate": "Primary raw two-sided p <= 0.05 opens Holm4 confirmatory family. Otherwise secondary rows remain exploratory. Report raw and Holm4 regardless of gate; report max(primary p, Holm4 p) as gated adjusted p.",
+    "primary_direction": "Opening the two-sided significance gate and supporting a negative preservation effect are reported separately.",
+    "sensitivity_family_size": 30,
+    "sensitivity_family": "The five fixed contrasts crossed with all six fixed metrics, including interaction; Holm30 is sensitivity only and never replaces the primary or changes its gate.",
+    "missing_tests": "Keep planned family sizes 4 and 30; unestimable tests participate as p=1 internally but export raw/adjusted as null."
+  },
+  "missingness": "Complete both planned seeds for every arm needed by this contrast and this metric. Never drop a source globally because a different arm/metric is missing. No zero filling or outcome-based replacement.",
+  "source_wins": {
+    "thresholds": [0, 0.005, 0.01, 0.02],
+    "zero": "Strictly positive metric-oriented improvement; exact ties reported separately.",
+    "positive_thresholds": "Improvement >= threshold, in raw metric units; report counts, available-source fraction and planned-40 fraction.",
+    "interaction": "Report signed difference distribution and threshold crossings, not an arm-win or quality ranking."
+  },
+  "decomposition": {
+    "cohort": "Common REQ/GLB_R/U25/REQ_U complete-source cohort for each metric, shared resamples for all components; may differ from the primary's larger two-arm cohort.",
+    "native": "REQ-U25",
+    "path1": "(REQ-GLB_R) + (GLB_R-U25)",
+    "path2": "(REQ-REQ_U) + (REQ_U-U25)",
+    "interaction": "(REQ_U-U25) - (REQ-GLB_R)",
+    "inference": "Pointwise bootstrap intervals for components, native total and interaction; no additional hypothesis family beyond the 30 planned tests."
+  },
+  "dose_audit": {
+    "steps": 28, "relative_tolerance": 1e-5, "absolute_tolerance": 1e-8, "schedule_tolerance": 1e-8,
+    "anchor_arms": {"REQ": "REQ", "GLB_R": "REQ", "U25": "U25", "REQ_U": "U25", "SHUF_R": "REQ", "REV_R": "REQ"},
+    "input": "Read each job's record.json for completion, identity, schedule fingerprint and stored correction_impulse; read embedded steps or sibling steps.json / step_summary.json for full per-step diagnostics.",
+    "I": "Sum h_i * actual applied correction RMS_i over all 28 positive steps; compare stored correction_impulse without multiplying step sizes twice.",
+    "incomplete": "Export partial_I explicitly; full I and full profiles require all steps and a completed matching record. Audit mismatches are reported, never silently used for outcome-dependent source exclusion.",
+    "report": "Job and source I; per-step RMS, h-weighted dose, cumulative I; matching errors against the same source/seed anchor; source-bootstrap summaries and U25-minus-REQ profile differences."
+  },
+  "io": {
+    "results": "--results directory containing metrics.csv, evaluation.csv, and job folders",
+    "plan_search": "--plan override; otherwise results/plan.json then results.parent/plan.json",
+    "merge": "Outer union on unique job id. Evaluation columns for the six outcomes are authoritative even when empty; retain metrics.csv fields absent from evaluation. Conflicting job identities fail clearly.",
+    "output_default": "results/evidence",
+    "outputs": ["r88_statistics.json", "r88_paired.csv", "r88_source_values.csv", "r88_arm_means.csv", "r88_source_wins.csv", "r88_native_decomposition.csv", "r88_dose_audit.csv", "r88_actual_profiles.csv", "r88_dose_source_values.csv", "r88_dose_summary.csv"]
+  },
+  "scope": "CPU scalar analysis only. No new generation, image scoring, semantic noninferiority claim, or human-evaluation inference. No adaptive change to the primary, category allocation, sample size or random seeds."
+}

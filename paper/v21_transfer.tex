@@ -1,0 +1,26 @@
+\subsection{Does trajectory attenuation predict the preservation gap?}
+\label{sec:v21-transfer}
+We tested whether the relative magnitude of two unmodified rollouts adds predictive information beyond the background area fraction. For each source the target was $G=L_U-L_S$, the uniform minus spatial background LPIPS. Positive $G$ favors spatial allocation for both restoring and departing operators. The primary score averages the AlexNet LPIPS feature map over the same annotated background used to measure area. The additional predictor was $a=1-I_S/I_U$. For restoring correction, $I$ sums applied velocity RMS weighted by the integration step. For DirectEdit, $I$ sums the actual blend-displacement RMS, which is already in latent displacement units. For SAM, the ratio uses the mean visible-branch displacement RMS over 26 active steps. Each ratio compares the two realized trajectories of one editor.
+
+\paragraph{Transfer between restoring operators.}
+Twenty DirectEdit sources have the same decoded source pixels, annotation masks and prompt pairs as 20 of the 40 correction sources. We fit ordinary least squares on the other 20 correction sources, using generation seed 0. We applied the frozen coefficients to the held-out 20 sources in both editors. Both comparisons use unmodified spatial and uniform arms at coefficient 0.25. In DirectEdit these are the local and global blend controls. The reference mask also enters the DirectEdit blend, whereas the correction editor constructs its own weight map. The training attenuation range was $[0.184,0.319]$. On the same test images all 20 correction ratios were in range, while 17 DirectEdit ratios fell outside it ($[-0.635,0.713]$). In ten DirectEdit cases the spatial trajectory had greater cumulative magnitude than the uniform one, giving negative attenuation.
+
+\begin{table}[t]\centering
+\caption{Held-out RMSE for predicting $G$. The last column gives the paired error reduction from adding attenuation and its 95\% bootstrap interval. The first three rows use feature-map LPIPS.}
+\label{tab:v21-transfer}
+{\footnotesize\setlength{\tabcolsep}{1.5pt}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrl@{}}\toprule
+Test set & Area & Area $+a$ & Gain [95\% interval]\\\midrule
+Correction & 0.0296 & 0.0295 & $0.00002\;[-0.00063,0.00088]$\\
+DirectEdit & 0.0340 & 0.0332 & $0.00085\;[-0.01749,0.00341]$\\
+SAM, category & 0.1138 & 0.1039 & $0.00988\;[-0.00156,0.02328]$\\
+SAM, masked input & 0.0501 & 0.0464 & $0.00373\;[-0.00404,0.01328]$\\\bottomrule
+\end{tabular*}}
+\end{table}
+The DirectEdit MAE reduction was 0.00116 [$-0.01467,0.00405$]. For the two operator rows, 5,000 bootstrap draws resampled training and test sources independently within edit category, refit both models, and used the same test draws for both operators. The small point gain, its interval and the feature-range shift leave the incremental predictive value on another operator unresolved.
+
+\paragraph{Held-out edit categories in SAM.}
+The departing operator used a disjoint cohort. We held out each entire PIE edit category in turn and fit the same models to the other nine. The 42 sources with a background enter the pooled error once each (one to five test sources per category). Area plus attenuation reduced feature-map MAE from 0.07954 to 0.07263, with a paired reduction of 0.00691 [$-0.00430,0.01873$]. Seven of ten categories had lower MAE. The intervals for SAM resample whole categories and refit each fold, keeping every copy of the test category out of training. With the original masked-input scorer, leave-one-source-out RMSE was 0.05011 versus 0.04630. Holding out the whole category gave 0.05013 versus 0.04639 on that same scorer. The two scorer scales are reported separately.
+
+\paragraph{Prediction scope.}
+The background fraction uses an evaluation annotation, and $a$ requires both test-image rollouts. This post hoc check concerns prediction after the two traces have been observed. The local archive contains three nested SAM report snapshots (245, 300 and 900 completed jobs), all on FLUX.1-dev at generation seed 0. The additional correction seeds belong to the restoring editor. The audited runs provide one transfer between two restoring operations on FLUX and a within-SAM category check. Transfer to a departing operator, another SAM generation seed or a second backbone remains unverified.

@@ -1,0 +1,24 @@
+\subsection{How closely can two constants fit the native projection profiles?}
+\label{sec:v21-constants}
+For each of 50 SAM sources, the native spatial run and its two-constant run record 26 aligned active steps at seed zero. Let $r^S_t$ and $r^C_t$ be the ungated source-relative displacement RMS on these two trajectories, and $b_{kt}$ the native projected RMS on branch $k$ (model or visible). The implemented gain is $g_k=\sum_t b_{kt}/\sum_t r^S_t$. Its relative summed magnitude on the constant trajectory is therefore $g_k\sum_t r^C_t/\sum_t b_{kt}=\sum_t r^C_t/\sum_t r^S_t$ for either branch, up to rounding. Both branches inherit the same mean signed overshoot of 8.42\%.
+
+We held the measured $r^C_t$ fixed and fitted gains in $[0,1]$. For $d_t=g r^C_t-b_{kt}$, total error is $|\sum_t d_t|/\sum_t b_{kt}$ and step error is $\sum_t|d_t|/\sum_t b_{kt}$. Each active step enters once. One per-source fit matches the native sum exactly. A second minimizes step error using the weighted median of $b_{kt}/r^C_t$ with weights $r^C_t$. For the held-out comparison, we fit one gain per branch to minimize mean source step error on the other 49 sources and score the held-out source.
+
+\begin{table}[t]
+\centering\small
+\caption{Absolute total and step errors on the recorded two-constant trajectories, as percentages of native branch magnitude, averaged over 50 sources. The first row uses measured FP32 projections.}
+\label{tab:v21-constants}
+\begin{tabular}{@{}lrrrr@{}}
+\hline
+ & \multicolumn{2}{c}{Model} & \multicolumn{2}{c}{Visible}\\
+Gain & Total & Step & Total & Step\\
+\hline
+Executed per-source gain & 8.89 & 9.84 & 8.89 & 11.68\\
+Per-source, match sum & 0.00 & 3.40 & 0.00 & 7.46\\
+Per-source, minimum step error & 1.08 & 3.25 & 2.47 & 7.15\\
+Shared, leave one source out & 9.60 & 10.26 & 15.77 & 18.04\\
+\hline
+\end{tabular}
+\end{table}
+
+Even at the best per-source gain, the visible profile has more step error than the model profile on 49/50 sources. The mean paired difference is 3.90 percentage points (95\% source-bootstrap interval 3.33--4.50; 10,000 draws, seed zero). The archived post-cast measurements give step errors of 9.83\% and 11.70\% for the executed model and visible branches. Changing a gain during generation would also change subsequent displacements. The three refitted rows quantify profile fit conditional on the recorded states; image-level effects would require new rollouts.

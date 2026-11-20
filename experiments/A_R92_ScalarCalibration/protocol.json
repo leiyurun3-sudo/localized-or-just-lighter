@@ -1,0 +1,43 @@
+{
+  "name": "A-R92 one-shot scalar calibration",
+  "status": "specified before new generation; no R92 outcomes observed",
+  "outputs": 80,
+  "sources": 40,
+  "seeds": [
+    0,
+    17
+  ],
+  "new_arm": "REQ_SC",
+  "coefficient": "lambda_SC = 0.25 * I_U / I_R, separately for every source/seed, using frozen native profiles",
+  "intervention": "Constant lambda_SC times original P times own-state residual; no stepwise normalization or coefficient search",
+  "fixed": "Same FLUX.1-dev revision, BF16 network/FP32 integration, 512px, 28 steps, source/target prompts, reference, memory, original map construction",
+  "comparators": [
+    "U25",
+    "REQ_U",
+    "REQ"
+  ],
+  "primary_family": [
+    "REQ_SC minus REQ_U preservation LPIPS",
+    "REQ_SC minus U25 preservation LPIPS"
+  ],
+  "inference": "Average seeds within each source; 20000 category-stratified source bootstraps; 1000000 two-sided source sign flips, plus-one; Holm across the two prespecified LPIPS tests; PCG64 seed 92013",
+  "descriptive_outcomes": [
+    "directional CLIP",
+    "edit-region MAE",
+    "native REQ LPIPS/CLIP contrast",
+    "all source differences",
+    "actual cumulative magnitude ratio",
+    "stepwise signed/absolute mismatch",
+    "normalized temporal magnitude shape distance"
+  ],
+  "historical_edit_MAE": "Available for U25 and REQ_U; native REQ edit MAE is missing and is not imputed",
+  "interpretation": [
+    "Different scientific outcome contrasts can demonstrate added value for this one-shot comparator.",
+    "An RMS mismatch alone is a control-accuracy result, not evidence of a changed scientific conclusion.",
+    "A CI containing zero does not establish equivalence; no equivalence margin is specified.",
+    "Magnitude and timing deviations are reported together; association does not identify their separate causal effects.",
+    "Do not retune scalar coefficients after outcomes or add runs to select a favorable result."
+  ],
+  "stopping": "Generate the fixed 80 outputs, analyze all paired cases, revise the contribution according to results, then finish this submission; no automatic additional experiments",
+  "execution": "Existing archived anchors and comparator scores reused; no regenerated baseline, additional seed or sentinel output"
+}

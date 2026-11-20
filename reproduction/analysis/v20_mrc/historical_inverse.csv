@@ -1,0 +1,2 @@
+cohort,sources,response,outcome,pair,order,support_lo,support_hi,mean,ci_low,ci_high,finite_draws,draws,seed
+Restoring,40,fm_lpips,directional_clip,SU,average_sources_then_match,0.43297177022323013,0.5318594139069319,0.006524130789244121,0.000857873583363711,0.01266008938320022,20000,20000,20261106

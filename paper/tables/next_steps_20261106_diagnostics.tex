@@ -1,0 +1,34 @@
+% Sources: analysis/next_steps_20261106/{summary.json,analysis_plan.json,
+% beta_direction_trend.csv,map_mask_summary.csv,directedit_paired.csv}.
+% Existing-data analyses specified after outcomes were observed; old test families retained.
+\begin{table*}[!t]
+\centering\footnotesize
+\setlength{\tabcolsep}{4pt}
+\caption{Post-outcome existing-data analyses. All intervals are marginal 95\% category-stratified source-bootstrap intervals (20,000 draws). Panel A uses Monte Carlo sign flips and its own Holm4 family; panel B is descriptive; panel C uses exact $2^{20}$ sign flips and one Holm6 family across three contrasts and two MAE outcomes. $d_\beta$ is request minus global; L--G is local minus global. Interaction is the local-origin contrast minus the global-origin contrast.}
+\label{tab:next-steps-20261106}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Outcome / map & Contrast / summary & Estimate & 95\% CI & Unadjusted $p$ & Holm $p$\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{A. Direction-effect trends: 40 sources, post hoc Holm4}}\\
+Preservation LPIPS & $d_{1.3}-d_{0.7}$ & $-0.004102$ & $[-0.009086,+0.000901]$ & 0.16883 & 0.50649\\
+Preservation LPIPS & $d_{0.7}-2d_1+d_{1.3}$ & $-0.000564$ & $[-0.005670,+0.004712]$ & 0.853945 & 1\\
+Directional CLIP & $d_{1.3}-d_{0.7}$ & $-0.010228$ & $[-0.020135,-0.001055]$ & 0.085145 & 0.34058\\
+Directional CLIP & $d_{0.7}-2d_1+d_{1.3}$ & $+0.000308$ & $[-0.013119,+0.014518]$ & 0.97034 & 1\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{B. Weight-map alignment: 40 sources, official preservation positive}}\\
+Correct $P$ & Preservation-mask AUROC & 0.720543 & $[0.661953,0.778988]$ & -- & --\\
+SOURCE-R & Preservation-mask AUROC & 0.493773 & $[0.448340,0.540041]$ & -- & --\\
+SHUF2-R & Preservation-mask AUROC & 0.670840 & $[0.605631,0.735889]$ & -- & --\\
+REV-HIST-R & Preservation-mask AUROC & 0.279506 & $[0.221134,0.338053]$ & -- & --\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{C. DirectEdit native MAE: 20 paired sources, post hoc Holm6}}\\
+Preservation MAE & L--G, global origin & $+0.001108$ & $[+0.000480,+0.001735]$ & 0.0009346 & 0.0028038\\
+Preservation MAE & L--G, local origin & $-0.003132$ & $[-0.004748,-0.001402]$ & 0.0060387 & 0.0060387\\
+Preservation MAE & Interaction & $-0.004240$ & $[-0.006055,-0.002234]$ & $1.90735\times10^{-5}$ & $7.62939\times10^{-5}$\\
+Edit-region MAE & L--G, global origin & $+0.040761$ & $[+0.033406,+0.048068]$ & $3.8147\times10^{-6}$ & $2.28882\times10^{-5}$\\
+Edit-region MAE & L--G, local origin & $+0.031323$ & $[+0.025274,+0.037228]$ & $3.8147\times10^{-6}$ & $2.28882\times10^{-5}$\\
+Edit-region MAE & Interaction & $-0.009438$ & $[-0.014947,-0.004022]$ & 0.0030174 & 0.0060349\\
+\bottomrule
+\end{tabular}
+\end{table*}

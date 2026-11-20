@@ -1,0 +1,20 @@
+\subsection{Native operating curves at the response attained by a control}
+\label{sec:v21-points}
+The two-constant and spatial-at-uniform runs each provide one measured output per source. For each of the 42 SAM sources with background pixels, we place that output at its measured directional CLIP on the same image's five-setting native curve. We interpolate background LPIPS in setting order only within the measured response range. The contrast is interpolated native loss minus observed point loss: a negative value favors the native sweep. This post hoc point comparison complements MRC, which averages over an interval.
+
+\begin{table}[t]\centering\footnotesize
+\caption{Native sweeps evaluated at the response attained by a measured control. Source support is pair-specific. Intervals use 10,000 paired-source bootstrap draws stratified by category among the supported sources. The final column repeats the mean with the last crossing.}
+\label{tab:v21-points}
+\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}llrll@{}}\toprule
+Point & Sweep & $n$ & First crossing [95\% CI] & Last\\\midrule
+Constants & Spatial & 36 & $-.0149\;[-.0374,.0193]$ & $-.0094$\\
+Constants & Uniform & 36 & $+.0066\;[-.0063,.0201]$ & $+.0230$\\
+Spatial/$U$ & Spatial & 32 & $-.0468\;[-.0936,-.0151]$ & $-.0311$\\
+Spatial/$U$ & Uniform & 20 & $+.0008\;[-.0378,.0417]$ & $+.0071$\\\bottomrule
+\end{tabular}
+\end{table}
+
+At the constants' response, the spatial sweep yields lower background loss on 35/36 supported sources (median difference $-0.0239$). One source contributes a difference of $+0.5542$. The first-crossing interval for the mean includes zero. The uniform sweep's mean changes from $+0.0066$ to $+0.0230$ with the crossing convention. These comparisons evaluate the single observed constant setting for each source. Its own response curve would require several gains per source. At the response of Spatial/$U$, the ordinary spatial sweep yields lower background loss on 24/32 sources. The replay estimates an allocation effect at the prescribed magnitude profile; the native sweep answers which measured settings preserve background at the replay's response.
+
+\paragraph{Matching the spatial share of pixel change.} As a separate descriptive coordinate, we repeat the within-image integral with $\rho$, the fraction of absolute pixel change inside the edit region. Of 42 sources, 32 have positive-width spatial/uniform overlap in $\rho$ (median width 0.0437). The uniform-minus-spatial loss is $+0.0499$ [0.0271, 0.0746] on the first crossing and $+0.0834$ [0.0513, 0.1177] on the last; 29/32 differences are positive under each rule. These intervals resample supported sources with equal weight as in the original MRC analysis. Equal shares can accompany different total changes, different within-region patterns and different semantic outcomes.

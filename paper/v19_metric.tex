@@ -1,0 +1,27 @@
+\subsection{Sensitivity to the regional LPIPS definition}
+\label{sec:v19_metric}
+Both scores use the same images, preservation mask and AlexNet-v0.1 weights. Feature-map LPIPS (FM) averages the full-image distance map over preservation pixels, whose receptive fields can cross the mask boundary. Masked-input LPIPS (MI) blacks out the edit region in both images before feature extraction and averages over the whole frame. Both are dimensionless, with lower scores indicating better preservation.
+
+For SAM, the retained fraction divides the mean matched gap (uniform minus spatial) by the mean default gap on the same sources (Table~\ref{tab:v21-bounded}). Four settings (0.25--1.00, 40/42 sources with overlap) retain 21.3\% [13.2, 30.5\%] with FM and 26.7\% [18.5, 34.5\%] with MI. Five settings (through 1.25, 41/42) retain 32.4\% [7.7, 57.4\%] and 49.4\% [34.5, 64.4\%], respectively.
+
+\begin{table}[t]
+\centering\small
+\caption{Spatial minus uniform preservation LPIPS. S and U denote the prescribed spatial and uniform magnitude profiles. Each estimate weights sources equally after averaging their paired seeds.}
+\label{tab:v19_metric}
+\begin{tabular}{llrrr}
+\hline
+Operator and seeds & Scorer & Native & Fixed S & Fixed U\\
+\hline
+Restoring, 0/17  & FM & $+.0362$ & $-.0100$ & $-.0100$\\
+                 & MI      & \multicolumn{1}{c}{---} & \multicolumn{1}{c}{---} & $-.0074$\\
+Restoring, 1/2/3 & FM & $+.0327$ & $-.0114$ & $-.0114$\\
+                 & MI      & $+.0250$ & $-.0071$ & $-.0065$\\
+SAM, 0           & FM & $-.1194$ & $-.0172$ & $-.0654$\\
+                 & MI      & $-.0650$ & $-.0126$ & $-.0395$\\
+\hline
+\end{tabular}
+\end{table}
+
+For 40 restoring sources, complete scores cover seeds 0/17. Archived images cover the uniform-profile pair on those seeds and all four cells on seeds 1/2/3. On the latter seeds, fixing either profile reverses the native sign under both scorers (Table~\ref{tab:v19_metric}). For the 42/50 SAM sources with a preservation region, two constants recover 84.5\% [78.0, 90.5\%] of native gain with FM and 81.7\% [77.0, 86.1\%] with MI.
+
+On the 41 five-setting overlaps, default gaps of 0.12068 (FM) and 0.06584 (MI) fall to $+.0390$ [$+.0106,+.0632$] and $+.0326$ [$+.0204,+.0462$] after matching. Both scorers favor spatial allocation on the same 37 sources and uniform on the other four.

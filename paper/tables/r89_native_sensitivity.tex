@@ -1,0 +1,18 @@
+% Source: evidence_r89/outputs/r88_native/native_paired_summary.csv.
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{Native-image preservation-LPIPS sensitivity on the original 480 outputs. All summaries average two seeds within each of 40 sources. Parentheses count sources with lower first-arm LPIPS; the interaction has no preferred direction. These are descriptive mask sensitivities.}
+\label{tab:r89-native-boundary}
+\begin{tabular}{lrrr}
+\toprule
+Contrast & Original $=$ official & Preserved interior $>8$ px & Preserved interior $>16$ px\\
+\midrule
+REQ-U $-$ U25 & $-0.010028$ (31/40) & $-0.010882$ (30/40) & $-0.011208$ (29/40) \\
+REQ $-$ GLB-R & $-0.009959$ (33/40) & $-0.010315$ (32/40) & $-0.010560$ (32/40) \\
+REQ $-$ SHUF-R & $-0.001161$ (25/40) & $-0.001184$ (25/40) & $-0.001090$ (24/40) \\
+REQ $-$ REV-R & $-0.032139$ (37/40) & $-0.032860$ (37/40) & $-0.032947$ (38/40) \\
+Native REQ $-$ U25 & $+0.036214$ (1/40) & $+0.036282$ (1/40) & $+0.036356$ (1/40) \\
+Direction-by-profile interaction & $-0.000069$ & $-0.000567$ & $-0.000648$ \\
+\bottomrule
+\end{tabular}
+\end{table*}

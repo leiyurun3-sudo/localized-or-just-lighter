@@ -1,0 +1,10 @@
+* text=auto
+*.sh text eol=lf
+*.csv -text
+*.tsv -text
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.npz binary
+*.zip binary

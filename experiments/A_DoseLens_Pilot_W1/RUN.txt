@@ -1,0 +1,94 @@
+A_DoseLens_Pilot_W1 — Linux / existing CUDA PyTorch / local FLUX Diffusers weights
+
+Default: engineering latent-bitwise parity, then 300 core jobs (6 per case).
+Explicit scan/all: core dependencies first, then 600 scan jobs; 900 total.
+No confirmation prompt, GPU rental, model download, package installation or evaluation is triggered by the runner.
+
+Manual dependencies (keep the server's matched torch/torchvision installation):
+  python -m pip install --no-deps -r requirements.txt
+The requirements omit torch/torchvision; --no-deps prevents transitive upgrades.
+
+Set the actual local model directory, then start:
+  export MODEL_PATH=/root/autodl-tmp/local-models/FLUX.1-dev
+  bash start.sh core
+
+CPU/local-file/tokenizer preflight only:
+  python run.py preflight --stage core
+
+After reviewing measured core/engineering cost, explicitly run scans:
+  bash start.sh scan
+  # all is equivalent to core + scan for this 900-job manifest
+
+Options: --model-path PATH --offload auto|model|sequential|none --dtype bfloat16|float16|float32
+Defaults: auto offload (adapter: model >=26 GiB, otherwise sequential), bfloat16.
+BF16 is a declared adaptation from upstream FP16. Dtype/environment changes require new engineering parity.
+Pass options after the stage, e.g. bash start.sh core --model-path /root/autodl-tmp/local-models/FLUX.1-dev
+
+Monitor / logs:
+  python status.py --watch --interval 3
+  python status.py --json
+Each launch prints its detached runner PID and timestamped log path under outputs/logs/.
+Ctrl+C stops the monitor only; reconnect with the status command above.
+The monitor exits automatically after a completed/failed runner exits (completed=0, failed=1).
+To stop generation intentionally, send SIGTERM to the runner PID shown by status.py.
+PID identity uses Linux /proc start ticks plus boot ID, never the monitor process.
+Heartbeat updates every 3 seconds even during model loading; callback progress has its own timestamp.
+Caught signals/errors/OOM mark state failed and preserve outputs. SIGKILL cannot be caught;
+the monitor identifies a missing runner as failed without pretending its old state is live.
+Linux flock is acquired before spawning and inherited by the runner; duplicate launch exits 3.
+start.sh handles that duplicate-launch code by monitoring the existing output directory.
+When using a custom output directory, pass the same --output-dir when reconnecting.
+
+Resume and layout:
+  Re-run the same start command. Only completed.json + completed report for the current
+  protocol/environment can be reused. Protocol covers manifests, generation code/config,
+  source images, dtype/offload, package versions and local model file identity.
+  Model weights are checked by local shard presence/size and file metadata, not hashed.
+  Shard filenames come from weight_map VALUES. No tensor-name-derived shard names.
+  outputs/{job_id}/report.json, profile.json, native.png, preview.jpg
+  outputs/_engineering/report.json must have passed=true for current protocol.
+  outputs/state.json is atomic; outputs/_protocols/ stores protocol/preflight provenance.
+  outputs/reports_manifest.json lists only selected, completed, current-protocol jobs.
+  Give the separate evaluator --reports outputs/reports_manifest.json to select that run.
+  Incomplete/old-protocol job directories move to outputs/_attempts/ before retry.
+  Dependencies use job.depends_on; adapter reads outputs/{anchor_job_id}/profile.json.
+  Progress callback accepts a JSON dictionary. Adapter report payload is preserved and
+  _runner.protocol_hash is added. No native-image hashes or evaluation in this runner.
+  Adapter cache identity is scoped to protocol; outputs/_cache is excluded from delivery.
+
+Collection:
+  python collect.py
+  python collect.py --native
+Default compact ZIP contains reports, profiles, previews and small metadata/log files.
+--native creates a second ZIP containing native.png files. Models, hidden scout cache,
+previous attempts and intermediate full-size images are excluded from the compact ZIP.
+Native PNGs stay on the server for separate CPU evaluation.
+
+One-block extraction/start example (after dependencies are installed):
+export MODEL_PATH=/root/autodl-tmp/local-models/FLUX.1-dev
+python - <<'PY'
+from pathlib import Path
+import zipfile
+base = Path('/root/autodl-tmp')
+candidates = [base/'A_DoseLens_Pilot_W1.zip', Path('/root/A_DoseLens_Pilot_W1.zip')]
+archive = next((p for p in candidates if p.is_file()), None)
+if archive is None: raise SystemExit('Upload A_DoseLens_Pilot_W1.zip to /root/autodl-tmp or /root')
+with zipfile.ZipFile(archive) as z:
+    members = z.namelist()
+    target = base if 'A_DoseLens_Pilot_W1/start.sh' in members else base/'A_DoseLens_Pilot_W1'
+    target.mkdir(parents=True, exist_ok=True)
+    for item in members:
+        if not (target/item).resolve().is_relative_to(target.resolve()): raise SystemExit('Unsafe ZIP member')
+    z.extractall(target)
+PY
+cd /root/autodl-tmp/A_DoseLens_Pilot_W1
+bash start.sh core
+
+Local delivery state: generation has not been executed here. Engineering and core results
+are produced only when the user starts the package on a CUDA server with local weights.
+
+Optional CPU evaluation (after generation, using existing local metric weights):
+  python -m pip install --no-deps -r requirements-eval.txt
+  python evaluate.py --results outputs --reports outputs/reports_manifest.json --clip-model /path/to/local/clip --alexnet-weights /path/to/alexnet.pth --lpips-weights bundled
+  python analyze.py --metrics outputs/evaluation/metrics.csv --baseline sam_native
+The scan condition is encoded in the method label. Empty preservation regions remain null.

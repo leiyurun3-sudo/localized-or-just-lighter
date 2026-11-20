@@ -1,0 +1,57 @@
+{
+  "version": "A-DoseLens-W1-v1",
+  "status": "implementation_ready_GPU_engineering_pending",
+  "source_commit": "8167978666e6df11e987a453934b89ec422bd3a4",
+  "primary_method": "SAM-Flow FLUX two state projections",
+  "dtype": "bfloat16 by declared default; upstream auto uses float16",
+  "n_avg": 8,
+  "text_tokens": 512,
+  "source_count": 50,
+  "preservation_eligible": 42,
+  "generation_seed": 0,
+  "core_jobs": 300,
+  "scan_additional_jobs": 600,
+  "default_stage": "core",
+  "sam_and_uniform_scale_grid": [
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.25
+  ],
+  "flowedit_n_max_grid": [
+    12,
+    16,
+    20,
+    24,
+    28
+  ],
+  "defaults": {
+    "sam_n_max": 26,
+    "flowedit_n_max": 24,
+    "steps": 28
+  },
+  "intervention": "source-relative accumulated latent displacement projected separately into model and visible state",
+  "profile_target": "FP32 projection RMS before state dtype cast; source-relative realized cast RMS additionally logged",
+  "normalization_tolerance": "absolute 1e-6 + relative 1e-4 (FP32 projection)",
+  "realized_state_diagnostic_tolerance": "absolute 1e-6 + relative 0.01; each profile must pass at every active step to claim realized-state match",
+  "constant_calibration": "two constants: sum(native projected RMS) / sum(native residual RMS), one per model/visible profile; no outcomes used",
+  "replay_targets": [
+    "native spatial twin profile",
+    "native uniform twin profile"
+  ],
+  "extended_control": "replay gains and rho=1.25 can exceed convex factors; record them, no clipping",
+  "map_source": "automatic source/scout attention with prompt-only tokens; no GT mask",
+  "cost_policy": "official n_avg preserved; cache prompt embeddings, scout image and arm-independent attention maps when RNG unchanged",
+  "deferred_plan_items": [
+    "one-shot scalar on a specified profile",
+    "actual-total scalar search",
+    "Q2 held-out dose prediction",
+    "Q4 controlled map families",
+    "second mechanism expansion",
+    "SD3.5 port and validation",
+    "200-source confirmation cohort",
+    "human 2AFC"
+  ],
+  "new_generation_run_locally": false
+}

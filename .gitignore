@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+*.aux
+*.log
+*.xdv
+*.synctex.gz
+/paper/main.pdf
+/paper/supplement.pdf
+/reproduction/rerun/
+/downloads/
+**/randomization_secret.txt
+**/assignment_key.csv
+**/ratings*.json

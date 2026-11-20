@@ -1,0 +1,853 @@
+\documentclass[10pt,doubleanonymous]{ieeeconf}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,graphicx,booktabs,tabularx,array,url}
+\usepackage{xurl}
+\hypersetup{hidelinks}
+\hypersetup{pdftitle={Localized, or Just Lighter? Attributing Background Preservation in Flow-Based Image Editing (Supplementary Material)},pdfauthor={}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@dblfptop}{0pt}
+\makeatother
+\newcommand{\RMS}{\operatorname{RMS}}
+\input{../analysis/curves/scan_numbers.tex}
+\title{Localized, or Just Lighter? Attributing Background Preservation in Flow-Based Image Editing\texorpdfstring{\\}{: }Supplementary Material}
+
+\makeatletter
+\patchcmd{\ieeeconf@printanonymousauthors}{Anonymous submission}{Anonymous ICME Submission.}{}{\ClassError{ieeeconf}{Unexpected anonymous title block}{}}
+\makeatother
+\begin{document}
+\raggedbottom
+\maketitle
+
+
+\section{Guide to the Evidence}
+\label{sec:evidence-guide}
+\noindent\textbf{Main results.} Table~\ref{tab:paths} traces both paths through the four restoring cells. Four bounded SAM settings retain 21.3\% (feature-map LPIPS) and 26.7\% (masked-input LPIPS) of the default gap (Section~\ref{sec:v21-bounded}, Table~\ref{tab:v21-bounded}). Tables~\ref{tab:sam-core} and~\ref{tab:v19-selectivity-points} cover SAM constants and per-pixel change.
+
+\noindent\textbf{Sensitivity.} Sections~\ref{sec:v19_metric} and~\ref{sec:v20-mrc} vary the scorer and the matching coordinate, interpolation and support. Tables~\ref{tab:r91-permutation} and~\ref{tab:r91-floor} test map arrangement and the protection floor. Section~\ref{sec:v21-checks} examines attained response, fixed-state gain fits, scan spacing, map structure and cross-source transfer.
+
+\noindent\textbf{DirectEdit and failure cases.} Section~\ref{sec:external} compares both local/global profile origins. Table~\ref{tab:v19-selectivity-category} locates the four negative five-setting SAM contrasts. Figures~\ref{fig:sam-cases1} and~\ref{fig:sam-cases2} show incomplete edits and subject or viewpoint changes.
+
+\noindent\textbf{Reproduction.} See \path{EVIDENCE_INDEX.md} and Table~\ref{tab:archive-coverage} for records and image coverage. At the ZIP root, run \texttt{python reproduce.py} for primary estimates. Add \mbox{\texttt{-\kern0pt-ci}} for paired SAM bootstrap intervals (NumPy).
+
+\noindent\textbf{Historical comparisons.} Section~\ref{sec:next-steps-20261106} compares three-setting cohort curves with within-source matching. Section~\ref{sec:development} lists earlier cohorts. Unless specified, intervals are marginal 95\% intervals from source bootstrap resampling.
+
+\begin{table*}[!t]
+\centering\small
+\caption{Result-to-file index for the anonymous supplement. Each row can be reaggregated from its specified records, except where a summary is indicated. The last column counts native output images in the study archive that can be rescored with their source and mask. The review ZIP includes zero native output PNGs in every row.}
+\label{tab:map}\label{tab:archive-coverage}
+\begin{tabularx}{\textwidth}{@{}p{.22\textwidth}>{\raggedright\arraybackslash}X p{.24\textwidth}@{}}
+\toprule
+Scientific comparison & Record relative to the ZIP root & Native images available for rescoring\\
+\midrule
+Restoring defaults and both profiles, seeds 0/17 &
+\path{C/two_seed_per_output.csv}, \path{H/R88_scores.csv}. Six primary arms, 40 sources. &
+160/480. U25 and REQ\_U have 80 each; the other four arms have archived scores.\\
+Three-setting restoring curves and map controls &
+\path{C/three_scale_points.csv}, \path{C/three_scale_overlap.csv}, \path{evidence/map_source_values.csv}. &
+0/640 added outputs; the middle scale reuses the 160 primary images above.\\
+Added seeds, map/floor tests and scalar calibration &
+\path{H/R91_scores.csv} (filter by phase), \path{H/R92_scores.csv}, \path{C/scalar_profile_diagnostics.csv}. &
+480/480 for the four cells at seeds 1--3; 240/240 map/floor; 80/80 scalar. Four exact repeats are additional checks.\\
+SAM constants and crossed projections &
+\path{H/sam_core_scores.csv}, \path{SAM_scan/data/core_steps.csv}. The latter supplies the two branch profiles. &
+300/300 core outputs, six conditions on 50 sources.\\
+SAM/FlowEdit curves, selectivity and exceptions &
+\path{H/sam_scan_scores.csv}, \path{cpu/selectivity/operating_sources.csv}, \path{M/observations.csv} and \path{M/reproduce_mrc.py}. The atlas shows all configurations. &
+600/600 added outputs; 150 core defaults also enter the curves. 42 backgrounds. SAM overlap covers 41 sources with five settings and 40 at scales up to one.\\
+DirectEdit blending &
+\path{H/DirectEdit_scores.csv} (both LPIPS scorers), \path{evidence/directedit_per_output.csv} (regional MAE and directional CLIP). &
+100/100; five configurations on 20 sources from the restoring cohort.\\
+\bottomrule
+\end{tabularx}
+\par\smallskip\raggedright\footnotesize
+ZIP directories are C = \path{source_correction_and_blending/}, H = \path{cpu/harmonized_lpips/}, M = \path{analysis/v20_mrc/}.
+\path{Atlas_900_outputs.pdf} contains rendered views. Input hashes, configurations and coverage are indexed in Section~\ref{sec:reproducibility}.
+\end{table*}
+
+\input{v19_metric}
+\input{v19_pixel}
+\input{v19_selectivity}
+\input{v20_mrc}
+\subsection{What the restoring correction acts on}
+\input{v19_controls}
+\begin{figure}[t]\centering
+\includegraphics[width=\columnwidth]{figures/v19_restoring_flower_strip.pdf}
+\caption{At seed 0 the three restoring configurations produce blue-violet petals and an orange center in response to a blue-flower, red-center request. The uniform, scalar-calibrated and spatial replay outputs are displayed at the same coordinates.}
+\label{fig:v19-flower}\end{figure}
+
+\input{v19_audit}
+\input{v19_human}
+\input{v19_cases}
+\input{sam_appendix}
+\subsection{Eight cases from the complete visual atlas}
+Figures~\ref{fig:sam-cases1} and~\ref{fig:sam-cases2} show eight sources chosen after inspecting all 18 outputs for each of the 50 sources in ascending ID order. The examples show incomplete edits, changes to subject identity or viewpoint, and two discrepancies between the instruction and the model prompt. Each image shows the full field of view at seed 0. The upright bag also appears in the independently ranked default examples in Fig.~\ref{fig:sam-ranked}.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.94\textwidth]{supp_cases_1.pdf}
+\caption{Editing strength and requested geometric changes. Labels identify the actual source and control setting. The bird edit succeeds at the higher spatial setting. The bag stays upright at each displayed default, and the wolf retains the moon in all 18 outputs.}
+\label{fig:sam-cases1}
+\end{figure*}
+\begin{figure*}[!t]
+\centering\includegraphics[width=.94\textwidth]{supp_cases_2.pdf}
+\caption{Background, subject identity and prompt interpretation. The otter and house examples are the two observed raw-instruction/target-prompt discrepancies. The figure describes the supplied model target for each. The primary comparison includes both sources.}
+\label{fig:sam-cases2}
+\end{figure*}
+
+\section{Post Hoc Checks on Recorded Trajectories and Outputs}
+\label{sec:v21-checks}
+\input{v21_operating}
+\input{v21_constants}
+\input{v21_bounded}
+\input{v21_grid}
+\input{v21_map}
+\input{v21_transfer}
+
+\section{Source Correction: Crossed Profiles and Cohort}
+\subsection{Selection before generation}
+The selection manifest excludes 90 historical source IDs and content duplicates. Eligible sources have valid prompts and nonempty official edited and preserved regions. Within each eligible category, selection follows a deterministic SHA256 ordering with the fixed study salt. Four sources are allocated to each category 0--8; four remaining slots go to categories 0--3. The resulting mixture has five sources in each of categories 0--3 and four in each of 4--8. After historical exclusions, remaining category-9 style cases lack a nonempty official preservation region and are outside this cohort.
+
+Content deduplication uses an RGB exact hash or a perceptual dHash distance at most 8 combined with $64\times64$ thumbnail RGB MAE at most 12. This rule applies against historical and already selected images. The manifest records selected and excluded sources. ID disjointness and plan consistency are verified from these records; content deduplication requires the original historical images. Table~\ref{tab:r88-source-manifest40} lists all selected sources and original instructions.
+
+The estimand weights each source equally in the planned 40-source mixture, so category weights follow the stated counts. Its population is the eligible selected cohort. All sources receive seeds 0 and 17, and every source/seed receives every arm. The archived design and statistical files specify these choices in internal frozen protocol artifacts; no public preregistration was recorded.
+
+\input{tables/r88_source_manifest40}
+
+\subsection{Notation}
+Table~\ref{tab:notation} summarizes the main-paper symbols.
+An \emph{allocation rule} specifies spatial weighting; its normalized residual is the \emph{correction direction}. A \emph{magnitude profile} (also called dose profile in historical records) is the full stepwise applied RMS sequence. Its step-size-weighted sum is the \emph{cumulative correction magnitude} $I$. These quantities measure the source-correction term, separately from the target field, the complete update, and semantic editing strength. RMS and its cumulative sum are norm quantities; squared residuals enter the separate attenuation identity below. The \emph{uniform} rule is called \emph{global} in historical arm names and records (e.g., GLB-R). \emph{Request-weighted} denotes the map construction, whereas REQ names its native arm. Native comparisons share a coefficient; matched-RMS comparisons share an applied sequence.
+\begin{table}[!t]
+\centering\small
+\caption{Main-paper symbols. Spatial weights are broadcast over channels.}
+\label{tab:notation}
+\begin{tabularx}{\linewidth}{@{}l >{\raggedright\arraybackslash}X@{}}
+\toprule
+Symbol & Meaning\\
+\midrule
+$z_i,r_i$ & Edited state and reference state at step $i$\\
+$\sigma_i,h_i$ & Decreasing scheduler node; $h_i=\sigma_i-\sigma_{i+1}$\\
+$u_i^s,u_i^{t,M_{\rm KV}}$ & Source field and target field with fixed source memory $M_{\rm KV}$\\
+$c_i,\widehat c_i$ & Current-state residual and applied correction\\
+$E,P$ & Normalized prompt response and protection weight $P=1-0.75E$\\
+$e_i(P)$ & Same-state residual-energy-weighted mean of $P^2$\\
+$\lambda$ & Native correction coefficient, 0.25\\
+$b_i^R,b_i^U$ & RMS profiles recorded by native REQ and U25\\
+$I$ & Cumulative magnitude $\sum_i h_i\RMS(\widehat c_i)$\\
+$\beta$ & Multiplier on the uniform-origin profile\\
+$\gamma$ & Controlled-inversion mixture, 0.5\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Fixed editor and probe settings}
+The backbone is FLUX.1-dev with $512\times512$ images, 28 integration steps, guidance 3.5, inversion mixture $\gamma=0.5$, network evaluation in BF16, and integration in FP32. Source K/V memory is paired with reference states, read by all image queries, and injected at steps 0--6 in single-stream blocks 1--26. Gate strength is one in all six arms. These are fixed development choices, not settings selected on the new outputs.
+
+The native correction coefficient is $\lambda=0.25$. At reference states nearest scheduler values $0.25,0.50,0.75$, channel-RMS source/target velocity differences yield response maps. Each map is normalized by its 10th and 90th spatial percentiles and clipped to $[0,1]$; a degenerate range contributes zero. Averaging the three maps gives $E$, and protection weights are $P=1-0.75E$. Thus $P\in[0.25,1]$: response-high locations receive weaker source correction. Official masks enter evaluation and cohort eligibility, not this map construction.
+
+\paragraph{Reference trajectory and fields.}
+With a seed-fixed Gaussian endpoint $\epsilon$, controlled inversion uses increasing times $t_k$ and Euler updates
+\begin{equation}
+z_{k+1}=z_k+\Delta t_k\left[(1-\gamma)f_\theta(z_k,t_k;\emptyset,0)
++\gamma\frac{\epsilon-z_k}{1-t_k}\right].
+\end{equation}
+The second term points toward the Gaussian endpoint; reversing the saved states supplies the generation reference. The last argument of $f_\theta$ is guidance strength. During editing, $u_i^s(z_i)=-f_\theta(z_i,\sigma_i;c_s,3.5)$ is evaluated with memory disabled. The target field uses the same sign convention, target prompt, and fixed K/V rule. Together with the own-state update in main-paper Eq.~(5), these definitions specify the reference displacement and current-state residual; editing-controller parameters are $\eta=0$ and $\tau=1$.
+
+\paragraph{Budget-preserving K/V rule.}
+For each image query/head, native joint attention is $a=\mathrm{softmax}(q[K_T,K_I]^\top/\sqrt d)$, with text and image keys $K_T,K_I$ and head width $d$. Let $m_I=\sum_{j\in I}a_j$. The memory output is
+\begin{equation}
+\widetilde o=a_TV_T+m_I\,\mathrm{softmax}(qK_S^\top/\sqrt d)V_S.
+\end{equation}
+Source keys/values $K_S,V_S$ are captured by a source-prompt forward pass at reference state $r_i$. The rule retains the native text contribution and image-attention mass while reallocating that mass to source values. Steps 0--6 and blocks 1--26 are inclusive, zero-based indices. The six-arm comparison uses gate one for every image query in these blocks; other operations retain native attention.
+
+\subsection{Six interventions}
+Let $c_i$ be the correction evaluated at an arm's own edited state and let $b_i^R$ and $b_i^U$ be the actual RMS profiles recorded by native request and uniform runs. The interventions are:
+\begin{align}
+\mathrm{REQ}:&\quad \widehat c_i=0.25P\odot c_i,\\
+\text{GLB-R}:&\quad \widehat c_i=b_i^R c_i/\RMS(c_i),\\
+\mathrm{U25}:&\quad \widehat c_i=0.25c_i,\\
+\text{REQ-U}:&\quad \widehat c_i=b_i^U(P\odot c_i)/\RMS(P\odot c_i).
+\end{align}
+In semantic terms, REQ is Spatial@spatial-profile, GLB-R is Uniform@spatial-profile, U25 is Uniform@uniform-profile, and REQ-U is Spatial@uniform-profile. The native arms record the two profiles; the crossed arms replay them. Historical identifiers remain in tables and filenames to connect each comparison to its archived records.
+
+SHUF-R and REV-R use the same normalization as REQ-U, but target $b_i^R$ and replace $P$ with the corresponding control map. A zero direction with a positive target norm is infeasible and is treated as an execution error, not silently replaced. The six-arm replay implementation rejects nonpositive targets; the subsequent eight-arm extension also handles a zero target by applying zero correction. Every recorded anchor is positive (minimum RMS 0.08143), so the implemented positive-target domain covers all reported runs.
+
+For SHUF-R, a fixed cyclic derangement chooses another target prompt within the same category. The donor ordering and smallest shift giving distinct target prompts are fixed before generation. Probes use the \emph{recipient} image, source prompt, and reference states with the wrong target. Their resulting weights are rank matched to the correct map's sorted values. The generation prompt remains the recipient's original correct target. This changes the target used to form the map, not the requested edit being generated. Rank matching preserves the weight histogram, not all spatial morphology.
+
+REV-R uses $P^{\mathrm{rev}}=1.25-P$, preserving the range $[0.25,1]$ while reversing spatial emphasis. Its histogram generally changes. This differs from the prior block-permutation control, which rearranged blocks of an already computed map. Figure~\ref{fig:maps} shows actual correct, wrong-request, and reversed maps.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/method_diagram_v14.pdf}
+\caption{Detailed crossed-profile protocol retained from the earlier main-paper diagram. The source image, protection map, and two native 28-step RMS curves use source 000000000117, seed 0. Native runs share the reference and record request- and uniform-origin profiles; each replay arm recomputes its residual and target field at its own evolving state. Crossing allocation with profile origin forms the four comparison cells. The flow diagram specifies the computation; its arrows are not measured latent trajectories.}
+\label{fig:protocol-flow}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/maps.pdf}
+\caption{Actual maps for two fresh-source examples. Each row shows the source and the correct-request, wrong-request, and reversed protection weights. Higher values apply stronger source correction. The wrong-request map is computed on the same source with a fixed donor target, then histogram matched; reversal retains the allowed value range. Maps visualize weighting, not ground-truth edit localization.}
+\label{fig:maps}
+\end{figure*}
+
+\section{Allocation Effects at Matched Profiles}
+The four crossed cells separate two uses of an ablation. REQ versus U25 compares native configurations, including the profiles they induce. REQ versus GLB-R and REQ-U versus U25 compare spatial allocation at the request- and uniform-origin profiles, respectively. Reporting their joint outcomes makes the conditional preservation effect visible alongside editing response.
+\begin{table*}[!t]
+\centering\small
+\caption{Six-arm cohort means after seed averaging within 40 sources. Arrows indicate preferred metric direction. Profile groups follow the main-paper factorial comparison.}
+\label{tab:main-means}
+\begin{tabular}{lrrrrrr}
+\toprule
+Arm & Target CLIP $\uparrow$ & Dir. CLIP $\uparrow$ & DINOv2 $\uparrow$ & Full LPIPS $\downarrow$ & Pres. LPIPS $\downarrow$ & Pres. MAE $\downarrow$\\
+\midrule
+REQ &0.2643&0.1288&0.5406&0.5449&0.5254&0.1239\\
+GLB-R &0.2647&0.1297&0.5396&0.5528&0.5353&0.1266\\
+U25 &0.2665&0.1357&0.5545&0.5045&0.4891&0.1051\\
+REQ-U &0.2647&0.1291&0.5540&0.4974&0.4791&0.1023\\
+SHUF-R &0.2648&0.1300&0.5388&0.5452&0.5265&0.1251\\
+REV-R &0.2673&0.1344&0.5349&0.5719&0.5575&0.1388\\
+\bottomrule
+\end{tabular}
+\end{table*}
+\subsection{Pairing, outcomes, and uncertainty}
+For each metric and arm, the two seed values are averaged within source. Contrasts then use 40 independent source-level differences. Retaining all arms of a source together preserves pairing. The primary metric is preservation LPIPS, computed by averaging a spatial LPIPS map over the official preservation mask. LPIPS receptive fields can extend across the mask boundary. Full-image LPIPS, preservation RGB MAE on $[0,1]$ channels, full-image DINOv2 cosine similarity, target CLIP, and directional CLIP complete the six-metric family. Scores were evaluated on native server PNGs. JPEG previews in the compact archive support figures rather than metric recomputation.
+
+\paragraph{Image inputs and evaluators.}
+Source and native output images are converted to RGB and resized to $512\times512$ with Lanczos. LPIPS uses AlexNet v0.1 with ImageNet trunk and learned calibration weights loaded explicitly, both with strict state-dictionary checks. Inputs are mapped to $[-1,1]$. Full LPIPS averages feature distances over the complete image; spatial LPIPS is also evaluated on complete images, then weighted by preservation mask $W$. If needed, $W$ is resized to the feature-distance map with area interpolation. Images are neither cropped nor zero-masked before feature extraction.
+
+CLIP uses OpenAI ViT-L/14 and image-feature similarity uses DINOv2-base. After the RGB/$512\times512$ input step, each evaluator calls its local checkpoint processor. DINO compares the first token of \texttt{last\_hidden\_state} by cosine. Target CLIP is an image--text cosine. For directional CLIP, writing $N(v)=v/\|v\|_2$, the implemented score is
+\begin{equation}
+\cos\!\left(N(I_{\rm edit})-N(I_{\rm src}),\,
+N(T_{\rm target})-N(T_{\rm src})\right).
+\end{equation}
+A zero difference is recorded as missing. Scores are raw cosines without logit scaling or positive clipping. 
+
+\paragraph{Evaluation-mask convention.}
+The decoder maps zero-based RLE start/length pairs to a row-major $512\times512$ edit mask $M_{\rm edit}$, then marks the first/last rows and columns as edited. This excludes the one-pixel image frame from $W=1-M_{\rm edit}$; it does not dilate the annotated object boundary. RGB MAE weights pixels by $W$ for preservation and by $M_{\rm edit}$ for edit-region change. Spatial LPIPS similarly weights its output map, whose receptive fields still include adjacent pixels. The native audit below reports the original, official, and 8-/16-pixel interior masks (Table~\ref{tab:r89-native-boundary}).
+
+Confidence intervals use 20,000 paired category-stratified source bootstraps with PCG64 and base seed 88002. Every replicate retains the planned category counts. Percentile bounds are the 2.5th and 97.5th percentiles with linear interpolation. The same resampled source weights are used across metrics and decomposition components for a cohort. Intervals are marginal; the separately reported adjusted tests address multiplicity.
+
+Two-sided sign-flip tests use $B=1,000,000$ Monte Carlo sign assignments, base seed 88001, and the absolute mean source difference. The same assignments are used for all contrasts and outcomes. With $k$ assignments at least as extreme as the observation (tolerance $10^{-12}$),
+\begin{equation}
+p_{\mathrm{MC}}=(k+1)/(B+1).
+\end{equation}
+This is Monte Carlo inference, not exhaustive enumeration of $2^{40}$ assignments. It assumes independent source differences with a sign-invariant joint distribution under the null; a zero mean alone does not imply that condition. The primary comparison has $k=267$, $p=0.0002679997$, and approximate Monte Carlo standard error $1.64\times10^{-5}$. Zero-extreme contrasts have the resolution floor $1/(B+1)$, not $p=0$.
+
+\subsection{Primary, secondary, and sensitivity families}
+The primary test is REQ-U minus U25 preservation LPIPS, two-sided $\alpha=0.05$. On passing this gate, four secondary preservation tests use Holm correction: REQ minus GLB-R, direction-by-profile interaction, REQ minus SHUF-R, and REQ minus REV-R. Reported gated values are the maximum of primary $p$ and secondary Holm4 $p$. The primary effect is negative and the gate opens. The sensitivity family comprises these five contrasts crossed with all six outcomes: Holm30. It supplements rather than replaces the specified primary test.
+
+Table~\ref{tab:r88-paired-all30} supplies every contrast. Seven of 30 tests pass Holm30: the three preservation contrasts against U25, GLB-R, and REV-R; full LPIPS against GLB-R and REV-R; and preservation MAE against SHUF-R and REV-R. All CLIP and DINO tests and every interaction test remain above 0.05 under that family. Some marginal intervals exclude zero despite a nonsignificant Holm30 value because intervals and adjusted tests use different coverage criteria.
+
+\input{tables/r88_paired_all30}
+
+\subsection{Distribution across sources}
+For REQ-U minus U25 preservation LPIPS, 31 sources improve, nine worsen, and none tie. The median difference is $-0.006038$. Improvements of at least 0.005, 0.010, and 0.020 occur in 22, 14, and seven sources, respectively. These cutoffs describe numerical LPIPS differences; their perceptual interpretation would require independent observer calibration. REQ improves over GLB-R on 33/40 sources, over SHUF-R on 25/40, and over REV-R on 37/40. Table~\ref{tab:r88-source-wins} reports the planned thresholds for both anchor comparisons across all metrics. Thresholds use raw score units and have no human perceptual calibration.
+
+\input{tables/r88_source_wins}
+
+REQ-U minus U25 target CLIP is $-0.00179$, interval $[-0.00401,0.00037]$, and directional CLIP is $-0.00658$, interval $[-0.01438,0.00048]$. Both point estimates indicate lower text response, with intervals spanning zero. The primary estimand is the preservation-metric effect of allocation at a matched applied profile; instruction success and perceptual preference require their corresponding evaluations.
+
+\section{Applied Profiles and Native-Ranking Decomposition}
+\subsection{What matching controls}
+Across the full experiment there are 13,440 recorded steps. Of these, 8,960 belong to the four replay-controlled arms; the remaining steps form the two native anchors. For each controlled step, the schedule and step size match the same source/seed anchor. The maximum absolute RMS difference is $5.96\times10^{-8}$ and maximum relative difference $2.31\times10^{-7}$. Maximum cumulative magnitude difference against the anchor is $7.51\times10^{-9}$. All controls satisfy the specified absolute-plus-relative tolerance $10^{-8}+10^{-5}b_i$.
+
+These measurements verify equality of full-vector applied RMS at every controlled step. Each arm recomputes its residual at its own current state, allowing spatial direction, regional correction energy, subsequent trajectory evolution, and final latent states to differ. In particular, full-vector RMS equality leaves the RMS within the preservation and edit regions free to change. Cumulative scalar magnitude $I=\sum_i h_i\RMS(\widehat c_i)$ sums stepwise norms; it is distinct from the norm of the summed correction, net trajectory displacement, and final image distance. The resulting contrast therefore measures allocation under a specified full-vector profile, including its trajectory consequences.
+
+\begin{figure*}[t]
+\centering\includegraphics[width=\textwidth]{figures/profiles.pdf}
+\caption{Actual RMS and cumulative magnitude profiles, averaged over source/seed groups. Replay-controlled arms follow their designated native anchor. The two profile origins are observed trajectories, not a universal scalar dose law. In this cohort U25 has a larger RMS at every anchor-comparison step.}
+\label{fig:profiles}
+\end{figure*}
+
+\subsection{Measured profile separation}
+Mean cumulative magnitude is $I_R=0.17094737$ (95\% CI $[0.16535783,0.17628020]$) and $I_U=0.23283413$ ($[0.22674989,0.23874031]$). Their paired difference is $0.06188676$ ($[0.05969371,0.06407954]$). The ratio of means $I_U/I_R$ is 1.3620: U25 applies 36.2\% more cumulative correction relative to native REQ. Conversely, $I_R/I_U=0.734202$: REQ applies 73.42\% of U25's cumulative correction, or 26.58\% less relative to U25. These percentages describe cumulative RMS magnitude. This comparison is specific to the 40-source cohort; the historical benchmark's corresponding U25-relative-to-request increase was 32.5\%.
+
+All 80 source/seed anchor pairs satisfy $b_i^U>b_i^R$ at every one of 28 steps. The smallest and largest stepwise differences are 0.02498 and 0.25727. Profile origin is nevertheless the experimental factor: it changes a complete time sequence, including shape as well as cumulative magnitude.
+
+\begin{table*}[!t]
+\centering\small
+\caption{Same-cohort decomposition of the native preservation-LPIPS difference. Components use shared bootstrap resamples. These are marginal intervals, with no additional hypothesis family.}
+\label{tab:paths}
+\begin{tabular}{lrr}
+\toprule
+Component & Mean difference & 95\% CI\\
+\midrule
+Native REQ $-$ U25 & $+0.03621$ & $[+0.03043,+0.04224]$\\
+Path 1: allocation, REQ $-$ GLB-R & $-0.00996$ & $[-0.01389,-0.00639]$\\
+Path 1: profile, GLB-R $-$ U25 & $+0.04617$ & $[+0.03934,+0.05378]$\\
+Path 2: profile, REQ $-$ REQ-U & $+0.04624$ & $[+0.04015,+0.05251]$\\
+Path 2: allocation, REQ-U $-$ U25 & $-0.01003$ & $[-0.01531,-0.00511]$\\
+Allocation interaction (uniform minus request origin) & $-0.00007$ & $[-0.00376,+0.00372]$\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+\subsection{Two paths, one observed native difference}
+Table~\ref{tab:paths} links the four factorial cells on the same source population. Path 1 changes allocation at the request-origin profile, then changes profile under uniform allocation. Path 2 changes profile under request weighting, then allocation at the uniform-origin profile. Both sum to the observed native difference for each source, not only in the grand mean. The profile term is about $+0.046$ and the allocation term about $-0.010$ in either path. Thus the observed native uniform advantage coexists with a matched-profile request-weighted advantage.
+
+These paths estimate allocation effects conditional on the two native-policy profiles. Each profile intervention changes cumulative magnitude and temporal shape together, so its contribution combines both features and their trajectory consequences. The near-zero interaction estimate has an uncertainty interval spanning zero. Additional fixed or externally supplied profiles would test a wider anchor class.
+
+\section{Computational Cost of Matched Comparisons}
+\begin{table}[!t]
+\centering\small
+\caption{Generation cost for the original six-arm experiment (480 outputs). Nominal branch NFE excludes prerequisite native anchors. Actual incremental NFE and seconds are means in the executed shared-reference order, not isolated end-to-end timings.}
+\label{tab:cost}
+\begin{tabular}{lrrr}
+\toprule
+Arm & \shortstack{Branch\\NFE} & \shortstack{Incremental\\NFE} & \shortstack{Seconds/\\output}\\
+\midrule
+REQ &97&97.000&63.86\\
+GLB-R &97&63.000&45.05\\
+U25 &91&62.825&44.93\\
+REQ-U &97&63.000&45.05\\
+SHUF-R &100&68.650&50.11\\
+REV-R &97&63.425&45.38\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The run required 33,432 new transformer evaluations for 480 outputs, versus a nominal sum of 46,320 branch evaluations without the recorded reuse. Recorded savings comprise 11,172 inversion calls, 1,674 probe calls, and 42 source-memory capture calls. A reference-cache miss in one reversed branch accounts for 34 additional calls relative to its usual incremental cost. Average recorded generation time is 49.06 seconds per output. Metric evaluation and export are separate stages.
+
+Controlled branches also require their anchor. Without shared preparation, the branch-plus-anchor nominal totals are 194 for GLB-R, 188 for REQ-U, 197 for SHUF-R, and 194 for REV-R. The incremental value of 63 measures a controlled branch with reusable preparation already available. Table~\ref{tab:cost} reports the computational requirements of the attribution protocol under both accounting conventions.
+
+\section{Magnitude Scaling and Map Specificity}
+\label{sec:extension}
+\subsection{Coverage and statistical families}
+The follow-up contains all $40\times2\times8=640$ planned new outputs and reuses the original 480, giving 14 arms on the same 40 sources. Category counts remain $5,5,5,5,4,4,4,4,4$. New arms were specified after the original results were available; this is a follow-up on the reused cohort. All six native-image metrics are available for every output. Table~\ref{tab:r89-means} reports the complete means.
+
+\input{tables/r89_arm_means}
+
+The main family comprises four comparisons---request versus global at $\beta=0.7$ and $1.3$, REQ versus SOURCE-R, and REQ versus SHUF2-R---crossed with preservation LPIPS and directional CLIP (Holm8). The sensitivity family crosses eight comparisons with all six outcomes (Holm48). Tables~\ref{tab:r89-all48-1}--\ref{tab:r89-all48-2} report all 48 rows and identify every main-family test. The original primary/secondary gate and Holm30 family remain as specified in the six-arm study.
+
+Both seeds are averaged before source pairing. The follow-up uses 20,000 category-stratified source bootstraps (PCG64, seed 89002), preserving the nine category counts and using marginal 95\% percentile intervals. Two-sided sign flips use $10^6$ Monte Carlo assignments (seed 89001), absolute source-difference sums, tolerance $10^{-14}$, and $(k+1)/(10^6+1)$. The same resampling indices and sign assignments are used across complete-source contrasts. These tests use the sign-symmetry assumption stated above; the intervals are marginal and the Holm values adjust the specified test families.
+
+\input{tables/r89_all48_part1}
+\input{tables/r89_all48_part2}
+
+Three of eight main-family tests pass Holm8, all on preservation LPIPS: request versus global at $\beta=0.7$ ($\Delta=-0.008259$, adjusted $p=0.000432$), at $\beta=1.3$ ($-0.012361$, $0.011028$), and REQ versus SOURCE-R ($-0.007533$, $0.001358$). Their source win counts are 29, 28, and 31 of 40. In Holm48, ten tests pass: preservation/full LPIPS for the $\beta=0.7$ and source-rank comparisons, and preservation/full LPIPS plus preservation MAE for each comparison with histogram-preserving reversal. The $\beta=1.3$ preservation-LPIPS Holm48 value is 0.068006. CLIP and DINO outcomes have no Holm48 rejection. For $\beta=1.3$, the directional-CLIP difference is $-0.011541$ with marginal interval $[-0.020421,-0.003289]$ and Holm8 $p=0.128360$.
+
+\subsection{Scaling a fixed temporal profile}
+Four new arms apply request/global directions at $b_i=\beta b_i^U$, for $\beta=0.7$ and $1.3$; U25 and REQ-U supply the reused $\beta=1$ cells. This changes magnitude while holding the U25 temporal shape fixed. Preservation LPIPS favors request at all three scales, with mean differences $-0.008259$, $-0.010028$, and $-0.012361$. Table~\ref{tab:beta} supplies the corresponding native pixel distances. Raising $\beta$ reduces preservation, edit-region, and full-image pixel departure at both increments for all 40 sources in each direction. Edit-region MAE quantifies source departure; the semantic outcomes are reported separately in the six-metric tables.
+
+\input{tables/r89_beta_native}
+
+Figure~\ref{fig:r89-operating-maps} shows the six complete-cohort operating points and the source-level distribution of map correlations.
+
+
+\subsection{Source ranks, histograms, and donor perturbations}
+The four map controls replay the original request profile $b^R$. SOURCE-R uses the native source-prompt velocity, with memory hooks off and guidance 3.5, at the same three reference states as the correct request probes. For the unpacked 16-channel velocity $v_j^s(x)$ on the $64\times64$ grid, its score is
+\begin{equation}
+S(x)=\frac{1}{3}\sum_{j=1}^{3}\sqrt{\frac{1}{16}\sum_{c=1}^{16}[v_{j,c}^s(x)]^2}.
+\end{equation}
+Stable ascending $S$ ranks receive ascending sorted correct-$P$ values: $P_{\rm src}(\pi_S(k))=P_{(k)}$. The ranking uses source image/text only; the assigned histogram comes from the correct request map. SOURCE-R then applies
+\begin{equation}
+\widehat c_i^{\rm src}=b_i^R\frac{P_{\rm src}\odot c_i}{\RMS(P_{\rm src}\odot c_i)}.
+\end{equation}
+Thus source-velocity channel RMS determines the spatial ranks, while the target-derived histogram and the request-dependent native anchor remain fixed. This control changes spatial ranking while retaining those two request-derived components.
+% Definition: code/generation.py:87--88; code/runtime_base/r89_maps.py:6--37; engine.py:278--287.
+
+SHUF2-R selects the same-category donor at cyclic offset $+2$ in case-ID order, evaluates its target on the recipient's reference states, and rank matches its weights to the correct histogram. SHUF2-RAW retains that donor map's raw values. REV-HIST-R assigns ascending correct-$P$ values to descending stable correct-$P$ ranks. The final generation prompt is the recipient's correct target in every arm.
+
+\input{tables/r89_map_strength}
+
+% These two figure files are replaced by the coordinated full-40-source figure update.
+\begin{figure*}[!t]
+\centering
+\includegraphics[width=0.49\textwidth]{figures/beta_operating_points.pdf}\hfill
+\includegraphics[width=0.49\textwidth]{figures/mapcontrolcorrelation.pdf}
+\caption{Complete 40-source follow-up. Left: preservation LPIPS versus directional CLIP for the six $\beta\times$direction operating points; each mean averages the two seeds within source, then all sources equally. The $\beta=1$ points reuse U25 and REQ-U. Right: Pearson correlations between each control's scalar weight map and the correct request map, averaged over the two seeds within each source.}
+\label{fig:r89-operating-maps}
+\end{figure*}
+
+Figure~\ref{fig:r89-map-examples} shows the map controls for the fixed flower and boy examples.
+\begin{figure*}[!t]
+\centering\includegraphics[width=.87\textwidth]{figures/map_controls_full.pdf}
+\caption{Two fixed sources, seed 0. Columns 1--5 show correct-request, source-rank, histogram-matched/raw second-donor, and reversed-rank protection weights on a shared $[0.25,1]$ color scale; larger $P$ gives stronger protection. Column 6 shows prompt response $E$ on its own $[0,1]$ color scale.}
+\label{fig:r89-map-examples}
+\end{figure*}
+
+
+SOURCE-R, SHUF2-R, and REV-HIST-R preserve all 4,096 sorted correct-map values exactly in each of 80 source/seed records (maximum absolute sorted-value difference zero). Their mean Pearson correlations with the correct map are 0.116115, 0.780937, and $-0.893027$, respectively. The reversal's Spearman correlation is $-0.999988$, including tied values. These scalar-map perturbations retain a large difference in strength between source ranks, donor ranks, and reversed ranks (Table~\ref{tab:map-controls}).
+
+Correct REQ minus REV-HIST-R preservation LPIPS is $-0.024073$; the corresponding MAE difference is $-0.009996$. Thus the reversal effect persists with the correct histogram. Correct REQ minus SHUF2-R preservation LPIPS is $-0.001912$ (30/40 lower), with marginal interval $[-0.004089,0.000376]$ and Holm8 $p=0.513103$. For 12/40 sources the second donor repeats both the first donor's case and target string; 28 supply distinct donor targets, and none repeats the recipient's correct target. The 12 repeated-donor sources tie on native pixel scores to $10^{-12}$. Second-minus-first donor preservation MAE is $-0.000223$ across all sources and $-0.000318$ among the 28 distinct donors. Histogram matching minus the raw second-donor map changes MAE by $-0.000173$, with 20 lower and 20 higher source values. Together with the first donor's correlation of 0.783719 and REQ--SHUF-R LPIPS difference of $-0.00116$ (Holm-adjusted $p=1.0$ across 30 tests), these results leave correct-request specificity unresolved. Correlated maps under wrong requests do not identify generic foreground saliency: donor perturbations retain source structure and request-derived components, and no independent saliency baseline is evaluated.
+
+\subsection{Native boundary and mask sensitivity}
+The native audit re-evaluated the original 480 outputs under four masks, producing 1,920 valid mask/output records. Original-mask preservation LPIPS and independent full-image LPIPS agree exactly with their archived values. The forced one-pixel frame adds zero edited pixels for every source, and the reconstructed original and official masks coincide on all 40 sources. The mask convention therefore contributes zero measured discrepancy in this cohort.
+
+For preservation mask $W$, interior variants retain pixels whose Euclidean distance to the nonpreserved region exceeds 8 or 16 pixels; the image exterior is padded with zero. The excluded 0--8 and 0--16 bands average 15.19\% and 29.13\% of the preserved area (ranges 6.81--43.92\% and 13.59--85.20\%). Each variant weights the same whole-image spatial LPIPS map. The changed support quantifies boundary sensitivity while retaining the network's original receptive fields.
+
+\input{tables/r89_native_sensitivity}
+
+Both matched-direction effects remain negative in the preserved interiors: REQ-U minus U25 changes from $-0.010028$ to $-0.011208$ at 16 pixels; REQ minus GLB-R changes from $-0.009959$ to $-0.010560$. The native unequal-profile REQ-minus-U25 difference remains positive ($+0.036214$ to $+0.036356$). Table~\ref{tab:r89-native-boundary} retains the other controls and interaction, using descriptive source means and wins.
+
+Official edited-area fractions average 32.38\% (range 1.11--92.61\%). Their unadjusted Pearson/Spearman correlations with preservation-LPIPS differences are 0.2175/0.2747 for REQ-U minus U25 and 0.2159/0.1289 for REQ minus GLB-R. The four fixed edited-area bins $[0,.25)$, $[.25,.5)$, $[.5,.75)$, and $[.75,1]$ contain 15, 17, six, and two sources; both contrasts have negative means in every bin. These summaries describe area dependence; perimeter and joint boundary-complexity effects were not measured.
+
+\paragraph{Pixel-score provenance.}
+Reported preservation MAE is the recorded \texttt{bg\_mae}: native RGB/255 absolute error, computed in float64 and weighted by the complement of the evaluation edit mask. All 640 follow-up records agree exactly with their metric/evaluation-table entries, and all 480 reused background scores agree with the original archive. The native audit's separate \texttt{preserve\_rgb\_mae} uses float32 $[-1,1]$ tensors followed by division by two; its original-mask maximum difference from recorded MAE is $3.64\times10^{-8}$. Eroded-mask variants use a different support. All arm means and inferential tables retain the original recorded MAE field and the full 40-source population.
+
+\subsection{Complete execution measurements}
+All $640\times28=17{,}920$ controlled steps use the designated scaled same-source/seed anchor, with zero difference between target RMS and $\beta$ times anchor RMS, and identical step sizes and scheduler values. Maximum actual-to-target absolute and relative RMS errors are $1.79\times10^{-7}$ and $2.31\times10^{-7}$, respectively; maximum relative cumulative-magnitude error is $3.44\times10^{-8}$. Mean cumulative magnitudes at $0.7b^U$, $b^U$, and $1.3b^U$ are 0.162984, 0.232834, and 0.302684; the map controls replay $I_R=0.170947$.
+% Numeric source: analysis/records/rms_step_values.csv and rms_record_audit.csv.
+% Exact maxima: absolute 1.7881393432617188e-7; relative 2.3083061395634208e-7; cumulative relative 3.4417862952495219e-8.
+% All 17,920 archived r86_relative_rms_error values equal abs(actual_rms-r86_target_rms)/r86_target_rms; maximum discrepancy 0.
+
+\input{tables/r89_execution}
+
+The 640 records sum to 43,110 actual incremental transformer evaluations, compared with 62,560 nominal branch evaluations and 122,720 nominal branch-plus-anchor evaluations (Table~\ref{tab:r89-cost}). Synchronized job time totals 32,362.65 seconds (8.990 job-hours). Request at $0.7b^U$ includes 28 inversion calls per record in this execution order; SHUF2-RAW reuses donor preparation. Nested stage timers overlap and are reported separately from job time.
+
+% Inlined scientific content; r91_followup.tex is no longer an active include.
+\section{Seed Variation, Spatial Placement, and Protection Floors}
+\label{sec:r91}
+These controls ask whether the conditional allocation contrast persists across generation noise, whether the correct histogram alone accounts for it, and how the spatial floor affects joint outcomes. They address different parts of the argument: seed replication concerns the cohort mean, permutations concern spatial organization, and floor changes concern operating-point selection.
+\subsection{Paired seed, permutation, and floor design}
+The design reuses the same 40 sources: seeds 1, 2, and 3 cross REQ, GLB-R, U25, and REQ-U; two cell permutations are evaluated for each source at seeds 0/17; and floors 0 and 0.5 are evaluated on a fixed 20-source subset at seeds 0/17. This plan was fixed after the primary analyses and before these outcomes.
+
+The added seeds construct their own native request and uniform anchors, then cross the allocation rules with these anchors. The map and floor interventions instead replay the exact archived profiles for seeds 0 and 17. No editor, resolution, integration schedule, guidance, memory rule, or source-selection criterion changes. Reference computations are cached; each arm evaluates the correction at its own evolving state.
+
+\paragraph{Cell permutations}
+For each source/seed pair, RAND-A and RAND-B independently permute all 4,096 scalar entries of the correct protection map. Permutation keys combine the source identifier, generation seed, and draw identifiers 9001 or 9002; each map remains fixed over all integration steps. The maps preserve the correct target-derived histogram exactly, use the original request-origin magnitude profile $b^R$, and retain the correct generation prompt. Averaging the two draws defines RAND in the paired analysis. Their mean Pearson correlation with the correct map is 0.00035; maximum sorted-value difference is zero across all 160 maps. This intervention disrupts spatial arrangement and smoothness together. It retains target-derived values and anchor information, so its contrast measures organized placement rather than isolated semantic request specificity.
+
+\paragraph{Protection floor}
+The floor experiment uses $P_f=f+(1-f)(1-E)$ at $f\in\{0,0.25,0.5\}$ and replays $b^U$ for each arm. The $f=0.25$ reference reuses REQ-U; U25 provides the uniform direction at the same profile. The 20 sources are selected by a fixed hash order, with three from each of categories 0 and 1 and two from each remaining category, independently of image scores. All 80 new maps match the specified formula exactly. A zero floor permits zero weights but every recorded weighted residual has positive RMS, so stepwise replay remains feasible. Floor changes alter relative spatial allocation while keeping applied magnitude fixed.
+
+\paragraph{Evaluation method}
+Native RGB outputs use the LPIPS, CLIP, and regional-MAE definitions above. Paired outcomes share sources, masks, and processing. Software versions, coverage, and numerical reproduction checks are consolidated in Section~\ref{sec:reproducibility}.
+
+\subsection{Statistical families and estimands}
+The primary follow-up is the added-three-seed allocation effect on the reused 40-source cohort. Original-two-seed and pooled-five-seed estimates remain separate. Seeds, and permutation draws where applicable, are averaged within source before inference. Marginal intervals use 20,000 category-stratified source bootstraps. The frozen calculation uses one million Monte Carlo sign flips and the plus-one correction; the sign-symmetry assumption is unchanged. The analysis uses a deterministic PCG64 stream initialized at 91013. Intervals condition on the specified seeds and preserve the original category mixture.
+
+The two added-seed preservation contrasts form Holm2. The three REQ/SOURCE-R/GLB-R versus RAND comparisons form one Holm3 family for preservation LPIPS and a separate Holm3 family for directional CLIP. The two added floors versus floor 0.25, crossed with LPIPS and directional CLIP, form Holm4. For this 20-source floor family, we subsequently enumerated all $2^{20}=1{,}048{,}576$ sign assignments to refine the near-threshold Monte Carlo result. The statistic, four contrasts, source pairing, and Holm family are unchanged. Exact two-sided probabilities count assignments with an absolute mean at least as large as observed, with numerical tolerance $10^{-15}$; exhaustive enumeration uses no plus-one correction. Table~\ref{tab:r91-floor} reports exact floor probabilities and the original bootstrap intervals. For floor 0 directional CLIP, the raw probability is $13022/1048576=0.012419$, giving Holm4 $0.049675$; the frozen Monte Carlo values are $0.012374$ and $0.049496$. The exact test can be reconstructed from the 20 paired source means in the floor arms of \path{source_correction_and_blending/replication_scores.csv}. Floor-versus-U25, edit-MAE, pooled-seed, and added-seed joint-outcome intervals are descriptive. Additional joint-outcome bootstraps use seed 91114; LPIPS intervals reuse the planned replication intervals.
+
+\input{tables/r91_replication}
+\input{tables/r91_per_seed}
+\input{tables/r91_joint}
+\input{tables/r91_permutation}
+\input{tables/r91_floor}
+\input{tables/r91_floor_points}
+\input{r91_interpretation}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/r91_followup.pdf}
+\caption{Seed, placement, and floor controls. (a) Preservation contrasts separately for each of five observed seeds, with marginal 95\% category-stratified source-bootstrap intervals. The dotted line separates original and added seeds. (b) Paired contrasts against the two-draw randomized-map mean, averaging seeds 0 and 17 within 40 sources. All methods share the request-origin magnitude profile; negative favors the named arm. (c) Joint preservation/text-response means on the fixed 20-source floor subset. Labels give protection floors; the square is U25. Segments connect tested points and do not estimate a continuous frontier.}
+\label{fig:r91}
+\end{figure*}
+
+\input{tables/r91_signs}
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/r91_source_seeds.pdf}
+\caption{All source-by-seed primary contrasts. Color denotes REQ-U minus U25 preservation LPIPS under each seed's uniform-origin profile; blue favors request weighting. Columns are sorted by five-seed mean, with a common symmetric color scale. This descriptive view retains all sources and exposes sign changes without selecting a favorable subset.}
+\label{fig:r91-heterogeneity}
+\end{figure*}
+
+
+\section{What One-Shot Scalar Calibration Recovers}
+\label{sec:scalar-complete}
+The completed scalar comparison evaluates a specified one-shot approximation to the uniform-origin correction profile. It characterizes the sequence and allocation contrast produced by a coefficient calculated from native records. We report realized profile errors alongside preservation and editing response.
+\subsection{Calibration rule and paired design}
+The scalar comparison uses the same 40 sources and seeds 0/17, with one request-weighted output per pair. The coefficient rule and two primary contrasts were fixed before these 80 outcomes, with a fixed sample size and no outcome-based coefficient search.
+
+For each source/seed pair, its native U25 and REQ records at $\lambda=0.25$ give $I_U=\sum_i h_i b_i^U$ and $I_R=\sum_i h_i b_i^R$. Set
+\begin{equation}
+\lambda_{\rm SC}=0.25\,\frac{I_U}{I_R},\qquad
+\widehat c_i^{\rm SC}=\lambda_{\rm SC}P\odot c_i(z_i^{\rm SC}).
+\end{equation}
+This pair-specific coefficient stays fixed throughout generation, without outcome-score fitting. The map, reference, prompts, seed, memory, scheduler, and precision match the original comparison. Each run recomputes its residual at its own state. The ratio would match cumulative magnitude if the native request run's candidate residual sequence remained fixed; recomputation along SC's own trajectory determines its realized sequence. U25, REQ-U, and native REQ are reused comparison arms. SC minus native REQ measures the change from calibrating the native request-weighted rule. SC minus REQ-U (stepwise) directly compares scalar calibration with replay under the same request-weighted allocation. SC minus U25 and REQ-U minus U25 give the respective allocation comparisons under these two calibration procedures.
+
+Native outputs use the same preservation-LPIPS, CLIP, and regional-MAE definitions as the seed comparison. Table~\ref{tab:r92-results} presents measured outcomes; file coverage is specified in Section~\ref{sec:reproducibility}.
+
+\paragraph{When can one scalar match the full profile?}
+For a fixed sequence of nonzero candidate vectors $v_i$ and positive targets $b_i$, a nonnegative constant $\lambda$ satisfies $\RMS(\lambda v_i)=b_i$ at every step exactly when
+\begin{equation}
+\frac{b_i}{\RMS(v_i)}=\lambda\quad\text{for every }i.
+\end{equation}
+This follows directly from homogeneity of RMS. With a single intervention at a shared state and a fixed nonzero direction, one admissible scalar suffices. For several steps, the required ratios must coincide. In a rollout, $v_i$ depends on the states induced by the chosen coefficient, so the condition must hold on that coefficient's own realized trajectory. Ratios measured on an earlier trajectory provide a calibration proposal whose realized sequence must be checked. If the operator restricts its coefficient range, the common ratio must also lie within that range. This condition explains what exact matching entails; outcome agreement between approximate calibrations remains an empirical question.
+
+\subsection{Source-level inference}
+The sampling unit is the source ($n=40$). Arm means average seeds 0/17 within each source, then weight all sources equally; paired contrasts first subtract matched arms within each source/seed and then use the same averaging order. The frozen primary family contains two two-sided preservation-LPIPS tests: SC--REQ-U and SC--U25, adjusted jointly by Holm2. Monte Carlo sign flips use 1,000,000 assignments and the plus-one estimator $(k+1)/(1{,}000{,}000+1)$, with PCG64 seed 92013. Marginal 95\% intervals use 20,000 category-stratified paired source bootstraps, retaining all 40 sources and planned category counts, conditional on these two seeds. Other outcomes and SC minus native REQ are descriptive. The original gated/expanded families and all original intervals remain unchanged. R92 re-bootstrap intervals for reused contrasts are identified separately and do not replace original intervals.
+
+\paragraph{Trajectory diagnostics and aggregation.}
+For each source/seed pair, let $b_i=b_i^U$ be the target U25 RMS, $\widehat b_i=\RMS(\widehat c_i^{\rm SC})$ the actual SC RMS, and $h_i=\sigma_i-\sigma_{i+1}$ the shared integration step size. Define $I=\sum_i h_i b_i=I_U$ and $\widehat I=\sum_i h_i\widehat b_i=I_{\rm SC}$. The four recorded diagnostics are
+\begin{align}
+e_{\rm cum}&=\frac{\widehat I-I}{I},\\
+e_{\rm abs}&=\frac{\sum_i h_i|\widehat b_i-b_i|}{I},\\
+e_{\rm max}&=\max_i\frac{|\widehat b_i-b_i|}{b_i},\\
+d_{\rm shape}&=\sum_i\left|\frac{h_i\widehat b_i}{\widehat I}-\frac{h_i b_i}{I}\right|.
+\end{align}
+Here $e_{\rm cum}$ is signed cumulative relative error, $e_{\rm abs}$ is integrated absolute relative error, $e_{\rm max}$ is maximum stepwise relative error, and $d_{\rm shape}$ is normalized temporal-shape L1 distance. The shape distance uses step-size-weighted normalized contributions and the full L1 sum, without a factor of one half. It compares the temporal distribution after normalizing each trajectory by its own cumulative magnitude; $e_{\rm cum}$ separately records the total-magnitude difference. Table~\ref{tab:r92-diagnostics} expresses the first three errors as percentages and the shape distance in dimensionless units. All target RMS values and both cumulative magnitudes are positive in these records.
+
+Each diagnostic is computed separately for each source/seed trajectory, then averaged over seeds 0/17 within source and over the 40 sources equally. Thus the reported mean maximum is the mean of per-trajectory maxima, and the reported relative errors average per-trajectory ratios. Marginal 95\% intervals resample these source means within category, using the 20,000-draw R92 bootstrap described above. The diagnostic definitions follow the generation archive's \path{runtime_base/r92_controls.py}; aggregation and intervals follow \path{analysis/r92/frozen_analyze.py}.
+
+\input{supp_r92_results}
+\input{tables/r92_diagnostics}
+
+\subsection{Realized profiles and outcomes}
+SC's mean coefficient is 0.341670; mean realized cumulative magnitude is 0.223068 versus native U25's 0.232834. The source-mean relative cumulative error is $-4.1603\%$ (CI $[-4.7910,-3.5798]\%$), negative for all 40 sources. Normalized temporal-shape L1 is 0.021214 (CI $[0.018551,0.024026]$). Integrated absolute relative error is 4.5022\%, and the mean maximum stepwise relative error is 7.7051\% (Table~\ref{tab:r92-diagnostics}). Figure~\ref{fig:r92-scalar}(a) displays the realized stepwise deviations. Thus this one-shot coefficient leaves both a residual dose difference and a different temporal shape.
+
+SC minus native REQ preservation LPIPS is $-0.040081$ (CI $[-0.045489,-0.034913]$), with all 40 source differences negative. SC--U25 is $-0.003868$ (CI $[-0.008473,0.000544]$; Holm2 $p=0.139348$), with 22/40 differences negative. Scalar calibration thus changes the native ranking in point estimate; the interval spans zero, leaving the sign statistically unresolved. No equivalence margin was prespecified. The direct SC--REQ-U (stepwise) contrast is $+0.006160$ (CI $[0.004714,0.007704]$; Holm2 $p=0.000002$), positive for 38/40 sources. Since both allocation comparisons use U25 as their reference, this direct paired contrast quantifies how much the estimated allocation effect changes between scalar calibration and stepwise replay.
+
+SC--REQ-U directional CLIP is $+0.001096$ (CI $[-0.000932,0.003041]$); edit-region MAE is $+0.002950$ (CI $[0.002393,0.003552]$), positive for all 40 sources. The latter measures pixel change, including unintended changes, rather than instruction success. Table~\ref{tab:r92-results} reports the joint operating points and descriptive contrasts. Figure~\ref{fig:r92-scalar}(c) retains all 40 paired source effects.
+
+The direct comparison establishes that this one-shot calibration and prescribed-profile replay yield different quantitative allocation estimates. SC has higher preservation LPIPS and edit-region MAE than REQ-U, with an uncertain directional-CLIP difference. Its realized cumulative magnitude, temporal shape, and ensuing trajectory feedback change together. These measurements leave two explanations open: residual total-magnitude mismatch may account for much of the gap, or temporal allocation and state feedback may remain consequential after totals are matched.
+
+An existing-data scale check illustrates the residual-dose explanation. The descriptive request-weighted slope from the three-scale fit is $-0.796337$ LPIPS per unit cumulative magnitude (Section~\ref{sec:next-steps-20261106}). Multiplying its absolute value by $0.232834-0.223068=0.009766$ gives approximately 0.0078 LPIPS, comparable in size to the measured SC--REQ-U gap of 0.006160. This is a cohort-level sensitivity calculation under the fitted response model. Source heterogeneity, temporal shape, and state feedback remain combined; the calculation supplies no causal allocation of the gap.
+
+\paragraph{Realized-total calibration.}
+The one-shot rule fixes the coefficient using two previously observed trajectories. A bounded coefficient search targeting the actual total on each candidate's own rollout defines a different comparison. The recorded one-shot trajectories simultaneously change realized total, temporal shape and state feedback. They do not identify how much of the observed LPIPS gap comes from each.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/r92_scalar_summary.pdf}
+\caption{Completed one-shot scalar calibration on all 40 sources, averaging seeds 0/17 within source. (a) Relative applied-RMS deviations from the U25 target over 28 steps: gray curves are sources, orange is their mean, and blue zero is the target. (b) Preservation-LPIPS contrasts with marginal 95\% R92 category-stratified source-bootstrap intervals; SC--REQ-U and SC--U25 form the Holm2 family, while reused REQ-U--U25 is descriptive here. These re-bootstrap intervals do not replace the original study's intervals. (c) All source contrasts: SC--U25 on the horizontal axis and REQ-U--U25 on the vertical axis. Thirty-eight of 40 sources lie below identity; the orange diamond is the cohort mean.}
+\label{fig:r92-scalar}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=0.96\textwidth]{figures/r92_native_examples.pdf}
+\caption{Native $512\times512$ source, U25, SC, and REQ-U images for the three examples in Fig.~\ref{fig:legacy-native}, selected before scalar outcomes: flower 000000000117, curtain 613000000001, and boy 522000000002, all at seed 0. The cases were fixed by the earlier illustrative selection and reused without selection on R92 outcomes. Displayed preservation LPIPS values are seed-0 scores, not the two-seed source means used for inference. Identical full-image views illustrate preservation and requested-edit behavior; these three cases do not estimate success frequency.}
+\label{fig:r92-native}
+\end{figure*}
+
+\section{Operator Dependence: DirectEdit Blending}
+\label{sec:external}
+We apply the comparison protocol to the local blend in DirectEdit~\cite{yang2026directedit} using 20 sources from the 40-source cohort, five configurations, and one deterministic run per source (100 outputs). Images are $512\times512$ with 30 steps, inversion/editing guidance 1/2, attention ratio 0.15, four initial V-injection steps, layer ratio zero, and no skipped steps. Official PIE masks are supplied to the editor, unlike the annotation-free routing maps of the main experiment.
+
+Let $y_i$ be the edited latent before blending, $s_i$ the paired source-branch latent, and $m$ the supplied edit mask. Local and global blend directions are $(1-m)\odot(s_i-y_i)$ and $s_i-y_i$. The native local blend has coefficient one; two further anchors use coefficient 0.25. Each matched arm replays the other anchor's actual blend RMS. This intervention is a latent displacement, applied directly without another multiplication by the integration step size. It is measured at the editor's blend operation rather than as the velocity correction in the main paper.
+
+\begin{table}[!t]
+\centering\small
+\caption{DirectEdit blend application: 20 sources, five arms, one deterministic run per source. Archived native-image pixel means; edit-region MAE measures source departure.}
+\label{tab:directedit}
+\begin{tabular}{lrr}
+\toprule
+Configuration & Pres. MAE $\downarrow$ & Edit-region MAE\\
+\midrule
+Native local, coefficient 1 &0.013399&0.054980\\
+Local, coefficient 0.25 &0.014281&0.060152\\
+Global, coefficient 0.25 &0.012993&0.017445\\
+Local at global profile &0.014101&0.058206\\
+Global at local profile &0.017413&0.028829\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Local minus global preservation MAE is $+0.001108$ at the global-origin profile (2/20 sources lower) and $-0.003132$ at the local-origin profile (14/20 lower). Their local-origin-minus-global-origin interaction is $-0.004240$ (18/20 negative): the direction effect changes sign with profile origin. Table~\ref{tab:next-steps-20261106} adds paired intervals and exact tests. Native local blending at coefficient one improves over local 0.25 by 0.000882, with lower preservation error on all 20 sources.
+
+Original step logs also identify when a replay extrapolates beyond convex blending. With the effective coefficient computed as target blend RMS divided by the candidate direction RMS and a threshold of $1+10^{-6}$, local-at-global exceeds one in 149/600 steps on 10/20 sources (maximum 16.524). Global-at-local exceeds one in 8/600 steps on 1/20 (maximum 3.566). These counts describe the two 30-step replay arms; the reported LPIPS and MAE contrasts use all 20 sources.
+The 20-source category counts are $2,2,2,2,2,2,3,2,3$. Selection follows the archived hash ordering with two top-up sources. VAE mode and deterministic inversion give one run per source; seed zero is its identifier. Original MAE scores use native RGB/255 images weighted by $m$ and $1-m$.
+
+\paragraph{Native-image LPIPS and CLIP.}
+All 100 native outputs are evaluated against their paired sources. LPIPS uses the same AlexNet-v0.1 weights and whole-image feature extraction as above. Preservation LPIPS weights the spatial map by the area-resampled complement of the supplied edit mask: grayscale masks are nearest-resized to 512 and divided by 255, without thresholding, dilation, or frame exclusion. Full LPIPS uses a separate nonspatial pass. CLIP uses the same checkpoint, processor, exact planned prompts, and normalized-difference score. Implementation identity and evaluation settings appear in Section~\ref{sec:reproducibility}.
+
+Table~\ref{tab:directedit-native-20261106} reports descriptive post hoc estimates with 20,000 category-stratified paired source bootstraps (seed 20261108), shared across arms and metrics. Only marginal 95\% intervals are added; the original MAE Holm6 membership is unchanged. Local-minus-global preservation LPIPS is $+0.037086$ (CI $[0.025736,0.048793]$) at the global origin and $+0.002996$ (CI $[-0.004826,0.011051]$) at the local origin. Both LPIPS point estimates favor global blending; the local-origin interval includes zero. Unlike pixel MAE, LPIPS has no sign reversal. This boundary case shows why crossed-profile comparison should measure sensitivity to the chosen control, with either sign retained. Directional-CLIP point differences favor local at both origins; the local-origin interval also spans zero. GLOBAL\_025 is a near-identity working point (directional CLIP 0.00111; full LPIPS 0.01560). Preservation therefore needs to be read alongside editing response. Operator, mask construction, and configuration change together, so the observed dependence is specific to this combination rather than an isolated operator effect.
+
+\input{tables/next_steps_20261106_directedit_native}
+
+\section{Operating-Point and Map-Alignment Diagnostics}
+\label{sec:next-steps-20261106}
+
+\begin{figure}[!t]
+\centering\includegraphics[width=\linewidth]{figures/beta_operating_points_v5.pdf}
+\caption{Original-seed joint operating points at three scales of the uniform-origin profile, averaged within 40 sources over seeds 0/17. Labels give $\beta$. Segments connect tested settings; uncertainty and adjusted tests are reported in this section.}
+\label{fig:scale-joint}
+\end{figure}
+
+These post hoc analyses retain the specified primary, secondary, and sensitivity families. Scale and map summaries average seeds within each of 40 sources; paired category-stratified bootstraps use 20,000 draws (seed 20261106) and marginal 95\% percentile intervals. Table~\ref{tab:next-steps-20261106} groups the results; Fig.~\ref{fig:next-steps-20261106} shows their context. The scale-to-profile calculation uses retained records and adds no hypothesis tests.
+
+\paragraph{Interpolated equal-LPIPS comparison and $\beta$ trends.}
+Piecewise-linear curves join the three observed cohort means per direction at $\beta=0.7,1,1.3$. Let $C_G(\ell)$ and $C_R(\ell)$ denote interpolated directional CLIP at preservation LPIPS $\ell$, and $[\ell_-,\ell_+]$ their shared range. The reported average is
+\begin{equation}
+\overline\Delta_C=\frac{1}{\ell_+-\ell_-}\int_{\ell_-}^{\ell_+}[C_G(\ell)-C_R(\ell)]\,d\ell.
+\end{equation}
+Over $[0.43297,0.53186]$, this gives $+0.006524$ (unadjusted 95\% CI $[0.0008579,0.0126601]$). Each bootstrap draw recomputes the means, curves, and overlap without extrapolation; all 20,000 draws support this summary. This interval captures source variation conditional on piecewise-linear interpolation. Linearity between the three scales is an assumption, not a validated finding, and no multiplicity adjustment is applied to this post hoc interval. The estimand compares cohort-mean automatic scores with uniform weighting over the LPIPS interval; it differs from a contrast at one common scale and reuses the same observations. Its narrower interval does not supply independent evidence of practical superiority. At fixed LPIPS targets 0.48, 0.50, and 0.52, gaps are $+0.006593$, $+0.005403$, and $+0.003340$, supported by 19,916, 19,222, and 14,959 draws; these points are reported without conditional intervals.
+
+\paragraph{Post hoc equal-response analysis within each source.}
+The original three scales per allocation also allow the inverse question: at equal editing response on the same source, which allocation yields lower background LPIPS? We averaged seeds 0/17 within each source, allocation and $\beta\in\{0.7,1,1.3\}$, giving 240 points from 480 archived outputs. We then applied the first-crossing integration and 10,000-draw paired source bootstrap of Section~\ref{sec:sam-scan}, requiring three complete points per curve. At equal directional CLIP, uniform minus request preservation LPIPS is $+0.01280$ [0.00219, 0.02396], positive on 22 and negative on 14 of 36 overlapping sources. The median common width is 0.01286. Four of 40 sources have disjoint ranges: 223000000006, 414000000004, 513000000000 and 822000000005. At equal edit MAE, the difference is $+0.03084$ [0.01970, 0.04235] on 40/40, positive on 33 and negative on seven, median width 0.03184. Neither comparison has missing or point-contact curves. The earlier equal-LPIPS result uses cohort means before interpolation. Here each source supplies its own interval and difference before cohort averaging.
+
+\paragraph{Cumulative magnitude and profile differences.}
+The sweep changes cumulative magnitude while retaining each source/seed's uniform-origin temporal shape. Let $\bar L_d(\beta)$ be cohort-mean preservation LPIPS for allocation $d$ at scale $\beta$. The ratio of cohort-mean native magnitudes is $q=\bar I_R/\bar I_U=0.734202$, within the observed interval $[0.7,1]$. A local linear prediction of the profile contrast is
+\begin{equation}
+\widehat D_d=\frac{1-q}{1-0.7}\big[\bar L_d(0.7)-\bar L_d(1)\big].
+\end{equation}
+The uniform-rule prediction is 0.045168 versus the observed GLB-R--U25 difference 0.046173; the request-weighted prediction is 0.046735 versus REQ--REQ-U 0.046242. Their prediction-to-observation ratios are 0.978 and 1.011. As fitting sensitivity, ordinary least squares over all three scales gives slopes $-0.766974$ and $-0.796337$ LPIPS per unit cumulative magnitude. Multiplying each slope by $\bar I_R-\bar I_U=-0.061887$ predicts 0.047466 and 0.049283, with ratios 1.028 and 1.066. These are deterministic, post hoc summaries; no additional confidence interval or test is claimed.
+
+The proximity of these predictions to the observed profile differences is consistent with a substantial cumulative-magnitude contribution under the assumed response models. Scaling by $q$ matches only the cohort-mean cumulative magnitude: individual source/seed ratios differ, and the temporal shapes remain uniform-origin. The residuals, 0.001005 and $-0.000493$ for local interpolation, combine any shape contribution with interpolation error, heterogeneous responses, and possible interactions. They therefore neither identify nor bound a temporal-shape effect. The ratios above are model comparisons, not additive percentages of causation. The scale measurements are in \path{source_correction_and_blending/three_scale_points.csv}.
+
+Let $d_\beta$ be the source-paired request-minus-uniform effect. The four post hoc trend tests are $d_{1.3}-d_{0.7}$ and $d_{0.7}-2d_1+d_{1.3}$ for preservation LPIPS and directional CLIP. Two-sided sign flips use 199,999 Monte Carlo assignments (seed 20261107) with the plus-one correction. All four Holm4-adjusted $p$ values exceed 0.05 (panel A). These tests concern the allocation contrast's variation across scales, separately from the magnitude response of either individual rule.
+
+\paragraph{Map alignment and first-donor association.}
+AUROC treats the official preservation mask as positive, broadcasts each $64\times64$ scalar weight to its $8\times8$ pixel cell, and excludes the one-pixel image frame. Seed-averaged source means are 0.72054 for correct $P$, 0.49377 for SOURCE-R, 0.67084 for SHUF2-R, and 0.27951 for REV-HIST-R (panel B). These cross-map means describe weight-mask alignment, not a causal dose--response: map construction, smoothness, and residual alignment vary together. Correction-energy allocation also depends on the residual fields.
+
+For the first histogram-matched donor (SHUF1, the original SHUF-R), correct-map Pearson correlation averages 0.783719 across sources (range 0.516335--0.957052). Within this SHUF1 comparison, correlation with the SHUF-R-minus-REQ preservation-LPIPS effect is Pearson $0.013$ and Spearman $-0.093$. The category-centered slope is $0.002347$ per correlation unit (95\% CI $[-0.01215,0.02521]$). This cross-source association provides no causal-mediation estimate.
+
+\paragraph{DirectEdit native-MAE paired inference.}
+The 20-source native-MAE contrasts use 20,000 paired category-stratified bootstrap draws (seed 20261108) and two-sided exact sign flips over all $2^{20}$ assignments. A post hoc Holm6 family combines the two local-minus-global profile contrasts and their local-origin-minus-global-origin interaction for background and edit-region MAE (panel C). Background effects change sign across origins, whereas edit-region source departure increases under the local direction at both origins.
+
+\input{tables/next_steps_20261106_diagnostics}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/next_steps_20261106_existing_data_diagnostics.pdf}
+\caption{Post-outcome diagnostics from existing data. Left: three observed mean operating points per direction and their linear interpolants. Middle: first-donor (SHUF1/SHUF-R) map correlation versus the paired preservation-LPIPS difference for 40 sources. Right: preservation-mask AUROC means and marginal category-bootstrap intervals; larger scalar weights predict preservation. Each source averages its two seeds.}
+\label{fig:next-steps-20261106}
+\end{figure*}
+
+\section{Source Robustness and Image Change}
+\subsection{Full-cohort source robustness}
+This sensitivity check uses automatic metrics on all 40 sources. Trimming removes two observations per tail at 5\% and four per tail at 10\%, giving means $-0.008447$ and $-0.007653$, respectively. Leave-one-source-out means range from $-0.010813$ to $-0.008142$. The two-seed scores for this calculation are in \path{source_correction_and_blending/two_seed_per_output.csv}.
+
+\subsection{Per-seed results and conditional inference}
+Table~\ref{tab:r91-seeds} consolidates both original seeds and the three added seeds in one source-bootstrap summary. Among the original seed pair, 24/40 sources have the same nonzero sign and 16 have opposite signs; 19 improve under both. Figure~\ref{fig:r91-heterogeneity} and Table~\ref{tab:r91-signs} extend this view to all five seeds without duplicating the original per-seed table. Intervals describe source variation conditional on each indicated seed.
+
+\subsection{Image change alongside preservation}
+The paired image-change scatter in Fig.~\ref{fig:paired-heterogeneity} uses all 160 recovered U25/REQ-U native outputs. RGB error is averaged over the complement of the official preservation mask, then over seeds within source. Cohort edit-region MAE is 0.136714 for U25 and 0.145197 for REQ-U, compared with preservation LPIPS 0.489139 and 0.479111. Thus the aggregate retention gain accompanies greater pixel change inside the edit region. Pixel departure can include artifacts and geometric changes; it is reported alongside directional CLIP and the native visual examples. The scatter is descriptive and does not condition away the effects of source content or task difficulty.
+
+\section{Same-State Norms and Method Correspondence}
+\subsection{Recovering the energy-weighted attenuation}
+For a nonzero residual, $e_i(P)=\RMS(P\odot c_i)^2/\RMS(c_i)^2$ uses the same residual in both reductions. Archived \texttt{candidate\_global\_rms} and \texttt{current\_correction\_global\_rms} provide these reductions before magnitude matching when calibration and spatial support are global. Coverage includes 80 recovered REQ-U runs and 480 weighted extension runs (15,680 steps). Both reductions use one current-state residual; norms from different trajectories would measure a different quantity.
+
+The time-weighted per-run mean is $\bar e=\sum_i h_i e_i/\sum_i h_i$, followed by seed averaging within source. For correct weights along REQ-U, its source mean is 0.48752, range 0.40968--0.62481. At profile scales 0.7 and 1.3 the corresponding means are 0.49928 and 0.47600. These later-state summaries include trajectory changes. The shared initial state instead gives identical correct-map $e$ across these three runs for each source/seed, with source mean 0.50965 and range 0.34691--0.66296.
+
+For native REQ the original 80 logs provide all 2,240 steps (40 sources, seeds 0/17). The same-state, time-weighted $\bar e$ averages 0.49807 across sources, with source means from 0.42243 to 0.62739. The native REQ value uses the original step logs. The 0.48752 value above belongs to the distinct REQ-U trajectory.
+
+The REQ-U time-weighted value has Pearson correlation 0.0098 with the source-level REQ--GLB-R preservation-LPIPS contrast (95\% category-bootstrap interval $[-0.3251,0.3476]$). Correct-map AUROC has Pearson correlation $-0.2644$ ($[-0.5138,-0.0308]$) and Spearman correlation $-0.2625$ ($[-0.5212,0.0341]$) with that contrast. These descriptive intervals use 20,000 category-stratified source draws, seed 20261112. Geometry and residual-weighted attenuation are different measurements; neither supplies a regional energy decomposition from global norms alone. Source-level AUROC values and paired LPIPS contrasts are in \path{evidence/map_source_values.csv}.
+
+\subsection{Boundary cases and scope of the norm identity}
+For $P\equiv p>0$, $e_i(P)=p^2$ and $(P\odot c_i)/\RMS(P\odot c_i)=c_i/\RMS(c_i)$. A constant map can therefore attenuate the unnormalized residual while leaving its normalized direction unchanged. Strict norm reduction requires nonzero residual energy at a location where $P<1$. A nonconstant map with $P=(1,0.5)$ and $c=(1,0)$ gives equality. If $c_i=0$, both unnormalized corrections vanish and $e_i$ is undefined; a positive target norm then cannot be replayed. The positive floor ensures nonzero weighted directions whenever the residual is nonzero in the original experiment. The added zero-floor experiment checks feasibility directly; all recorded replay directions remain nonzero. These identities constrain the instantaneous correction; final image metrics include the integrated target field and decoder.
+
+The RMS attenuation factor is $\sqrt{e_i(P)}$; $e_i(P)$ is its square. For a complete update containing another field $a_i$, the norm of $a_i+P\odot c_i$ also depends on their cross term. The identity therefore motivates measuring the specified intervention at its actual application point. It does not determine the final preservation ranking: randomized spatial placement supplies an observed higher-error case at the same RMS profile.
+
+\subsection{Correspondence with contemporary controls}
+\textbf{VeloEdit.} Its velocity replacement can be written as an additive intervention $v^{\rm final}-v^{\rm pred}=Q\odot(v^{\rm keep}-v^{\rm pred})$, where $Q=1$ in replacement locations and $Q=1-\alpha$ in blended locations~\cite{li2026veloedit}. For $\alpha\in[0,1]$, $Q$ is bounded. The norm identity applies to this residual at a fixed state, with sums over its actual coordinates. The residual, initial state, intervention schedule and backbone differ from the present editor.
+
+\textbf{DecFlowEdit.} Its Eq.~(5) spatially weights FlowEdit's update~\cite{zhan2026decflowedit}. Appendix~D.1 compares spatial reweighting with uniform scaling at comparable edited-region CLIP. Appendix~E.4 also matches global update norms step by step: both no-CFG and default-CFG updates are recomputed at the current norm-matched state with shared noise, and the former is scaled toward the latter's norm. The reference is evaluated online, rather than replayed from an independent native trajectory. These are precedents for outcome-based and current-state norm controls. Our comparison instead records native source-correction RMS sequences, crosses both profile origins with both allocation rules, and tests a scalar approximation. Its contribution concerns the resulting conditional attribution and joint decisions, beyond the norm-rescaling operation itself.
+
+\textbf{ASG.} Its control replaces each spatial gate by a per-example mean~\cite{li2026asg}. For dual residuals $d_t,d_s$ and gates $g_t,g_s$, applied squared magnitude contains
+\begin{equation}
+\|g_t d_t+g_s d_s\|^2=\|g_t d_t\|^2+\|g_s d_s\|^2+2\langle g_t d_t,g_s d_s\rangle.
+\end{equation}
+Average coefficients alone do not fix these energy-weighted terms. ASG establishes a spatial-versus-mean-gate precedent; our intervention prescribes the applied vector RMS at each arm's state and crosses recorded native origins. The 36.2\% figure is measured in our source-correction experiment and is not assigned to these other methods.
+
+\textbf{GA-Eval.} Guidance Matters derives effective CFG scales from stepwise projections onto the CFG direction and averages them along the sampling path to construct a constant-scale CFG comparison~\cite{xie2026guidancematters}. This is a measured effective-guidance control. Our scalar and crossed-profile experiments address additive source correction, comparing realized sequence errors and allocation estimates under the specified calibration rules.
+
+\section{Earlier Cohorts and Native Working Points}\label{sec:development}
+\subsection{Direction effects in separate cohorts}
+The prior request-profile confirmation used 20 fresh sources, two seeds, and four directions (160 outputs). Table~\ref{tab:old-direction} retains its planned tests and separate Holm18 sensitivity family.
+
+\begin{table*}[!t]
+\centering\small
+\caption{Earlier 20-source direction confirmation. The global direction applies nonzero correction. Primary and secondary probabilities refer to their specified roles; the sensitivity family covers 18 tests.}
+\label{tab:old-direction}
+\begin{tabular}{lrrr}
+\toprule
+Contrast & Pres. LPIPS difference & Primary / secondary $p$ & Holm18\\
+\midrule
+Request $-$ Global & $-0.0126$ & 0.0061 (primary exact) &0.0615\\
+Request $-$ Shifted & $-0.0223$ & 0.0045 (secondary Holm2) &0.0581\\
+Request $-$ Permuted & $-0.0197$ & 0.0004 (secondary Holm2) &0.0026\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The developmental ten-source pilot used seed zero. On its nine nonempty preservation regions, request/global/shifted LPIPS averaged 0.5920/0.6042/0.6134; the request-minus-global difference was $-0.01218$ [$-0.02099,-0.00250$]. On the subsequent 20-source cohort (seeds 0/17) it was $-0.01256$ [$-0.02352,-0.00380$] on 20/20 eligible sources. That confirmation uses one request-origin magnitude reference; each candidate follows its own trajectory. The two earlier studies supply development context. The 50-source SAM cohort overlaps the ten-source pilot at ID 422000000001 and the 20-source study at 911000000007. It is disjoint from the primary 40-source R88/R89/R91/R92 cohort.
+
+\subsection{Native editors and their working points}
+Table~\ref{tab:native} retains the historical 40-source, 520-output benchmark, with preservation summaries over 33 nonempty-region sources. Repeated deterministic RF-Edit outputs count once per source.
+
+\begin{table*}[!t]
+\centering\small
+\caption{Historical native working points, reporting preservation, text response, and nominal model evaluations jointly. Arrows denote preferred metric direction. Editor-specific settings yield different edit strengths; preservation LPIPS alone does not isolate method or allocation effects. These data are separate from the new matched-profile cohort.}
+\label{tab:native}
+\begin{tabular}{lrrrrrrr}
+\toprule
+Arm & Target $\uparrow$ & Dir. $\uparrow$ & DINO $\uparrow$ & Full LPIPS $\downarrow$ & Pres. LPIPS $\downarrow$ & Pres. MAE $\downarrow$ & NFE\\
+\midrule
+CORR25 &0.2629&0.0863&0.5904&0.5419&0.5142&0.1169&97\\
+BOTH25 &0.2733&0.1069&0.5579&0.5620&0.5269&0.1221&97\\
+ENERGY &0.2622&0.0881&0.5856&0.5483&0.5226&0.1202&97\\
+U25 &0.2632&0.0908&0.6111&0.4971&0.4743&0.0972&91\\
+FlowEdit N26 &0.2712&0.1177&0.5737&0.4437&0.4281&0.1207&52\\
+RF-Inversion ETA03 &0.2694&0.1065&0.4670&0.5431&0.5322&0.1062&56\\
+RF-Edit I08 &0.2453&0.0383&0.7875&0.2778&0.2688&0.0455&100\\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:native} describes observed operating points rather than a preservation-only ranking. For example, RF-Edit I08 combines preservation LPIPS 0.2688 with directional CLIP 0.0383, whereas FlowEdit N26 gives 0.4281 and 0.1177. BOTH25 gives target CLIP 0.2733 and preservation LPIPS 0.5269, versus U25's 0.2632 and 0.4743. Practical selection requires considering both retention and editing response. Attributing cross-editor preservation differences to a mechanism requires an explicitly matched comparison; nominal NFE alone also does not match runtime across implementations.
+
+CORR25 minus U25 preservation LPIPS was $+0.0399$ (CI $[0.0331,0.0469]$; six-comparison Holm $p=0.0006$), with cumulative magnitudes 0.18074/0.23941. ENERGY calibrated at a common state, whereas GLB-R replays actual RMS at its own states. ENERGY/CORR25 rollouts had $-1.02\%$ mean cumulative drift and 9.53\% maximum stepwise drift; Table~\ref{tab:old-multiplicity} retains their multiplicity sensitivity.
+
+\begin{table}[!t]
+\centering\small
+\caption{Historical CORR25--ENERGY preservation LPIPS sensitivity. The same observed difference is tested under broader reported families.}
+\label{tab:old-multiplicity}
+\begin{tabular}{lrr}
+\toprule
+Family & Difference & Holm $p$\\
+\midrule
+6 comparisons &$-0.0084$&0.0238\\
+21 comparisons &$-0.0084$&0.0702\\
+66 tests &$-0.0084$&0.2856\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Correction strength and memory placement}
+The ten-source, two-seed development sweep had eight nonempty preservation regions; source distances decreased with correction strength (Table~\ref{tab:dose}).
+
+\begin{table}[!t]
+\centering\footnotesize
+\setlength{\tabcolsep}{3pt}
+\caption{Historical local-coefficient development sweep. CLIP and DINO are higher-is-better; distances are lower-is-better.}
+\label{tab:dose}
+\begin{tabular}{rrrrrr}
+\toprule
+$\lambda$ & Dir. CLIP & DINO & Full & Pres. & Pres.\\
+ & & & LPIPS & LPIPS & MAE\\
+\midrule
+0.15&0.0964&0.5543&0.5827&0.5544&0.1600\\
+0.25&0.0979&0.5946&0.5276&0.4983&0.1284\\
+0.35&0.0939&0.6063&0.4803&0.4561&0.1055\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Memory release (BOTH25 minus CORR25) changed directional CLIP by $+0.0207$ (CI $[0.0099,0.0334]$; Holm $p=0.0012$) and preservation LPIPS by $+0.0127$ (CI $[0.0077,0.0180]$; $p=0.0006$), in the six-comparison family. The separate ten-source, two-seed ONLINE study matched gate means exactly (0.735907): spatial-minus-uniform preservation MAE was $-0.0003$ (CI $[-0.0020,0.0012]$) and NCC $+0.0034$ (CI $[-0.0041,0.0127]$).
+
+\subsection{Prediction transfer and factual scoring}
+Earlier LOSO retention-prediction skill was 0.7721 for arm identity and 0.7756 with cumulative magnitude; development-to-independent skill was $-0.182$. Historical Qwen2.5-VL-7B scoring has 136/520 unknown preservation labels and output-dependent complete cases. Three rule-mismatch sources (giant location, Chinese watercolor style, black sofa) are excluded only in sensitivity analysis. With all-negative artifact calls and no positive-artifact controls, the reported conjunction is $J_{EP}=E\land P$. Frozen-source reuse yields zero edit positives algebraically; empirical specificity needs fresh identity controls. Primary inference uses the separate automatic image metrics.
+
+\section{Additional Visual Evidence}
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/evaluation_lens_v16.pdf}
+\caption{(a) Flower source 117, perspective $E/P$ maps, and measured 28-step native U25/REQ correction-RMS profiles. (b) Paired native/SC/stepwise LPIPS contrasts over 40 sources, means, and source-bootstrap CIs; SC's CI includes zero. (c) Separate 20-source mean LPIPS/directional-CLIP points: U25 and floors $0/0.25/0.5$. Cat 94 retains a red blanket at both $f=0.25$ and $f=0$.}
+\label{fig:legacy-lens}
+\end{figure*}
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/evidence_summary_v16.pdf}
+\caption{Calibration, attribution, and selection on the same 40 sources. (a) Source-paired REQ-U minus U25 differences, averaging seeds 0/17; the mean has marginal 95\% source-bootstrap intervals. Lower-right indicates more edit-region change with lower preservation LPIPS. (b) SC's actual RMS deviation from the target at each step: gray curves are source means over seeds 0/17, orange is their cohort mean. (c) Three observed scales per rule connected piecewise linearly; $+0.0065$ is the mean equal-LPIPS directional-CLIP gap over the shared range. (d) All five observed seeds per source: gray dots are seeds, black points are means, and bars span observed ranges.}
+\label{fig:legacy-summary}
+\end{figure*}
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/native_error_v16.pdf}
+\caption{Archived native $512\times512$ outputs; post hoc cases span favorable, near-zero, and unfavorable source-mean contrasts. Displayed LPIPS uses seed 0. Preservation overlays show signed RGB $[0,1]$ absolute-error differences (REQ-U minus U25), not LPIPS maps: $\alpha=0.70$, shared limits $\pm0.08366$ (pooled absolute-error-contrast P95; 4.98\% clipped). Blue favors REQ-U; red favors U25. Matched $128\times128$ crops with $\geq98\%$ preservation coverage are selected post hoc by maximum absolute error contrast. Images reuse original generations.}
+\label{fig:legacy-native}
+\end{figure*}
+\paragraph{Figure evidence and selection.}
+Figure~\ref{fig:legacy-lens} shows the source-correction interventions. Panel (a) presents the actual flower source 000000000117 at seed 0, its response map $E$, and protection map $P$ as perspective-arranged image slices, alongside the corresponding native 28-step U25 and REQ RMS profiles. The perspective arrangement is a display of the source and maps; the curves show recorded correction magnitudes. Panel (b) shows the paired source-level preservation-contrast distributions for native, one-shot SC, and stepwise comparisons on 40 sources, averaging seeds within source, with means and the cached marginal 95\% source-bootstrap intervals.
+
+Panel (c) shows four joint-outcome means on the same fixed 20-source floor subset: $f=0$, $0.25$, $0.5$, and U25. Its native cat example uses source 000000000094, seed 0: the original R88 \texttt{REQ\_U} output at $f=0.25$ and the R91 \texttt{FLOOR000} output at $f=0$ share the same archived R88 U25 profile anchor. Both blankets remain red in these outputs; the pair illustrates the observed floor comparison, with the requested blanket-color change unsuccessful in both. The six measured $\beta\times$allocation points on 40 sources belong to Fig.~\ref{fig:legacy-summary}(c), separately from this 20-source floor comparison.
+
+Figure~\ref{fig:protocol-flow} retains the detailed protocol previously shown in the main paper. Its source image, actual protection map, and two 28-step RMS curves use source 000000000117, seed 0. The curves retain the recorded U25 and REQ step values. Each replay arm evaluates its residual and target field at its own current state. The original editable TikZ asset, map array, and curve CSV document these computational inputs alongside the new evaluation-lens view.
+
+The native qualitative inputs pair full $512\times512$ source, U25, and REQ-U images with signed RGB-error differences. The difference is $\Delta(x)=\frac{1}{3}\sum_c(|I_{\mathrm{REQ-U},c}(x)-I_{\mathrm{src},c}(x)|-|I_{\mathrm{U25},c}(x)-I_{\mathrm{src},c}(x)|)$, displayed on the preservation region with a common zero-centered scale; negative values indicate lower REQ-U pixel error. This is a pixel-error diagnostic, distinct from spatial LPIPS. In Fig.~\ref{fig:legacy-native}, the common limit is the pooled 95th percentile of absolute pixel contrasts and the overlay opacity is 0.70. Identical crop coordinates within each row maximize mean absolute contrast on a 16-pixel grid among windows with at least 98\% preservation coverage. The full crossed preview comparison remains in Fig.~\ref{fig:crossed-preview}; Fig.~\ref{fig:r92-native} adds the native SC comparison for the same three cases.
+
+The quantitative figure inputs cover four questions. Paired image-change effects use all 40 sources after averaging seeds 0/17, with marginal source-bootstrap intervals for the cohort mean (Fig.~\ref{fig:paired-heterogeneity}). The SC profile panel shows realized stepwise RMS deviations from U25 (Fig.~\ref{fig:r92-scalar}). The interpolated equal-LPIPS comparison connects three measured scale points per rule on those 40 sources over the shared range defined in Section~\ref{sec:next-steps-20261106}. The seed summary retains all 200 source/seed contrasts: 14 sources are negative throughout, one positive throughout, and 25 change sign (Fig.~\ref{fig:r91-heterogeneity}). Negative favors REQ-U; observed seed ranges are distinct from confidence intervals. Floor settings form a separate 20-source comparison in Fig.~\ref{fig:r91}(c) and Table~\ref{tab:r91-floor-points}; they do not provide a floor-zero scale curve on the 40-source cohort.
+
+The retained three-case crossed preview figure uses flower 000000000117, curtain 613000000001, and boy 522000000002 at seed 0. Their two-seed source-mean contrasts are $-0.039281$, $-0.0000993$, and $+0.020588$. Its unretouched $320\times320$ previews and actual $64\times64$ maps share display scales; the identical boy crop maps native $(160,32,128,128)$ to preview $(100,20,80,80)$ and has 99.19\% preservation coverage. The post hoc selection spans negative, near-zero, and positive effects, including incomplete flower-center and hand edits.
+
+Figures~\ref{fig:qual} and \ref{fig:qual-maps} show six seed-0 cases: flower/curtain color changes, incomplete chair/blanket edits, streetlight-to-moon scene change, and inconsistent raised hands. The curtain case has a near-zero primary source contrast; the boy case favors U25 in source-averaged preservation LPIPS (REQ-U minus U25: $+0.0206$). Identically sized archived previews are unretouched. Brighter weights apply stronger correction. These examples illustrate outcomes rather than estimate their prevalence.
+
+\paragraph{Native detail crops.}
+Figure~\ref{fig:native-detail} shows mushroom and boy examples from native seed-0 outputs. The mushroom source has the second-largest preservation-LPIPS improvement among the 40 sources (REQ-U minus U25, averaged across seeds: $-0.0474$); the boy has the largest deterioration ($+0.0206$). These are post hoc selections from the source-level results. Identical $128\times128$ windows crop the source, U25, and REQ-U images. For the mushroom example, the sky window at $(x,y)=(256,64)$ was selected after viewing the outputs and contains 98.22\% official preservation pixels. For the boy, windows on a 16-pixel grid with at least 98\% preservation coverage are ranked by mean source-image grayscale gradient; the selected window at $(160,32)$ has 99.19\% coverage. The source-mean LPIPS contrasts summarize the entire preservation mask, rather than these selected crops.
+
+\begin{figure}[!t]
+\centering\includegraphics[width=\linewidth]{figures/map_alignment_supp.pdf}
+\caption{Post hoc association between map-mask AUROC and preservation LPIPS for four constructions. Horizontal bars are marginal 95\% category-stratified source-bootstrap AUROC intervals. The points summarize constructed maps, not independently assigned levels of mask alignment.}
+\label{fig:map-alignment}
+\end{figure}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=.935\textwidth]{figures/native_preservation_detail.pdf}
+\caption{Selected native seed-0 examples. The mushroom source (a) has the second-largest source-mean preservation improvement among 40 sources ($-0.0474$ LPIPS); the boy (b) has the largest deterioration ($+0.0206$). Neither output raises the boy's hands, visible in the full images. At least 98\% of each identical $128\times128$ crop lies inside the preservation mask. The sky crop in (a) was chosen after viewing outputs; (b) uses source gradients to show changes in the face region. Scores cover the full preservation mask.}
+\label{fig:native-detail}
+\end{figure*}
+
+\paragraph{Paired image-change diagnostic.}
+Figure~\ref{fig:paired-heterogeneity}(a) plots REQ-U minus U25 edit-region RGB MAE and preservation LPIPS for each source after averaging seeds 0 and 17. The mean MAE difference is $+0.00848$ (marginal 95\% CI $[0.00610,0.01095]$). The plotted intervals use 20,000 category-stratified paired source bootstraps with seed 88002; they describe two marginal intervals rather than a joint confidence region. Of 40 sources, 27 have larger edit-region MAE and lower preservation LPIPS, six increase both, four decrease both, and three have smaller edit-region MAE with higher preservation LPIPS. This is a post hoc description of actual pixel change, including unintended changes. Panel (b) ranks all 40 sources by their two-seed mean LPIPS contrast and shows both seed-specific effects; its connecting segments show the observed seed range, not uncertainty intervals. Per-output pixel measurements and LPIPS are in \path{cpu/pixels_by_output.csv} and \path{cpu/harmonized_lpips/R88_scores.csv}.
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/paired_heterogeneity_v5.pdf}
+\caption{REQ-U minus U25 across all 40 sources, with the full observed range retained. (a) Paired image changes, averaged over two seeds; the black diamond and bars show the mean and marginal 95\% source-bootstrap intervals. (b) Sources ranked by their two-seed mean preservation contrast. Blue points are source means; gray circles and open squares show seeds 0 and 17. Segments give observed seed variation. Dashed/dotted lines mark the cohort mean/median. Negative LPIPS differences favor REQ-U.}
+\label{fig:paired-heterogeneity}
+\end{figure*}
+
+\paragraph{Mask-alignment diagnostic.}
+Figure~\ref{fig:map-alignment} displays the four constructions covered by the archived alignment audit. Figure~\ref{fig:v19-corrector-controls} extends the original four-map diagnostic to the first shuffled donor with a reconstructed AUROC. No regression is fitted to these four means. Mask ordering, residual-energy alignment, and the spatial pattern of weights change together across constructions.
+
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/qualitative_supp.pdf}
+\caption{Source, protection map, and the four crossed direction/profile cells. Map interventions are shown separately in Fig.~\ref{fig:qual-maps}. Requests and selected preservation differences are displayed with the panels. All output images use seed 0. Rows show heterogeneous outcomes, including small metric differences and failed requested edits. Quantitative comparisons average both planned seeds.}
+\label{fig:qual}
+\end{figure*}
+\begin{figure*}[!t]
+\centering\includegraphics[width=0.76\textwidth]{figures/qualitative_supp_mapcontrols.pdf}
+\caption{Map-control comparisons at the same request-origin profile: source, correct protection map, REQ, SHUF-R, and REV-R. Inspect changes outside the requested object as well as whether the edit occurred. All images use seed 0; these rows are illustrations, not preference labels.}
+\label{fig:qual-maps}
+\end{figure*}
+
+\begin{figure*}[!t]
+\centering\includegraphics[width=\textwidth]{figures/qualitative_matrix_v10.pdf}
+\caption{Full crossed comparisons, seed 0. White in actual $P$ means stronger correction. Post hoc flower, curtain, and boy cases span negative, near-zero, and positive two-seed source-mean preservation contrasts ($-0.0393,-0.0001,+0.0206$). RGB panels are archived $320\times320$ previews, with an identical boy-face crop; metrics use native outputs. Incomplete flower-center and hand edits show why preservation alone is insufficient.}
+\label{fig:crossed-preview}
+\end{figure*}
+
+\section{Reproducibility}\label{sec:reproducibility}
+
+\subsection{Native coverage and record identity}
+The primary and scale/map studies (R88/R89) contain 480 and 640 outputs respectively. Of their 1,120 recorded output digests, 160 matched a retained native PNG; 960 have score records only. The seed/map/floor study (R91) contributes 720 scientific outputs, and the scalar study (R92) adds 80, for 1,920 distinct scientific runs on the restoring cohort. The four extra seed-0 checks repeat earlier outputs. Seeds 1, 2 and 3 each cover all 40 sources in each of REQ, GLB\_R, REQ\_U and U25. Thus both fixed-profile contrasts can be rescored on all three added seeds; on the original two seeds only the uniform-profile pair has complete native files.
+
+The six per-output score tables in \path{cpu/harmonized_lpips/} retain SHA-256 identifiers for output, source and mask. Across SAM, restoring and DirectEdit the 1,964 rescored rows have 1,960 distinct output digests. \path{evidence/historical_native_coverage.csv} lists all early output hashes and retrieval flags. \path{evidence/native_counts.csv} gives arm and seed counts; \path{evidence/provenance.json} records archive digests, the SAM evaluator and mask-manifest hashes, CPU versions, LPIPS weight digests and the original-score verification errors.
+
+All six planned automatic outcomes for the primary and scale/map studies are complete. The original R88 evaluation CSV additionally contains native REQ edit-region MAE (\texttt{object\_mae}): all 80 records have status OK, with mean 0.164571 after seed averaging within 40 sources. For the 160 U25/REQ-U entries shared with the later reconstruction, the same field agrees within $10^{-16}$. The corresponding SC minus native REQ edit MAE is $-0.016425$. Table~\ref{tab:r92-results} identifies the recovered source of that cell. Seed/floor/scalar evaluations retain LPIPS, CLIP and regional MAE.
+
+
+\paragraph{What to run.}
+Run \path{reproduce.py} for restoring contrasts, SAM constant-gain recovery, selectivity and four- and five-setting MRC. Use \path{analysis/v20_mrc/reproduce_mrc.py} for both editors' response sensitivities and \path{SAM_scan/reproduce.py} for the original scorer and 6,500 projection-step records. \path{SAM_scan/control/} and \path{SAM_scan/data/protocol.json} supply the operator and settings. The early study archive contains generator and evaluator code, step summaries and maps. The compact ZIP includes source-level measurements and a four-cell profile. Two early metadata files were unavailable (\path{runtime_base/results/evaluation_config.json} and \path{run/identity.json}).
+
+The two-seed native path estimates and the cohort-mean equal-LPIPS interpolation are also retained as archived aggregates. \path{analysis/history/supp_history_recovered.json} identifies their original records, the 80 native REQ trajectories and DirectEdit extrapolations. The three-setting within-source analysis can be reaggregated separately from \path{source_correction_and_blending/three_scale_points.csv}.
+
+\subsection{Implementation and evaluation metadata}
+The restoring protocol specifies FLUX.1-dev revision \path{3de623fc3c33e44ffbe2bad470d0f45bccf2eb21}; CLIP ViT-L/14 uses \path{32bd64288804d66eefd0ccbe215aa642df71cc41}; DINOv2-base uses \path{f9e44c814b77203eaa57a6bdbbd535f21ede1415}. Snapshot identities and processor calls are archived; processor configuration files are outside the compact package. DirectEdit follows official commit \path{26b04bf576bfb83204bea619ae411d075faec99e}, with BF16 network evaluation and FP32 integration in place of the example's FP16. The archived evaluator uses LPIPS 0.1.4. Local evaluation uses FP32 on CPU with autocast off, PyTorch 2.11.0 for seed/floor/scalar evaluation, and Transformers 4.55.4. Scalar calibration reuses the seed study's recorded FLUX model inventory.
+For R92, the audit names the expected historical FLUX revision above and records \path{revision_directory_matches=false} for the local model binding. Its tensor inventory agrees with R91 in names, headers and lengths. A full generator-weight payload digest was unavailable for this comparison.
+
+Caching reuses source encoding, prompt embeddings, inversion states, reference motion, probes, and compatible source memory; each arm computes its residual at its own edited state. The primary equivalence check covers all six arms on one source/seed and records identical outputs. Four seed-study checks repeat U25/REQ-U at seed 0 on sources 000000000094 and 822000000006, reproducing native RGB exactly; maximum score differences are $5.96\times10^{-8}$ (preservation LPIPS), $8.94\times10^{-8}$ (target CLIP), and $2.46\times10^{-7}$ (directional CLIP).
+
+The seed/map/floor study and checks use 52,368 incremental evaluations and 7.552 synchronized job-hours; maximum relative RMS error across 13,496 replay steps is $2.21\times10^{-7}$. Scalar calibration has 2,240 steps, 7,760 evaluations (97/output), and 4,000.79 synchronized job-seconds (1.111 hours). All 724 seed-study/check runs and 80 scalar runs completed without recorded generation failures. Timings exclude loading and evaluation; main and scale/map costs appear in Tables~\ref{tab:cost} and \ref{tab:r89-cost}.
+
+
+The exploratory REML fits did not converge. The reported intervals use source resampling.
+
+\paragraph{Archived model ratings.}\label{sec:model-judge80}
+One DeepSeek-V4.1-Flash pass viewed randomized REQ-U/U25 pairs (40 sources, seeds 0/17; $512\times512$ images displayed in an approximately 390-pixel panel). Background preference tied on 80/80 pairs and instruction labels on 78/80, including 20 joint failures and five joint uncertain calls. Both discordant instruction labels favored REQ-U. This pass had no human calibration; the exact API settings and complete transcript were unavailable.
+
+\subsection{Scope of the paired evidence}
+The source-correction comparisons condition on 40 sources and a fixed FLUX editor, with additional seeds measured on those same sources. The SAM experiment conditions on 50 sources and one generation seed, with backgrounds measurable on 42. DirectEdit uses 20 of the source-correction sources with its own mask and blending rule. The different operators and regional scoring procedures each define their own contrast.
+
+The reported outcomes are automatic metrics and annotated examples. No human evaluation was conducted. Alternative regional RMS controls and calibration of a scalar to the realized total on its own rollout remain distinct, unmeasured interventions.
+
+\subsection{AI assistance}
+OpenAI Codex assisted drafting and language revision throughout the main paper and supplement, development of analysis code, and preparation of data figures. The authors are responsible for the analyses and final content.
+
+
+\section{Reading the Comparisons}\label{sec:decision-guide}
+Compare configurations over each image's shared response range. Attribute allocation effects by naming the gated term and crossing the two native profiles. Report a calibrated scalar's realized magnitude alongside its output scores. For external blends, identify coefficients and sources outside the convex range (Section~\ref{sec:external}).
+
+\begin{thebibliography}{7}
+\bibitem{cui2026sam}
+H. Cui, R. Chen, T. Luo, T. Guo, Z. Qin, and J. Wang, 
+``SAM-Flow: Source-anchored masked flow for training-free image editing,'' arXiv:2606.06228, 2026.
+\bibitem{kulikov2025flowedit}
+V. Kulikov, M. Kleiner, I. Huberman-Spiegelglas, and T. Michaeli,
+``FlowEdit: Inversion-free text-based editing using pre-trained flow models,'' in \emph{Proc. ICCV}, 2025, pp.~19721--19730.
+\bibitem{yang2026directedit}
+D. Yang and M. Ye,
+``DirectEdit: Step-level accurate inversion for flow-based image editing,''
+in \emph{Proc. ICML}, vol. 306, 2026, pp. 146750--146765.
+\bibitem{li2026veloedit}
+Z. Li et al., ``VeloEdit: Training-free consistent and continuous instruction-based image editing via velocity field decomposition,'' arXiv:2603.13388, 2026.
+\bibitem{zhan2026decflowedit}
+Z. Zhan, C. Wang, J. Chen, C. Chen, S. Lyu, Z. Zheng, and D. Chen, ``DecFlowEdit: Self-localized flow-based image editing via guidance decoupling,'' arXiv:2609.34237, 2026.
+\bibitem{li2026asg}
+Z. Li et al., ``Attention-scoped guidance: Training-free spatial control for image editing,'' arXiv:2609.37492, 2026.
+\bibitem{xie2026guidancematters}
+D. Xie et al., ``Guidance matters: Rethinking the evaluation pitfall for text-to-image generation,'' in \emph{Proc. ICLR}, 2026.
+\end{thebibliography}
+\end{document}

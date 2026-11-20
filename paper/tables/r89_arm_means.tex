@@ -1,0 +1,28 @@
+% Source: evidence_r89/outputs/statistics/arm_summary.csv.
+\begin{table*}[!t]
+\centering\footnotesize
+\caption{All 14 arms on the same 40 sources. Every cell averages seeds 0 and 17 within source, then sources equally. The first six arms reuse the original 480 outputs; the last eight add 640. All metrics use native images.}
+\label{tab:r89-means}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{lrrrrrr}
+\toprule
+Arm & Pres. LPIPS $\downarrow$ & Full LPIPS $\downarrow$ & Pres. MAE $\downarrow$ & DINO $\uparrow$ & Target CLIP $\uparrow$ & Dir. CLIP $\uparrow$ \\
+\midrule
+REQ & 0.525352 & 0.544935 & 0.123945 & 0.540550 & 0.264348 & 0.128818 \\
+GLB-R & 0.535311 & 0.552767 & 0.126580 & 0.539594 & 0.264653 & 0.129743 \\
+U25 & 0.489139 & 0.504496 & 0.105122 & 0.554525 & 0.266477 & 0.135701 \\
+REQ-U & 0.479111 & 0.497375 & 0.102306 & 0.553974 & 0.264684 & 0.129120 \\
+SHUF-R & 0.526513 & 0.545218 & 0.125079 & 0.538751 & 0.264801 & 0.129966 \\
+REV-R & 0.557491 & 0.571900 & 0.138823 & 0.534889 & 0.267309 & 0.134429 \\
+\midrule
+Global, $0.7b^U$ & 0.540118 & 0.557918 & 0.129818 & 0.538398 & 0.265604 & 0.130742 \\
+Request, $0.7b^U$ & 0.531859 & 0.550672 & 0.127155 & 0.538988 & 0.264442 & 0.129428 \\
+Global, $1.3b^U$ & 0.432972 & 0.447076 & 0.084485 & 0.574237 & 0.264536 & 0.135803 \\
+Request, $1.3b^U$ & 0.420611 & 0.437718 & 0.082238 & 0.577019 & 0.261224 & 0.124262 \\
+SOURCE-R & 0.532885 & 0.549682 & 0.128033 & 0.544714 & 0.266882 & 0.133953 \\
+SHUF2-R & 0.527264 & 0.545805 & 0.124856 & 0.538385 & 0.264619 & 0.128581 \\
+SHUF2-RAW & 0.526332 & 0.544767 & 0.125029 & 0.540492 & 0.264277 & 0.128087 \\
+REV-HIST-R & 0.549425 & 0.564450 & 0.133941 & 0.540373 & 0.265857 & 0.132352 \\
+\bottomrule
+\end{tabular}
+\end{table*}

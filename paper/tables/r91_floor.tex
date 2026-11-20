@@ -1,0 +1,23 @@
+\begin{table*}[!t]
+\centering\small
+\caption{Protection-floor comparisons on the prespecified 20-source subset and two original seeds. The four floor-versus-0.25 LPIPS/directional-CLIP contrasts form Holm4; their probabilities enumerate all $2^{20}$ sign assignments, refining the frozen Monte Carlo calculation. Original bootstrap intervals are retained. Comparisons with U25 and edit-MAE contrasts are descriptive. All arms replay the same original uniform-origin profile.}
+\label{tab:r91-floor}
+\begin{tabular}{llrrrrr}
+\toprule
+Contrast & Outcome & Sources & Mean & 95\% CI & Raw $p$ & Holm $p$\\
+\midrule
+Floor 0 $-$ REQ-U & LPIPS & 20 & $-0.0009$ & $[-0.0042, +0.0024]$ & 0.7419 & 1.0000\\
+Floor 0.5 $-$ REQ-U & LPIPS & 20 & $+0.0014$ & $[-0.0016, +0.0043]$ & 0.4641 & 1.0000\\
+Floor 0 $-$ U25 & LPIPS & 20 & $-0.0137$ & $[-0.0251, -0.0023]$ & --- & ---\\
+REQ-U $-$ U25 & LPIPS & 20 & $-0.0128$ & $[-0.0216, -0.0040]$ & --- & ---\\
+Floor 0.5 $-$ U25 & LPIPS & 20 & $-0.0114$ & $[-0.0177, -0.0051]$ & --- & ---\\
+Floor 0 $-$ REQ-U & Dir. CLIP & 20 & $+0.0085$ & $[+0.0034, +0.0141]$ & 0.0124 & 0.0497\\
+Floor 0.5 $-$ REQ-U & Dir. CLIP & 20 & $-0.0013$ & $[-0.0057, +0.0031]$ & 0.7643 & 1.0000\\
+Floor 0 $-$ U25 & Dir. CLIP & 20 & $+0.0033$ & $[-0.0033, +0.0102]$ & --- & ---\\
+REQ-U $-$ U25 & Dir. CLIP & 20 & $-0.0051$ & $[-0.0121, +0.0018]$ & --- & ---\\
+Floor 0.5 $-$ U25 & Dir. CLIP & 20 & $-0.0064$ & $[-0.0148, +0.0017]$ & --- & ---\\
+Floor 0 $-$ REQ-U & Edit MAE & 20 & $+0.0072$ & $[+0.0054, +0.0089]$ & --- & ---\\
+Floor 0.5 $-$ REQ-U & Edit MAE & 20 & $-0.0042$ & $[-0.0055, -0.0030]$ & --- & ---\\
+\bottomrule
+\end{tabular}
+\end{table*}

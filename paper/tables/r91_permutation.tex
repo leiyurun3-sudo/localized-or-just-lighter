@@ -1,0 +1,17 @@
+\begin{table*}[!t]
+\centering\small
+\caption{Cell-permutation comparisons, 40 sources and two original seeds. RAND averages two independently keyed permutations within each source/seed. LPIPS and directional CLIP each form a separate three-test Holm family. Intervals are marginal.}
+\label{tab:r91-permutation}
+\begin{tabular}{llrrrrr}
+\toprule
+Contrast & Outcome & Sources & Mean & 95\% CI & Raw $p$ & Holm $p$\\
+\midrule
+REQ $-$ RAND & LPIPS & 40 & $-0.0135$ & $[-0.0186, -0.0090]$ & 0.000001 & 0.000003\\
+GLB-R $-$ RAND & LPIPS & 40 & $-0.0036$ & $[-0.0051, -0.0022]$ & 0.000003 & 0.000006\\
+SOURCE-R $-$ RAND & LPIPS & 40 & $-0.0060$ & $[-0.0094, -0.0030]$ & 0.000636 & 0.000636\\
+REQ $-$ RAND & Dir. CLIP & 40 & $-0.0013$ & $[-0.0063, +0.0034]$ & 0.6399 & 1.0000\\
+GLB-R $-$ RAND & Dir. CLIP & 40 & $-0.0004$ & $[-0.0025, +0.0017]$ & 0.7305 & 1.0000\\
+SOURCE-R $-$ RAND & Dir. CLIP & 40 & $+0.0038$ & $[-0.0004, +0.0083]$ & 0.1941 & 0.5822\\
+\bottomrule
+\end{tabular}
+\end{table*}

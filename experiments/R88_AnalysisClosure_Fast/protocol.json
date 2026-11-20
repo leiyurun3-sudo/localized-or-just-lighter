@@ -1,0 +1,148 @@
+{
+  "schema": "analysis-cross-anchor-v1",
+  "name": "R88_AnalysisClosure",
+  "status": "designed_not_run",
+  "scope": "analysis paper child only; no manuscript changes",
+  "question": "How does native request-vs-uniform retention difference depend on spatial direction and the realized per-step amplitude profile?",
+  "sample": {
+    "source_count": 40,
+    "seeds": [
+      0,
+      17
+    ],
+    "outputs": 480,
+    "excluded_history_count": 90,
+    "source_manifest_sha256": "cc97333537a7ee683400d7f881933636b0ce9cf12fca31800554bed91e6167fa",
+    "category_counts": {
+      "0": 5,
+      "1": 5,
+      "2": 5,
+      "3": 5,
+      "4": 4,
+      "5": 4,
+      "6": 4,
+      "7": 4,
+      "8": 4,
+      "9": 0
+    },
+    "population": "Fresh local edits with nonempty official preserved region; remaining category-9 style cases have no such region after 90 historical exclusions; no claim of full PIE category coverage",
+    "unit": "source; seeds averaged within source"
+  },
+  "fixed": {
+    "backbone": "FLUX.1-dev",
+    "model_revision": "3de623fc3c33e44ffbe2bad470d0f45bccf2eb21",
+    "resolution": 512,
+    "steps": 28,
+    "guidance": 3.5,
+    "gamma": 0.5,
+    "corr_lambda": 0.25,
+    "network_dtype": "bfloat16",
+    "integration_dtype": "float32",
+    "response_sigmas": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "protection": "P=1-0.75E",
+    "memory": "source K/V, paired, all image queries, gate=1, steps[0,7), blocks1..26; identical in all six arms"
+  },
+  "arms": [
+    {
+      "id": "REQ",
+      "direction": "P*c",
+      "amplitude": "native 0.25*P*c; record bR",
+      "role": "request anchor"
+    },
+    {
+      "id": "GLB_R",
+      "direction": "c",
+      "amplitude": "RMS=bR at each own-state step",
+      "anchor": "REQ"
+    },
+    {
+      "id": "U25",
+      "direction": "c",
+      "amplitude": "native 0.25*c; record bU",
+      "role": "uniform anchor"
+    },
+    {
+      "id": "REQ_U",
+      "direction": "P*c",
+      "amplitude": "RMS=bU at each own-state step",
+      "anchor": "U25"
+    },
+    {
+      "id": "SHUF_R",
+      "direction": "rank-histogram-matched wrong-target P*c",
+      "amplitude": "RMS=bR",
+      "anchor": "REQ",
+      "probe": "same recipient image/source prompt/reference; fixed wrong target from within-category donor; actual edit uses original true target"
+    },
+    {
+      "id": "REV_R",
+      "direction": "(1.25-P)*c",
+      "amplitude": "RMS=bR",
+      "anchor": "REQ",
+      "note": "range preserved; histogram generally changes"
+    }
+  ],
+  "factorial": {
+    "A": "REQ",
+    "B": "GLB_R",
+    "C": "U25",
+    "D": "REQ_U",
+    "direction_at_R": "A-B",
+    "direction_at_U": "D-C",
+    "profile_effect_request": "D-A",
+    "profile_effect_global": "C-B",
+    "interaction": "(D-C)-(A-B)",
+    "native_difference": "A-C",
+    "path_1": "(A-B)+(B-C)",
+    "path_2": "(A-D)+(D-C)"
+  },
+  "interpretation": [
+    "Profile origin is the second factor, not a pre-assumed scalar high/low dose. Report stepwise crossing and cumulative impulse separately.",
+    "The two decomposition paths are arithmetic within the same cohort, not a unique additive causal percentage.",
+    "Wrong-target response tests the frozen donor construction; histogram matching does not match all spatial morphology.",
+    "Global controls apply nonzero correction; never describe GLB as no correction.",
+    "Preservation metrics do not establish whole-instruction success; nonsignificant CLIP does not establish equivalence.",
+    "No outcome-based resampling, winner selection, optional stopping, or substitute test family. All six arms run on the frozen cohort.",
+    "All conclusions are conditional on this editor, backbone, resolution and profile construction; external methods and new backbones are not implemented in this round."
+  ],
+  "source_selection": {
+    "salt": "R88-analysis-cross-anchor-20261104",
+    "order": "SHA256 within category",
+    "eligible": "valid prompts, nonempty official edited and preserved regions",
+    "dedupe": "RGB exact hash or dHash<=8 with 64x64 thumbnail RGB MAE<=12; exclude historical90 and within-cohort duplicates",
+    "donors": "fixed same-category cyclic derangement of SHA256 donor order, smallest shift with different target prompts"
+  },
+  "statistics": "stats_plan.json; must be frozen with manifest and code BEFORE server generation; package timestamp is not a public registry",
+  "runtime_budget": {
+    "new_generation_outputs": 480,
+    "reference_call_estimate": 33440,
+    "formula": "80 source-seed groups * (97 + 5*63 + 6 wrong-target probe calls)",
+    "savings_to_verify": "source probe reuse can save 3/group; source K/V capture reuse may save 7/dependent arm if exact reference state/conditioning/hooks match",
+    "walltime": "measure first completed source-seed group; no fixed hours claim"
+  },
+  "observations_to_save": [
+    "native output PNG on server",
+    "source and P maps",
+    "per-step sigma/h/applied RMS and anchor target",
+    "standalone and actual incremental NFE separately",
+    "GPU seconds, CPU evaluation seconds, export seconds, peak allocated/reserved memory",
+    "raw metrics, source paired contrasts, exact prompts/donor IDs, structured failure status"
+  ],
+  "delivery": {
+    "compact_zip": "previews/maps/scalars/config/statistics/code; native PNG retained in server results",
+    "no_default_latent_dump": true,
+    "pack": "once after generation checkpoint and once after final metrics, atomic rename; never per image",
+    "direct_download_link": "print Jupyter file URL for final ZIP using server base URL when available"
+  },
+  "speed_invariants": [
+    "identical solver/update/steps/precision/conditioning/probe states/memory semantics",
+    "no fewer steps, lower resolution, quantization, changed attention backend or reduced evaluation coverage as a speed shortcut",
+    "cache only functions of an explicit immutable key; never reuse own-current-state c across diverging arms",
+    "CPU-side postprocessing may overlap after files commit; GPU processes use shared queue",
+    "reference implementation retained; optimized numerical equivalence recorded before production"
+  ]
+}

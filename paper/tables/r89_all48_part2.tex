@@ -1,0 +1,50 @@
+% Source: evidence_r89/outputs/statistics/contrasts.csv; archived tests, no rerun.
+\begin{table*}[!t]
+\centering
+\begin{minipage}{\textwidth}
+\fontsize{8}{9.2}\selectfont
+\caption{Complete follow-up: all 48 tests, part 2/2. Differences are first arm minus second arm, with 40 paired sources after averaging two seeds.}
+\label{tab:r89-all48-2}
+\setlength{\tabcolsep}{3pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabularx}{\linewidth}{@{}l r >{\centering\arraybackslash}X r r r r@{}}
+\toprule
+Metric & $\Delta$ & Marginal 95\% CI & $p_{\rm MC}$ & Holm8 & Holm48 & $n_-/n_0/n_+$ \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{SHUF-R $-$ SHUF2-R}} \\
+Pres. LPIPS $\downarrow$ & $-0.00075$ & $[-0.00235,\,+0.00080]$ & $0.442511$ & \textemdash & $1$ & 17/12/11 \\
+Dir. CLIP $\uparrow$ & $+0.00139$ & $[-0.00003,\,+0.00291]$ & $0.104824$ & \textemdash & $1$ & 14/12/14 \\
+Target CLIP $\uparrow$ & $+0.00018$ & $[-0.00063,\,+0.00103]$ & $0.728116$ & \textemdash & $1$ & 12/12/16 \\
+Full LPIPS $\downarrow$ & $-0.00059$ & $[-0.00131,\,+0.00012]$ & $0.153001$ & \textemdash & $1$ & 19/12/9 \\
+DINO $\uparrow$ & $+0.00037$ & $[-0.00273,\,+0.00344]$ & $0.829416$ & \textemdash & $1$ & 13/12/15 \\
+Pres. MAE $\downarrow$ & $+0.00022$ & $[+0.00006,\,+0.00041]$ & $0.044007$ & \textemdash & $1$ & 9/12/19 \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{SHUF2-R $-$ SHUF2-RAW}} \\
+Pres. LPIPS $\downarrow$ & $+0.00093$ & $[-0.00024,\,+0.00236]$ & $0.275891$ & \textemdash & $1$ & 19/0/21 \\
+Dir. CLIP $\uparrow$ & $+0.00049$ & $[-0.00077,\,+0.00181]$ & $0.599366$ & \textemdash & $1$ & 17/0/23 \\
+Target CLIP $\uparrow$ & $+0.00034$ & $[-0.00020,\,+0.00091]$ & $0.322353$ & \textemdash & $1$ & 19/0/21 \\
+Full LPIPS $\downarrow$ & $+0.00104$ & $[+0.00022,\,+0.00203]$ & $0.026462$ & \textemdash & $0.847175$ & 18/0/22 \\
+DINO $\uparrow$ & $-0.00211$ & $[-0.00432,\,-0.00006]$ & $0.098898$ & \textemdash & $1$ & 23/0/17 \\
+Pres. MAE $\downarrow$ & $-0.00017$ & $[-0.00042,\,+0.00004]$ & $0.334532$ & \textemdash & $1$ & 20/0/20 \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{REQ $-$ REV-HIST-R}} \\
+Pres. LPIPS $\downarrow$ & $-0.02407$ & $[-0.03136,\,-0.01727]$ & $1.00\!\times\!10^{-6}$ & \textemdash & $4.80\!\times\!10^{-5}$ & 35/0/5 \\
+Dir. CLIP $\uparrow$ & $-0.00353$ & $[-0.01118,\,+0.00321]$ & $0.425758$ & \textemdash & $1$ & 22/0/18 \\
+Target CLIP $\uparrow$ & $-0.00151$ & $[-0.00380,\,+0.00087]$ & $0.360569$ & \textemdash & $1$ & 23/0/17 \\
+Full LPIPS $\downarrow$ & $-0.01952$ & $[-0.02568,\,-0.01378]$ & $1.00\!\times\!10^{-6}$ & \textemdash & $4.80\!\times\!10^{-5}$ & 35/0/5 \\
+DINO $\uparrow$ & $+0.00018$ & $[-0.01196,\,+0.01203]$ & $0.977964$ & \textemdash & $1$ & 23/0/17 \\
+Pres. MAE $\downarrow$ & $-0.01000$ & $[-0.01349,\,-0.00637]$ & $2.00\!\times\!10^{-5}$ & \textemdash & $8.60\!\times\!10^{-4}$ & 36/0/4 \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{REV-R $-$ REV-HIST-R}} \\
+Pres. LPIPS $\downarrow$ & $+0.00807$ & $[+0.00466,\,+0.01224]$ & $3.00\!\times\!10^{-6}$ & \textemdash & $1.32\!\times\!10^{-4}$ & 6/0/34 \\
+Dir. CLIP $\uparrow$ & $+0.00208$ & $[-0.00299,\,+0.00862]$ & $0.670725$ & \textemdash & $1$ & 20/0/20 \\
+Target CLIP $\uparrow$ & $+0.00145$ & $[-0.00061,\,+0.00373]$ & $0.283664$ & \textemdash & $1$ & 18/0/22 \\
+Full LPIPS $\downarrow$ & $+0.00745$ & $[+0.00441,\,+0.01143]$ & $1.00\!\times\!10^{-6}$ & \textemdash & $4.80\!\times\!10^{-5}$ & 5/0/35 \\
+DINO $\uparrow$ & $-0.00548$ & $[-0.01305,\,+0.00267]$ & $0.227393$ & \textemdash & $1$ & 28/0/12 \\
+Pres. MAE $\downarrow$ & $+0.00488$ & $[+0.00361,\,+0.00619]$ & $1.00\!\times\!10^{-6}$ & \textemdash & $4.80\!\times\!10^{-5}$ & 2/0/38 \\
+\bottomrule
+\end{tabularx}
+\par\smallskip
+{\raggedright Holm8 covers preservation LPIPS and directional CLIP for the four comparisons in part 1; dashes mark tests outside that family. Holm48 covers both parts jointly. Intervals use 20,000 paired category-stratified source bootstraps (seed 89002). Two-sided Monte Carlo sign flips use $10^6$ assignments (seed 89001) and $(k+1)/(10^6+1)$; values near $10^{-6}$ are rounded, not zero. Counts distinguish negative, exactly zero, and positive archived source differences. Arrows give preferred metric direction.\par}
+\end{minipage}
+\end{table*}

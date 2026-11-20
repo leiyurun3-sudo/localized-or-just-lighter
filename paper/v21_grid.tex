@@ -1,0 +1,29 @@
+\subsection{Interpolation at held-out scan settings}
+\label{sec:v21-grid}
+
+We withheld each of the three interior settings in turn from each source and arm. Linear interpolation between the two neighboring knob settings predicts both coordinates of the held-out image. On 42 sources with a background (126 holdouts per arm), mean absolute directional-CLIP errors were 0.0257, 0.0237 and 0.0414 for spatial SAM (S), uniform SAM (U) and FlowEdit (F); background feature-map LPIPS errors were 0.0098, 0.0323 and 0.0592. A second test predicts LPIPS at the held image's \emph{observed} CLIP response, taking the first crossing of the four retained settings in knob order. The retained ranges covered 93, 95 and 92 of 126 queries, respectively. Mean absolute LPIPS errors on those queries were 0.0154, 0.0429 and 0.0593. Each source contributes its mean absolute error; the response-space test omits out-of-range queries. When the response folds, the first crossing may belong to a different branch from the held setting.
+
+Thinning the grid while retaining both endpoints (SAM scales 0.25, 0.75 and 1.25) tests sensitivity to the spacing of settings. This preserved all 41 supported U$-$S sources and their signs. The first-crossing mean rose from 0.0390 to 0.0553; the paired increase was 0.0163 [0.0070, 0.0271] (10,000 source-bootstrap draws). The overlap narrowed on 23 sources. Integrating both grids over the three-point interval gave a similar increase, 0.0155 [0.0053, 0.0270]. F$-$S retained 38 sources with one sign change; F$-$U retained 40 of 41 with seven sign changes.
+
+\begin{table}[t]
+\centering\footnotesize
+\caption{The four sources favoring uniform on the five-point grid. Width is the shared directional-CLIP range; $D$ is mean U$-$S background LPIPS on that range. The final column counts negative contrasts when both arms omit the same single interior rank.}
+\label{tab:v21-grid-exceptions}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrrrc@{}}
+\hline
+& \multicolumn{2}{c}{Five settings} & \multicolumn{2}{c}{Three settings} & Negative\\
+Edit & Width & $D$ & Width & $D$ & deletions\\
+\hline
+Reflection & 0.03637 & $-0.0674$ & 0.03438 & $-0.0826$ & 3/3\\
+Dog posture & 0.08516 & $-0.0119$ & 0.07049 & $-0.0072$ & 2/3\\
+Jar lid & 0.00167 & $-0.0514$ & 0.00167 & $-0.0513$ & 3/3\\
+Rice field & 0.04378 & $-0.3656$ & 0.04378 & $-0.2396$ & 3/3\\
+\hline
+\end{tabular}
+\end{table}
+
+Omitting scale 0.75 from both arms reverses the dog-posture contrast to $+0.0038$. The jar has the narrowest overlap of the 41 sources, $[0.02465,0.02632]$ directional CLIP. Its contrast stays between $-0.05171$ and $-0.05093$ across all nine joint or single-arm deletions. These checks measure interpolation at existing settings and sensitivity to thinning. A genuinely denser scan would require outputs at additional settings.
+
+\noindent\textit{Thinning within the bounded range.}
+With both endpoints fixed at 0.25 and 1.00, the four-setting U$-$S feature-map LPIPS contrast was 0.0263 on 40 supported sources. Keeping 0.50 as the sole interior setting gave 0.0330 on 38 sources. Keeping 0.75 gave 0.0292 on 39. Relative to the four-setting estimate on each subset's own sources, the paired increases were 0.0055 [0.0003, 0.0113] and 0.0023 [0.0003, 0.0039], respectively. On the 37 sources supported by all three grids, the four-setting grid and the two thinned grids retained 25.1\%, 30.1\% and 27.0\% of the same scale-1 default difference.

@@ -1,0 +1,350 @@
+{
+  "sam_snapshots": {
+    "A_DoseLens_results.zip": {
+      "completed": 245,
+      "cases": 41,
+      "seeds": [
+        0
+      ],
+      "backbones": [
+        "FLUX.1-dev"
+      ]
+    },
+    "A_DoseLens_results_full.zip": {
+      "completed": 300,
+      "cases": 50,
+      "seeds": [
+        0
+      ],
+      "backbones": [
+        "FLUX.1-dev"
+      ]
+    },
+    "A_DoseLens_scan900_20261119T012536Z_6206_reports.zip": {
+      "completed": 900,
+      "cases": 50,
+      "seeds": [
+        0
+      ],
+      "backbones": [
+        "FLUX.1-dev"
+      ]
+    }
+  },
+  "earlier_sam_job_ids_nested_in_later": true,
+  "sam_full_region_exclusions": 8,
+  "correction_directedit_same_pixels_and_prompts": {
+    "source": 20,
+    "mask": 20,
+    "prompt_pair": 20
+  },
+  "sam_sources_shared_with_correction_or_directedit": 0,
+  "observed_arm_seed_counts": [
+    {
+      "dataset": "DirectEdit",
+      "arm": "GLOBAL_025",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "DirectEdit",
+      "arm": "GLOBAL_AT_LOCAL",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "DirectEdit",
+      "arm": "LOCAL_025",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "DirectEdit",
+      "arm": "LOCAL_AT_GLOBAL",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "DirectEdit",
+      "arm": "NATIVE_L1",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "R88",
+      "arm": "REQ_U",
+      "seed": "0",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R88",
+      "arm": "REQ_U",
+      "seed": "17",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R88",
+      "arm": "U25",
+      "seed": "0",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R88",
+      "arm": "U25",
+      "seed": "17",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "FLOOR_000",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "R91",
+      "arm": "FLOOR_000",
+      "seed": "17",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "R91",
+      "arm": "FLOOR_050",
+      "seed": "0",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "R91",
+      "arm": "FLOOR_050",
+      "seed": "17",
+      "native_outputs": "20"
+    },
+    {
+      "dataset": "R91",
+      "arm": "GLB_R",
+      "seed": "1",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "GLB_R",
+      "seed": "2",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "GLB_R",
+      "seed": "3",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "RAND_A",
+      "seed": "0",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "RAND_A",
+      "seed": "17",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "RAND_B",
+      "seed": "0",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "RAND_B",
+      "seed": "17",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ",
+      "seed": "1",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ",
+      "seed": "2",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ",
+      "seed": "3",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ_U",
+      "seed": "0",
+      "native_outputs": "2"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ_U",
+      "seed": "1",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ_U",
+      "seed": "2",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "REQ_U",
+      "seed": "3",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "U25",
+      "seed": "0",
+      "native_outputs": "2"
+    },
+    {
+      "dataset": "R91",
+      "arm": "U25",
+      "seed": "1",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "U25",
+      "seed": "2",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R91",
+      "arm": "U25",
+      "seed": "3",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R92",
+      "arm": "REQ_SC",
+      "seed": "0",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "R92",
+      "arm": "REQ_SC",
+      "seed": "17",
+      "native_outputs": "40"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "flowedit_12",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "flowedit_16",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "flowedit_20",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "flowedit_24",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "flowedit_28",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "sam_native",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "sam_native_scale0.25",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "sam_native_scale0.5",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "sam_native_scale0.75",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "sam_native_scale1.25",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "spatial_at_uniform",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "two_constant",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "uniform",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "uniform_at_local",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "uniform_scale0.25",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "uniform_scale0.5",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "uniform_scale0.75",
+      "seed": "0",
+      "native_outputs": "50"
+    },
+    {
+      "dataset": "SAM",
+      "arm": "uniform_scale1.25",
+      "seed": "0",
+      "native_outputs": "50"
+    }
+  ]
+}

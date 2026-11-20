@@ -1,0 +1,33 @@
+\begin{table*}[!t]
+\centering\small
+\caption{R92 operating points and paired outcomes, averaged over 40 sources after averaging two seeds within source. LPIPS and MAE are distances; directional CLIP is higher-is-better. Differences are first minus second. Intervals are marginal 95\% R92 bootstrap intervals. Only the two designated LPIPS contrasts have Holm2-adjusted tests; all other entries are descriptive. The native REQ edit MAE comes from the original R88 per-output evaluation (80 records); other entries retain the frozen R92 analysis.}
+\label{tab:r92-results}
+\begin{tabular}{lrrr}
+\toprule
+Arm & Preservation LPIPS & Directional CLIP & Edit MAE\\
+\midrule
+REQ & 0.525352 & 0.128818 & 0.164571\\
+SC & 0.485271 & 0.130216 & 0.148146\\
+REQ-U & 0.479111 & 0.129120 & 0.145197\\
+U25 & 0.489139 & 0.135701 & 0.136714\\
+\bottomrule
+\end{tabular}
+\par\medskip
+\begin{tabular}{llrrr}
+\toprule
+Contrast & Outcome & Difference & 95\% CI & Holm2 $p$\\
+\midrule
+SC $-$ REQ-U & Pres. LPIPS & $+0.006160$ & $[0.004714,0.007704]$ & 0.000002\\
+SC $-$ U25 & Pres. LPIPS & $-0.003868$ & $[-0.008473,0.000544]$ & 0.139348\\
+SC $-$ native REQ & Pres. LPIPS & $-0.040081$ & $[-0.045489,-0.034913]$ & ---\\
+REQ-U $-$ U25 & Pres. LPIPS & $-0.010028$ & $[-0.015216,-0.005077]$ & ---\\
+SC $-$ REQ-U & Dir. CLIP & $+0.001096$ & $[-0.000932,0.003041]$ & ---\\
+SC $-$ U25 & Dir. CLIP & $-0.005486$ & $[-0.013101,0.001853]$ & ---\\
+SC $-$ native REQ & Dir. CLIP & $+0.001397$ & $[-0.005522,0.007703]$ & ---\\
+REQ-U $-$ U25 & Dir. CLIP & $-0.006581$ & $[-0.014074,0.000548]$ & ---\\
+SC $-$ REQ-U & Edit MAE & $+0.002950$ & $[0.002393,0.003552]$ & ---\\
+SC $-$ U25 & Edit MAE & $+0.011432$ & $[0.008966,0.013956]$ & ---\\
+REQ-U $-$ U25 & Edit MAE & $+0.008482$ & $[0.006089,0.010953]$ & ---\\
+\bottomrule
+\end{tabular}
+\end{table*}

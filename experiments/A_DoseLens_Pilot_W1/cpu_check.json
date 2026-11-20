@@ -1,0 +1,25 @@
+{
+  "syntax": [
+    "adapter.py",
+    "analyze.py",
+    "collect.py",
+    "evaluate.py",
+    "prepare_tokens.py",
+    "projection_control.py",
+    "run.py",
+    "status.py"
+  ],
+  "cpu_checks": [
+    "native object identity preserved",
+    "paired target RMS reproduced",
+    "two constants calibrated in range",
+    "zero target and infeasible direction handled",
+    "900 jobs dependency order valid",
+    "pinned upstream reference and instrumented functions compile",
+    "50 case manifest and 42 regional-mask eligibility consistent",
+    "bash start.sh syntax valid"
+  ],
+  "torch": "2.11.0+cpu",
+  "GPU_generation_tested": false,
+  "GPU_native_parity_tested": false
+}
