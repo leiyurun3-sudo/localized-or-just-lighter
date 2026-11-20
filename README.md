@@ -1,5 +1,9 @@
 # Localized, or Just Lighter?
 
+**[一键下载全部材料（v21 完整 ZIP）](https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v21/Localized-or-Just-Lighter-v21-complete.zip)**
+
+整包含论文、LaTeX 源码、可编辑图稿、实验与 CPU 复现代码、900 张原生输出 PNG 和三份空白盲评问卷。解压后打开本页；论文在 `manuscript/`，原生图像包与问卷在 `downloads/`。
+
 **空间掩码带来的背景保持收益，有多少来自把编辑放对位置，又有多少来自整体改得更轻？** 这篇分析论文在 FLUX.1-dev 上研究两种免训练图像编辑算子，用逐步幅度回放分析组件，用等响应比较评估完整配置。
 
 [阅读主文（6 页）](manuscript/A_ICME_Main.pdf) · [补充材料（53 页）](manuscript/A_ICME_Supplement.pdf) · [900 张输出图册](reproduction/Atlas_900_outputs.pdf) · [下载审阅包](manuscript/A_ICME_Review_Supplement.zip)
