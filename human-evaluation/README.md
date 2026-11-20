@@ -1,5 +1,7 @@
 # 离线编辑成功盲评 / Offline edit-success assessment
 
+本仓库的三份空白离线问卷可从 [v21 下载区](https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/tag/v21) 取得。以下操作说明针对协调者的本地完整套件。仓库提供评分程序，计分所需的私有编号对照与随机化记录由协调者单独保管。
+
 本目录是协调者保存的用户套件。三份 ZIP 各含 50 个源图各自的 3 个默认输出，共 150 项。三份问卷使用相同图像、独立随机顺序和独立匿名编号。保留本目录在投稿文件之外。当前状态为待收集，尚无人工评分。
 
 ## 分发与作答 / Administration

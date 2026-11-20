@@ -14,6 +14,10 @@
 
 40 张恢复型源图与 50 张 SAM 源图属于两个队列。SAM 扫描使用 seed 0。加入 1.25 扩展档后，41 张图有共同响应区间，保留比例为 32.4%。正文分别报告两个扫描范围及其分母。
 
+![SAM 和 FlowEdit 的响应、空间选择性与逐源匹配差异](docs/media/Fig4.png)
+
+**如何读图 4。** 左侧看背景保持与文本响应，中间看变化的大小和集中程度，右侧看同一图像在等响应条件下的背景差。右下角把四档和含 1.25 的五档分开呈现。
+
 ## 从哪里开始
 
 | 想做什么 | 入口 |
@@ -24,6 +28,7 @@
 | 阅读、修改、编译两篇 PDF | [主文 TeX](paper/main.tex) · [补充 TeX](paper/supplement.tex) · [编译说明](docs/reproduction.md#编译论文) |
 | 追溯实验实现、设置和生成数量 | [实验索引](experiments/README.md) · [文献逐篇编码](reproduction/literature/control_audit.csv) |
 | 查看版本材料和原生输出 | [v21 版本下载](https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/tag/v21) |
+| 了解论文怎样从单算子案例发展成双算子评测研究 | [研究大计划](docs/history/paper_strategy.md) · [v18 修订计划](docs/history/A_v18_review_and_revision_plan.md) · [叙事与绘图蓝图](docs/history/A_v18_deep_overhaul_blueprint.md) |
 | 准备最后的人工盲评 | [评测说明](human-evaluation/README.md) · [统计口径](human-evaluation/统计口径与回填.md) |
 
 从仓库根目录运行以下两行即可复算主要点估计。Python 标准库即可执行。

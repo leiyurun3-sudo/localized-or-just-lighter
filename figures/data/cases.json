@@ -1,0 +1,184 @@
+{
+  "cases": [
+    {
+      "case": "622000000002",
+      "instruction": "Change the color of the shirt from white to blue",
+      "regions": [
+        {
+          "label": "Shirt",
+          "xyxy": [
+            284,
+            258,
+            380,
+            354
+          ],
+          "edit_mask_fraction": 1.0
+        },
+        {
+          "label": "Arm",
+          "xyxy": [
+            388,
+            370,
+            484,
+            466
+          ],
+          "edit_mask_fraction": 0.3416883680555556
+        }
+      ]
+    },
+    {
+      "case": "211000000000",
+      "instruction": "Add flowers to the dog's mouth",
+      "regions": [
+        {
+          "label": "Muzzle",
+          "xyxy": [
+            174,
+            229,
+            270,
+            325
+          ],
+          "edit_mask_fraction": 1.0
+        },
+        {
+          "label": "Rim",
+          "xyxy": [
+            264,
+            44,
+            360,
+            140
+          ],
+          "edit_mask_fraction": 0.3601345486111111
+        }
+      ]
+    },
+    {
+      "case": "513000000001",
+      "instruction": "Change the lid from being closed to being opened",
+      "regions": [
+        {
+          "label": "Lid",
+          "xyxy": [
+            212,
+            44,
+            308,
+            140
+          ],
+          "edit_mask_fraction": 0.6979166666666666
+        },
+        {
+          "label": "Clasp",
+          "xyxy": [
+            143,
+            100,
+            239,
+            196
+          ],
+          "edit_mask_fraction": 0.10601128472222222
+        }
+      ]
+    }
+  ],
+  "scores": [
+    {
+      "case": "622000000002",
+      "arm": "uniform",
+      "bg_lpips": 0.07870564609766006,
+      "directional_clip": 0.06091703847050667,
+      "mae_edit": 0.12343997364207863,
+      "mae_background": 0.0390351086121528
+    },
+    {
+      "case": "622000000002",
+      "arm": "two_constant",
+      "bg_lpips": 0.059729546308517456,
+      "directional_clip": 0.07306865602731705,
+      "mae_edit": 0.1018402089648942,
+      "mae_background": 0.03239012376169301
+    },
+    {
+      "case": "622000000002",
+      "arm": "sam_native",
+      "bg_lpips": 0.0324862040579319,
+      "directional_clip": 0.08646252006292343,
+      "mae_edit": 0.11503961138622468,
+      "mae_background": 0.014119159548928813
+    },
+    {
+      "case": "622000000002",
+      "arm": "flowedit_24",
+      "bg_lpips": 0.09832127392292023,
+      "directional_clip": 0.030156712979078293,
+      "mae_edit": 0.0949733302648651,
+      "mae_background": 0.03770795007764878
+    },
+    {
+      "case": "211000000000",
+      "arm": "uniform",
+      "bg_lpips": 0.09357110410928726,
+      "directional_clip": 0.14499470591545105,
+      "mae_edit": 0.05172909499119704,
+      "mae_background": 0.05146010895221716
+    },
+    {
+      "case": "211000000000",
+      "arm": "two_constant",
+      "bg_lpips": 0.05287189036607742,
+      "directional_clip": 0.004834885708987713,
+      "mae_edit": 0.03299673376804971,
+      "mae_background": 0.032163667544340295
+    },
+    {
+      "case": "211000000000",
+      "arm": "sam_native",
+      "bg_lpips": 0.03918056935071945,
+      "directional_clip": 0.09359246492385864,
+      "mae_edit": 0.03229432604234859,
+      "mae_background": 0.014124012751859734
+    },
+    {
+      "case": "211000000000",
+      "arm": "flowedit_24",
+      "bg_lpips": 0.17253993451595306,
+      "directional_clip": 0.1258699893951416,
+      "mae_edit": 0.06911996696079539,
+      "mae_background": 0.06872082166199812
+    },
+    {
+      "case": "513000000001",
+      "arm": "uniform",
+      "bg_lpips": 0.045366741716861725,
+      "directional_clip": 0.013969085179269314,
+      "mae_edit": 0.040098141037389685,
+      "mae_background": 0.0235793695690435
+    },
+    {
+      "case": "513000000001",
+      "arm": "two_constant",
+      "bg_lpips": 0.025041447952389717,
+      "directional_clip": 0.006985613610595465,
+      "mae_edit": 0.027248443196437194,
+      "mae_background": 0.016429735206200214
+    },
+    {
+      "case": "513000000001",
+      "arm": "sam_native",
+      "bg_lpips": 0.02987772226333618,
+      "directional_clip": 0.04837018996477127,
+      "mae_edit": 0.02623495270067612,
+      "mae_background": 0.01331461008930103
+    },
+    {
+      "case": "513000000001",
+      "arm": "flowedit_24",
+      "bg_lpips": 0.06667642295360565,
+      "directional_clip": -0.004510778002440929,
+      "mae_edit": 0.03581469053367394,
+      "mae_background": 0.029998922516718634
+    }
+  ],
+  "jar_comparison": {
+    "default_difference": 0.015489019453525543,
+    "matched_difference": -0.05138299358273234
+  }
+}
