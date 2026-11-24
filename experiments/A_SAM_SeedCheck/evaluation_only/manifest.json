@@ -1,0 +1,380 @@
+[
+  {
+    "case": "000000000088",
+    "edit_mask": "evaluation_only/000000000088/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 12579,
+    "preservation_pixels": 249565,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "000000000003",
+    "edit_mask": "evaluation_only/000000000003/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 125038,
+    "preservation_pixels": 137106,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "000000000044",
+    "edit_mask": "evaluation_only/000000000044/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 207668,
+    "preservation_pixels": 54476,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "000000000014",
+    "edit_mask": "evaluation_only/000000000014/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 82673,
+    "preservation_pixels": 179471,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "122000000009",
+    "edit_mask": "evaluation_only/122000000009/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 9482,
+    "preservation_pixels": 252662,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "113000000006",
+    "edit_mask": "evaluation_only/113000000006/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 37851,
+    "preservation_pixels": 224293,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "123000000007",
+    "edit_mask": "evaluation_only/123000000007/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 56092,
+    "preservation_pixels": 206052,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "112000000009",
+    "edit_mask": "evaluation_only/112000000009/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 32725,
+    "preservation_pixels": 229419,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "114000000004",
+    "edit_mask": "evaluation_only/114000000004/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 173364,
+    "preservation_pixels": 88780,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "213000000005",
+    "edit_mask": "evaluation_only/213000000005/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 122041,
+    "preservation_pixels": 140103,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "211000000000",
+    "edit_mask": "evaluation_only/211000000000/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 165096,
+    "preservation_pixels": 97048,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "224000000002",
+    "edit_mask": "evaluation_only/224000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 182855,
+    "preservation_pixels": 79289,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "221000000003",
+    "edit_mask": "evaluation_only/221000000003/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 180944,
+    "preservation_pixels": 81200,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "213000000008",
+    "edit_mask": "evaluation_only/213000000008/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 58206,
+    "preservation_pixels": 203938,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "314000000006",
+    "edit_mask": "evaluation_only/314000000006/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 17599,
+    "preservation_pixels": 244545,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "322000000002",
+    "edit_mask": "evaluation_only/322000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 3663,
+    "preservation_pixels": 258481,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "311000000002",
+    "edit_mask": "evaluation_only/311000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 24573,
+    "preservation_pixels": 237571,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "324000000008",
+    "edit_mask": "evaluation_only/324000000008/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 20011,
+    "preservation_pixels": 242133,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "322000000004",
+    "edit_mask": "evaluation_only/322000000004/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 3189,
+    "preservation_pixels": 258955,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "422000000001",
+    "edit_mask": "evaluation_only/422000000001/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 45718,
+    "preservation_pixels": 216426,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "412000000004",
+    "edit_mask": "evaluation_only/412000000004/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 16521,
+    "preservation_pixels": 245623,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "413000000002",
+    "edit_mask": "evaluation_only/413000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 11185,
+    "preservation_pixels": 250959,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "423000000001",
+    "edit_mask": "evaluation_only/423000000001/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 28322,
+    "preservation_pixels": 233822,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "524000000004",
+    "edit_mask": "evaluation_only/524000000004/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 99903,
+    "preservation_pixels": 162241,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "511000000000",
+    "edit_mask": "evaluation_only/511000000000/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 15953,
+    "preservation_pixels": 246191,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "523000000003",
+    "edit_mask": "evaluation_only/523000000003/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 122180,
+    "preservation_pixels": 139964,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "513000000001",
+    "edit_mask": "evaluation_only/513000000001/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 25997,
+    "preservation_pixels": 236147,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "611000000001",
+    "edit_mask": "evaluation_only/611000000001/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 55517,
+    "preservation_pixels": 206627,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "624000000003",
+    "edit_mask": "evaluation_only/624000000003/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 19488,
+    "preservation_pixels": 242656,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "622000000003",
+    "edit_mask": "evaluation_only/622000000003/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 146066,
+    "preservation_pixels": 116078,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "623000000002",
+    "edit_mask": "evaluation_only/623000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 14501,
+    "preservation_pixels": 247643,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "622000000002",
+    "edit_mask": "evaluation_only/622000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 59215,
+    "preservation_pixels": 202929,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "714000000000",
+    "edit_mask": "evaluation_only/714000000000/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 155202,
+    "preservation_pixels": 106942,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "712000000004",
+    "edit_mask": "evaluation_only/712000000004/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 124606,
+    "preservation_pixels": 137538,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "713000000001",
+    "edit_mask": "evaluation_only/713000000001/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 28935,
+    "preservation_pixels": 233209,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "712000000001",
+    "edit_mask": "evaluation_only/712000000001/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 210309,
+    "preservation_pixels": 51835,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "722000000000",
+    "edit_mask": "evaluation_only/722000000000/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 97950,
+    "preservation_pixels": 164194,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "812000000002",
+    "edit_mask": "evaluation_only/812000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 173158,
+    "preservation_pixels": 88986,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "813000000002",
+    "edit_mask": "evaluation_only/813000000002/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 51368,
+    "preservation_pixels": 210776,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "824000000007",
+    "edit_mask": "evaluation_only/824000000007/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 254387,
+    "preservation_pixels": 7757,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "811000000004",
+    "edit_mask": "evaluation_only/811000000004/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 187856,
+    "preservation_pixels": 74288,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  },
+  {
+    "case": "911000000007",
+    "edit_mask": "evaluation_only/911000000007/edit_mask.png",
+    "preservation_definition": "complement of official decoded edit mask",
+    "edit_pixels": 49476,
+    "preservation_pixels": 212668,
+    "preservation_metric_eligible": true,
+    "edit_region_metric_eligible": true
+  }
+]

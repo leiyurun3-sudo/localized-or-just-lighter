@@ -1,0 +1,2002 @@
+{
+  "cases": [
+    {
+      "case": "000000000088",
+      "seed": 2,
+      "image_name": "000000000088",
+      "target_code": "edit",
+      "image_path": "data/000000000088/source.png",
+      "source_prompt": "a plate with rice, lemon slices and fish",
+      "target_prompt": "a plate with rice, apple slices and fish",
+      "source_mask_tokens": [
+        "lemon",
+        "slices"
+      ],
+      "target_mask_tokens": [
+        "apple",
+        "slices"
+      ],
+      "unchanged_tokens": [],
+      "category": "0",
+      "record_index": 0,
+      "target_index": 0,
+      "source_prompt_raw": "a plate with rice, [lemon] slices and fish",
+      "target_prompt_raw": "a plate with rice, [apple] slices and fish",
+      "instruction": "Replace the lemon slices with apple slices",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "lemon"
+          ],
+          "target": [
+            "apple"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "lemon"
+      ],
+      "target_annotated_spans": [
+        "apple"
+      ],
+      "object_context": [
+        "slices"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Fruit replacement; slices names the affected food.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "000000000003",
+      "seed": 2,
+      "image_name": "000000000003",
+      "target_code": "edit",
+      "image_path": "data/000000000003/source.png",
+      "source_prompt": "blue light, a black and white cat is playing with a flower",
+      "target_prompt": "blue light, a black and white dog is playing with a flower",
+      "source_mask_tokens": [
+        "cat"
+      ],
+      "target_mask_tokens": [
+        "dog"
+      ],
+      "unchanged_tokens": [],
+      "category": "0",
+      "record_index": 1,
+      "target_index": 0,
+      "source_prompt_raw": "blue light, a black and white [cat] is playing with a flower",
+      "target_prompt_raw": "blue light, a black and white [dog] is playing with a flower",
+      "instruction": "Change the animal from a cat to a dog",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "cat"
+          ],
+          "target": [
+            "dog"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "cat"
+      ],
+      "target_annotated_spans": [
+        "dog"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Animal replacement; use the changed animal nouns.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "000000000044",
+      "seed": 2,
+      "image_name": "000000000044",
+      "target_code": "edit",
+      "image_path": "data/000000000044/source.png",
+      "source_prompt": "a cat sitting in the grass",
+      "target_prompt": "a cat sitting in the rocks",
+      "source_mask_tokens": [
+        "grass"
+      ],
+      "target_mask_tokens": [
+        "rocks"
+      ],
+      "unchanged_tokens": [],
+      "category": "0",
+      "record_index": 3,
+      "target_index": 0,
+      "source_prompt_raw": "a cat sitting in the [grass]",
+      "target_prompt_raw": "a cat sitting in the [rocks]",
+      "instruction": "Change the cat sitting location to rocks",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "grass"
+          ],
+          "target": [
+            "rocks"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "grass"
+      ],
+      "target_annotated_spans": [
+        "rocks"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Support/background material replacement; changed nouns identify the region.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "000000000014",
+      "seed": 2,
+      "image_name": "000000000014",
+      "target_code": "edit",
+      "image_path": "data/000000000014/source.png",
+      "source_prompt": "a man with his hands hanging down standing by a house",
+      "target_prompt": "a man with his hands rasing standing by a house",
+      "source_mask_tokens": [
+        "hanging",
+        "down",
+        "hands"
+      ],
+      "target_mask_tokens": [
+        "rasing",
+        "hands"
+      ],
+      "unchanged_tokens": [],
+      "category": "0",
+      "record_index": 4,
+      "target_index": 0,
+      "source_prompt_raw": "a man with his hands [hanging down] standing by a house",
+      "target_prompt_raw": "a man with his hands [rasing] standing by a house",
+      "instruction": "Turn the man's hands from hanhanging down to rasing",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "hanging",
+            "down"
+          ],
+          "target": [
+            "rasing"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "hanging down"
+      ],
+      "target_annotated_spans": [
+        "rasing"
+      ],
+      "object_context": [
+        "hands"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Hand pose change; preserve the supplied rasing spelling.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "122000000009",
+      "seed": 2,
+      "image_name": "122000000009",
+      "target_code": "edit",
+      "image_path": "data/122000000009/source.png",
+      "source_prompt": "a woman sitting at a bar with a glass of wine, with a lamp on the table",
+      "target_prompt": "a woman sitting at a bar with a glass of wine, with a cake on the table",
+      "source_mask_tokens": [
+        "lamp"
+      ],
+      "target_mask_tokens": [
+        "cake"
+      ],
+      "unchanged_tokens": [],
+      "category": "1",
+      "record_index": 5,
+      "target_index": 0,
+      "source_prompt_raw": "a woman sitting at a bar with a glass of wine, with a [lamp] on the table",
+      "target_prompt_raw": "a woman sitting at a bar with a glass of wine, with a [cake] on the table",
+      "instruction": "Change the lamp to cake on the table",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "lamp"
+          ],
+          "target": [
+            "cake"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "lamp"
+      ],
+      "target_annotated_spans": [
+        "cake"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Table object replacement; changed object nouns suffice.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "113000000006",
+      "seed": 2,
+      "image_name": "113000000006",
+      "target_code": "edit",
+      "image_path": "data/113000000006/source.png",
+      "source_prompt": "a woman's face is framed in a large photo on a wall",
+      "target_prompt": "a woman's face is framed in a large painting on a wall",
+      "source_mask_tokens": [
+        "photo"
+      ],
+      "target_mask_tokens": [
+        "painting"
+      ],
+      "unchanged_tokens": [],
+      "category": "1",
+      "record_index": 6,
+      "target_index": 0,
+      "source_prompt_raw": "a woman's face is framed in a large [photo] on a wall",
+      "target_prompt_raw": "a woman's face is framed in a large [painting] on a wall",
+      "instruction": "Change the photo on the wall to a painting",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "photo"
+          ],
+          "target": [
+            "painting"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "photo"
+      ],
+      "target_annotated_spans": [
+        "painting"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Framed artwork replacement; changed object nouns suffice.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "123000000007",
+      "seed": 2,
+      "image_name": "123000000007",
+      "target_code": "edit",
+      "image_path": "data/123000000007/source.png",
+      "source_prompt": "a living room with white sofa and a brick wall",
+      "target_prompt": "a living room with white bed and a brick wall",
+      "source_mask_tokens": [
+        "sofa"
+      ],
+      "target_mask_tokens": [
+        "bed"
+      ],
+      "unchanged_tokens": [],
+      "category": "1",
+      "record_index": 7,
+      "target_index": 0,
+      "source_prompt_raw": "a living room with white [sofa] and a brick wall",
+      "target_prompt_raw": "a living room with white [bed] and a brick wall",
+      "instruction": "Change the sofa to a bed",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "sofa"
+          ],
+          "target": [
+            "bed"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "sofa"
+      ],
+      "target_annotated_spans": [
+        "bed"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Furniture replacement; changed object nouns suffice.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "112000000009",
+      "seed": 2,
+      "image_name": "112000000009",
+      "target_code": "edit",
+      "image_path": "data/112000000009/source.png",
+      "source_prompt": "an angel with wings and a golden light",
+      "target_prompt": "an demon with wings and a golden light",
+      "source_mask_tokens": [
+        "angel"
+      ],
+      "target_mask_tokens": [
+        "demon"
+      ],
+      "unchanged_tokens": [],
+      "category": "1",
+      "record_index": 8,
+      "target_index": 0,
+      "source_prompt_raw": "an [angel] with wings and a golden light",
+      "target_prompt_raw": "an [demon] with wings and a golden light",
+      "instruction": "Change the angel to a demon",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "angel"
+          ],
+          "target": [
+            "demon"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "angel"
+      ],
+      "target_annotated_spans": [
+        "demon"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Character replacement; changed character nouns suffice.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "114000000004",
+      "seed": 2,
+      "image_name": "114000000004",
+      "target_code": "edit",
+      "image_path": "data/114000000004/source.png",
+      "source_prompt": "a blue pyramid with a reflection of mountains in the water",
+      "target_prompt": "a blue pyramid with a reflection of ship in the water",
+      "source_mask_tokens": [
+        "mountains",
+        "reflection"
+      ],
+      "target_mask_tokens": [
+        "ship",
+        "reflection"
+      ],
+      "unchanged_tokens": [],
+      "category": "1",
+      "record_index": 9,
+      "target_index": 0,
+      "source_prompt_raw": "a blue pyramid with a reflection of [mountains] in the water",
+      "target_prompt_raw": "a blue pyramid with a reflection of [ship] in the water",
+      "instruction": "Replace the mountain reflection with a ship reflection in the water",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "mountains"
+          ],
+          "target": [
+            "ship"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "mountains"
+      ],
+      "target_annotated_spans": [
+        "ship"
+      ],
+      "object_context": [
+        "reflection"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Replacement concerns the reflection; retain reflection context.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "213000000005",
+      "seed": 2,
+      "image_name": "213000000005",
+      "target_code": "edit",
+      "image_path": "data/213000000005/source.png",
+      "source_prompt": "a large brown teddy bear sitting on a white couch",
+      "target_prompt": "a large brown teddy bear and a girl sitting on a white couch",
+      "source_mask_tokens": [
+        "couch"
+      ],
+      "target_mask_tokens": [
+        "girl",
+        "couch"
+      ],
+      "unchanged_tokens": [],
+      "category": "2",
+      "record_index": 10,
+      "target_index": 0,
+      "source_prompt_raw": "a large brown teddy bear sitting on a white couch",
+      "target_prompt_raw": "a large brown teddy bear [and a girl] sitting on a white couch",
+      "instruction": "Add a girl to the couch with the teddy bear",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "and",
+            "a",
+            "girl"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "and a girl"
+      ],
+      "object_context": [
+        "couch"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Girl insertion; couch is the shared support surface on both sides.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "211000000000",
+      "seed": 2,
+      "image_name": "211000000000",
+      "target_code": "edit",
+      "image_path": "data/211000000000/source.png",
+      "source_prompt": "a dog wearing space suit",
+      "target_prompt": "a dog wearing space suit with flowers in mouth",
+      "source_mask_tokens": [
+        "dog"
+      ],
+      "target_mask_tokens": [
+        "flowers",
+        "mouth",
+        "dog"
+      ],
+      "unchanged_tokens": [],
+      "category": "2",
+      "record_index": 11,
+      "target_index": 0,
+      "source_prompt_raw": "a dog wearing space suit",
+      "target_prompt_raw": "a dog wearing space suit [with flowers in mouth]",
+      "instruction": "Add flowers to the dog's mouth",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "with",
+            "flowers",
+            "in",
+            "mouth"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "with flowers in mouth"
+      ],
+      "object_context": [
+        "dog"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Flowers at mouth insertion; dog is the shared affected animal; mouth is absent from source.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "224000000002",
+      "seed": 2,
+      "image_name": "224000000002",
+      "target_code": "edit",
+      "image_path": "data/224000000002/source.png",
+      "source_prompt": "a dog lying on the grass",
+      "target_prompt": "a dog lying on the grass with flowers",
+      "source_mask_tokens": [
+        "grass"
+      ],
+      "target_mask_tokens": [
+        "flowers",
+        "grass"
+      ],
+      "unchanged_tokens": [],
+      "category": "2",
+      "record_index": 12,
+      "target_index": 0,
+      "source_prompt_raw": "a dog lying on the grass",
+      "target_prompt_raw": "a dog lying on the grass [with flowers]",
+      "instruction": "add flowers on the grass",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "with",
+            "flowers"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "with flowers"
+      ],
+      "object_context": [
+        "grass"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Flowers insertion following grass; grass is the shared location noun.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "221000000003",
+      "seed": 2,
+      "image_name": "221000000003",
+      "target_code": "edit",
+      "image_path": "data/221000000003/source.png",
+      "source_prompt": "a small brown bird sitting on top of a pine tree",
+      "target_prompt": "two small brown bird sitting on top of a pine tree",
+      "source_mask_tokens": [
+        "bird"
+      ],
+      "target_mask_tokens": [
+        "two",
+        "bird"
+      ],
+      "unchanged_tokens": [],
+      "category": "2",
+      "record_index": 13,
+      "target_index": 0,
+      "source_prompt_raw": "[a] small brown bird sitting on top of a pine tree",
+      "target_prompt_raw": "[two] small brown bird sitting on top of a pine tree",
+      "instruction": "Add another small brown bird",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "a"
+          ],
+          "target": [
+            "two"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "a"
+      ],
+      "target_annotated_spans": [
+        "two"
+      ],
+      "object_context": [
+        "bird"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Count change from article a to two; exclude article a and anchor both sides to bird.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "213000000008",
+      "seed": 2,
+      "image_name": "213000000008",
+      "target_code": "edit",
+      "image_path": "data/213000000008/source.png",
+      "source_prompt": "a table with flowers on it",
+      "target_prompt": "a table with flowers and hat on it",
+      "source_mask_tokens": [
+        "table"
+      ],
+      "target_mask_tokens": [
+        "hat",
+        "table"
+      ],
+      "unchanged_tokens": [],
+      "category": "2",
+      "record_index": 14,
+      "target_index": 0,
+      "source_prompt_raw": "a table with flowers on it",
+      "target_prompt_raw": "a table with flowers [and hat] on it",
+      "instruction": "Add hat to the table with flowers.",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "and",
+            "hat"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "and hat"
+      ],
+      "object_context": [
+        "table"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Hat insertion; table is the shared support surface.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "314000000006",
+      "seed": 2,
+      "image_name": "314000000006",
+      "target_code": "edit",
+      "image_path": "data/314000000006/source.png",
+      "source_prompt": "a lone wolf howling at the moon in the night sky",
+      "target_prompt": "a lone wolf howling in the night sky",
+      "source_mask_tokens": [
+        "moon",
+        "sky"
+      ],
+      "target_mask_tokens": [
+        "sky"
+      ],
+      "unchanged_tokens": [],
+      "category": "3",
+      "record_index": 15,
+      "target_index": 0,
+      "source_prompt_raw": "a lone wolf howling [at the moon] in the night sky",
+      "target_prompt_raw": "a lone wolf howling in the night sky",
+      "instruction": "Remove the moon",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "delete",
+          "source": [
+            "at",
+            "the",
+            "moon"
+          ],
+          "target": []
+        }
+      ],
+      "source_annotated_spans": [
+        "at the moon"
+      ],
+      "target_annotated_spans": [],
+      "object_context": [
+        "sky"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Moon deletion; sky is the common scene region retained in target.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "322000000002",
+      "seed": 2,
+      "image_name": "322000000002",
+      "target_code": "edit",
+      "image_path": "data/322000000002/source.png",
+      "source_prompt": "a woman in a purple dress sitting on a swing holding a coconut",
+      "target_prompt": "a woman in a purple dress sitting on a swing",
+      "source_mask_tokens": [
+        "holding",
+        "coconut",
+        "woman"
+      ],
+      "target_mask_tokens": [
+        "woman"
+      ],
+      "unchanged_tokens": [],
+      "category": "3",
+      "record_index": 16,
+      "target_index": 0,
+      "source_prompt_raw": "a woman in a purple dress sitting on a swing [holding a coconut]",
+      "target_prompt_raw": "a woman in a purple dress sitting on a swing",
+      "instruction": "Remove the coconut from the woman's hand",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "delete",
+          "source": [
+            "holding",
+            "a",
+            "coconut"
+          ],
+          "target": []
+        }
+      ],
+      "source_annotated_spans": [
+        "holding a coconut"
+      ],
+      "target_annotated_spans": [],
+      "object_context": [
+        "woman"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Held coconut deletion; woman is the shared affected person.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "311000000002",
+      "seed": 2,
+      "image_name": "311000000002",
+      "target_code": "edit",
+      "image_path": "data/311000000002/source.png",
+      "source_prompt": "a lion in a suit sitting at a table with a laptop",
+      "target_prompt": "a lion in a suit sitting at a table",
+      "source_mask_tokens": [
+        "laptop",
+        "table"
+      ],
+      "target_mask_tokens": [
+        "table"
+      ],
+      "unchanged_tokens": [],
+      "category": "3",
+      "record_index": 17,
+      "target_index": 0,
+      "source_prompt_raw": "a lion in a suit sitting at a table [with a laptop]",
+      "target_prompt_raw": "a lion in a suit sitting at a table",
+      "instruction": "Remove the laptop from the table",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "delete",
+          "source": [
+            "with",
+            "a",
+            "laptop"
+          ],
+          "target": []
+        }
+      ],
+      "source_annotated_spans": [
+        "with a laptop"
+      ],
+      "target_annotated_spans": [],
+      "object_context": [
+        "table"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Laptop deletion; table is the common support surface.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "324000000008",
+      "seed": 2,
+      "image_name": "324000000008",
+      "target_code": "edit",
+      "image_path": "data/324000000008/source.png",
+      "source_prompt": "two boats are docked on the shore of a lake",
+      "target_prompt": "a lake",
+      "source_mask_tokens": [
+        "two",
+        "boats",
+        "docked",
+        "shore",
+        "lake"
+      ],
+      "target_mask_tokens": [
+        "lake"
+      ],
+      "unchanged_tokens": [],
+      "category": "3",
+      "record_index": 18,
+      "target_index": 0,
+      "source_prompt_raw": "[two boats are docked on the shore of] a lake",
+      "target_prompt_raw": "a lake",
+      "instruction": "Remove the boats",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "delete",
+          "source": [
+            "two",
+            "boats",
+            "are",
+            "docked",
+            "on",
+            "the",
+            "shore",
+            "of"
+          ],
+          "target": []
+        }
+      ],
+      "source_annotated_spans": [
+        "two boats are docked on the shore of"
+      ],
+      "target_annotated_spans": [],
+      "object_context": [
+        "lake"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Boats and shore clause deletion; lake is the sole shared scene noun.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "322000000004",
+      "seed": 2,
+      "image_name": "322000000004",
+      "target_code": "edit",
+      "image_path": "data/322000000004/source.png",
+      "source_prompt": "a woman with glasses sitting on a stone wall",
+      "target_prompt": "a woman sitting on a stone wall",
+      "source_mask_tokens": [
+        "glasses",
+        "woman"
+      ],
+      "target_mask_tokens": [
+        "woman"
+      ],
+      "unchanged_tokens": [],
+      "category": "3",
+      "record_index": 19,
+      "target_index": 0,
+      "source_prompt_raw": "a woman [with glasses] sitting on a stone wall",
+      "target_prompt_raw": "a woman sitting on a stone wall",
+      "instruction": "Remove the glasses from the woman",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "delete",
+          "source": [
+            "with",
+            "glasses"
+          ],
+          "target": []
+        }
+      ],
+      "source_annotated_spans": [
+        "with glasses"
+      ],
+      "target_annotated_spans": [],
+      "object_context": [
+        "woman"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Glasses deletion; woman is the shared affected person.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "422000000001",
+      "seed": 2,
+      "image_name": "422000000001",
+      "target_code": "edit",
+      "image_path": "data/422000000001/source.png",
+      "source_prompt": "a woman with long curly hair",
+      "target_prompt": "a woman with short curly hair",
+      "source_mask_tokens": [
+        "long",
+        "hair"
+      ],
+      "target_mask_tokens": [
+        "short",
+        "hair"
+      ],
+      "unchanged_tokens": [],
+      "category": "4",
+      "record_index": 20,
+      "target_index": 0,
+      "source_prompt_raw": "a woman with [long curly hair]",
+      "target_prompt_raw": "a woman with [short curly hair]",
+      "instruction": "Change the woman's hair from long to short",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "long"
+          ],
+          "target": [
+            "short"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "long curly hair"
+      ],
+      "target_annotated_spans": [
+        "short curly hair"
+      ],
+      "object_context": [
+        "hair"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Hair length change; curly is unchanged and omitted.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "412000000004",
+      "seed": 2,
+      "image_name": "412000000004",
+      "target_code": "edit",
+      "image_path": "data/412000000004/source.png",
+      "source_prompt": "a detailed oil painting of a calm beautiful woman with stars in her hair",
+      "target_prompt": "a detailed oil painting of a laughing beautiful woman with stars in her hair",
+      "source_mask_tokens": [
+        "calm",
+        "woman"
+      ],
+      "target_mask_tokens": [
+        "laughing",
+        "woman"
+      ],
+      "unchanged_tokens": [],
+      "category": "4",
+      "record_index": 21,
+      "target_index": 0,
+      "source_prompt_raw": "a detailed oil painting of a [calm] beautiful woman with stars in her hair",
+      "target_prompt_raw": "a detailed oil painting of a [laughing] beautiful woman with stars in her hair",
+      "instruction": "Change the woman from calm to laughing",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "calm"
+          ],
+          "target": [
+            "laughing"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "calm"
+      ],
+      "target_annotated_spans": [
+        "laughing"
+      ],
+      "object_context": [
+        "woman"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Expression/action change; woman anchors the attribute.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "413000000002",
+      "seed": 2,
+      "image_name": "413000000002",
+      "target_code": "edit",
+      "image_path": "data/413000000002/source.png",
+      "source_prompt": "couple in a blanket on the couch with a burning fire",
+      "target_prompt": "couple in a blanket on the couch with a extinguished fire",
+      "source_mask_tokens": [
+        "burning",
+        "fire"
+      ],
+      "target_mask_tokens": [
+        "extinguished",
+        "fire"
+      ],
+      "unchanged_tokens": [],
+      "category": "4",
+      "record_index": 22,
+      "target_index": 0,
+      "source_prompt_raw": "couple in a blanket on the couch with a [burning fire]",
+      "target_prompt_raw": "couple in a blanket on the couch with a [extinguished fire]",
+      "instruction": "Extinguish the fire to the scene",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "burning"
+          ],
+          "target": [
+            "extinguished"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "burning fire"
+      ],
+      "target_annotated_spans": [
+        "extinguished fire"
+      ],
+      "object_context": [
+        "fire"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Fire state change; fire anchors the attribute.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "423000000001",
+      "seed": 2,
+      "image_name": "423000000001",
+      "target_code": "edit",
+      "image_path": "data/423000000001/source.png",
+      "source_prompt": "a person holding a mug of hot chocolate and reading a book",
+      "target_prompt": "a person holding a glass of hot chocolate and reading a book",
+      "source_mask_tokens": [
+        "mug"
+      ],
+      "target_mask_tokens": [
+        "glass"
+      ],
+      "unchanged_tokens": [],
+      "category": "4",
+      "record_index": 23,
+      "target_index": 0,
+      "source_prompt_raw": "a person holding a [mug] of hot chocolate and reading a book",
+      "target_prompt_raw": "a person holding a [glass] of hot chocolate and reading a book",
+      "instruction": "Change the mug to a glass",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "mug"
+          ],
+          "target": [
+            "glass"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "mug"
+      ],
+      "target_annotated_spans": [
+        "glass"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Vessel replacement; changed object nouns suffice.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "524000000004",
+      "seed": 2,
+      "image_name": "524000000004",
+      "target_code": "edit",
+      "image_path": "data/524000000004/source.png",
+      "source_prompt": "easter bag with easter eggs and flowers",
+      "target_prompt": "easter bag upside down with easter eggs and flowers",
+      "source_mask_tokens": [
+        "bag"
+      ],
+      "target_mask_tokens": [
+        "upside",
+        "down",
+        "bag"
+      ],
+      "unchanged_tokens": [],
+      "category": "5",
+      "record_index": 25,
+      "target_index": 0,
+      "source_prompt_raw": "easter bag with easter eggs and flowers",
+      "target_prompt_raw": "easter bag [upside down] with easter eggs and flowers",
+      "instruction": "Turn the easter bag upside down",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "upside",
+            "down"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "upside down"
+      ],
+      "object_context": [
+        "bag"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Orientation insertion; bag is the affected common object.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "511000000000",
+      "seed": 2,
+      "image_name": "511000000000",
+      "target_code": "edit",
+      "image_path": "data/511000000000/source.png",
+      "source_prompt": "a cartoon dog laying down on the ground",
+      "target_prompt": "a cartoon dog jumping up from the ground",
+      "source_mask_tokens": [
+        "laying",
+        "down",
+        "dog"
+      ],
+      "target_mask_tokens": [
+        "jumping",
+        "up",
+        "dog"
+      ],
+      "unchanged_tokens": [],
+      "category": "5",
+      "record_index": 27,
+      "target_index": 0,
+      "source_prompt_raw": "a cartoon dog [laying down on] the ground",
+      "target_prompt_raw": "a cartoon dog [jumping up from] the ground",
+      "instruction": "Change the cartoon dog's posture from laying down to jumping up",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "laying",
+            "down",
+            "on"
+          ],
+          "target": [
+            "jumping",
+            "up",
+            "from"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "laying down on"
+      ],
+      "target_annotated_spans": [
+        "jumping up from"
+      ],
+      "object_context": [
+        "dog"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Posture/action replacement; remove prepositions and retain dog context.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "523000000003",
+      "seed": 2,
+      "image_name": "523000000003",
+      "target_code": "edit",
+      "image_path": "data/523000000003/source.png",
+      "source_prompt": "a square wooden crate filled with radishes and greens",
+      "target_prompt": "a round wooden crate filled with radishes and greens",
+      "source_mask_tokens": [
+        "square",
+        "crate"
+      ],
+      "target_mask_tokens": [
+        "round",
+        "crate"
+      ],
+      "unchanged_tokens": [],
+      "category": "5",
+      "record_index": 28,
+      "target_index": 0,
+      "source_prompt_raw": "a [square] wooden crate filled with radishes and greens",
+      "target_prompt_raw": "a [round] wooden crate filled with radishes and greens",
+      "instruction": "change the wooden crate shape to round",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "square"
+          ],
+          "target": [
+            "round"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "square"
+      ],
+      "target_annotated_spans": [
+        "round"
+      ],
+      "object_context": [
+        "crate"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Crate shape change; crate anchors the attribute.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "513000000001",
+      "seed": 2,
+      "image_name": "513000000001",
+      "target_code": "edit",
+      "image_path": "data/513000000001/source.png",
+      "source_prompt": "a glass jar with a lid closed",
+      "target_prompt": "a glass jar with a lid opened",
+      "source_mask_tokens": [
+        "closed",
+        "lid"
+      ],
+      "target_mask_tokens": [
+        "opened",
+        "lid"
+      ],
+      "unchanged_tokens": [],
+      "category": "5",
+      "record_index": 29,
+      "target_index": 0,
+      "source_prompt_raw": "a glass jar with a lid [closed]",
+      "target_prompt_raw": "a glass jar with a lid [opened]",
+      "instruction": "Change the lid from being closed to being opened",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "closed"
+          ],
+          "target": [
+            "opened"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "closed"
+      ],
+      "target_annotated_spans": [
+        "opened"
+      ],
+      "object_context": [
+        "lid"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Lid state change; use lid rather than the surrounding jar.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "611000000001",
+      "seed": 2,
+      "image_name": "611000000001",
+      "target_code": "edit",
+      "image_path": "data/611000000001/source.png",
+      "source_prompt": "otter in the water with pink hearts",
+      "target_prompt": "otter in the water with green hearts",
+      "source_mask_tokens": [
+        "pink",
+        "hearts"
+      ],
+      "target_mask_tokens": [
+        "green",
+        "hearts"
+      ],
+      "unchanged_tokens": [],
+      "category": "6",
+      "record_index": 30,
+      "target_index": 0,
+      "source_prompt_raw": "otter in the water with [pink] hearts",
+      "target_prompt_raw": "otter in the water with [green] hearts",
+      "instruction": "Change the raven from pink to green",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "pink"
+          ],
+          "target": [
+            "green"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "pink"
+      ],
+      "target_annotated_spans": [
+        "green"
+      ],
+      "object_context": [
+        "hearts"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Prompt pair changes hearts; instruction mentions raven in error. Follow prompts.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "624000000003",
+      "seed": 2,
+      "image_name": "624000000003",
+      "target_code": "edit",
+      "image_path": "data/624000000003/source.png",
+      "source_prompt": "a brwon cabin in the snow near a lake",
+      "target_prompt": "a golden cabin in the snow near a lake",
+      "source_mask_tokens": [
+        "brwon",
+        "cabin"
+      ],
+      "target_mask_tokens": [
+        "golden",
+        "cabin"
+      ],
+      "unchanged_tokens": [],
+      "category": "6",
+      "record_index": 31,
+      "target_index": 0,
+      "source_prompt_raw": "a [brwon] cabin in the snow near a lake",
+      "target_prompt_raw": "a [golden] cabin in the snow near a lake",
+      "instruction": "Change the cabin's color to golden",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "brwon"
+          ],
+          "target": [
+            "golden"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "brwon"
+      ],
+      "target_annotated_spans": [
+        "golden"
+      ],
+      "object_context": [
+        "cabin"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Cabin color change; preserve supplied brwon spelling.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "622000000003",
+      "seed": 2,
+      "image_name": "622000000003",
+      "target_code": "edit",
+      "image_path": "data/622000000003/source.png",
+      "source_prompt": "a beautiful woman wearing a black veil",
+      "target_prompt": "a beautiful woman wearing a golden veil",
+      "source_mask_tokens": [
+        "black",
+        "veil"
+      ],
+      "target_mask_tokens": [
+        "golden",
+        "veil"
+      ],
+      "unchanged_tokens": [],
+      "category": "6",
+      "record_index": 32,
+      "target_index": 0,
+      "source_prompt_raw": "a beautiful woman wearing a [black] veil",
+      "target_prompt_raw": "a beautiful woman wearing a [golden] veil",
+      "instruction": "Make the veil golden",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "black"
+          ],
+          "target": [
+            "golden"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "black"
+      ],
+      "target_annotated_spans": [
+        "golden"
+      ],
+      "object_context": [
+        "veil"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Veil color change; veil anchors the attribute.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "623000000002",
+      "seed": 2,
+      "image_name": "623000000002",
+      "target_code": "edit",
+      "image_path": "data/623000000002/source.png",
+      "source_prompt": "a red lipstick is being splashed with red powder",
+      "target_prompt": "a green lipstick is being splashed with red powder",
+      "source_mask_tokens": [
+        "red",
+        "lipstick"
+      ],
+      "target_mask_tokens": [
+        "green",
+        "lipstick"
+      ],
+      "unchanged_tokens": [],
+      "category": "6",
+      "record_index": 33,
+      "target_index": 0,
+      "source_prompt_raw": "a [red] lipstick is being splashed with red powder",
+      "target_prompt_raw": "a [green] lipstick is being splashed with red powder",
+      "instruction": "Change the lipstick from red to green",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "red"
+          ],
+          "target": [
+            "green"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "red"
+      ],
+      "target_annotated_spans": [
+        "green"
+      ],
+      "object_context": [
+        "lipstick"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Lipstick color change; source red occurs twice so upstream token matching can also select powder red. Record ambiguity; retain lexical tokens.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "622000000002",
+      "seed": 2,
+      "image_name": "622000000002",
+      "target_code": "edit",
+      "image_path": "data/622000000002/source.png",
+      "source_prompt": "a man in a white shirt talking on a cell phone",
+      "target_prompt": "a man in a blue shirt talking on a cell phone",
+      "source_mask_tokens": [
+        "white",
+        "shirt"
+      ],
+      "target_mask_tokens": [
+        "blue",
+        "shirt"
+      ],
+      "unchanged_tokens": [],
+      "category": "6",
+      "record_index": 34,
+      "target_index": 0,
+      "source_prompt_raw": "a man in a [white] shirt talking on a cell phone",
+      "target_prompt_raw": "a man in a [blue] shirt talking on a cell phone",
+      "instruction": "Change the color of the shirt from white to blue",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "white"
+          ],
+          "target": [
+            "blue"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "white"
+      ],
+      "target_annotated_spans": [
+        "blue"
+      ],
+      "object_context": [
+        "shirt"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Shirt color change; shirt anchors the attribute.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "714000000000",
+      "seed": 2,
+      "image_name": "714000000000",
+      "target_code": "edit",
+      "image_path": "data/714000000000/source.png",
+      "source_prompt": "a close up of a red leaf on a plant",
+      "target_prompt": "a close up of a red leaf made of jewels on a plant",
+      "source_mask_tokens": [
+        "leaf"
+      ],
+      "target_mask_tokens": [
+        "jewels",
+        "leaf"
+      ],
+      "unchanged_tokens": [],
+      "category": "7",
+      "record_index": 35,
+      "target_index": 0,
+      "source_prompt_raw": "a close up of a red leaf on a plant",
+      "target_prompt_raw": "a close up of a red leaf [made of jewels] on a plant",
+      "instruction": "Make the red leaf made of jewels",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "made",
+            "of",
+            "jewels"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "made of jewels"
+      ],
+      "object_context": [
+        "leaf"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Material insertion; leaf is the shared affected object.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "712000000004",
+      "seed": 2,
+      "image_name": "712000000004",
+      "target_code": "edit",
+      "image_path": "data/712000000004/source.png",
+      "source_prompt": "a cartoon couple standing on the beach",
+      "target_prompt": "a cartoon garage kits couple standing on the beach",
+      "source_mask_tokens": [
+        "couple"
+      ],
+      "target_mask_tokens": [
+        "garage",
+        "kits",
+        "couple"
+      ],
+      "unchanged_tokens": [],
+      "category": "7",
+      "record_index": 36,
+      "target_index": 0,
+      "source_prompt_raw": "a cartoon couple standing on the beach",
+      "target_prompt_raw": "a cartoon [garage kits] couple standing on the beach",
+      "instruction": "Add a garage kits style to the cartoon couple",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "garage",
+            "kits"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "garage kits"
+      ],
+      "object_context": [
+        "couple"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Figurine-style insertion; couple is the common affected subject.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "713000000001",
+      "seed": 2,
+      "image_name": "713000000001",
+      "target_code": "edit",
+      "image_path": "data/713000000001/source.png",
+      "source_prompt": "illustration of a cup and a lamp on a table by a window",
+      "target_prompt": "illustration of a cup and a crystal lamp on a table by a window",
+      "source_mask_tokens": [
+        "lamp"
+      ],
+      "target_mask_tokens": [
+        "crystal",
+        "lamp"
+      ],
+      "unchanged_tokens": [],
+      "category": "7",
+      "record_index": 37,
+      "target_index": 0,
+      "source_prompt_raw": "illustration of a cup and a lamp on a table by a window",
+      "target_prompt_raw": "illustration of a cup and a [crystal] lamp on a table by a window",
+      "instruction": "Replace the lamp with a crystal lamp",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "crystal"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "crystal"
+      ],
+      "object_context": [
+        "lamp"
+      ],
+      "manual_context_required": true,
+      "selection_note": "Material insertion; lamp is the shared affected object.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "712000000001",
+      "seed": 2,
+      "image_name": "712000000001",
+      "target_code": "edit",
+      "image_path": "data/712000000001/source.png",
+      "source_prompt": "a drawing of a young man with blue eyes",
+      "target_prompt": "a drawing of a young robot with blue eyes",
+      "source_mask_tokens": [
+        "man"
+      ],
+      "target_mask_tokens": [
+        "robot"
+      ],
+      "unchanged_tokens": [],
+      "category": "7",
+      "record_index": 38,
+      "target_index": 0,
+      "source_prompt_raw": "a drawing of a young man with blue eyes",
+      "target_prompt_raw": "a drawing of a young [robot] with blue eyes",
+      "instruction": "Change the man to a robot",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "man"
+          ],
+          "target": [
+            "robot"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "robot"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Character replacement; changed nouns suffice even though source man has no brackets.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "722000000000",
+      "seed": 2,
+      "image_name": "722000000000",
+      "target_code": "edit",
+      "image_path": "data/722000000000/source.png",
+      "source_prompt": "a man wearing a shirt",
+      "target_prompt": "a man wearing a sweater",
+      "source_mask_tokens": [
+        "shirt"
+      ],
+      "target_mask_tokens": [
+        "sweater"
+      ],
+      "unchanged_tokens": [],
+      "category": "7",
+      "record_index": 39,
+      "target_index": 0,
+      "source_prompt_raw": "a man wearing a [shirt]",
+      "target_prompt_raw": "a man wearing a [sweater]",
+      "instruction": "change the shirt to sweater",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "shirt"
+          ],
+          "target": [
+            "sweater"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "shirt"
+      ],
+      "target_annotated_spans": [
+        "sweater"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Garment replacement; changed nouns suffice.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "812000000002",
+      "seed": 2,
+      "image_name": "812000000002",
+      "target_code": "edit",
+      "image_path": "data/812000000002/source.png",
+      "source_prompt": "a cartoon girl in a hat and dress",
+      "target_prompt": "a cartoon girl in a hat and dress standing in front of a beautiful house",
+      "source_mask_tokens": [
+        "girl"
+      ],
+      "target_mask_tokens": [
+        "standing",
+        "front",
+        "beautiful",
+        "house",
+        "girl"
+      ],
+      "unchanged_tokens": [],
+      "category": "8",
+      "record_index": 40,
+      "target_index": 0,
+      "source_prompt_raw": "a cartoon girl in a hat and dress",
+      "target_prompt_raw": "a cartoon girl in a hat and dress [standing in front of a beautiful house]",
+      "instruction": "Add a beautiful house in front of the girl",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "insert",
+          "source": [],
+          "target": [
+            "standing",
+            "in",
+            "front",
+            "of",
+            "a",
+            "beautiful",
+            "house"
+          ]
+        }
+      ],
+      "source_annotated_spans": [],
+      "target_annotated_spans": [
+        "standing in front of a beautiful house"
+      ],
+      "object_context": [
+        "girl"
+      ],
+      "manual_context_required": true,
+      "selection_note": "House/background clause insertion; girl is the shared subject. Target places girl in front of house whereas instruction wording reverses relation; follow target.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "813000000002",
+      "seed": 2,
+      "image_name": "813000000002",
+      "target_code": "edit",
+      "image_path": "data/813000000002/source.png",
+      "source_prompt": "luxury bedroom interior with marble wall",
+      "target_prompt": "luxury bedroom interior with flower wall",
+      "source_mask_tokens": [
+        "marble",
+        "wall"
+      ],
+      "target_mask_tokens": [
+        "flower",
+        "wall"
+      ],
+      "unchanged_tokens": [],
+      "category": "8",
+      "record_index": 41,
+      "target_index": 0,
+      "source_prompt_raw": "luxury bedroom interior [with marble wall]",
+      "target_prompt_raw": "luxury bedroom interior [with flower wall]",
+      "instruction": "Add a flower wall to the luxury bedroom interior",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "marble"
+          ],
+          "target": [
+            "flower"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "with marble wall"
+      ],
+      "target_annotated_spans": [
+        "with flower wall"
+      ],
+      "object_context": [
+        "wall"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Wall material/appearance replacement; wall is common context.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "824000000007",
+      "seed": 2,
+      "image_name": "824000000007",
+      "target_code": "edit",
+      "image_path": "data/824000000007/source.png",
+      "source_prompt": "a man is walking through a rice field",
+      "target_prompt": "a man is walking through a wonder land",
+      "source_mask_tokens": [
+        "rice",
+        "field"
+      ],
+      "target_mask_tokens": [
+        "wonder",
+        "land"
+      ],
+      "unchanged_tokens": [],
+      "category": "8",
+      "record_index": 43,
+      "target_index": 0,
+      "source_prompt_raw": "a man is walking through [a rice field]",
+      "target_prompt_raw": "a man is walking through [a wonder land]",
+      "instruction": "Change the rice field to a wonder land",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "rice",
+            "field"
+          ],
+          "target": [
+            "wonder",
+            "land"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "a rice field"
+      ],
+      "target_annotated_spans": [
+        "a wonder land"
+      ],
+      "object_context": [],
+      "manual_context_required": false,
+      "selection_note": "Scene replacement; use content words from both changed noun phrases.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "811000000004",
+      "seed": 2,
+      "image_name": "811000000004",
+      "target_code": "edit",
+      "image_path": "data/811000000004/source.png",
+      "source_prompt": "the lion head is on a black background",
+      "target_prompt": "the lion head is on a red background",
+      "source_mask_tokens": [
+        "black",
+        "background"
+      ],
+      "target_mask_tokens": [
+        "red",
+        "background"
+      ],
+      "unchanged_tokens": [],
+      "category": "8",
+      "record_index": 44,
+      "target_index": 0,
+      "source_prompt_raw": "the lion head is on a [black] background",
+      "target_prompt_raw": "the lion head is on a [red] background",
+      "instruction": "Change the background color to red",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "black"
+          ],
+          "target": [
+            "red"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "black"
+      ],
+      "target_annotated_spans": [
+        "red"
+      ],
+      "object_context": [
+        "background"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Background color change; background anchors the attribute.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    },
+    {
+      "case": "911000000007",
+      "seed": 2,
+      "image_name": "911000000007",
+      "target_code": "edit",
+      "image_path": "data/911000000007/source.png",
+      "source_prompt": "a cartoon giraffe sitting down on a white background",
+      "target_prompt": "a watercolor giraffe sitting down on a white background",
+      "source_mask_tokens": [
+        "cartoon",
+        "giraffe"
+      ],
+      "target_mask_tokens": [
+        "watercolor",
+        "giraffe"
+      ],
+      "unchanged_tokens": [],
+      "category": "9",
+      "record_index": 49,
+      "target_index": 0,
+      "source_prompt_raw": "a [cartoon] giraffe sitting down on a white background",
+      "target_prompt_raw": "a [watercolor] giraffe sitting down on a white background",
+      "instruction": "Change the cartoon to watercolor",
+      "mask_mode": "union",
+      "changed_spans": [
+        {
+          "operation": "replace",
+          "source": [
+            "cartoon"
+          ],
+          "target": [
+            "watercolor"
+          ]
+        }
+      ],
+      "source_annotated_spans": [
+        "cartoon"
+      ],
+      "target_annotated_spans": [
+        "watercolor"
+      ],
+      "object_context": [
+        "giraffe"
+      ],
+      "manual_context_required": false,
+      "selection_note": "Global style replacement; giraffe is the common subject noun.",
+      "manually_reviewed": true,
+      "review_basis": "full_prompt_pair_only"
+    }
+  ]
+}

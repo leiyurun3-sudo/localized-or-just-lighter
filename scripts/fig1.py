@@ -71,7 +71,7 @@ def quantitative(ax, c, y, diagnostic):
         label(ax,x+(4.3 if spatial else -4.3),cy,f"{value:.4f}",
               size=7.1,ha="left" if spatial else "right",bold=native)
     for x, title, contrast in ((138,"Default",default), (183,"At S",c["SS"]-c["US"]),
-                               (228,"At U†" if diagnostic else "At U",c["SU"]-c["UU"])):
+                               (228,"At U (extrap.)" if diagnostic else "At U",c["SU"]-c["UU"])):
         label(ax,x,y+44,title,size=7.3,color=SUB,ha="center")
         label(ax,x,y+53,signed(contrast),size=7.7,bold=True,ha="center")
 
@@ -124,6 +124,6 @@ def render():
         label(ax,134,166,"At U profile",size=7.15)
         ax.plot(182,166,marker="o",ms=3.5,mfc="white",mec=SUB,ls="none",mew=.8)
         label(ax,188,166,"Replayed",size=7.15)
-        label(ax,1,178.5,"†  Spatial at U exceeds the native [0, 1] gate range in (b).",size=7.1)
+        label(ax,1,178.5,"Spatial at U exceeds the native [0, 1] gate range in (b).",size=7.1)
         save_svg(fig, "cross", dpi=450)
         plt.close(fig)

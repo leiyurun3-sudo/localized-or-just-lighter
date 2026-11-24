@@ -24,9 +24,9 @@
 
 \section{Guide to the Evidence}
 \label{sec:evidence-guide}
-\noindent\textbf{Main results.} Table~\ref{tab:paths} traces both paths through the four restoring cells. Four bounded SAM settings retain 21.3\% (feature-map LPIPS) and 26.7\% (masked-input LPIPS) of the default gap (Section~\ref{sec:v21-bounded}, Table~\ref{tab:v21-bounded}). Tables~\ref{tab:sam-core} and~\ref{tab:v19-selectivity-points} cover SAM constants and per-pixel change.
+\noindent\textbf{Main results.} Table~\ref{tab:paths} traces both paths through the four restoring cells. At seed 0, four bounded SAM settings retain 21.3\% (feature-map LPIPS) and 26.7\% (masked-input LPIPS) of the default gap (Section~\ref{sec:v21-bounded}, Table~\ref{tab:v21-bounded}). Tables~\ref{tab:sam-core} and~\ref{tab:v19-selectivity-points} cover SAM constants and per-pixel change.
 
-\noindent\textbf{Sensitivity.} Sections~\ref{sec:v19_metric} and~\ref{sec:v20-mrc} vary the scorer and the matching coordinate, interpolation and support. Tables~\ref{tab:r91-permutation} and~\ref{tab:r91-floor} test map arrangement and the protection floor. Section~\ref{sec:v21-checks} examines attained response, fixed-state gain fits, scan spacing, map structure and cross-source transfer.
+\noindent\textbf{Sensitivity.} Sections~\ref{sec:v19_metric} and~\ref{sec:v20-mrc} vary the scorer and the matching coordinate, interpolation and support. Tables~\ref{tab:r91-permutation} and~\ref{tab:r91-floor} test map arrangement and the protection floor. Section~\ref{sec:v21-checks} examines attained response, gain fits, scan spacing, map structure and transfer. Section~\ref{sec:sam-seed-repeat} repeats the bounded SAM comparisons at seed 1.
 
 \noindent\textbf{DirectEdit and failure cases.} Section~\ref{sec:external} compares both local/global profile origins. Table~\ref{tab:v19-selectivity-category} locates the four negative five-setting SAM contrasts. Figures~\ref{fig:sam-cases1} and~\ref{fig:sam-cases2} show incomplete edits and subject or viewpoint changes.
 
@@ -57,6 +57,9 @@ SAM constants and crossed projections &
 SAM/FlowEdit curves, selectivity and exceptions &
 \path{H/sam_scan_scores.csv}, \path{cpu/selectivity/operating_sources.csv}, \path{M/observations.csv} and \path{M/reproduce_mrc.py}. The atlas shows all configurations. &
 600/600 added outputs; 150 core defaults also enter the curves. 42 backgrounds. SAM overlap covers 41 sources with five settings and 40 at scales up to one.\\
+SAM repeat at seed 1 (bounded grid) &
+\path{analysis/sam_seed_repeat/seed1.csv}, \path{analysis/sam_seed_repeat/seed1_mrc_sources.csv} and \path{analysis/sam_seed_repeat/seed_comparison.json}. &
+420/420 new outputs, ten configurations per source on the same 42 backgrounds.\\
 DirectEdit blending &
 \path{H/DirectEdit_scores.csv} (both LPIPS scorers), \path{evidence/directedit_per_output.csv} (regional MAE and directional CLIP). &
 100/100; five configurations on 20 sources from the restoring cohort.\\
@@ -79,7 +82,6 @@ ZIP directories are C = \path{source_correction_and_blending/}, H = \path{cpu/ha
 \label{fig:v19-flower}\end{figure}
 
 \input{v19_audit}
-\input{v19_human}
 \input{v19_cases}
 \input{sam_appendix}
 \subsection{Eight cases from the complete visual atlas}
@@ -96,14 +98,16 @@ Figures~\ref{fig:sam-cases1} and~\ref{fig:sam-cases2} show eight sources chosen 
 \label{fig:sam-cases2}
 \end{figure*}
 
-\section{Post Hoc Checks on Recorded Trajectories and Outputs}
+\section{Sensitivity Analyses and a Second SAM Seed}
 \label{sec:v21-checks}
 \input{v21_operating}
 \input{v21_constants}
 \input{v21_bounded}
+\input{v22_overlap}
 \input{v21_grid}
 \input{v21_map}
 \input{v21_transfer}
+\input{sam_seed_repeat}
 
 \section{Source Correction: Crossed Profiles and Cohort}
 \subsection{Selection before generation}
@@ -240,11 +244,11 @@ Table~\ref{tab:r88-paired-all30} supplies every contrast. Seven of 30 tests pass
 \input{tables/r88_paired_all30}
 
 \subsection{Distribution across sources}
-For REQ-U minus U25 preservation LPIPS, 31 sources improve, nine worsen, and none tie. The median difference is $-0.006038$. Improvements of at least 0.005, 0.010, and 0.020 occur in 22, 14, and seven sources, respectively. These cutoffs describe numerical LPIPS differences; their perceptual interpretation would require independent observer calibration. REQ improves over GLB-R on 33/40 sources, over SHUF-R on 25/40, and over REV-R on 37/40. Table~\ref{tab:r88-source-wins} reports the planned thresholds for both anchor comparisons across all metrics. Thresholds use raw score units and have no human perceptual calibration.
+For REQ-U minus U25 preservation LPIPS, 31 sources improve, nine worsen, and none tie. The median difference is $-0.006038$. Improvements of at least 0.005, 0.010, and 0.020 occur in 22, 14, and seven sources, respectively. REQ improves over GLB-R on 33/40 sources, over SHUF-R on 25/40, and over REV-R on 37/40. Table~\ref{tab:r88-source-wins} reports the planned thresholds for both anchor comparisons across all metrics. Thresholds use raw score units.
 
 \input{tables/r88_source_wins}
 
-REQ-U minus U25 target CLIP is $-0.00179$, interval $[-0.00401,0.00037]$, and directional CLIP is $-0.00658$, interval $[-0.01438,0.00048]$. Both point estimates indicate lower text response, with intervals spanning zero. The primary estimand is the preservation-metric effect of allocation at a matched applied profile; instruction success and perceptual preference require their corresponding evaluations.
+REQ-U minus U25 target CLIP is $-0.00179$, interval $[-0.00401,0.00037]$, and directional CLIP is $-0.00658$, interval $[-0.01438,0.00048]$. Both point estimates indicate lower text response, with intervals spanning zero. The primary comparison measures the effect of allocation on background LPIPS at a matched update profile.
 
 \section{Applied Profiles and Native-Ranking Decomposition}
 \subsection{What matching controls}
@@ -794,13 +798,13 @@ Figure~\ref{fig:map-alignment} displays the four constructions covered by the ar
 \subsection{Native coverage and record identity}
 The primary and scale/map studies (R88/R89) contain 480 and 640 outputs respectively. Of their 1,120 recorded output digests, 160 matched a retained native PNG; 960 have score records only. The seed/map/floor study (R91) contributes 720 scientific outputs, and the scalar study (R92) adds 80, for 1,920 distinct scientific runs on the restoring cohort. The four extra seed-0 checks repeat earlier outputs. Seeds 1, 2 and 3 each cover all 40 sources in each of REQ, GLB\_R, REQ\_U and U25. Thus both fixed-profile contrasts can be rescored on all three added seeds; on the original two seeds only the uniform-profile pair has complete native files.
 
-The six per-output score tables in \path{cpu/harmonized_lpips/} retain SHA-256 identifiers for output, source and mask. Across SAM, restoring and DirectEdit the 1,964 rescored rows have 1,960 distinct output digests. \path{evidence/historical_native_coverage.csv} lists all early output hashes and retrieval flags. \path{evidence/native_counts.csv} gives arm and seed counts; \path{evidence/provenance.json} records archive digests, the SAM evaluator and mask-manifest hashes, CPU versions, LPIPS weight digests and the original-score verification errors.
+The six per-output score tables in \path{cpu/harmonized_lpips/} retain SHA-256 identifiers for output, source and mask. The original archive covers SAM (seed 0), restoring and DirectEdit, with 1,964 rescored rows and 1,960 distinct output digests. The 420 additional SAM outputs at seed 1 have separate score records in \path{analysis/sam_seed_repeat/seed1.csv}. \path{evidence/historical_native_coverage.csv} lists all early output hashes and retrieval flags. \path{evidence/native_counts.csv} gives arm and seed counts; \path{evidence/provenance.json} records archive digests, the SAM evaluator and mask-manifest hashes, CPU versions, LPIPS weight digests and the original-score verification errors.
 
 All six planned automatic outcomes for the primary and scale/map studies are complete. The original R88 evaluation CSV additionally contains native REQ edit-region MAE (\texttt{object\_mae}): all 80 records have status OK, with mean 0.164571 after seed averaging within 40 sources. For the 160 U25/REQ-U entries shared with the later reconstruction, the same field agrees within $10^{-16}$. The corresponding SC minus native REQ edit MAE is $-0.016425$. Table~\ref{tab:r92-results} identifies the recovered source of that cell. Seed/floor/scalar evaluations retain LPIPS, CLIP and regional MAE.
 
 
 \paragraph{What to run.}
-Run \path{reproduce.py} for restoring contrasts, SAM constant-gain recovery, selectivity and four- and five-setting MRC. Use \path{analysis/v20_mrc/reproduce_mrc.py} for both editors' response sensitivities and \path{SAM_scan/reproduce.py} for the original scorer and 6,500 projection-step records. \path{SAM_scan/control/} and \path{SAM_scan/data/protocol.json} supply the operator and settings. The early study archive contains generator and evaluator code, step summaries and maps. The compact ZIP includes source-level measurements and a four-cell profile. Two early metadata files were unavailable (\path{runtime_base/results/evaluation_config.json} and \path{run/identity.json}).
+Run \path{reproduce.py} for restoring contrasts, SAM constant-gain recovery, selectivity and four- and five-setting MRC. For the two-seed SAM comparison, run \texttt{python -B} \path{analysis/sam_seed_repeat/compare_seeds.py} \path{analysis/sam_seed_repeat/seed1.csv} \texttt{-{}-out} \path{seed_comparison.json} from the ZIP root. Use \path{analysis/v20_mrc/reproduce_mrc.py} for both editors' response sensitivities and \path{SAM_scan/reproduce.py} for the original scorer and 6,500 projection-step records. \path{SAM_scan/control/} and \path{SAM_scan/data/protocol.json} supply the operator and settings. The early study archive contains generator and evaluator code, step summaries and maps. The compact ZIP includes source-level measurements and a four-cell profile. Two early metadata files were unavailable (\path{runtime_base/results/evaluation_config.json} and \path{run/identity.json}).
 
 The two-seed native path estimates and the cohort-mean equal-LPIPS interpolation are also retained as archived aggregates. \path{analysis/history/supp_history_recovered.json} identifies their original records, the 80 native REQ trajectories and DirectEdit extrapolations. The three-setting within-source analysis can be reaggregated separately from \path{source_correction_and_blending/three_scale_points.csv}.
 
@@ -816,15 +820,15 @@ The seed/map/floor study and checks use 52,368 incremental evaluations and 7.552
 The exploratory REML fits did not converge. The reported intervals use source resampling.
 
 \paragraph{Archived model ratings.}\label{sec:model-judge80}
-One DeepSeek-V4.1-Flash pass viewed randomized REQ-U/U25 pairs (40 sources, seeds 0/17; $512\times512$ images displayed in an approximately 390-pixel panel). Background preference tied on 80/80 pairs and instruction labels on 78/80, including 20 joint failures and five joint uncertain calls. Both discordant instruction labels favored REQ-U. This pass had no human calibration; the exact API settings and complete transcript were unavailable.
+The archived record identifies the interface model as DeepSeek-V4.1-Flash. In one pass it viewed randomized REQ-U/U25 pairs (40 sources, seeds 0/17; $512\times512$ images displayed in an approximately 390-pixel panel). Background preference tied on 80/80 pairs and instruction labels on 78/80, including 20 joint failures and five joint uncertain calls. Both discordant instruction labels favored REQ-U. The underlying API revision, inference settings and complete transcript were not archived.
 
 \subsection{Scope of the paired evidence}
-The source-correction comparisons condition on 40 sources and a fixed FLUX editor, with additional seeds measured on those same sources. The SAM experiment conditions on 50 sources and one generation seed, with backgrounds measurable on 42. DirectEdit uses 20 of the source-correction sources with its own mask and blending rule. The different operators and regional scoring procedures each define their own contrast.
+The source-correction comparisons condition on 40 sources and a fixed FLUX editor, with additional seeds measured on those same sources. The original SAM sweep used 50 sources at seed 0. The bounded four-scale repeat at seed 1 covers the same 42 sources with measurable background. DirectEdit uses 20 of the source-correction sources with its own mask and blending rule. The different operators and regional scoring procedures each define their own contrast.
 
-The reported outcomes are automatic metrics and annotated examples. No human evaluation was conducted. Alternative regional RMS controls and calibration of a scalar to the realized total on its own rollout remain distinct, unmeasured interventions.
+The reported outcomes are automatic metrics and annotated examples. Alternative regional RMS controls and calibration of a scalar to the realized total on its own rollout remain distinct, unmeasured interventions.
 
 \subsection{AI assistance}
-OpenAI Codex assisted drafting and language revision throughout the main paper and supplement, development of analysis code, and preparation of data figures. The authors are responsible for the analyses and final content.
+OpenAI Codex assisted drafting and language revision throughout the main paper and supplement, development of analysis code, and preparation of data figures. AI agents coded the literature sample in Section 6 of the main paper. The authors are responsible for the analyses and final content.
 
 
 \section{Reading the Comparisons}\label{sec:decision-guide}

@@ -361,7 +361,7 @@ L 82.448041 123.020964
     <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #24292f" x="183" y="153.995984" transform="rotate(-0 183 153.995984)">−0.0172</text>
    </g>
    <g id="text_33">
-    <text style="font-size: 7.3px; font-family: 'Arial'; text-anchor: middle; fill: #4c565d" x="228" y="144.887164" transform="rotate(-0 228 144.887164)">At U†</text>
+    <text style="font-size: 7.3px; font-family: 'Arial'; text-anchor: middle; fill: #4c565d" x="228" y="144.889089" transform="rotate(-0 228 144.889089)">At U (extrap.)</text>
    </g>
    <g id="text_34">
     <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #24292f" x="228" y="153.995984" transform="rotate(-0 228 153.995984)">−0.0654</text>
@@ -379,7 +379,7 @@ L 82.448041 123.020964
     <text style="font-size: 7.15px; font-family: 'Arial'; text-anchor: start; fill: #24292f" x="188" y="167.806492" transform="rotate(-0 188 167.806492)">Replayed</text>
    </g>
    <g id="text_39">
-    <text style="font-size: 7.1px; font-family: 'Arial'; text-anchor: start; fill: #24292f" x="1" y="180.337125" transform="rotate(-0 1 180.337125)">†  Spatial at U exceeds the native [0, 1] gate range in (b).</text>
+    <text style="font-size: 7.1px; font-family: 'Arial'; text-anchor: start; fill: #24292f" x="1" y="180.337333" transform="rotate(-0 1 180.337333)">Spatial at U exceeds the native [0, 1] gate range in (b).</text>
    </g>
    <g id="line2d_8">
     <defs>

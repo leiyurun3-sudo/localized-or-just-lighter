@@ -1,0 +1,3532 @@
+{
+  "jobs": [
+    {
+      "case": "000000000088",
+      "stage": "core",
+      "job_id": "000000000088__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "core",
+      "job_id": "000000000088__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "core",
+      "job_id": "000000000088__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "000000000088__sam_native",
+      "depends_on": [
+        "000000000088__sam_native"
+      ]
+    },
+    {
+      "case": "000000000088",
+      "stage": "core",
+      "job_id": "000000000088__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "000000000088__sam_native",
+      "depends_on": [
+        "000000000088__sam_native"
+      ]
+    },
+    {
+      "case": "000000000003",
+      "stage": "core",
+      "job_id": "000000000003__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "core",
+      "job_id": "000000000003__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "core",
+      "job_id": "000000000003__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "000000000003__sam_native",
+      "depends_on": [
+        "000000000003__sam_native"
+      ]
+    },
+    {
+      "case": "000000000003",
+      "stage": "core",
+      "job_id": "000000000003__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "000000000003__sam_native",
+      "depends_on": [
+        "000000000003__sam_native"
+      ]
+    },
+    {
+      "case": "000000000044",
+      "stage": "core",
+      "job_id": "000000000044__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "core",
+      "job_id": "000000000044__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "core",
+      "job_id": "000000000044__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "000000000044__sam_native",
+      "depends_on": [
+        "000000000044__sam_native"
+      ]
+    },
+    {
+      "case": "000000000044",
+      "stage": "core",
+      "job_id": "000000000044__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "000000000044__sam_native",
+      "depends_on": [
+        "000000000044__sam_native"
+      ]
+    },
+    {
+      "case": "000000000014",
+      "stage": "core",
+      "job_id": "000000000014__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "core",
+      "job_id": "000000000014__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "core",
+      "job_id": "000000000014__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "000000000014__sam_native",
+      "depends_on": [
+        "000000000014__sam_native"
+      ]
+    },
+    {
+      "case": "000000000014",
+      "stage": "core",
+      "job_id": "000000000014__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "000000000014__sam_native",
+      "depends_on": [
+        "000000000014__sam_native"
+      ]
+    },
+    {
+      "case": "122000000009",
+      "stage": "core",
+      "job_id": "122000000009__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "core",
+      "job_id": "122000000009__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "core",
+      "job_id": "122000000009__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "122000000009__sam_native",
+      "depends_on": [
+        "122000000009__sam_native"
+      ]
+    },
+    {
+      "case": "122000000009",
+      "stage": "core",
+      "job_id": "122000000009__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "122000000009__sam_native",
+      "depends_on": [
+        "122000000009__sam_native"
+      ]
+    },
+    {
+      "case": "113000000006",
+      "stage": "core",
+      "job_id": "113000000006__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "core",
+      "job_id": "113000000006__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "core",
+      "job_id": "113000000006__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "113000000006__sam_native",
+      "depends_on": [
+        "113000000006__sam_native"
+      ]
+    },
+    {
+      "case": "113000000006",
+      "stage": "core",
+      "job_id": "113000000006__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "113000000006__sam_native",
+      "depends_on": [
+        "113000000006__sam_native"
+      ]
+    },
+    {
+      "case": "123000000007",
+      "stage": "core",
+      "job_id": "123000000007__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "core",
+      "job_id": "123000000007__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "core",
+      "job_id": "123000000007__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "123000000007__sam_native",
+      "depends_on": [
+        "123000000007__sam_native"
+      ]
+    },
+    {
+      "case": "123000000007",
+      "stage": "core",
+      "job_id": "123000000007__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "123000000007__sam_native",
+      "depends_on": [
+        "123000000007__sam_native"
+      ]
+    },
+    {
+      "case": "112000000009",
+      "stage": "core",
+      "job_id": "112000000009__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "core",
+      "job_id": "112000000009__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "core",
+      "job_id": "112000000009__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "112000000009__sam_native",
+      "depends_on": [
+        "112000000009__sam_native"
+      ]
+    },
+    {
+      "case": "112000000009",
+      "stage": "core",
+      "job_id": "112000000009__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "112000000009__sam_native",
+      "depends_on": [
+        "112000000009__sam_native"
+      ]
+    },
+    {
+      "case": "114000000004",
+      "stage": "core",
+      "job_id": "114000000004__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "core",
+      "job_id": "114000000004__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "core",
+      "job_id": "114000000004__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "114000000004__sam_native",
+      "depends_on": [
+        "114000000004__sam_native"
+      ]
+    },
+    {
+      "case": "114000000004",
+      "stage": "core",
+      "job_id": "114000000004__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "114000000004__sam_native",
+      "depends_on": [
+        "114000000004__sam_native"
+      ]
+    },
+    {
+      "case": "213000000005",
+      "stage": "core",
+      "job_id": "213000000005__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "core",
+      "job_id": "213000000005__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "core",
+      "job_id": "213000000005__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "213000000005__sam_native",
+      "depends_on": [
+        "213000000005__sam_native"
+      ]
+    },
+    {
+      "case": "213000000005",
+      "stage": "core",
+      "job_id": "213000000005__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "213000000005__sam_native",
+      "depends_on": [
+        "213000000005__sam_native"
+      ]
+    },
+    {
+      "case": "211000000000",
+      "stage": "core",
+      "job_id": "211000000000__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "core",
+      "job_id": "211000000000__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "core",
+      "job_id": "211000000000__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "211000000000__sam_native",
+      "depends_on": [
+        "211000000000__sam_native"
+      ]
+    },
+    {
+      "case": "211000000000",
+      "stage": "core",
+      "job_id": "211000000000__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "211000000000__sam_native",
+      "depends_on": [
+        "211000000000__sam_native"
+      ]
+    },
+    {
+      "case": "224000000002",
+      "stage": "core",
+      "job_id": "224000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "core",
+      "job_id": "224000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "core",
+      "job_id": "224000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "224000000002__sam_native",
+      "depends_on": [
+        "224000000002__sam_native"
+      ]
+    },
+    {
+      "case": "224000000002",
+      "stage": "core",
+      "job_id": "224000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "224000000002__sam_native",
+      "depends_on": [
+        "224000000002__sam_native"
+      ]
+    },
+    {
+      "case": "221000000003",
+      "stage": "core",
+      "job_id": "221000000003__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "core",
+      "job_id": "221000000003__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "core",
+      "job_id": "221000000003__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "221000000003__sam_native",
+      "depends_on": [
+        "221000000003__sam_native"
+      ]
+    },
+    {
+      "case": "221000000003",
+      "stage": "core",
+      "job_id": "221000000003__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "221000000003__sam_native",
+      "depends_on": [
+        "221000000003__sam_native"
+      ]
+    },
+    {
+      "case": "213000000008",
+      "stage": "core",
+      "job_id": "213000000008__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "core",
+      "job_id": "213000000008__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "core",
+      "job_id": "213000000008__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "213000000008__sam_native",
+      "depends_on": [
+        "213000000008__sam_native"
+      ]
+    },
+    {
+      "case": "213000000008",
+      "stage": "core",
+      "job_id": "213000000008__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "213000000008__sam_native",
+      "depends_on": [
+        "213000000008__sam_native"
+      ]
+    },
+    {
+      "case": "314000000006",
+      "stage": "core",
+      "job_id": "314000000006__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "core",
+      "job_id": "314000000006__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "core",
+      "job_id": "314000000006__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "314000000006__sam_native",
+      "depends_on": [
+        "314000000006__sam_native"
+      ]
+    },
+    {
+      "case": "314000000006",
+      "stage": "core",
+      "job_id": "314000000006__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "314000000006__sam_native",
+      "depends_on": [
+        "314000000006__sam_native"
+      ]
+    },
+    {
+      "case": "322000000002",
+      "stage": "core",
+      "job_id": "322000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "core",
+      "job_id": "322000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "core",
+      "job_id": "322000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "322000000002__sam_native",
+      "depends_on": [
+        "322000000002__sam_native"
+      ]
+    },
+    {
+      "case": "322000000002",
+      "stage": "core",
+      "job_id": "322000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "322000000002__sam_native",
+      "depends_on": [
+        "322000000002__sam_native"
+      ]
+    },
+    {
+      "case": "311000000002",
+      "stage": "core",
+      "job_id": "311000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "core",
+      "job_id": "311000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "core",
+      "job_id": "311000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "311000000002__sam_native",
+      "depends_on": [
+        "311000000002__sam_native"
+      ]
+    },
+    {
+      "case": "311000000002",
+      "stage": "core",
+      "job_id": "311000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "311000000002__sam_native",
+      "depends_on": [
+        "311000000002__sam_native"
+      ]
+    },
+    {
+      "case": "324000000008",
+      "stage": "core",
+      "job_id": "324000000008__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "core",
+      "job_id": "324000000008__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "core",
+      "job_id": "324000000008__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "324000000008__sam_native",
+      "depends_on": [
+        "324000000008__sam_native"
+      ]
+    },
+    {
+      "case": "324000000008",
+      "stage": "core",
+      "job_id": "324000000008__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "324000000008__sam_native",
+      "depends_on": [
+        "324000000008__sam_native"
+      ]
+    },
+    {
+      "case": "322000000004",
+      "stage": "core",
+      "job_id": "322000000004__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "core",
+      "job_id": "322000000004__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "core",
+      "job_id": "322000000004__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "322000000004__sam_native",
+      "depends_on": [
+        "322000000004__sam_native"
+      ]
+    },
+    {
+      "case": "322000000004",
+      "stage": "core",
+      "job_id": "322000000004__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "322000000004__sam_native",
+      "depends_on": [
+        "322000000004__sam_native"
+      ]
+    },
+    {
+      "case": "422000000001",
+      "stage": "core",
+      "job_id": "422000000001__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "core",
+      "job_id": "422000000001__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "core",
+      "job_id": "422000000001__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "422000000001__sam_native",
+      "depends_on": [
+        "422000000001__sam_native"
+      ]
+    },
+    {
+      "case": "422000000001",
+      "stage": "core",
+      "job_id": "422000000001__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "422000000001__sam_native",
+      "depends_on": [
+        "422000000001__sam_native"
+      ]
+    },
+    {
+      "case": "412000000004",
+      "stage": "core",
+      "job_id": "412000000004__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "core",
+      "job_id": "412000000004__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "core",
+      "job_id": "412000000004__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "412000000004__sam_native",
+      "depends_on": [
+        "412000000004__sam_native"
+      ]
+    },
+    {
+      "case": "412000000004",
+      "stage": "core",
+      "job_id": "412000000004__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "412000000004__sam_native",
+      "depends_on": [
+        "412000000004__sam_native"
+      ]
+    },
+    {
+      "case": "413000000002",
+      "stage": "core",
+      "job_id": "413000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "core",
+      "job_id": "413000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "core",
+      "job_id": "413000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "413000000002__sam_native",
+      "depends_on": [
+        "413000000002__sam_native"
+      ]
+    },
+    {
+      "case": "413000000002",
+      "stage": "core",
+      "job_id": "413000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "413000000002__sam_native",
+      "depends_on": [
+        "413000000002__sam_native"
+      ]
+    },
+    {
+      "case": "423000000001",
+      "stage": "core",
+      "job_id": "423000000001__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "core",
+      "job_id": "423000000001__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "core",
+      "job_id": "423000000001__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "423000000001__sam_native",
+      "depends_on": [
+        "423000000001__sam_native"
+      ]
+    },
+    {
+      "case": "423000000001",
+      "stage": "core",
+      "job_id": "423000000001__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "423000000001__sam_native",
+      "depends_on": [
+        "423000000001__sam_native"
+      ]
+    },
+    {
+      "case": "524000000004",
+      "stage": "core",
+      "job_id": "524000000004__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "core",
+      "job_id": "524000000004__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "core",
+      "job_id": "524000000004__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "524000000004__sam_native",
+      "depends_on": [
+        "524000000004__sam_native"
+      ]
+    },
+    {
+      "case": "524000000004",
+      "stage": "core",
+      "job_id": "524000000004__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "524000000004__sam_native",
+      "depends_on": [
+        "524000000004__sam_native"
+      ]
+    },
+    {
+      "case": "511000000000",
+      "stage": "core",
+      "job_id": "511000000000__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "core",
+      "job_id": "511000000000__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "core",
+      "job_id": "511000000000__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "511000000000__sam_native",
+      "depends_on": [
+        "511000000000__sam_native"
+      ]
+    },
+    {
+      "case": "511000000000",
+      "stage": "core",
+      "job_id": "511000000000__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "511000000000__sam_native",
+      "depends_on": [
+        "511000000000__sam_native"
+      ]
+    },
+    {
+      "case": "523000000003",
+      "stage": "core",
+      "job_id": "523000000003__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "core",
+      "job_id": "523000000003__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "core",
+      "job_id": "523000000003__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "523000000003__sam_native",
+      "depends_on": [
+        "523000000003__sam_native"
+      ]
+    },
+    {
+      "case": "523000000003",
+      "stage": "core",
+      "job_id": "523000000003__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "523000000003__sam_native",
+      "depends_on": [
+        "523000000003__sam_native"
+      ]
+    },
+    {
+      "case": "513000000001",
+      "stage": "core",
+      "job_id": "513000000001__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "core",
+      "job_id": "513000000001__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "core",
+      "job_id": "513000000001__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "513000000001__sam_native",
+      "depends_on": [
+        "513000000001__sam_native"
+      ]
+    },
+    {
+      "case": "513000000001",
+      "stage": "core",
+      "job_id": "513000000001__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "513000000001__sam_native",
+      "depends_on": [
+        "513000000001__sam_native"
+      ]
+    },
+    {
+      "case": "611000000001",
+      "stage": "core",
+      "job_id": "611000000001__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "core",
+      "job_id": "611000000001__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "core",
+      "job_id": "611000000001__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "611000000001__sam_native",
+      "depends_on": [
+        "611000000001__sam_native"
+      ]
+    },
+    {
+      "case": "611000000001",
+      "stage": "core",
+      "job_id": "611000000001__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "611000000001__sam_native",
+      "depends_on": [
+        "611000000001__sam_native"
+      ]
+    },
+    {
+      "case": "624000000003",
+      "stage": "core",
+      "job_id": "624000000003__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "core",
+      "job_id": "624000000003__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "core",
+      "job_id": "624000000003__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "624000000003__sam_native",
+      "depends_on": [
+        "624000000003__sam_native"
+      ]
+    },
+    {
+      "case": "624000000003",
+      "stage": "core",
+      "job_id": "624000000003__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "624000000003__sam_native",
+      "depends_on": [
+        "624000000003__sam_native"
+      ]
+    },
+    {
+      "case": "622000000003",
+      "stage": "core",
+      "job_id": "622000000003__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "core",
+      "job_id": "622000000003__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "core",
+      "job_id": "622000000003__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "622000000003__sam_native",
+      "depends_on": [
+        "622000000003__sam_native"
+      ]
+    },
+    {
+      "case": "622000000003",
+      "stage": "core",
+      "job_id": "622000000003__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "622000000003__sam_native",
+      "depends_on": [
+        "622000000003__sam_native"
+      ]
+    },
+    {
+      "case": "623000000002",
+      "stage": "core",
+      "job_id": "623000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "core",
+      "job_id": "623000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "core",
+      "job_id": "623000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "623000000002__sam_native",
+      "depends_on": [
+        "623000000002__sam_native"
+      ]
+    },
+    {
+      "case": "623000000002",
+      "stage": "core",
+      "job_id": "623000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "623000000002__sam_native",
+      "depends_on": [
+        "623000000002__sam_native"
+      ]
+    },
+    {
+      "case": "622000000002",
+      "stage": "core",
+      "job_id": "622000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "core",
+      "job_id": "622000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "core",
+      "job_id": "622000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "622000000002__sam_native",
+      "depends_on": [
+        "622000000002__sam_native"
+      ]
+    },
+    {
+      "case": "622000000002",
+      "stage": "core",
+      "job_id": "622000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "622000000002__sam_native",
+      "depends_on": [
+        "622000000002__sam_native"
+      ]
+    },
+    {
+      "case": "714000000000",
+      "stage": "core",
+      "job_id": "714000000000__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "core",
+      "job_id": "714000000000__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "core",
+      "job_id": "714000000000__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "714000000000__sam_native",
+      "depends_on": [
+        "714000000000__sam_native"
+      ]
+    },
+    {
+      "case": "714000000000",
+      "stage": "core",
+      "job_id": "714000000000__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "714000000000__sam_native",
+      "depends_on": [
+        "714000000000__sam_native"
+      ]
+    },
+    {
+      "case": "712000000004",
+      "stage": "core",
+      "job_id": "712000000004__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "core",
+      "job_id": "712000000004__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "core",
+      "job_id": "712000000004__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "712000000004__sam_native",
+      "depends_on": [
+        "712000000004__sam_native"
+      ]
+    },
+    {
+      "case": "712000000004",
+      "stage": "core",
+      "job_id": "712000000004__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "712000000004__sam_native",
+      "depends_on": [
+        "712000000004__sam_native"
+      ]
+    },
+    {
+      "case": "713000000001",
+      "stage": "core",
+      "job_id": "713000000001__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "core",
+      "job_id": "713000000001__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "core",
+      "job_id": "713000000001__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "713000000001__sam_native",
+      "depends_on": [
+        "713000000001__sam_native"
+      ]
+    },
+    {
+      "case": "713000000001",
+      "stage": "core",
+      "job_id": "713000000001__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "713000000001__sam_native",
+      "depends_on": [
+        "713000000001__sam_native"
+      ]
+    },
+    {
+      "case": "712000000001",
+      "stage": "core",
+      "job_id": "712000000001__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "core",
+      "job_id": "712000000001__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "core",
+      "job_id": "712000000001__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "712000000001__sam_native",
+      "depends_on": [
+        "712000000001__sam_native"
+      ]
+    },
+    {
+      "case": "712000000001",
+      "stage": "core",
+      "job_id": "712000000001__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "712000000001__sam_native",
+      "depends_on": [
+        "712000000001__sam_native"
+      ]
+    },
+    {
+      "case": "722000000000",
+      "stage": "core",
+      "job_id": "722000000000__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "core",
+      "job_id": "722000000000__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "core",
+      "job_id": "722000000000__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "722000000000__sam_native",
+      "depends_on": [
+        "722000000000__sam_native"
+      ]
+    },
+    {
+      "case": "722000000000",
+      "stage": "core",
+      "job_id": "722000000000__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "722000000000__sam_native",
+      "depends_on": [
+        "722000000000__sam_native"
+      ]
+    },
+    {
+      "case": "812000000002",
+      "stage": "core",
+      "job_id": "812000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "core",
+      "job_id": "812000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "core",
+      "job_id": "812000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "812000000002__sam_native",
+      "depends_on": [
+        "812000000002__sam_native"
+      ]
+    },
+    {
+      "case": "812000000002",
+      "stage": "core",
+      "job_id": "812000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "812000000002__sam_native",
+      "depends_on": [
+        "812000000002__sam_native"
+      ]
+    },
+    {
+      "case": "813000000002",
+      "stage": "core",
+      "job_id": "813000000002__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "core",
+      "job_id": "813000000002__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "core",
+      "job_id": "813000000002__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "813000000002__sam_native",
+      "depends_on": [
+        "813000000002__sam_native"
+      ]
+    },
+    {
+      "case": "813000000002",
+      "stage": "core",
+      "job_id": "813000000002__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "813000000002__sam_native",
+      "depends_on": [
+        "813000000002__sam_native"
+      ]
+    },
+    {
+      "case": "824000000007",
+      "stage": "core",
+      "job_id": "824000000007__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "core",
+      "job_id": "824000000007__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "core",
+      "job_id": "824000000007__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "824000000007__sam_native",
+      "depends_on": [
+        "824000000007__sam_native"
+      ]
+    },
+    {
+      "case": "824000000007",
+      "stage": "core",
+      "job_id": "824000000007__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "824000000007__sam_native",
+      "depends_on": [
+        "824000000007__sam_native"
+      ]
+    },
+    {
+      "case": "811000000004",
+      "stage": "core",
+      "job_id": "811000000004__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "core",
+      "job_id": "811000000004__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "core",
+      "job_id": "811000000004__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "811000000004__sam_native",
+      "depends_on": [
+        "811000000004__sam_native"
+      ]
+    },
+    {
+      "case": "811000000004",
+      "stage": "core",
+      "job_id": "811000000004__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "811000000004__sam_native",
+      "depends_on": [
+        "811000000004__sam_native"
+      ]
+    },
+    {
+      "case": "911000000007",
+      "stage": "core",
+      "job_id": "911000000007__sam_native",
+      "arm": "sam_native",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "core",
+      "job_id": "911000000007__uniform",
+      "arm": "uniform",
+      "scale": 1.0,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "core",
+      "job_id": "911000000007__two_constant",
+      "arm": "two_constant",
+      "anchor_job_id": "911000000007__sam_native",
+      "depends_on": [
+        "911000000007__sam_native"
+      ]
+    },
+    {
+      "case": "911000000007",
+      "stage": "core",
+      "job_id": "911000000007__uniform_at_local",
+      "arm": "uniform_replay",
+      "anchor_job_id": "911000000007__sam_native",
+      "depends_on": [
+        "911000000007__sam_native"
+      ]
+    },
+    {
+      "case": "000000000088",
+      "stage": "scan",
+      "job_id": "000000000088__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "scan",
+      "job_id": "000000000088__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "scan",
+      "job_id": "000000000088__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "scan",
+      "job_id": "000000000088__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "scan",
+      "job_id": "000000000088__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000088",
+      "stage": "scan",
+      "job_id": "000000000088__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "scan",
+      "job_id": "000000000003__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "scan",
+      "job_id": "000000000003__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "scan",
+      "job_id": "000000000003__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "scan",
+      "job_id": "000000000003__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "scan",
+      "job_id": "000000000003__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000003",
+      "stage": "scan",
+      "job_id": "000000000003__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "scan",
+      "job_id": "000000000044__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "scan",
+      "job_id": "000000000044__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "scan",
+      "job_id": "000000000044__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "scan",
+      "job_id": "000000000044__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "scan",
+      "job_id": "000000000044__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000044",
+      "stage": "scan",
+      "job_id": "000000000044__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "scan",
+      "job_id": "000000000014__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "scan",
+      "job_id": "000000000014__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "scan",
+      "job_id": "000000000014__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "scan",
+      "job_id": "000000000014__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "scan",
+      "job_id": "000000000014__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "000000000014",
+      "stage": "scan",
+      "job_id": "000000000014__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "scan",
+      "job_id": "122000000009__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "scan",
+      "job_id": "122000000009__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "scan",
+      "job_id": "122000000009__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "scan",
+      "job_id": "122000000009__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "scan",
+      "job_id": "122000000009__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "122000000009",
+      "stage": "scan",
+      "job_id": "122000000009__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "scan",
+      "job_id": "113000000006__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "scan",
+      "job_id": "113000000006__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "scan",
+      "job_id": "113000000006__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "scan",
+      "job_id": "113000000006__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "scan",
+      "job_id": "113000000006__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "113000000006",
+      "stage": "scan",
+      "job_id": "113000000006__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "scan",
+      "job_id": "123000000007__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "scan",
+      "job_id": "123000000007__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "scan",
+      "job_id": "123000000007__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "scan",
+      "job_id": "123000000007__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "scan",
+      "job_id": "123000000007__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "123000000007",
+      "stage": "scan",
+      "job_id": "123000000007__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "scan",
+      "job_id": "112000000009__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "scan",
+      "job_id": "112000000009__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "scan",
+      "job_id": "112000000009__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "scan",
+      "job_id": "112000000009__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "scan",
+      "job_id": "112000000009__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "112000000009",
+      "stage": "scan",
+      "job_id": "112000000009__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "scan",
+      "job_id": "114000000004__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "scan",
+      "job_id": "114000000004__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "scan",
+      "job_id": "114000000004__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "scan",
+      "job_id": "114000000004__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "scan",
+      "job_id": "114000000004__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "114000000004",
+      "stage": "scan",
+      "job_id": "114000000004__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "scan",
+      "job_id": "213000000005__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "scan",
+      "job_id": "213000000005__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "scan",
+      "job_id": "213000000005__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "scan",
+      "job_id": "213000000005__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "scan",
+      "job_id": "213000000005__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "213000000005",
+      "stage": "scan",
+      "job_id": "213000000005__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "scan",
+      "job_id": "211000000000__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "scan",
+      "job_id": "211000000000__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "scan",
+      "job_id": "211000000000__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "scan",
+      "job_id": "211000000000__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "scan",
+      "job_id": "211000000000__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "211000000000",
+      "stage": "scan",
+      "job_id": "211000000000__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "scan",
+      "job_id": "224000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "scan",
+      "job_id": "224000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "scan",
+      "job_id": "224000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "scan",
+      "job_id": "224000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "scan",
+      "job_id": "224000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "224000000002",
+      "stage": "scan",
+      "job_id": "224000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "scan",
+      "job_id": "221000000003__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "scan",
+      "job_id": "221000000003__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "scan",
+      "job_id": "221000000003__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "scan",
+      "job_id": "221000000003__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "scan",
+      "job_id": "221000000003__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "221000000003",
+      "stage": "scan",
+      "job_id": "221000000003__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "scan",
+      "job_id": "213000000008__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "scan",
+      "job_id": "213000000008__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "scan",
+      "job_id": "213000000008__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "scan",
+      "job_id": "213000000008__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "scan",
+      "job_id": "213000000008__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "213000000008",
+      "stage": "scan",
+      "job_id": "213000000008__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "scan",
+      "job_id": "314000000006__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "scan",
+      "job_id": "314000000006__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "scan",
+      "job_id": "314000000006__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "scan",
+      "job_id": "314000000006__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "scan",
+      "job_id": "314000000006__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "314000000006",
+      "stage": "scan",
+      "job_id": "314000000006__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "scan",
+      "job_id": "322000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "scan",
+      "job_id": "322000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "scan",
+      "job_id": "322000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "scan",
+      "job_id": "322000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "scan",
+      "job_id": "322000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "322000000002",
+      "stage": "scan",
+      "job_id": "322000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "scan",
+      "job_id": "311000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "scan",
+      "job_id": "311000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "scan",
+      "job_id": "311000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "scan",
+      "job_id": "311000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "scan",
+      "job_id": "311000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "311000000002",
+      "stage": "scan",
+      "job_id": "311000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "scan",
+      "job_id": "324000000008__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "scan",
+      "job_id": "324000000008__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "scan",
+      "job_id": "324000000008__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "scan",
+      "job_id": "324000000008__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "scan",
+      "job_id": "324000000008__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "324000000008",
+      "stage": "scan",
+      "job_id": "324000000008__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "scan",
+      "job_id": "322000000004__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "scan",
+      "job_id": "322000000004__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "scan",
+      "job_id": "322000000004__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "scan",
+      "job_id": "322000000004__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "scan",
+      "job_id": "322000000004__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "322000000004",
+      "stage": "scan",
+      "job_id": "322000000004__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "scan",
+      "job_id": "422000000001__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "scan",
+      "job_id": "422000000001__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "scan",
+      "job_id": "422000000001__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "scan",
+      "job_id": "422000000001__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "scan",
+      "job_id": "422000000001__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "422000000001",
+      "stage": "scan",
+      "job_id": "422000000001__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "scan",
+      "job_id": "412000000004__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "scan",
+      "job_id": "412000000004__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "scan",
+      "job_id": "412000000004__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "scan",
+      "job_id": "412000000004__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "scan",
+      "job_id": "412000000004__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "412000000004",
+      "stage": "scan",
+      "job_id": "412000000004__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "scan",
+      "job_id": "413000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "scan",
+      "job_id": "413000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "scan",
+      "job_id": "413000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "scan",
+      "job_id": "413000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "scan",
+      "job_id": "413000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "413000000002",
+      "stage": "scan",
+      "job_id": "413000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "scan",
+      "job_id": "423000000001__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "scan",
+      "job_id": "423000000001__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "scan",
+      "job_id": "423000000001__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "scan",
+      "job_id": "423000000001__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "scan",
+      "job_id": "423000000001__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "423000000001",
+      "stage": "scan",
+      "job_id": "423000000001__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "scan",
+      "job_id": "524000000004__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "scan",
+      "job_id": "524000000004__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "scan",
+      "job_id": "524000000004__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "scan",
+      "job_id": "524000000004__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "scan",
+      "job_id": "524000000004__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "524000000004",
+      "stage": "scan",
+      "job_id": "524000000004__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "scan",
+      "job_id": "511000000000__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "scan",
+      "job_id": "511000000000__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "scan",
+      "job_id": "511000000000__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "scan",
+      "job_id": "511000000000__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "scan",
+      "job_id": "511000000000__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "511000000000",
+      "stage": "scan",
+      "job_id": "511000000000__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "scan",
+      "job_id": "523000000003__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "scan",
+      "job_id": "523000000003__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "scan",
+      "job_id": "523000000003__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "scan",
+      "job_id": "523000000003__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "scan",
+      "job_id": "523000000003__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "523000000003",
+      "stage": "scan",
+      "job_id": "523000000003__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "scan",
+      "job_id": "513000000001__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "scan",
+      "job_id": "513000000001__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "scan",
+      "job_id": "513000000001__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "scan",
+      "job_id": "513000000001__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "scan",
+      "job_id": "513000000001__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "513000000001",
+      "stage": "scan",
+      "job_id": "513000000001__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "scan",
+      "job_id": "611000000001__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "scan",
+      "job_id": "611000000001__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "scan",
+      "job_id": "611000000001__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "scan",
+      "job_id": "611000000001__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "scan",
+      "job_id": "611000000001__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "611000000001",
+      "stage": "scan",
+      "job_id": "611000000001__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "scan",
+      "job_id": "624000000003__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "scan",
+      "job_id": "624000000003__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "scan",
+      "job_id": "624000000003__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "scan",
+      "job_id": "624000000003__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "scan",
+      "job_id": "624000000003__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "624000000003",
+      "stage": "scan",
+      "job_id": "624000000003__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "scan",
+      "job_id": "622000000003__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "scan",
+      "job_id": "622000000003__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "scan",
+      "job_id": "622000000003__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "scan",
+      "job_id": "622000000003__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "scan",
+      "job_id": "622000000003__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "622000000003",
+      "stage": "scan",
+      "job_id": "622000000003__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "scan",
+      "job_id": "623000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "scan",
+      "job_id": "623000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "scan",
+      "job_id": "623000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "scan",
+      "job_id": "623000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "scan",
+      "job_id": "623000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "623000000002",
+      "stage": "scan",
+      "job_id": "623000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "scan",
+      "job_id": "622000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "scan",
+      "job_id": "622000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "scan",
+      "job_id": "622000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "scan",
+      "job_id": "622000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "scan",
+      "job_id": "622000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "622000000002",
+      "stage": "scan",
+      "job_id": "622000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "scan",
+      "job_id": "714000000000__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "scan",
+      "job_id": "714000000000__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "scan",
+      "job_id": "714000000000__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "scan",
+      "job_id": "714000000000__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "scan",
+      "job_id": "714000000000__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "714000000000",
+      "stage": "scan",
+      "job_id": "714000000000__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "scan",
+      "job_id": "712000000004__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "scan",
+      "job_id": "712000000004__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "scan",
+      "job_id": "712000000004__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "scan",
+      "job_id": "712000000004__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "scan",
+      "job_id": "712000000004__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "712000000004",
+      "stage": "scan",
+      "job_id": "712000000004__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "scan",
+      "job_id": "713000000001__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "scan",
+      "job_id": "713000000001__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "scan",
+      "job_id": "713000000001__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "scan",
+      "job_id": "713000000001__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "scan",
+      "job_id": "713000000001__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "713000000001",
+      "stage": "scan",
+      "job_id": "713000000001__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "scan",
+      "job_id": "712000000001__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "scan",
+      "job_id": "712000000001__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "scan",
+      "job_id": "712000000001__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "scan",
+      "job_id": "712000000001__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "scan",
+      "job_id": "712000000001__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "712000000001",
+      "stage": "scan",
+      "job_id": "712000000001__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "scan",
+      "job_id": "722000000000__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "scan",
+      "job_id": "722000000000__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "scan",
+      "job_id": "722000000000__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "scan",
+      "job_id": "722000000000__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "scan",
+      "job_id": "722000000000__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "722000000000",
+      "stage": "scan",
+      "job_id": "722000000000__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "scan",
+      "job_id": "812000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "scan",
+      "job_id": "812000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "scan",
+      "job_id": "812000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "scan",
+      "job_id": "812000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "scan",
+      "job_id": "812000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "812000000002",
+      "stage": "scan",
+      "job_id": "812000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "scan",
+      "job_id": "813000000002__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "scan",
+      "job_id": "813000000002__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "scan",
+      "job_id": "813000000002__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "scan",
+      "job_id": "813000000002__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "scan",
+      "job_id": "813000000002__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "813000000002",
+      "stage": "scan",
+      "job_id": "813000000002__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "scan",
+      "job_id": "824000000007__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "scan",
+      "job_id": "824000000007__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "scan",
+      "job_id": "824000000007__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "scan",
+      "job_id": "824000000007__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "scan",
+      "job_id": "824000000007__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "824000000007",
+      "stage": "scan",
+      "job_id": "824000000007__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "scan",
+      "job_id": "811000000004__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "scan",
+      "job_id": "811000000004__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "scan",
+      "job_id": "811000000004__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "scan",
+      "job_id": "811000000004__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "scan",
+      "job_id": "811000000004__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "811000000004",
+      "stage": "scan",
+      "job_id": "811000000004__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "scan",
+      "job_id": "911000000007__sam_native_scale0.25",
+      "arm": "sam_native",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "scan",
+      "job_id": "911000000007__sam_native_scale0.5",
+      "arm": "sam_native",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "scan",
+      "job_id": "911000000007__sam_native_scale0.75",
+      "arm": "sam_native",
+      "scale": 0.75,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "scan",
+      "job_id": "911000000007__uniform_scale0.25",
+      "arm": "uniform",
+      "scale": 0.25,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "scan",
+      "job_id": "911000000007__uniform_scale0.5",
+      "arm": "uniform",
+      "scale": 0.5,
+      "depends_on": []
+    },
+    {
+      "case": "911000000007",
+      "stage": "scan",
+      "job_id": "911000000007__uniform_scale0.75",
+      "arm": "uniform",
+      "scale": 0.75,
+      "depends_on": []
+    }
+  ]
+}

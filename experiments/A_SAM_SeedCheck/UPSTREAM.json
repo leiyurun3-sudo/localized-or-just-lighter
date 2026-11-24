@@ -1,0 +1,14 @@
+{
+  "repo": "https://github.com/chwbob/Sam-Flow",
+  "commit": "8167978666e6df11e987a453934b89ec422bd3a4",
+  "license": "MIT; LICENSE.upstream",
+  "vendored_files": "sam_flow/ unchanged; runtime adapter performs checked in-memory source substitutions",
+  "changes": [
+    "execution-device lookup for Accelerate offload",
+    "observe/control call after both native projections",
+    "final-latent capture for engineering parity",
+    "BF16 default declared instead of upstream FP16",
+    "memoized text/scout/independent attention map computation"
+  ],
+  "backbone": "FLUX.1-dev existing local Diffusers directory only"
+}

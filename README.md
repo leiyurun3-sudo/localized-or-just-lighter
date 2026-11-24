@@ -5,7 +5,7 @@
   <a href="REFERENCES.md">All 43 references</a> ·
   <a href="manuscript/A_ICME_Supplement.pdf">Supplement</a> ·
   <a href="reproduction/Atlas_900_outputs.pdf">Image gallery</a> ·
-  <a href="https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v21.1/Localized-or-Just-Lighter-v21.1-complete.zip">Download everything</a> ·
+  <a href="https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v22/Localized-or-Just-Lighter-v22-complete.zip">Download everything</a> ·
   <a href="docs/research-guide.md">中文导读</a>
 </p>
 
@@ -17,11 +17,11 @@ All four configurations turn the shirt blue. The crops reveal a gray patch below
 
 ## What changes when we match strength?
 
-**A correction toward the source.** Across 40 source images, spatial weighting raises background LPIPS by 0.0362 at the default coefficient. Matching the actual correction magnitude at each step reverses the ranking. Spatial weighting lowers background LPIPS by 0.0100 under either reference profile.
+**A correction toward the source.** Across 40 source images, spatial weighting raises background LPIPS by 0.0362 at the default coefficient. Matching the actual correction magnitude at each step reverses the mean ranking. Spatial weighting lowers background LPIPS by 0.0100 under either reference profile.
 
-**SAM-Flow.** Two spatially constant gains, fitted separately for each image, recover 84.5% of the default background gain on the 42 images with background pixels. Across all 50 images, mean directional CLIP falls from 0.0841 to 0.0521. Spatial allocation also changes *where* pixels move. At the default setting, the edit-to-background MAE ratio averages 4.00 for spatial allocation and 2.11 for uniform allocation.
+**SAM-Flow.** On 42 images with measurable background, two spatially constant gains fitted per image recover 84.5% of the mean default background gain at seed 0 and 82.4% at seed 1. Mean directional CLIP falls from 0.0918 to 0.0517 at seed 0 and from 0.0883 to 0.0461 at seed 1. Spatial gating yields an edit-to-background MAE ratio of 4.00 at both seeds, compared with 2.11 and 2.03 for uniform gating.
 
-**At comparable edit response.** Matching directional CLIP within each image over four strengths from 0.25 to 1.0 leaves 40 images with overlapping response ranges. Spatial allocation retains 21.3% of the default background gain on these same images. The mean difference in background LPIPS (uniform minus spatial) is 0.0263, with a 95% interval of [0.0169, 0.0370]. [Figure and per-source results](data/README.md)
+**At comparable edit response.** We match directional CLIP within each image over four strengths from 0.25 to 1.0. Spatial gating retains 21.3% of the default background gain at seed 0 and 26.8% at seed 1. The mean background LPIPS differences (uniform minus spatial) are 0.0263 across 40 supported images and 0.0341 across 41. A partial seed 2 run covers the four core configurations on 12 images. [Per-source results and seed comparison](reproduction/analysis/sam_seed_repeat/)
 
 ## Reproduce the results
 
@@ -42,6 +42,6 @@ The editable SVGs are written to `figures/generated/`. [Figure scripts](scripts/
 
 ## Paper and references
 
-The six-page [paper](manuscript/A_ICME_Main.pdf) includes its full bibliography on page 6. The [43 references](REFERENCES.md) are also readable on GitHub in the paper’s citation order. The [LaTeX manuscript](paper/main.tex) and [bibliography source](paper/references.tex) are provided alongside the [53-page supplement](manuscript/A_ICME_Supplement.pdf). A separate [literature coding sheet](reproduction/literature/control_audit.csv) records which comparisons were reported in the 24 papers sampled for the audit.
+The six-page [paper](manuscript/A_ICME_Main.pdf) includes its full bibliography on page 6. The [43 references](REFERENCES.md) are also readable on GitHub in the paper’s citation order. The [LaTeX manuscript](paper/main.tex) and [bibliography source](paper/references.tex) are provided alongside the [54-page supplement](manuscript/A_ICME_Supplement.pdf). A separate [literature coding sheet](reproduction/literature/control_audit.csv) records which comparisons were reported in the 24 papers sampled for the audit.
 
-[Data and upstream credits](docs/sources.md) · [Evidence index](reproduction/EVIDENCE_INDEX.md) · [Human-evaluation protocol and blank forms](human-evaluation/README.md)
+[Data and upstream credits](docs/sources.md) · [Evidence index](reproduction/EVIDENCE_INDEX.md)

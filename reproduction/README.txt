@@ -1,3 +1,10 @@
 Extract the whole ZIP, then run python reproduce.py (Python 3.8+). Point estimates use the standard library. Run python reproduce.py --ci with NumPy to include paired source-bootstrap 95% intervals for the SAM recovery, matched gap and retained fraction. Both commands print JSON. The restoring contrasts use source_correction_and_blending/two_seed_per_output.csv (spatial minus uniform, seeds averaged within source). SAM results use cpu/selectivity/operating_sources.csv. For each LPIPS scorer the script computes two-constant gain recovery on all background sources, then integrates the first knob-ordered branch on each source's positive-width directional CLIP overlap. The retained fraction divides the mean matched gap by the mean default gap on those same sources (uniform minus spatial). Both the original five-setting grid and its four-setting restriction are reported. Selectivity averages the edit/background MAE ratio across sources.
 
+For SAM seeds 0 and 1, run the following command from the extracted ZIP root with NumPy installed. Compare its output with analysis/sam_seed_repeat/seed_comparison.json.
+
+python -B analysis/sam_seed_repeat/compare_seeds.py analysis/sam_seed_repeat/seed1.csv --out seed_comparison.json
+
 Start with Supplement.pdf and EVIDENCE_INDEX.md. The index lists the commands for the additional checks on recorded trajectories and outputs. SAM_scan contains the prespecified scan analysis, data, code and its own README. additional_SAM_analyses contains cohort summaries, the crossed contrasts, sensitivity analyses and post hoc held-out predictions. source_correction_and_blending gives the historical score tables and paired results. In scalar_operating_points_by_output.csv the 80 native REQ edit-region MAEs were recovered from the original evaluation records. Subsets overlap across the historical tables. Regional LPIPS implementations are detailed in the supplement.
+
+Main manuscript: 6 pages. Supplement.pdf: 54 pages.
+From the extracted ZIP root, run python -B analysis/v22_overlap/reproduce.py with NumPy to regenerate summary.csv, per_source.csv and cross_checks.json in analysis/v22_overlap/.

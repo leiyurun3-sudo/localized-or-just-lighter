@@ -9,5 +9,6 @@
 | R92 | 用每个源图和种子的单个标量校准原生积分，比较标量近似与逐步回放；40 个源图 × 2 个种子新增 80 个输出 | [协议](A_R92_ScalarCalibration/protocol.json) · [运行说明](A_R92_ScalarCalibration/README.txt) |
 | SAM / FlowEdit，首批 300 | 在 50 个源图上运行 6 个核心设置，包括默认配置、常数对照和回放 | [协议](A_DoseLens_Pilot_W1/protocol.json) · [运行说明](A_DoseLens_Pilot_W1/RUN.txt) |
 | SAM / FlowEdit，追加 600 | 在同一队列扩展强度与窗口扫描，沿用首批 300 的目录和既有输出。共形成每源 18 个输出、合计 900 个输出的图册 | [增量启动脚本](A_DoseLens_Scan600/run_scan.sh) |
+| SAM 种子复查 | seed 1 的 42 源四档实验（420 个输出），以及 seed 2 的 12 源四配置检查（48 个输出） | [运行包](A_SAM_SeedCheck/) · [分数与复算](../reproduction/analysis/sam_seed_repeat/) |
 
 追加 600 的脚本假设 AutoDL 上已有首批核心结果。实验包保留当时的 Linux 路径及模型加载约定。论文中的“五档扫描 750 个运行点”包括复用的默认点；900 是整套 SAM 图册的输出数。两者统计对象不同。

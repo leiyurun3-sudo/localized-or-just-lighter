@@ -110,8 +110,8 @@ def schematic(fig):
                  ha="center", size=7.15, weight="normal" if alloc==ref else "bold")
 
 
-def trace(fig, x, width, title, steps, paths, ticks, gap_color="#E8EDF0"):
-    text(fig, x+width/2, 95.4, title, ha="center", weight="bold", size=7.7)
+def trace(fig, x, width, title, steps, paths, ticks, gap_color="#E8EDF0", title_offset=0):
+    text(fig, x+width/2+title_offset, 95.4, title, ha="center", weight="bold", size=7.7)
     ax = axes(fig, x, 31, width, 56.5)
     ax.set(xlim=(-.5,27.5), ylim=(0,ticks[-1]), xticks=[steps[0],14,27],
            yticks=ticks, yticklabels=[f"{t:g}" for t in ticks])
@@ -181,8 +181,9 @@ def main():
         left = trace(fig,27,70,"Restoring · correction",np.arange(28),restoring,[0,.4,.8],
                      gap_color="#EAEAEA")
         left.set_ylabel("Measured RMS",size=7.3,labelpad=2.3)
-        trace(fig,119,78,"Departing · model",np.arange(2,28),branches["model_rms"],[0,.15,.30])
-        trace(fig,222,78,"Departing · visible",np.arange(2,28),branches["visible_rms"],[0,.15,.30])
+        trace(fig,119,78,"SAM model (next step)",np.arange(2,28),branches["model_rms"],[0,.15,.30])
+        trace(fig,222,78,"SAM visible (final decode)",np.arange(2,28),branches["visible_rms"],[0,.15,.30],
+              title_offset=-5)
         legend(fig)
         mrc(fig,sweeps,scalar,pieces,gap)
         save_svg(fig, "protocols", dpi=400)

@@ -1,0 +1,4 @@
+# Optional CPU evaluation, in addition to requirements.txt.
+# Preserve an existing matched torch/torchvision installation.
+# python -m pip install --no-deps -r requirements-eval.txt
+lpips==0.1.4

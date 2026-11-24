@@ -3321,10 +3321,10 @@ z
    <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #20262b" x="62" y="74.545453" transform="rotate(-0 62 74.545453)">Restoring · correction</text>
   </g>
   <g id="text_54">
-   <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #20262b" x="158" y="74.545453" transform="rotate(-0 158 74.545453)">Departing · model</text>
+   <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #20262b" x="158" y="74.592601" transform="rotate(-0 158 74.592601)">SAM model (next step)</text>
   </g>
   <g id="text_55">
-   <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #20262b" x="261" y="74.545453" transform="rotate(-0 261 74.545453)">Departing · visible</text>
+   <text style="font-weight: 700; font-size: 7.7px; font-family: 'Arial'; text-anchor: middle; fill: #20262b" x="256" y="74.592601" transform="rotate(-0 256 74.592601)">SAM visible (final decode)</text>
   </g>
   <g id="text_56">
    <text style="font-size: 7.35px; font-family: 'Arial'; text-anchor: start; fill: #20262b" x="16.5" y="161.844879" transform="rotate(-0 16.5 161.844879)">Spatial</text>
