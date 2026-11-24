@@ -5,7 +5,7 @@
   <a href="REFERENCES.md">All 43 references</a> ·
   <a href="manuscript/A_ICME_Supplement.pdf">Supplement</a> ·
   <a href="reproduction/Atlas_900_outputs.pdf">Image gallery</a> ·
-  <a href="https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v22/Localized-or-Just-Lighter-v22-complete.zip">Download everything</a> ·
+  <a href="https://github.com/leiyurun3-sudo/localized-or-just-lighter/archive/refs/tags/v22-complete.zip">Download everything</a> ·
   <a href="docs/research-guide.md">中文导读</a>
 </p>
 

@@ -25,7 +25,7 @@ tectonic main.tex
 tectonic supplement.tex
 ```
 
-生成的 `main.pdf` 和 `supplement.pdf` 在当前目录。用于上传的独立 PDF 与匿名 ZIP 已另行处理图片体积，归档在 [manuscript](../manuscript/)。需要直接打包好的 TeX 工程、恢复型映射的可选输入或逐图原生输出时，可从 [v22 完整包](https://github.com/leiyurun3-sudo/localized-or-just-lighter/releases/download/v22/Localized-or-Just-Lighter-v22-complete.zip) 下载。压缩包的 `downloads/` 内含原始 900 图归档和两个新增种子的输出。
+生成的 `main.pdf` 和 `supplement.pdf` 在当前目录。用于上传的独立 PDF 与匿名 ZIP 已另行处理图片体积，归档在 [manuscript](../manuscript/)。需要直接打包好的 TeX 工程、恢复型映射的可选输入或逐图原生输出时，可从 [v22 完整包](https://github.com/leiyurun3-sudo/localized-or-just-lighter/archive/refs/tags/v22-complete.zip) 下载。压缩包的 `downloads/` 内含900 图扫描、seed 1 的完整输出和 seed 2 的部分输出。前两组按原始目录展开。
 
 ## 提交前材料
 
