@@ -1,0 +1,12 @@
+{
+  "job": {
+    "case": "000000000044",
+    "stage": "scan",
+    "job_id": "000000000044__uniform_scale0.5",
+    "arm": "uniform",
+    "scale": 0.5,
+    "depends_on": []
+  },
+  "protocol_hash": "c5512069a9eeeb176c487d308aa7ffa8cf5464d5a21955daed916048d4ba2f51",
+  "started_at": "2026-11-23T17:47:40+00:00"
+}

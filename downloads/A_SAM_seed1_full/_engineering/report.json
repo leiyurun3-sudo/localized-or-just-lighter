@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "max_abs_latent_difference": 0.0,
+  "criterion": "bitwise equality of final visible latent",
+  "seconds": {
+    "reference": 270.79771126806736,
+    "observe": 251.01944019645452
+  },
+  "nfe": {
+    "reference": 468,
+    "observe": 468
+  },
+  "environment": {
+    "torch": "2.8.0+cu128",
+    "diffusers": "0.35.1",
+    "transformers": "4.56.2",
+    "dtype": "bfloat16",
+    "offload": "model",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "upstream_commit": "8167978666e6df11e987a453934b89ec422bd3a4"
+  },
+  "scope": "upstream native reference with device adapter versus observation-only instrumentation; shared dtype/scout/prompts",
+  "not_claimed": "paper-quality reproduction, other dtype parity, or validated controlled effects",
+  "_runner": {
+    "protocol_hash": "c5512069a9eeeb176c487d308aa7ffa8cf5464d5a21955daed916048d4ba2f51",
+    "job_id": "_engineering",
+    "finished_at": "2026-11-23T07:34:44+00:00",
+    "pid": 3047
+  }
+}

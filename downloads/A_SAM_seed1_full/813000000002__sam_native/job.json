@@ -1,0 +1,12 @@
+{
+  "job": {
+    "case": "813000000002",
+    "stage": "core",
+    "job_id": "813000000002__sam_native",
+    "arm": "sam_native",
+    "scale": 1.0,
+    "depends_on": []
+  },
+  "protocol_hash": "c5512069a9eeeb176c487d308aa7ffa8cf5464d5a21955daed916048d4ba2f51",
+  "started_at": "2026-11-23T16:07:59+00:00"
+}

@@ -1,0 +1,101 @@
+{
+  "case": "213000000008",
+  "job_id": "213000000008__uniform_scale0.25",
+  "arm": "uniform",
+  "scale": 0.25,
+  "seed": 1,
+  "stage": "scan",
+  "environment": {
+    "torch": "2.8.0+cu128",
+    "diffusers": "0.35.1",
+    "transformers": "4.56.2",
+    "dtype": "bfloat16",
+    "offload": "model",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "upstream_commit": "8167978666e6df11e987a453934b89ec422bd3a4"
+  },
+  "source_prompt": "a table with flowers on it",
+  "target_prompt": "a table with flowers and hat on it",
+  "gt_mask_used_for_generation": false,
+  "status": "completed",
+  "profile": {
+    "active_steps": 26,
+    "constants": null,
+    "profile_units": "RMS of source-relative projected latent displacement; active-step mean",
+    "profile_stage": "FP32 projection before upstream state dtype cast; quantized state RMS also recorded",
+    "euler_dose": 0.1379344504623251,
+    "replay_scope": "two projection displacement profiles, not equal final edit response",
+    "convex_constraint": "replay gains may exceed 1; extended intervention is recorded, never clipped",
+    "model_mean_rms": 0.011756083251944242,
+    "visible_mean_rms": 0.011756083251944242
+  },
+  "anchor_job_id": null,
+  "matching_roundoff": "FP32 projection RMS matched; state dtype cast RMS separately logged",
+  "nfe": 416,
+  "seconds": 134.5039375089109,
+  "reused_attention_maps": 26,
+  "native_path": "/root/autodl-tmp/A_SAM_SeedCheck/runs/seed1/213000000008__uniform_scale0.25/native.png",
+  "config": {
+    "mode": "flux",
+    "dataset": {
+      "path": "data/data.yaml",
+      "root": "data",
+      "strict_validation": false
+    },
+    "results": {
+      "root": "results_flux"
+    },
+    "run": {
+      "device": "auto",
+      "dtype": "auto",
+      "overwrite": false,
+      "start_index": null,
+      "end_index": null,
+      "max_records": null,
+      "max_cases": null,
+      "image_names": [],
+      "target_codes": [],
+      "save_debug_maps": false
+    },
+    "models": {
+      "flux_model_id": "black-forest-labs/FLUX.1-dev"
+    },
+    "flowedit": {
+      "negative_prompt": "",
+      "T_steps": 28,
+      "n_avg": 8,
+      "src_guidance_scale": 1.5,
+      "tar_guidance_scale": 5.5,
+      "n_min": 0,
+      "n_max": 24
+    },
+    "sam_flow": {
+      "T_steps": 28,
+      "n_avg": 8,
+      "src_guidance_scale": 1.5,
+      "tgt_guidance_scale": 10.5,
+      "n_min": 0,
+      "n_max": 26,
+      "ref_noise_seed": 999,
+      "blur_sigma_start": 2.0,
+      "blur_sigma_end": 0.6,
+      "q_start": 0.6,
+      "q_end": 0.8,
+      "alpha_min": 5.0,
+      "alpha_max": 20.0,
+      "tau_core": 0.85,
+      "ring_radius_start": 6,
+      "ring_radius_end": 3,
+      "w_ring": 0.35,
+      "slack": 0.05,
+      "anchor_rho": 1.0,
+      "ring_blend": 0.35
+    }
+  },
+  "_runner": {
+    "protocol_hash": "c5512069a9eeeb176c487d308aa7ffa8cf5464d5a21955daed916048d4ba2f51",
+    "job_id": "213000000008__uniform_scale0.25",
+    "finished_at": "2026-11-23T20:43:51+00:00",
+    "pid": 3047
+  }
+}

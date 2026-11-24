@@ -1,0 +1,5783 @@
+{
+  "schema_version": 1,
+  "cases": {
+    "cases": [
+      {
+        "case": "000000000088",
+        "seed": 1,
+        "image_name": "000000000088",
+        "target_code": "edit",
+        "image_path": "data/000000000088/source.png",
+        "source_prompt": "a plate with rice, lemon slices and fish",
+        "target_prompt": "a plate with rice, apple slices and fish",
+        "source_mask_tokens": [
+          "lemon",
+          "slices"
+        ],
+        "target_mask_tokens": [
+          "apple",
+          "slices"
+        ],
+        "unchanged_tokens": [],
+        "category": "0",
+        "record_index": 0,
+        "target_index": 0,
+        "source_prompt_raw": "a plate with rice, [lemon] slices and fish",
+        "target_prompt_raw": "a plate with rice, [apple] slices and fish",
+        "instruction": "Replace the lemon slices with apple slices",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "lemon"
+            ],
+            "target": [
+              "apple"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "lemon"
+        ],
+        "target_annotated_spans": [
+          "apple"
+        ],
+        "object_context": [
+          "slices"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Fruit replacement; slices names the affected food.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "000000000003",
+        "seed": 1,
+        "image_name": "000000000003",
+        "target_code": "edit",
+        "image_path": "data/000000000003/source.png",
+        "source_prompt": "blue light, a black and white cat is playing with a flower",
+        "target_prompt": "blue light, a black and white dog is playing with a flower",
+        "source_mask_tokens": [
+          "cat"
+        ],
+        "target_mask_tokens": [
+          "dog"
+        ],
+        "unchanged_tokens": [],
+        "category": "0",
+        "record_index": 1,
+        "target_index": 0,
+        "source_prompt_raw": "blue light, a black and white [cat] is playing with a flower",
+        "target_prompt_raw": "blue light, a black and white [dog] is playing with a flower",
+        "instruction": "Change the animal from a cat to a dog",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "cat"
+            ],
+            "target": [
+              "dog"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "cat"
+        ],
+        "target_annotated_spans": [
+          "dog"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Animal replacement; use the changed animal nouns.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "000000000044",
+        "seed": 1,
+        "image_name": "000000000044",
+        "target_code": "edit",
+        "image_path": "data/000000000044/source.png",
+        "source_prompt": "a cat sitting in the grass",
+        "target_prompt": "a cat sitting in the rocks",
+        "source_mask_tokens": [
+          "grass"
+        ],
+        "target_mask_tokens": [
+          "rocks"
+        ],
+        "unchanged_tokens": [],
+        "category": "0",
+        "record_index": 3,
+        "target_index": 0,
+        "source_prompt_raw": "a cat sitting in the [grass]",
+        "target_prompt_raw": "a cat sitting in the [rocks]",
+        "instruction": "Change the cat sitting location to rocks",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "grass"
+            ],
+            "target": [
+              "rocks"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "grass"
+        ],
+        "target_annotated_spans": [
+          "rocks"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Support/background material replacement; changed nouns identify the region.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "000000000014",
+        "seed": 1,
+        "image_name": "000000000014",
+        "target_code": "edit",
+        "image_path": "data/000000000014/source.png",
+        "source_prompt": "a man with his hands hanging down standing by a house",
+        "target_prompt": "a man with his hands rasing standing by a house",
+        "source_mask_tokens": [
+          "hanging",
+          "down",
+          "hands"
+        ],
+        "target_mask_tokens": [
+          "rasing",
+          "hands"
+        ],
+        "unchanged_tokens": [],
+        "category": "0",
+        "record_index": 4,
+        "target_index": 0,
+        "source_prompt_raw": "a man with his hands [hanging down] standing by a house",
+        "target_prompt_raw": "a man with his hands [rasing] standing by a house",
+        "instruction": "Turn the man's hands from hanhanging down to rasing",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "hanging",
+              "down"
+            ],
+            "target": [
+              "rasing"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "hanging down"
+        ],
+        "target_annotated_spans": [
+          "rasing"
+        ],
+        "object_context": [
+          "hands"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Hand pose change; preserve the supplied rasing spelling.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "122000000009",
+        "seed": 1,
+        "image_name": "122000000009",
+        "target_code": "edit",
+        "image_path": "data/122000000009/source.png",
+        "source_prompt": "a woman sitting at a bar with a glass of wine, with a lamp on the table",
+        "target_prompt": "a woman sitting at a bar with a glass of wine, with a cake on the table",
+        "source_mask_tokens": [
+          "lamp"
+        ],
+        "target_mask_tokens": [
+          "cake"
+        ],
+        "unchanged_tokens": [],
+        "category": "1",
+        "record_index": 5,
+        "target_index": 0,
+        "source_prompt_raw": "a woman sitting at a bar with a glass of wine, with a [lamp] on the table",
+        "target_prompt_raw": "a woman sitting at a bar with a glass of wine, with a [cake] on the table",
+        "instruction": "Change the lamp to cake on the table",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "lamp"
+            ],
+            "target": [
+              "cake"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "lamp"
+        ],
+        "target_annotated_spans": [
+          "cake"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Table object replacement; changed object nouns suffice.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "113000000006",
+        "seed": 1,
+        "image_name": "113000000006",
+        "target_code": "edit",
+        "image_path": "data/113000000006/source.png",
+        "source_prompt": "a woman's face is framed in a large photo on a wall",
+        "target_prompt": "a woman's face is framed in a large painting on a wall",
+        "source_mask_tokens": [
+          "photo"
+        ],
+        "target_mask_tokens": [
+          "painting"
+        ],
+        "unchanged_tokens": [],
+        "category": "1",
+        "record_index": 6,
+        "target_index": 0,
+        "source_prompt_raw": "a woman's face is framed in a large [photo] on a wall",
+        "target_prompt_raw": "a woman's face is framed in a large [painting] on a wall",
+        "instruction": "Change the photo on the wall to a painting",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "photo"
+            ],
+            "target": [
+              "painting"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "photo"
+        ],
+        "target_annotated_spans": [
+          "painting"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Framed artwork replacement; changed object nouns suffice.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "123000000007",
+        "seed": 1,
+        "image_name": "123000000007",
+        "target_code": "edit",
+        "image_path": "data/123000000007/source.png",
+        "source_prompt": "a living room with white sofa and a brick wall",
+        "target_prompt": "a living room with white bed and a brick wall",
+        "source_mask_tokens": [
+          "sofa"
+        ],
+        "target_mask_tokens": [
+          "bed"
+        ],
+        "unchanged_tokens": [],
+        "category": "1",
+        "record_index": 7,
+        "target_index": 0,
+        "source_prompt_raw": "a living room with white [sofa] and a brick wall",
+        "target_prompt_raw": "a living room with white [bed] and a brick wall",
+        "instruction": "Change the sofa to a bed",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "sofa"
+            ],
+            "target": [
+              "bed"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "sofa"
+        ],
+        "target_annotated_spans": [
+          "bed"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Furniture replacement; changed object nouns suffice.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "112000000009",
+        "seed": 1,
+        "image_name": "112000000009",
+        "target_code": "edit",
+        "image_path": "data/112000000009/source.png",
+        "source_prompt": "an angel with wings and a golden light",
+        "target_prompt": "an demon with wings and a golden light",
+        "source_mask_tokens": [
+          "angel"
+        ],
+        "target_mask_tokens": [
+          "demon"
+        ],
+        "unchanged_tokens": [],
+        "category": "1",
+        "record_index": 8,
+        "target_index": 0,
+        "source_prompt_raw": "an [angel] with wings and a golden light",
+        "target_prompt_raw": "an [demon] with wings and a golden light",
+        "instruction": "Change the angel to a demon",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "angel"
+            ],
+            "target": [
+              "demon"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "angel"
+        ],
+        "target_annotated_spans": [
+          "demon"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Character replacement; changed character nouns suffice.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "114000000004",
+        "seed": 1,
+        "image_name": "114000000004",
+        "target_code": "edit",
+        "image_path": "data/114000000004/source.png",
+        "source_prompt": "a blue pyramid with a reflection of mountains in the water",
+        "target_prompt": "a blue pyramid with a reflection of ship in the water",
+        "source_mask_tokens": [
+          "mountains",
+          "reflection"
+        ],
+        "target_mask_tokens": [
+          "ship",
+          "reflection"
+        ],
+        "unchanged_tokens": [],
+        "category": "1",
+        "record_index": 9,
+        "target_index": 0,
+        "source_prompt_raw": "a blue pyramid with a reflection of [mountains] in the water",
+        "target_prompt_raw": "a blue pyramid with a reflection of [ship] in the water",
+        "instruction": "Replace the mountain reflection with a ship reflection in the water",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "mountains"
+            ],
+            "target": [
+              "ship"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "mountains"
+        ],
+        "target_annotated_spans": [
+          "ship"
+        ],
+        "object_context": [
+          "reflection"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Replacement concerns the reflection; retain reflection context.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "213000000005",
+        "seed": 1,
+        "image_name": "213000000005",
+        "target_code": "edit",
+        "image_path": "data/213000000005/source.png",
+        "source_prompt": "a large brown teddy bear sitting on a white couch",
+        "target_prompt": "a large brown teddy bear and a girl sitting on a white couch",
+        "source_mask_tokens": [
+          "couch"
+        ],
+        "target_mask_tokens": [
+          "girl",
+          "couch"
+        ],
+        "unchanged_tokens": [],
+        "category": "2",
+        "record_index": 10,
+        "target_index": 0,
+        "source_prompt_raw": "a large brown teddy bear sitting on a white couch",
+        "target_prompt_raw": "a large brown teddy bear [and a girl] sitting on a white couch",
+        "instruction": "Add a girl to the couch with the teddy bear",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "and",
+              "a",
+              "girl"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "and a girl"
+        ],
+        "object_context": [
+          "couch"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Girl insertion; couch is the shared support surface on both sides.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "211000000000",
+        "seed": 1,
+        "image_name": "211000000000",
+        "target_code": "edit",
+        "image_path": "data/211000000000/source.png",
+        "source_prompt": "a dog wearing space suit",
+        "target_prompt": "a dog wearing space suit with flowers in mouth",
+        "source_mask_tokens": [
+          "dog"
+        ],
+        "target_mask_tokens": [
+          "flowers",
+          "mouth",
+          "dog"
+        ],
+        "unchanged_tokens": [],
+        "category": "2",
+        "record_index": 11,
+        "target_index": 0,
+        "source_prompt_raw": "a dog wearing space suit",
+        "target_prompt_raw": "a dog wearing space suit [with flowers in mouth]",
+        "instruction": "Add flowers to the dog's mouth",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "with",
+              "flowers",
+              "in",
+              "mouth"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "with flowers in mouth"
+        ],
+        "object_context": [
+          "dog"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Flowers at mouth insertion; dog is the shared affected animal; mouth is absent from source.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "224000000002",
+        "seed": 1,
+        "image_name": "224000000002",
+        "target_code": "edit",
+        "image_path": "data/224000000002/source.png",
+        "source_prompt": "a dog lying on the grass",
+        "target_prompt": "a dog lying on the grass with flowers",
+        "source_mask_tokens": [
+          "grass"
+        ],
+        "target_mask_tokens": [
+          "flowers",
+          "grass"
+        ],
+        "unchanged_tokens": [],
+        "category": "2",
+        "record_index": 12,
+        "target_index": 0,
+        "source_prompt_raw": "a dog lying on the grass",
+        "target_prompt_raw": "a dog lying on the grass [with flowers]",
+        "instruction": "add flowers on the grass",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "with",
+              "flowers"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "with flowers"
+        ],
+        "object_context": [
+          "grass"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Flowers insertion following grass; grass is the shared location noun.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "221000000003",
+        "seed": 1,
+        "image_name": "221000000003",
+        "target_code": "edit",
+        "image_path": "data/221000000003/source.png",
+        "source_prompt": "a small brown bird sitting on top of a pine tree",
+        "target_prompt": "two small brown bird sitting on top of a pine tree",
+        "source_mask_tokens": [
+          "bird"
+        ],
+        "target_mask_tokens": [
+          "two",
+          "bird"
+        ],
+        "unchanged_tokens": [],
+        "category": "2",
+        "record_index": 13,
+        "target_index": 0,
+        "source_prompt_raw": "[a] small brown bird sitting on top of a pine tree",
+        "target_prompt_raw": "[two] small brown bird sitting on top of a pine tree",
+        "instruction": "Add another small brown bird",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "a"
+            ],
+            "target": [
+              "two"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "a"
+        ],
+        "target_annotated_spans": [
+          "two"
+        ],
+        "object_context": [
+          "bird"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Count change from article a to two; exclude article a and anchor both sides to bird.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "213000000008",
+        "seed": 1,
+        "image_name": "213000000008",
+        "target_code": "edit",
+        "image_path": "data/213000000008/source.png",
+        "source_prompt": "a table with flowers on it",
+        "target_prompt": "a table with flowers and hat on it",
+        "source_mask_tokens": [
+          "table"
+        ],
+        "target_mask_tokens": [
+          "hat",
+          "table"
+        ],
+        "unchanged_tokens": [],
+        "category": "2",
+        "record_index": 14,
+        "target_index": 0,
+        "source_prompt_raw": "a table with flowers on it",
+        "target_prompt_raw": "a table with flowers [and hat] on it",
+        "instruction": "Add hat to the table with flowers.",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "and",
+              "hat"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "and hat"
+        ],
+        "object_context": [
+          "table"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Hat insertion; table is the shared support surface.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "314000000006",
+        "seed": 1,
+        "image_name": "314000000006",
+        "target_code": "edit",
+        "image_path": "data/314000000006/source.png",
+        "source_prompt": "a lone wolf howling at the moon in the night sky",
+        "target_prompt": "a lone wolf howling in the night sky",
+        "source_mask_tokens": [
+          "moon",
+          "sky"
+        ],
+        "target_mask_tokens": [
+          "sky"
+        ],
+        "unchanged_tokens": [],
+        "category": "3",
+        "record_index": 15,
+        "target_index": 0,
+        "source_prompt_raw": "a lone wolf howling [at the moon] in the night sky",
+        "target_prompt_raw": "a lone wolf howling in the night sky",
+        "instruction": "Remove the moon",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "delete",
+            "source": [
+              "at",
+              "the",
+              "moon"
+            ],
+            "target": []
+          }
+        ],
+        "source_annotated_spans": [
+          "at the moon"
+        ],
+        "target_annotated_spans": [],
+        "object_context": [
+          "sky"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Moon deletion; sky is the common scene region retained in target.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "322000000002",
+        "seed": 1,
+        "image_name": "322000000002",
+        "target_code": "edit",
+        "image_path": "data/322000000002/source.png",
+        "source_prompt": "a woman in a purple dress sitting on a swing holding a coconut",
+        "target_prompt": "a woman in a purple dress sitting on a swing",
+        "source_mask_tokens": [
+          "holding",
+          "coconut",
+          "woman"
+        ],
+        "target_mask_tokens": [
+          "woman"
+        ],
+        "unchanged_tokens": [],
+        "category": "3",
+        "record_index": 16,
+        "target_index": 0,
+        "source_prompt_raw": "a woman in a purple dress sitting on a swing [holding a coconut]",
+        "target_prompt_raw": "a woman in a purple dress sitting on a swing",
+        "instruction": "Remove the coconut from the woman's hand",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "delete",
+            "source": [
+              "holding",
+              "a",
+              "coconut"
+            ],
+            "target": []
+          }
+        ],
+        "source_annotated_spans": [
+          "holding a coconut"
+        ],
+        "target_annotated_spans": [],
+        "object_context": [
+          "woman"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Held coconut deletion; woman is the shared affected person.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "311000000002",
+        "seed": 1,
+        "image_name": "311000000002",
+        "target_code": "edit",
+        "image_path": "data/311000000002/source.png",
+        "source_prompt": "a lion in a suit sitting at a table with a laptop",
+        "target_prompt": "a lion in a suit sitting at a table",
+        "source_mask_tokens": [
+          "laptop",
+          "table"
+        ],
+        "target_mask_tokens": [
+          "table"
+        ],
+        "unchanged_tokens": [],
+        "category": "3",
+        "record_index": 17,
+        "target_index": 0,
+        "source_prompt_raw": "a lion in a suit sitting at a table [with a laptop]",
+        "target_prompt_raw": "a lion in a suit sitting at a table",
+        "instruction": "Remove the laptop from the table",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "delete",
+            "source": [
+              "with",
+              "a",
+              "laptop"
+            ],
+            "target": []
+          }
+        ],
+        "source_annotated_spans": [
+          "with a laptop"
+        ],
+        "target_annotated_spans": [],
+        "object_context": [
+          "table"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Laptop deletion; table is the common support surface.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "324000000008",
+        "seed": 1,
+        "image_name": "324000000008",
+        "target_code": "edit",
+        "image_path": "data/324000000008/source.png",
+        "source_prompt": "two boats are docked on the shore of a lake",
+        "target_prompt": "a lake",
+        "source_mask_tokens": [
+          "two",
+          "boats",
+          "docked",
+          "shore",
+          "lake"
+        ],
+        "target_mask_tokens": [
+          "lake"
+        ],
+        "unchanged_tokens": [],
+        "category": "3",
+        "record_index": 18,
+        "target_index": 0,
+        "source_prompt_raw": "[two boats are docked on the shore of] a lake",
+        "target_prompt_raw": "a lake",
+        "instruction": "Remove the boats",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "delete",
+            "source": [
+              "two",
+              "boats",
+              "are",
+              "docked",
+              "on",
+              "the",
+              "shore",
+              "of"
+            ],
+            "target": []
+          }
+        ],
+        "source_annotated_spans": [
+          "two boats are docked on the shore of"
+        ],
+        "target_annotated_spans": [],
+        "object_context": [
+          "lake"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Boats and shore clause deletion; lake is the sole shared scene noun.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "322000000004",
+        "seed": 1,
+        "image_name": "322000000004",
+        "target_code": "edit",
+        "image_path": "data/322000000004/source.png",
+        "source_prompt": "a woman with glasses sitting on a stone wall",
+        "target_prompt": "a woman sitting on a stone wall",
+        "source_mask_tokens": [
+          "glasses",
+          "woman"
+        ],
+        "target_mask_tokens": [
+          "woman"
+        ],
+        "unchanged_tokens": [],
+        "category": "3",
+        "record_index": 19,
+        "target_index": 0,
+        "source_prompt_raw": "a woman [with glasses] sitting on a stone wall",
+        "target_prompt_raw": "a woman sitting on a stone wall",
+        "instruction": "Remove the glasses from the woman",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "delete",
+            "source": [
+              "with",
+              "glasses"
+            ],
+            "target": []
+          }
+        ],
+        "source_annotated_spans": [
+          "with glasses"
+        ],
+        "target_annotated_spans": [],
+        "object_context": [
+          "woman"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Glasses deletion; woman is the shared affected person.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "422000000001",
+        "seed": 1,
+        "image_name": "422000000001",
+        "target_code": "edit",
+        "image_path": "data/422000000001/source.png",
+        "source_prompt": "a woman with long curly hair",
+        "target_prompt": "a woman with short curly hair",
+        "source_mask_tokens": [
+          "long",
+          "hair"
+        ],
+        "target_mask_tokens": [
+          "short",
+          "hair"
+        ],
+        "unchanged_tokens": [],
+        "category": "4",
+        "record_index": 20,
+        "target_index": 0,
+        "source_prompt_raw": "a woman with [long curly hair]",
+        "target_prompt_raw": "a woman with [short curly hair]",
+        "instruction": "Change the woman's hair from long to short",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "long"
+            ],
+            "target": [
+              "short"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "long curly hair"
+        ],
+        "target_annotated_spans": [
+          "short curly hair"
+        ],
+        "object_context": [
+          "hair"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Hair length change; curly is unchanged and omitted.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "412000000004",
+        "seed": 1,
+        "image_name": "412000000004",
+        "target_code": "edit",
+        "image_path": "data/412000000004/source.png",
+        "source_prompt": "a detailed oil painting of a calm beautiful woman with stars in her hair",
+        "target_prompt": "a detailed oil painting of a laughing beautiful woman with stars in her hair",
+        "source_mask_tokens": [
+          "calm",
+          "woman"
+        ],
+        "target_mask_tokens": [
+          "laughing",
+          "woman"
+        ],
+        "unchanged_tokens": [],
+        "category": "4",
+        "record_index": 21,
+        "target_index": 0,
+        "source_prompt_raw": "a detailed oil painting of a [calm] beautiful woman with stars in her hair",
+        "target_prompt_raw": "a detailed oil painting of a [laughing] beautiful woman with stars in her hair",
+        "instruction": "Change the woman from calm to laughing",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "calm"
+            ],
+            "target": [
+              "laughing"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "calm"
+        ],
+        "target_annotated_spans": [
+          "laughing"
+        ],
+        "object_context": [
+          "woman"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Expression/action change; woman anchors the attribute.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "413000000002",
+        "seed": 1,
+        "image_name": "413000000002",
+        "target_code": "edit",
+        "image_path": "data/413000000002/source.png",
+        "source_prompt": "couple in a blanket on the couch with a burning fire",
+        "target_prompt": "couple in a blanket on the couch with a extinguished fire",
+        "source_mask_tokens": [
+          "burning",
+          "fire"
+        ],
+        "target_mask_tokens": [
+          "extinguished",
+          "fire"
+        ],
+        "unchanged_tokens": [],
+        "category": "4",
+        "record_index": 22,
+        "target_index": 0,
+        "source_prompt_raw": "couple in a blanket on the couch with a [burning fire]",
+        "target_prompt_raw": "couple in a blanket on the couch with a [extinguished fire]",
+        "instruction": "Extinguish the fire to the scene",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "burning"
+            ],
+            "target": [
+              "extinguished"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "burning fire"
+        ],
+        "target_annotated_spans": [
+          "extinguished fire"
+        ],
+        "object_context": [
+          "fire"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Fire state change; fire anchors the attribute.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "423000000001",
+        "seed": 1,
+        "image_name": "423000000001",
+        "target_code": "edit",
+        "image_path": "data/423000000001/source.png",
+        "source_prompt": "a person holding a mug of hot chocolate and reading a book",
+        "target_prompt": "a person holding a glass of hot chocolate and reading a book",
+        "source_mask_tokens": [
+          "mug"
+        ],
+        "target_mask_tokens": [
+          "glass"
+        ],
+        "unchanged_tokens": [],
+        "category": "4",
+        "record_index": 23,
+        "target_index": 0,
+        "source_prompt_raw": "a person holding a [mug] of hot chocolate and reading a book",
+        "target_prompt_raw": "a person holding a [glass] of hot chocolate and reading a book",
+        "instruction": "Change the mug to a glass",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "mug"
+            ],
+            "target": [
+              "glass"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "mug"
+        ],
+        "target_annotated_spans": [
+          "glass"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Vessel replacement; changed object nouns suffice.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "524000000004",
+        "seed": 1,
+        "image_name": "524000000004",
+        "target_code": "edit",
+        "image_path": "data/524000000004/source.png",
+        "source_prompt": "easter bag with easter eggs and flowers",
+        "target_prompt": "easter bag upside down with easter eggs and flowers",
+        "source_mask_tokens": [
+          "bag"
+        ],
+        "target_mask_tokens": [
+          "upside",
+          "down",
+          "bag"
+        ],
+        "unchanged_tokens": [],
+        "category": "5",
+        "record_index": 25,
+        "target_index": 0,
+        "source_prompt_raw": "easter bag with easter eggs and flowers",
+        "target_prompt_raw": "easter bag [upside down] with easter eggs and flowers",
+        "instruction": "Turn the easter bag upside down",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "upside",
+              "down"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "upside down"
+        ],
+        "object_context": [
+          "bag"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Orientation insertion; bag is the affected common object.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "511000000000",
+        "seed": 1,
+        "image_name": "511000000000",
+        "target_code": "edit",
+        "image_path": "data/511000000000/source.png",
+        "source_prompt": "a cartoon dog laying down on the ground",
+        "target_prompt": "a cartoon dog jumping up from the ground",
+        "source_mask_tokens": [
+          "laying",
+          "down",
+          "dog"
+        ],
+        "target_mask_tokens": [
+          "jumping",
+          "up",
+          "dog"
+        ],
+        "unchanged_tokens": [],
+        "category": "5",
+        "record_index": 27,
+        "target_index": 0,
+        "source_prompt_raw": "a cartoon dog [laying down on] the ground",
+        "target_prompt_raw": "a cartoon dog [jumping up from] the ground",
+        "instruction": "Change the cartoon dog's posture from laying down to jumping up",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "laying",
+              "down",
+              "on"
+            ],
+            "target": [
+              "jumping",
+              "up",
+              "from"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "laying down on"
+        ],
+        "target_annotated_spans": [
+          "jumping up from"
+        ],
+        "object_context": [
+          "dog"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Posture/action replacement; remove prepositions and retain dog context.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "523000000003",
+        "seed": 1,
+        "image_name": "523000000003",
+        "target_code": "edit",
+        "image_path": "data/523000000003/source.png",
+        "source_prompt": "a square wooden crate filled with radishes and greens",
+        "target_prompt": "a round wooden crate filled with radishes and greens",
+        "source_mask_tokens": [
+          "square",
+          "crate"
+        ],
+        "target_mask_tokens": [
+          "round",
+          "crate"
+        ],
+        "unchanged_tokens": [],
+        "category": "5",
+        "record_index": 28,
+        "target_index": 0,
+        "source_prompt_raw": "a [square] wooden crate filled with radishes and greens",
+        "target_prompt_raw": "a [round] wooden crate filled with radishes and greens",
+        "instruction": "change the wooden crate shape to round",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "square"
+            ],
+            "target": [
+              "round"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "square"
+        ],
+        "target_annotated_spans": [
+          "round"
+        ],
+        "object_context": [
+          "crate"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Crate shape change; crate anchors the attribute.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "513000000001",
+        "seed": 1,
+        "image_name": "513000000001",
+        "target_code": "edit",
+        "image_path": "data/513000000001/source.png",
+        "source_prompt": "a glass jar with a lid closed",
+        "target_prompt": "a glass jar with a lid opened",
+        "source_mask_tokens": [
+          "closed",
+          "lid"
+        ],
+        "target_mask_tokens": [
+          "opened",
+          "lid"
+        ],
+        "unchanged_tokens": [],
+        "category": "5",
+        "record_index": 29,
+        "target_index": 0,
+        "source_prompt_raw": "a glass jar with a lid [closed]",
+        "target_prompt_raw": "a glass jar with a lid [opened]",
+        "instruction": "Change the lid from being closed to being opened",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "closed"
+            ],
+            "target": [
+              "opened"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "closed"
+        ],
+        "target_annotated_spans": [
+          "opened"
+        ],
+        "object_context": [
+          "lid"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Lid state change; use lid rather than the surrounding jar.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "611000000001",
+        "seed": 1,
+        "image_name": "611000000001",
+        "target_code": "edit",
+        "image_path": "data/611000000001/source.png",
+        "source_prompt": "otter in the water with pink hearts",
+        "target_prompt": "otter in the water with green hearts",
+        "source_mask_tokens": [
+          "pink",
+          "hearts"
+        ],
+        "target_mask_tokens": [
+          "green",
+          "hearts"
+        ],
+        "unchanged_tokens": [],
+        "category": "6",
+        "record_index": 30,
+        "target_index": 0,
+        "source_prompt_raw": "otter in the water with [pink] hearts",
+        "target_prompt_raw": "otter in the water with [green] hearts",
+        "instruction": "Change the raven from pink to green",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "pink"
+            ],
+            "target": [
+              "green"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "pink"
+        ],
+        "target_annotated_spans": [
+          "green"
+        ],
+        "object_context": [
+          "hearts"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Prompt pair changes hearts; instruction mentions raven in error. Follow prompts.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "624000000003",
+        "seed": 1,
+        "image_name": "624000000003",
+        "target_code": "edit",
+        "image_path": "data/624000000003/source.png",
+        "source_prompt": "a brwon cabin in the snow near a lake",
+        "target_prompt": "a golden cabin in the snow near a lake",
+        "source_mask_tokens": [
+          "brwon",
+          "cabin"
+        ],
+        "target_mask_tokens": [
+          "golden",
+          "cabin"
+        ],
+        "unchanged_tokens": [],
+        "category": "6",
+        "record_index": 31,
+        "target_index": 0,
+        "source_prompt_raw": "a [brwon] cabin in the snow near a lake",
+        "target_prompt_raw": "a [golden] cabin in the snow near a lake",
+        "instruction": "Change the cabin's color to golden",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "brwon"
+            ],
+            "target": [
+              "golden"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "brwon"
+        ],
+        "target_annotated_spans": [
+          "golden"
+        ],
+        "object_context": [
+          "cabin"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Cabin color change; preserve supplied brwon spelling.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "622000000003",
+        "seed": 1,
+        "image_name": "622000000003",
+        "target_code": "edit",
+        "image_path": "data/622000000003/source.png",
+        "source_prompt": "a beautiful woman wearing a black veil",
+        "target_prompt": "a beautiful woman wearing a golden veil",
+        "source_mask_tokens": [
+          "black",
+          "veil"
+        ],
+        "target_mask_tokens": [
+          "golden",
+          "veil"
+        ],
+        "unchanged_tokens": [],
+        "category": "6",
+        "record_index": 32,
+        "target_index": 0,
+        "source_prompt_raw": "a beautiful woman wearing a [black] veil",
+        "target_prompt_raw": "a beautiful woman wearing a [golden] veil",
+        "instruction": "Make the veil golden",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "black"
+            ],
+            "target": [
+              "golden"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "black"
+        ],
+        "target_annotated_spans": [
+          "golden"
+        ],
+        "object_context": [
+          "veil"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Veil color change; veil anchors the attribute.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "623000000002",
+        "seed": 1,
+        "image_name": "623000000002",
+        "target_code": "edit",
+        "image_path": "data/623000000002/source.png",
+        "source_prompt": "a red lipstick is being splashed with red powder",
+        "target_prompt": "a green lipstick is being splashed with red powder",
+        "source_mask_tokens": [
+          "red",
+          "lipstick"
+        ],
+        "target_mask_tokens": [
+          "green",
+          "lipstick"
+        ],
+        "unchanged_tokens": [],
+        "category": "6",
+        "record_index": 33,
+        "target_index": 0,
+        "source_prompt_raw": "a [red] lipstick is being splashed with red powder",
+        "target_prompt_raw": "a [green] lipstick is being splashed with red powder",
+        "instruction": "Change the lipstick from red to green",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "red"
+            ],
+            "target": [
+              "green"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "red"
+        ],
+        "target_annotated_spans": [
+          "green"
+        ],
+        "object_context": [
+          "lipstick"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Lipstick color change; source red occurs twice so upstream token matching can also select powder red. Record ambiguity; retain lexical tokens.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "622000000002",
+        "seed": 1,
+        "image_name": "622000000002",
+        "target_code": "edit",
+        "image_path": "data/622000000002/source.png",
+        "source_prompt": "a man in a white shirt talking on a cell phone",
+        "target_prompt": "a man in a blue shirt talking on a cell phone",
+        "source_mask_tokens": [
+          "white",
+          "shirt"
+        ],
+        "target_mask_tokens": [
+          "blue",
+          "shirt"
+        ],
+        "unchanged_tokens": [],
+        "category": "6",
+        "record_index": 34,
+        "target_index": 0,
+        "source_prompt_raw": "a man in a [white] shirt talking on a cell phone",
+        "target_prompt_raw": "a man in a [blue] shirt talking on a cell phone",
+        "instruction": "Change the color of the shirt from white to blue",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "white"
+            ],
+            "target": [
+              "blue"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "white"
+        ],
+        "target_annotated_spans": [
+          "blue"
+        ],
+        "object_context": [
+          "shirt"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Shirt color change; shirt anchors the attribute.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "714000000000",
+        "seed": 1,
+        "image_name": "714000000000",
+        "target_code": "edit",
+        "image_path": "data/714000000000/source.png",
+        "source_prompt": "a close up of a red leaf on a plant",
+        "target_prompt": "a close up of a red leaf made of jewels on a plant",
+        "source_mask_tokens": [
+          "leaf"
+        ],
+        "target_mask_tokens": [
+          "jewels",
+          "leaf"
+        ],
+        "unchanged_tokens": [],
+        "category": "7",
+        "record_index": 35,
+        "target_index": 0,
+        "source_prompt_raw": "a close up of a red leaf on a plant",
+        "target_prompt_raw": "a close up of a red leaf [made of jewels] on a plant",
+        "instruction": "Make the red leaf made of jewels",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "made",
+              "of",
+              "jewels"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "made of jewels"
+        ],
+        "object_context": [
+          "leaf"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Material insertion; leaf is the shared affected object.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "712000000004",
+        "seed": 1,
+        "image_name": "712000000004",
+        "target_code": "edit",
+        "image_path": "data/712000000004/source.png",
+        "source_prompt": "a cartoon couple standing on the beach",
+        "target_prompt": "a cartoon garage kits couple standing on the beach",
+        "source_mask_tokens": [
+          "couple"
+        ],
+        "target_mask_tokens": [
+          "garage",
+          "kits",
+          "couple"
+        ],
+        "unchanged_tokens": [],
+        "category": "7",
+        "record_index": 36,
+        "target_index": 0,
+        "source_prompt_raw": "a cartoon couple standing on the beach",
+        "target_prompt_raw": "a cartoon [garage kits] couple standing on the beach",
+        "instruction": "Add a garage kits style to the cartoon couple",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "garage",
+              "kits"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "garage kits"
+        ],
+        "object_context": [
+          "couple"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Figurine-style insertion; couple is the common affected subject.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "713000000001",
+        "seed": 1,
+        "image_name": "713000000001",
+        "target_code": "edit",
+        "image_path": "data/713000000001/source.png",
+        "source_prompt": "illustration of a cup and a lamp on a table by a window",
+        "target_prompt": "illustration of a cup and a crystal lamp on a table by a window",
+        "source_mask_tokens": [
+          "lamp"
+        ],
+        "target_mask_tokens": [
+          "crystal",
+          "lamp"
+        ],
+        "unchanged_tokens": [],
+        "category": "7",
+        "record_index": 37,
+        "target_index": 0,
+        "source_prompt_raw": "illustration of a cup and a lamp on a table by a window",
+        "target_prompt_raw": "illustration of a cup and a [crystal] lamp on a table by a window",
+        "instruction": "Replace the lamp with a crystal lamp",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "crystal"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "crystal"
+        ],
+        "object_context": [
+          "lamp"
+        ],
+        "manual_context_required": true,
+        "selection_note": "Material insertion; lamp is the shared affected object.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "712000000001",
+        "seed": 1,
+        "image_name": "712000000001",
+        "target_code": "edit",
+        "image_path": "data/712000000001/source.png",
+        "source_prompt": "a drawing of a young man with blue eyes",
+        "target_prompt": "a drawing of a young robot with blue eyes",
+        "source_mask_tokens": [
+          "man"
+        ],
+        "target_mask_tokens": [
+          "robot"
+        ],
+        "unchanged_tokens": [],
+        "category": "7",
+        "record_index": 38,
+        "target_index": 0,
+        "source_prompt_raw": "a drawing of a young man with blue eyes",
+        "target_prompt_raw": "a drawing of a young [robot] with blue eyes",
+        "instruction": "Change the man to a robot",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "man"
+            ],
+            "target": [
+              "robot"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "robot"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Character replacement; changed nouns suffice even though source man has no brackets.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "722000000000",
+        "seed": 1,
+        "image_name": "722000000000",
+        "target_code": "edit",
+        "image_path": "data/722000000000/source.png",
+        "source_prompt": "a man wearing a shirt",
+        "target_prompt": "a man wearing a sweater",
+        "source_mask_tokens": [
+          "shirt"
+        ],
+        "target_mask_tokens": [
+          "sweater"
+        ],
+        "unchanged_tokens": [],
+        "category": "7",
+        "record_index": 39,
+        "target_index": 0,
+        "source_prompt_raw": "a man wearing a [shirt]",
+        "target_prompt_raw": "a man wearing a [sweater]",
+        "instruction": "change the shirt to sweater",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "shirt"
+            ],
+            "target": [
+              "sweater"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "shirt"
+        ],
+        "target_annotated_spans": [
+          "sweater"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Garment replacement; changed nouns suffice.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "812000000002",
+        "seed": 1,
+        "image_name": "812000000002",
+        "target_code": "edit",
+        "image_path": "data/812000000002/source.png",
+        "source_prompt": "a cartoon girl in a hat and dress",
+        "target_prompt": "a cartoon girl in a hat and dress standing in front of a beautiful house",
+        "source_mask_tokens": [
+          "girl"
+        ],
+        "target_mask_tokens": [
+          "standing",
+          "front",
+          "beautiful",
+          "house",
+          "girl"
+        ],
+        "unchanged_tokens": [],
+        "category": "8",
+        "record_index": 40,
+        "target_index": 0,
+        "source_prompt_raw": "a cartoon girl in a hat and dress",
+        "target_prompt_raw": "a cartoon girl in a hat and dress [standing in front of a beautiful house]",
+        "instruction": "Add a beautiful house in front of the girl",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "insert",
+            "source": [],
+            "target": [
+              "standing",
+              "in",
+              "front",
+              "of",
+              "a",
+              "beautiful",
+              "house"
+            ]
+          }
+        ],
+        "source_annotated_spans": [],
+        "target_annotated_spans": [
+          "standing in front of a beautiful house"
+        ],
+        "object_context": [
+          "girl"
+        ],
+        "manual_context_required": true,
+        "selection_note": "House/background clause insertion; girl is the shared subject. Target places girl in front of house whereas instruction wording reverses relation; follow target.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "813000000002",
+        "seed": 1,
+        "image_name": "813000000002",
+        "target_code": "edit",
+        "image_path": "data/813000000002/source.png",
+        "source_prompt": "luxury bedroom interior with marble wall",
+        "target_prompt": "luxury bedroom interior with flower wall",
+        "source_mask_tokens": [
+          "marble",
+          "wall"
+        ],
+        "target_mask_tokens": [
+          "flower",
+          "wall"
+        ],
+        "unchanged_tokens": [],
+        "category": "8",
+        "record_index": 41,
+        "target_index": 0,
+        "source_prompt_raw": "luxury bedroom interior [with marble wall]",
+        "target_prompt_raw": "luxury bedroom interior [with flower wall]",
+        "instruction": "Add a flower wall to the luxury bedroom interior",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "marble"
+            ],
+            "target": [
+              "flower"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "with marble wall"
+        ],
+        "target_annotated_spans": [
+          "with flower wall"
+        ],
+        "object_context": [
+          "wall"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Wall material/appearance replacement; wall is common context.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "824000000007",
+        "seed": 1,
+        "image_name": "824000000007",
+        "target_code": "edit",
+        "image_path": "data/824000000007/source.png",
+        "source_prompt": "a man is walking through a rice field",
+        "target_prompt": "a man is walking through a wonder land",
+        "source_mask_tokens": [
+          "rice",
+          "field"
+        ],
+        "target_mask_tokens": [
+          "wonder",
+          "land"
+        ],
+        "unchanged_tokens": [],
+        "category": "8",
+        "record_index": 43,
+        "target_index": 0,
+        "source_prompt_raw": "a man is walking through [a rice field]",
+        "target_prompt_raw": "a man is walking through [a wonder land]",
+        "instruction": "Change the rice field to a wonder land",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "rice",
+              "field"
+            ],
+            "target": [
+              "wonder",
+              "land"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "a rice field"
+        ],
+        "target_annotated_spans": [
+          "a wonder land"
+        ],
+        "object_context": [],
+        "manual_context_required": false,
+        "selection_note": "Scene replacement; use content words from both changed noun phrases.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "811000000004",
+        "seed": 1,
+        "image_name": "811000000004",
+        "target_code": "edit",
+        "image_path": "data/811000000004/source.png",
+        "source_prompt": "the lion head is on a black background",
+        "target_prompt": "the lion head is on a red background",
+        "source_mask_tokens": [
+          "black",
+          "background"
+        ],
+        "target_mask_tokens": [
+          "red",
+          "background"
+        ],
+        "unchanged_tokens": [],
+        "category": "8",
+        "record_index": 44,
+        "target_index": 0,
+        "source_prompt_raw": "the lion head is on a [black] background",
+        "target_prompt_raw": "the lion head is on a [red] background",
+        "instruction": "Change the background color to red",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "black"
+            ],
+            "target": [
+              "red"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "black"
+        ],
+        "target_annotated_spans": [
+          "red"
+        ],
+        "object_context": [
+          "background"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Background color change; background anchors the attribute.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      },
+      {
+        "case": "911000000007",
+        "seed": 1,
+        "image_name": "911000000007",
+        "target_code": "edit",
+        "image_path": "data/911000000007/source.png",
+        "source_prompt": "a cartoon giraffe sitting down on a white background",
+        "target_prompt": "a watercolor giraffe sitting down on a white background",
+        "source_mask_tokens": [
+          "cartoon",
+          "giraffe"
+        ],
+        "target_mask_tokens": [
+          "watercolor",
+          "giraffe"
+        ],
+        "unchanged_tokens": [],
+        "category": "9",
+        "record_index": 49,
+        "target_index": 0,
+        "source_prompt_raw": "a [cartoon] giraffe sitting down on a white background",
+        "target_prompt_raw": "a [watercolor] giraffe sitting down on a white background",
+        "instruction": "Change the cartoon to watercolor",
+        "mask_mode": "union",
+        "changed_spans": [
+          {
+            "operation": "replace",
+            "source": [
+              "cartoon"
+            ],
+            "target": [
+              "watercolor"
+            ]
+          }
+        ],
+        "source_annotated_spans": [
+          "cartoon"
+        ],
+        "target_annotated_spans": [
+          "watercolor"
+        ],
+        "object_context": [
+          "giraffe"
+        ],
+        "manual_context_required": false,
+        "selection_note": "Global style replacement; giraffe is the common subject noun.",
+        "manually_reviewed": true,
+        "review_basis": "full_prompt_pair_only"
+      }
+    ]
+  },
+  "jobs": {
+    "jobs": [
+      {
+        "case": "000000000088",
+        "stage": "core",
+        "job_id": "000000000088__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "core",
+        "job_id": "000000000088__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "core",
+        "job_id": "000000000088__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "000000000088__sam_native",
+        "depends_on": [
+          "000000000088__sam_native"
+        ]
+      },
+      {
+        "case": "000000000088",
+        "stage": "core",
+        "job_id": "000000000088__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "000000000088__sam_native",
+        "depends_on": [
+          "000000000088__sam_native"
+        ]
+      },
+      {
+        "case": "000000000003",
+        "stage": "core",
+        "job_id": "000000000003__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "core",
+        "job_id": "000000000003__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "core",
+        "job_id": "000000000003__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "000000000003__sam_native",
+        "depends_on": [
+          "000000000003__sam_native"
+        ]
+      },
+      {
+        "case": "000000000003",
+        "stage": "core",
+        "job_id": "000000000003__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "000000000003__sam_native",
+        "depends_on": [
+          "000000000003__sam_native"
+        ]
+      },
+      {
+        "case": "000000000044",
+        "stage": "core",
+        "job_id": "000000000044__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "core",
+        "job_id": "000000000044__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "core",
+        "job_id": "000000000044__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "000000000044__sam_native",
+        "depends_on": [
+          "000000000044__sam_native"
+        ]
+      },
+      {
+        "case": "000000000044",
+        "stage": "core",
+        "job_id": "000000000044__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "000000000044__sam_native",
+        "depends_on": [
+          "000000000044__sam_native"
+        ]
+      },
+      {
+        "case": "000000000014",
+        "stage": "core",
+        "job_id": "000000000014__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "core",
+        "job_id": "000000000014__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "core",
+        "job_id": "000000000014__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "000000000014__sam_native",
+        "depends_on": [
+          "000000000014__sam_native"
+        ]
+      },
+      {
+        "case": "000000000014",
+        "stage": "core",
+        "job_id": "000000000014__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "000000000014__sam_native",
+        "depends_on": [
+          "000000000014__sam_native"
+        ]
+      },
+      {
+        "case": "122000000009",
+        "stage": "core",
+        "job_id": "122000000009__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "core",
+        "job_id": "122000000009__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "core",
+        "job_id": "122000000009__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "122000000009__sam_native",
+        "depends_on": [
+          "122000000009__sam_native"
+        ]
+      },
+      {
+        "case": "122000000009",
+        "stage": "core",
+        "job_id": "122000000009__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "122000000009__sam_native",
+        "depends_on": [
+          "122000000009__sam_native"
+        ]
+      },
+      {
+        "case": "113000000006",
+        "stage": "core",
+        "job_id": "113000000006__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "core",
+        "job_id": "113000000006__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "core",
+        "job_id": "113000000006__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "113000000006__sam_native",
+        "depends_on": [
+          "113000000006__sam_native"
+        ]
+      },
+      {
+        "case": "113000000006",
+        "stage": "core",
+        "job_id": "113000000006__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "113000000006__sam_native",
+        "depends_on": [
+          "113000000006__sam_native"
+        ]
+      },
+      {
+        "case": "123000000007",
+        "stage": "core",
+        "job_id": "123000000007__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "core",
+        "job_id": "123000000007__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "core",
+        "job_id": "123000000007__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "123000000007__sam_native",
+        "depends_on": [
+          "123000000007__sam_native"
+        ]
+      },
+      {
+        "case": "123000000007",
+        "stage": "core",
+        "job_id": "123000000007__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "123000000007__sam_native",
+        "depends_on": [
+          "123000000007__sam_native"
+        ]
+      },
+      {
+        "case": "112000000009",
+        "stage": "core",
+        "job_id": "112000000009__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "core",
+        "job_id": "112000000009__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "core",
+        "job_id": "112000000009__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "112000000009__sam_native",
+        "depends_on": [
+          "112000000009__sam_native"
+        ]
+      },
+      {
+        "case": "112000000009",
+        "stage": "core",
+        "job_id": "112000000009__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "112000000009__sam_native",
+        "depends_on": [
+          "112000000009__sam_native"
+        ]
+      },
+      {
+        "case": "114000000004",
+        "stage": "core",
+        "job_id": "114000000004__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "core",
+        "job_id": "114000000004__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "core",
+        "job_id": "114000000004__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "114000000004__sam_native",
+        "depends_on": [
+          "114000000004__sam_native"
+        ]
+      },
+      {
+        "case": "114000000004",
+        "stage": "core",
+        "job_id": "114000000004__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "114000000004__sam_native",
+        "depends_on": [
+          "114000000004__sam_native"
+        ]
+      },
+      {
+        "case": "213000000005",
+        "stage": "core",
+        "job_id": "213000000005__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "core",
+        "job_id": "213000000005__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "core",
+        "job_id": "213000000005__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "213000000005__sam_native",
+        "depends_on": [
+          "213000000005__sam_native"
+        ]
+      },
+      {
+        "case": "213000000005",
+        "stage": "core",
+        "job_id": "213000000005__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "213000000005__sam_native",
+        "depends_on": [
+          "213000000005__sam_native"
+        ]
+      },
+      {
+        "case": "211000000000",
+        "stage": "core",
+        "job_id": "211000000000__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "core",
+        "job_id": "211000000000__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "core",
+        "job_id": "211000000000__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "211000000000__sam_native",
+        "depends_on": [
+          "211000000000__sam_native"
+        ]
+      },
+      {
+        "case": "211000000000",
+        "stage": "core",
+        "job_id": "211000000000__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "211000000000__sam_native",
+        "depends_on": [
+          "211000000000__sam_native"
+        ]
+      },
+      {
+        "case": "224000000002",
+        "stage": "core",
+        "job_id": "224000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "core",
+        "job_id": "224000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "core",
+        "job_id": "224000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "224000000002__sam_native",
+        "depends_on": [
+          "224000000002__sam_native"
+        ]
+      },
+      {
+        "case": "224000000002",
+        "stage": "core",
+        "job_id": "224000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "224000000002__sam_native",
+        "depends_on": [
+          "224000000002__sam_native"
+        ]
+      },
+      {
+        "case": "221000000003",
+        "stage": "core",
+        "job_id": "221000000003__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "core",
+        "job_id": "221000000003__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "core",
+        "job_id": "221000000003__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "221000000003__sam_native",
+        "depends_on": [
+          "221000000003__sam_native"
+        ]
+      },
+      {
+        "case": "221000000003",
+        "stage": "core",
+        "job_id": "221000000003__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "221000000003__sam_native",
+        "depends_on": [
+          "221000000003__sam_native"
+        ]
+      },
+      {
+        "case": "213000000008",
+        "stage": "core",
+        "job_id": "213000000008__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "core",
+        "job_id": "213000000008__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "core",
+        "job_id": "213000000008__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "213000000008__sam_native",
+        "depends_on": [
+          "213000000008__sam_native"
+        ]
+      },
+      {
+        "case": "213000000008",
+        "stage": "core",
+        "job_id": "213000000008__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "213000000008__sam_native",
+        "depends_on": [
+          "213000000008__sam_native"
+        ]
+      },
+      {
+        "case": "314000000006",
+        "stage": "core",
+        "job_id": "314000000006__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "core",
+        "job_id": "314000000006__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "core",
+        "job_id": "314000000006__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "314000000006__sam_native",
+        "depends_on": [
+          "314000000006__sam_native"
+        ]
+      },
+      {
+        "case": "314000000006",
+        "stage": "core",
+        "job_id": "314000000006__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "314000000006__sam_native",
+        "depends_on": [
+          "314000000006__sam_native"
+        ]
+      },
+      {
+        "case": "322000000002",
+        "stage": "core",
+        "job_id": "322000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "core",
+        "job_id": "322000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "core",
+        "job_id": "322000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "322000000002__sam_native",
+        "depends_on": [
+          "322000000002__sam_native"
+        ]
+      },
+      {
+        "case": "322000000002",
+        "stage": "core",
+        "job_id": "322000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "322000000002__sam_native",
+        "depends_on": [
+          "322000000002__sam_native"
+        ]
+      },
+      {
+        "case": "311000000002",
+        "stage": "core",
+        "job_id": "311000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "core",
+        "job_id": "311000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "core",
+        "job_id": "311000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "311000000002__sam_native",
+        "depends_on": [
+          "311000000002__sam_native"
+        ]
+      },
+      {
+        "case": "311000000002",
+        "stage": "core",
+        "job_id": "311000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "311000000002__sam_native",
+        "depends_on": [
+          "311000000002__sam_native"
+        ]
+      },
+      {
+        "case": "324000000008",
+        "stage": "core",
+        "job_id": "324000000008__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "core",
+        "job_id": "324000000008__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "core",
+        "job_id": "324000000008__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "324000000008__sam_native",
+        "depends_on": [
+          "324000000008__sam_native"
+        ]
+      },
+      {
+        "case": "324000000008",
+        "stage": "core",
+        "job_id": "324000000008__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "324000000008__sam_native",
+        "depends_on": [
+          "324000000008__sam_native"
+        ]
+      },
+      {
+        "case": "322000000004",
+        "stage": "core",
+        "job_id": "322000000004__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "core",
+        "job_id": "322000000004__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "core",
+        "job_id": "322000000004__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "322000000004__sam_native",
+        "depends_on": [
+          "322000000004__sam_native"
+        ]
+      },
+      {
+        "case": "322000000004",
+        "stage": "core",
+        "job_id": "322000000004__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "322000000004__sam_native",
+        "depends_on": [
+          "322000000004__sam_native"
+        ]
+      },
+      {
+        "case": "422000000001",
+        "stage": "core",
+        "job_id": "422000000001__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "core",
+        "job_id": "422000000001__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "core",
+        "job_id": "422000000001__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "422000000001__sam_native",
+        "depends_on": [
+          "422000000001__sam_native"
+        ]
+      },
+      {
+        "case": "422000000001",
+        "stage": "core",
+        "job_id": "422000000001__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "422000000001__sam_native",
+        "depends_on": [
+          "422000000001__sam_native"
+        ]
+      },
+      {
+        "case": "412000000004",
+        "stage": "core",
+        "job_id": "412000000004__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "core",
+        "job_id": "412000000004__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "core",
+        "job_id": "412000000004__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "412000000004__sam_native",
+        "depends_on": [
+          "412000000004__sam_native"
+        ]
+      },
+      {
+        "case": "412000000004",
+        "stage": "core",
+        "job_id": "412000000004__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "412000000004__sam_native",
+        "depends_on": [
+          "412000000004__sam_native"
+        ]
+      },
+      {
+        "case": "413000000002",
+        "stage": "core",
+        "job_id": "413000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "core",
+        "job_id": "413000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "core",
+        "job_id": "413000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "413000000002__sam_native",
+        "depends_on": [
+          "413000000002__sam_native"
+        ]
+      },
+      {
+        "case": "413000000002",
+        "stage": "core",
+        "job_id": "413000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "413000000002__sam_native",
+        "depends_on": [
+          "413000000002__sam_native"
+        ]
+      },
+      {
+        "case": "423000000001",
+        "stage": "core",
+        "job_id": "423000000001__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "core",
+        "job_id": "423000000001__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "core",
+        "job_id": "423000000001__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "423000000001__sam_native",
+        "depends_on": [
+          "423000000001__sam_native"
+        ]
+      },
+      {
+        "case": "423000000001",
+        "stage": "core",
+        "job_id": "423000000001__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "423000000001__sam_native",
+        "depends_on": [
+          "423000000001__sam_native"
+        ]
+      },
+      {
+        "case": "524000000004",
+        "stage": "core",
+        "job_id": "524000000004__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "core",
+        "job_id": "524000000004__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "core",
+        "job_id": "524000000004__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "524000000004__sam_native",
+        "depends_on": [
+          "524000000004__sam_native"
+        ]
+      },
+      {
+        "case": "524000000004",
+        "stage": "core",
+        "job_id": "524000000004__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "524000000004__sam_native",
+        "depends_on": [
+          "524000000004__sam_native"
+        ]
+      },
+      {
+        "case": "511000000000",
+        "stage": "core",
+        "job_id": "511000000000__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "core",
+        "job_id": "511000000000__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "core",
+        "job_id": "511000000000__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "511000000000__sam_native",
+        "depends_on": [
+          "511000000000__sam_native"
+        ]
+      },
+      {
+        "case": "511000000000",
+        "stage": "core",
+        "job_id": "511000000000__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "511000000000__sam_native",
+        "depends_on": [
+          "511000000000__sam_native"
+        ]
+      },
+      {
+        "case": "523000000003",
+        "stage": "core",
+        "job_id": "523000000003__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "core",
+        "job_id": "523000000003__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "core",
+        "job_id": "523000000003__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "523000000003__sam_native",
+        "depends_on": [
+          "523000000003__sam_native"
+        ]
+      },
+      {
+        "case": "523000000003",
+        "stage": "core",
+        "job_id": "523000000003__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "523000000003__sam_native",
+        "depends_on": [
+          "523000000003__sam_native"
+        ]
+      },
+      {
+        "case": "513000000001",
+        "stage": "core",
+        "job_id": "513000000001__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "core",
+        "job_id": "513000000001__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "core",
+        "job_id": "513000000001__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "513000000001__sam_native",
+        "depends_on": [
+          "513000000001__sam_native"
+        ]
+      },
+      {
+        "case": "513000000001",
+        "stage": "core",
+        "job_id": "513000000001__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "513000000001__sam_native",
+        "depends_on": [
+          "513000000001__sam_native"
+        ]
+      },
+      {
+        "case": "611000000001",
+        "stage": "core",
+        "job_id": "611000000001__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "core",
+        "job_id": "611000000001__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "core",
+        "job_id": "611000000001__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "611000000001__sam_native",
+        "depends_on": [
+          "611000000001__sam_native"
+        ]
+      },
+      {
+        "case": "611000000001",
+        "stage": "core",
+        "job_id": "611000000001__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "611000000001__sam_native",
+        "depends_on": [
+          "611000000001__sam_native"
+        ]
+      },
+      {
+        "case": "624000000003",
+        "stage": "core",
+        "job_id": "624000000003__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "core",
+        "job_id": "624000000003__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "core",
+        "job_id": "624000000003__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "624000000003__sam_native",
+        "depends_on": [
+          "624000000003__sam_native"
+        ]
+      },
+      {
+        "case": "624000000003",
+        "stage": "core",
+        "job_id": "624000000003__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "624000000003__sam_native",
+        "depends_on": [
+          "624000000003__sam_native"
+        ]
+      },
+      {
+        "case": "622000000003",
+        "stage": "core",
+        "job_id": "622000000003__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "core",
+        "job_id": "622000000003__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "core",
+        "job_id": "622000000003__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "622000000003__sam_native",
+        "depends_on": [
+          "622000000003__sam_native"
+        ]
+      },
+      {
+        "case": "622000000003",
+        "stage": "core",
+        "job_id": "622000000003__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "622000000003__sam_native",
+        "depends_on": [
+          "622000000003__sam_native"
+        ]
+      },
+      {
+        "case": "623000000002",
+        "stage": "core",
+        "job_id": "623000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "core",
+        "job_id": "623000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "core",
+        "job_id": "623000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "623000000002__sam_native",
+        "depends_on": [
+          "623000000002__sam_native"
+        ]
+      },
+      {
+        "case": "623000000002",
+        "stage": "core",
+        "job_id": "623000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "623000000002__sam_native",
+        "depends_on": [
+          "623000000002__sam_native"
+        ]
+      },
+      {
+        "case": "622000000002",
+        "stage": "core",
+        "job_id": "622000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "core",
+        "job_id": "622000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "core",
+        "job_id": "622000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "622000000002__sam_native",
+        "depends_on": [
+          "622000000002__sam_native"
+        ]
+      },
+      {
+        "case": "622000000002",
+        "stage": "core",
+        "job_id": "622000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "622000000002__sam_native",
+        "depends_on": [
+          "622000000002__sam_native"
+        ]
+      },
+      {
+        "case": "714000000000",
+        "stage": "core",
+        "job_id": "714000000000__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "core",
+        "job_id": "714000000000__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "core",
+        "job_id": "714000000000__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "714000000000__sam_native",
+        "depends_on": [
+          "714000000000__sam_native"
+        ]
+      },
+      {
+        "case": "714000000000",
+        "stage": "core",
+        "job_id": "714000000000__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "714000000000__sam_native",
+        "depends_on": [
+          "714000000000__sam_native"
+        ]
+      },
+      {
+        "case": "712000000004",
+        "stage": "core",
+        "job_id": "712000000004__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "core",
+        "job_id": "712000000004__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "core",
+        "job_id": "712000000004__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "712000000004__sam_native",
+        "depends_on": [
+          "712000000004__sam_native"
+        ]
+      },
+      {
+        "case": "712000000004",
+        "stage": "core",
+        "job_id": "712000000004__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "712000000004__sam_native",
+        "depends_on": [
+          "712000000004__sam_native"
+        ]
+      },
+      {
+        "case": "713000000001",
+        "stage": "core",
+        "job_id": "713000000001__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "core",
+        "job_id": "713000000001__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "core",
+        "job_id": "713000000001__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "713000000001__sam_native",
+        "depends_on": [
+          "713000000001__sam_native"
+        ]
+      },
+      {
+        "case": "713000000001",
+        "stage": "core",
+        "job_id": "713000000001__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "713000000001__sam_native",
+        "depends_on": [
+          "713000000001__sam_native"
+        ]
+      },
+      {
+        "case": "712000000001",
+        "stage": "core",
+        "job_id": "712000000001__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "core",
+        "job_id": "712000000001__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "core",
+        "job_id": "712000000001__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "712000000001__sam_native",
+        "depends_on": [
+          "712000000001__sam_native"
+        ]
+      },
+      {
+        "case": "712000000001",
+        "stage": "core",
+        "job_id": "712000000001__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "712000000001__sam_native",
+        "depends_on": [
+          "712000000001__sam_native"
+        ]
+      },
+      {
+        "case": "722000000000",
+        "stage": "core",
+        "job_id": "722000000000__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "core",
+        "job_id": "722000000000__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "core",
+        "job_id": "722000000000__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "722000000000__sam_native",
+        "depends_on": [
+          "722000000000__sam_native"
+        ]
+      },
+      {
+        "case": "722000000000",
+        "stage": "core",
+        "job_id": "722000000000__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "722000000000__sam_native",
+        "depends_on": [
+          "722000000000__sam_native"
+        ]
+      },
+      {
+        "case": "812000000002",
+        "stage": "core",
+        "job_id": "812000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "core",
+        "job_id": "812000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "core",
+        "job_id": "812000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "812000000002__sam_native",
+        "depends_on": [
+          "812000000002__sam_native"
+        ]
+      },
+      {
+        "case": "812000000002",
+        "stage": "core",
+        "job_id": "812000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "812000000002__sam_native",
+        "depends_on": [
+          "812000000002__sam_native"
+        ]
+      },
+      {
+        "case": "813000000002",
+        "stage": "core",
+        "job_id": "813000000002__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "core",
+        "job_id": "813000000002__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "core",
+        "job_id": "813000000002__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "813000000002__sam_native",
+        "depends_on": [
+          "813000000002__sam_native"
+        ]
+      },
+      {
+        "case": "813000000002",
+        "stage": "core",
+        "job_id": "813000000002__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "813000000002__sam_native",
+        "depends_on": [
+          "813000000002__sam_native"
+        ]
+      },
+      {
+        "case": "824000000007",
+        "stage": "core",
+        "job_id": "824000000007__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "core",
+        "job_id": "824000000007__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "core",
+        "job_id": "824000000007__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "824000000007__sam_native",
+        "depends_on": [
+          "824000000007__sam_native"
+        ]
+      },
+      {
+        "case": "824000000007",
+        "stage": "core",
+        "job_id": "824000000007__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "824000000007__sam_native",
+        "depends_on": [
+          "824000000007__sam_native"
+        ]
+      },
+      {
+        "case": "811000000004",
+        "stage": "core",
+        "job_id": "811000000004__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "core",
+        "job_id": "811000000004__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "core",
+        "job_id": "811000000004__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "811000000004__sam_native",
+        "depends_on": [
+          "811000000004__sam_native"
+        ]
+      },
+      {
+        "case": "811000000004",
+        "stage": "core",
+        "job_id": "811000000004__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "811000000004__sam_native",
+        "depends_on": [
+          "811000000004__sam_native"
+        ]
+      },
+      {
+        "case": "911000000007",
+        "stage": "core",
+        "job_id": "911000000007__sam_native",
+        "arm": "sam_native",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "core",
+        "job_id": "911000000007__uniform",
+        "arm": "uniform",
+        "scale": 1.0,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "core",
+        "job_id": "911000000007__two_constant",
+        "arm": "two_constant",
+        "anchor_job_id": "911000000007__sam_native",
+        "depends_on": [
+          "911000000007__sam_native"
+        ]
+      },
+      {
+        "case": "911000000007",
+        "stage": "core",
+        "job_id": "911000000007__uniform_at_local",
+        "arm": "uniform_replay",
+        "anchor_job_id": "911000000007__sam_native",
+        "depends_on": [
+          "911000000007__sam_native"
+        ]
+      },
+      {
+        "case": "000000000088",
+        "stage": "scan",
+        "job_id": "000000000088__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "scan",
+        "job_id": "000000000088__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "scan",
+        "job_id": "000000000088__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "scan",
+        "job_id": "000000000088__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "scan",
+        "job_id": "000000000088__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000088",
+        "stage": "scan",
+        "job_id": "000000000088__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "scan",
+        "job_id": "000000000003__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "scan",
+        "job_id": "000000000003__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "scan",
+        "job_id": "000000000003__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "scan",
+        "job_id": "000000000003__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "scan",
+        "job_id": "000000000003__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000003",
+        "stage": "scan",
+        "job_id": "000000000003__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "scan",
+        "job_id": "000000000044__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "scan",
+        "job_id": "000000000044__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "scan",
+        "job_id": "000000000044__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "scan",
+        "job_id": "000000000044__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "scan",
+        "job_id": "000000000044__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000044",
+        "stage": "scan",
+        "job_id": "000000000044__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "scan",
+        "job_id": "000000000014__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "scan",
+        "job_id": "000000000014__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "scan",
+        "job_id": "000000000014__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "scan",
+        "job_id": "000000000014__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "scan",
+        "job_id": "000000000014__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "000000000014",
+        "stage": "scan",
+        "job_id": "000000000014__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "scan",
+        "job_id": "122000000009__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "scan",
+        "job_id": "122000000009__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "scan",
+        "job_id": "122000000009__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "scan",
+        "job_id": "122000000009__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "scan",
+        "job_id": "122000000009__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "122000000009",
+        "stage": "scan",
+        "job_id": "122000000009__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "scan",
+        "job_id": "113000000006__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "scan",
+        "job_id": "113000000006__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "scan",
+        "job_id": "113000000006__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "scan",
+        "job_id": "113000000006__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "scan",
+        "job_id": "113000000006__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "113000000006",
+        "stage": "scan",
+        "job_id": "113000000006__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "scan",
+        "job_id": "123000000007__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "scan",
+        "job_id": "123000000007__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "scan",
+        "job_id": "123000000007__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "scan",
+        "job_id": "123000000007__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "scan",
+        "job_id": "123000000007__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "123000000007",
+        "stage": "scan",
+        "job_id": "123000000007__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "scan",
+        "job_id": "112000000009__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "scan",
+        "job_id": "112000000009__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "scan",
+        "job_id": "112000000009__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "scan",
+        "job_id": "112000000009__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "scan",
+        "job_id": "112000000009__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "112000000009",
+        "stage": "scan",
+        "job_id": "112000000009__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "scan",
+        "job_id": "114000000004__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "scan",
+        "job_id": "114000000004__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "scan",
+        "job_id": "114000000004__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "scan",
+        "job_id": "114000000004__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "scan",
+        "job_id": "114000000004__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "114000000004",
+        "stage": "scan",
+        "job_id": "114000000004__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "scan",
+        "job_id": "213000000005__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "scan",
+        "job_id": "213000000005__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "scan",
+        "job_id": "213000000005__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "scan",
+        "job_id": "213000000005__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "scan",
+        "job_id": "213000000005__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "213000000005",
+        "stage": "scan",
+        "job_id": "213000000005__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "scan",
+        "job_id": "211000000000__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "scan",
+        "job_id": "211000000000__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "scan",
+        "job_id": "211000000000__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "scan",
+        "job_id": "211000000000__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "scan",
+        "job_id": "211000000000__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "211000000000",
+        "stage": "scan",
+        "job_id": "211000000000__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "scan",
+        "job_id": "224000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "scan",
+        "job_id": "224000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "scan",
+        "job_id": "224000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "scan",
+        "job_id": "224000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "scan",
+        "job_id": "224000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "224000000002",
+        "stage": "scan",
+        "job_id": "224000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "scan",
+        "job_id": "221000000003__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "scan",
+        "job_id": "221000000003__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "scan",
+        "job_id": "221000000003__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "scan",
+        "job_id": "221000000003__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "scan",
+        "job_id": "221000000003__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "221000000003",
+        "stage": "scan",
+        "job_id": "221000000003__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "scan",
+        "job_id": "213000000008__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "scan",
+        "job_id": "213000000008__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "scan",
+        "job_id": "213000000008__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "scan",
+        "job_id": "213000000008__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "scan",
+        "job_id": "213000000008__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "213000000008",
+        "stage": "scan",
+        "job_id": "213000000008__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "scan",
+        "job_id": "314000000006__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "scan",
+        "job_id": "314000000006__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "scan",
+        "job_id": "314000000006__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "scan",
+        "job_id": "314000000006__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "scan",
+        "job_id": "314000000006__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "314000000006",
+        "stage": "scan",
+        "job_id": "314000000006__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "scan",
+        "job_id": "322000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "scan",
+        "job_id": "322000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "scan",
+        "job_id": "322000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "scan",
+        "job_id": "322000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "scan",
+        "job_id": "322000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "322000000002",
+        "stage": "scan",
+        "job_id": "322000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "scan",
+        "job_id": "311000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "scan",
+        "job_id": "311000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "scan",
+        "job_id": "311000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "scan",
+        "job_id": "311000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "scan",
+        "job_id": "311000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "311000000002",
+        "stage": "scan",
+        "job_id": "311000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "scan",
+        "job_id": "324000000008__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "scan",
+        "job_id": "324000000008__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "scan",
+        "job_id": "324000000008__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "scan",
+        "job_id": "324000000008__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "scan",
+        "job_id": "324000000008__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "324000000008",
+        "stage": "scan",
+        "job_id": "324000000008__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "scan",
+        "job_id": "322000000004__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "scan",
+        "job_id": "322000000004__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "scan",
+        "job_id": "322000000004__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "scan",
+        "job_id": "322000000004__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "scan",
+        "job_id": "322000000004__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "322000000004",
+        "stage": "scan",
+        "job_id": "322000000004__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "scan",
+        "job_id": "422000000001__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "scan",
+        "job_id": "422000000001__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "scan",
+        "job_id": "422000000001__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "scan",
+        "job_id": "422000000001__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "scan",
+        "job_id": "422000000001__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "422000000001",
+        "stage": "scan",
+        "job_id": "422000000001__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "scan",
+        "job_id": "412000000004__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "scan",
+        "job_id": "412000000004__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "scan",
+        "job_id": "412000000004__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "scan",
+        "job_id": "412000000004__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "scan",
+        "job_id": "412000000004__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "412000000004",
+        "stage": "scan",
+        "job_id": "412000000004__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "scan",
+        "job_id": "413000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "scan",
+        "job_id": "413000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "scan",
+        "job_id": "413000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "scan",
+        "job_id": "413000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "scan",
+        "job_id": "413000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "413000000002",
+        "stage": "scan",
+        "job_id": "413000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "scan",
+        "job_id": "423000000001__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "scan",
+        "job_id": "423000000001__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "scan",
+        "job_id": "423000000001__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "scan",
+        "job_id": "423000000001__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "scan",
+        "job_id": "423000000001__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "423000000001",
+        "stage": "scan",
+        "job_id": "423000000001__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "scan",
+        "job_id": "524000000004__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "scan",
+        "job_id": "524000000004__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "scan",
+        "job_id": "524000000004__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "scan",
+        "job_id": "524000000004__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "scan",
+        "job_id": "524000000004__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "524000000004",
+        "stage": "scan",
+        "job_id": "524000000004__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "scan",
+        "job_id": "511000000000__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "scan",
+        "job_id": "511000000000__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "scan",
+        "job_id": "511000000000__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "scan",
+        "job_id": "511000000000__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "scan",
+        "job_id": "511000000000__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "511000000000",
+        "stage": "scan",
+        "job_id": "511000000000__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "scan",
+        "job_id": "523000000003__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "scan",
+        "job_id": "523000000003__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "scan",
+        "job_id": "523000000003__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "scan",
+        "job_id": "523000000003__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "scan",
+        "job_id": "523000000003__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "523000000003",
+        "stage": "scan",
+        "job_id": "523000000003__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "scan",
+        "job_id": "513000000001__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "scan",
+        "job_id": "513000000001__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "scan",
+        "job_id": "513000000001__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "scan",
+        "job_id": "513000000001__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "scan",
+        "job_id": "513000000001__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "513000000001",
+        "stage": "scan",
+        "job_id": "513000000001__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "scan",
+        "job_id": "611000000001__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "scan",
+        "job_id": "611000000001__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "scan",
+        "job_id": "611000000001__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "scan",
+        "job_id": "611000000001__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "scan",
+        "job_id": "611000000001__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "611000000001",
+        "stage": "scan",
+        "job_id": "611000000001__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "scan",
+        "job_id": "624000000003__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "scan",
+        "job_id": "624000000003__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "scan",
+        "job_id": "624000000003__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "scan",
+        "job_id": "624000000003__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "scan",
+        "job_id": "624000000003__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "624000000003",
+        "stage": "scan",
+        "job_id": "624000000003__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "scan",
+        "job_id": "622000000003__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "scan",
+        "job_id": "622000000003__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "scan",
+        "job_id": "622000000003__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "scan",
+        "job_id": "622000000003__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "scan",
+        "job_id": "622000000003__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "622000000003",
+        "stage": "scan",
+        "job_id": "622000000003__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "scan",
+        "job_id": "623000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "scan",
+        "job_id": "623000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "scan",
+        "job_id": "623000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "scan",
+        "job_id": "623000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "scan",
+        "job_id": "623000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "623000000002",
+        "stage": "scan",
+        "job_id": "623000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "scan",
+        "job_id": "622000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "scan",
+        "job_id": "622000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "scan",
+        "job_id": "622000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "scan",
+        "job_id": "622000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "scan",
+        "job_id": "622000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "622000000002",
+        "stage": "scan",
+        "job_id": "622000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "scan",
+        "job_id": "714000000000__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "scan",
+        "job_id": "714000000000__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "scan",
+        "job_id": "714000000000__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "scan",
+        "job_id": "714000000000__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "scan",
+        "job_id": "714000000000__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "714000000000",
+        "stage": "scan",
+        "job_id": "714000000000__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "scan",
+        "job_id": "712000000004__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "scan",
+        "job_id": "712000000004__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "scan",
+        "job_id": "712000000004__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "scan",
+        "job_id": "712000000004__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "scan",
+        "job_id": "712000000004__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "712000000004",
+        "stage": "scan",
+        "job_id": "712000000004__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "scan",
+        "job_id": "713000000001__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "scan",
+        "job_id": "713000000001__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "scan",
+        "job_id": "713000000001__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "scan",
+        "job_id": "713000000001__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "scan",
+        "job_id": "713000000001__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "713000000001",
+        "stage": "scan",
+        "job_id": "713000000001__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "scan",
+        "job_id": "712000000001__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "scan",
+        "job_id": "712000000001__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "scan",
+        "job_id": "712000000001__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "scan",
+        "job_id": "712000000001__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "scan",
+        "job_id": "712000000001__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "712000000001",
+        "stage": "scan",
+        "job_id": "712000000001__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "scan",
+        "job_id": "722000000000__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "scan",
+        "job_id": "722000000000__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "scan",
+        "job_id": "722000000000__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "scan",
+        "job_id": "722000000000__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "scan",
+        "job_id": "722000000000__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "722000000000",
+        "stage": "scan",
+        "job_id": "722000000000__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "scan",
+        "job_id": "812000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "scan",
+        "job_id": "812000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "scan",
+        "job_id": "812000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "scan",
+        "job_id": "812000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "scan",
+        "job_id": "812000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "812000000002",
+        "stage": "scan",
+        "job_id": "812000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "scan",
+        "job_id": "813000000002__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "scan",
+        "job_id": "813000000002__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "scan",
+        "job_id": "813000000002__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "scan",
+        "job_id": "813000000002__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "scan",
+        "job_id": "813000000002__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "813000000002",
+        "stage": "scan",
+        "job_id": "813000000002__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "scan",
+        "job_id": "824000000007__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "scan",
+        "job_id": "824000000007__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "scan",
+        "job_id": "824000000007__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "scan",
+        "job_id": "824000000007__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "scan",
+        "job_id": "824000000007__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "824000000007",
+        "stage": "scan",
+        "job_id": "824000000007__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "scan",
+        "job_id": "811000000004__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "scan",
+        "job_id": "811000000004__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "scan",
+        "job_id": "811000000004__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "scan",
+        "job_id": "811000000004__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "scan",
+        "job_id": "811000000004__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "811000000004",
+        "stage": "scan",
+        "job_id": "811000000004__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "scan",
+        "job_id": "911000000007__sam_native_scale0.25",
+        "arm": "sam_native",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "scan",
+        "job_id": "911000000007__sam_native_scale0.5",
+        "arm": "sam_native",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "scan",
+        "job_id": "911000000007__sam_native_scale0.75",
+        "arm": "sam_native",
+        "scale": 0.75,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "scan",
+        "job_id": "911000000007__uniform_scale0.25",
+        "arm": "uniform",
+        "scale": 0.25,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "scan",
+        "job_id": "911000000007__uniform_scale0.5",
+        "arm": "uniform",
+        "scale": 0.5,
+        "depends_on": []
+      },
+      {
+        "case": "911000000007",
+        "stage": "scan",
+        "job_id": "911000000007__uniform_scale0.75",
+        "arm": "uniform",
+        "scale": 0.75,
+        "depends_on": []
+      }
+    ]
+  },
+  "code": {
+    "UPSTREAM.json": "f35b511deee5a1f2dc39b2b540a9431896f677f7e3a54379d14ac105c69fb132",
+    "adapter.py": "b7bd58f3fc1ad7782b80ce166fb36676d7c3eb923388b0c6f6a14b41855f652b",
+    "configs/flux.yaml": "7917942a7dab3a878ce420277a9315a2ceea9820cb45e79d883fcd79006049a3",
+    "configs/sd3.yaml": "69539b3aa93a83646ffbca66c950a10ebec63c5c23e43dd6882f44d54e49059f",
+    "projection_control.py": "99a803aa9ae2bd67ac0fa53f2418ab411c08d246c154660c2ee1cd91a2297028",
+    "protocol.json": "8759be36e08ee2da0a284f666c7a5449d451f2b9d0cec7b72b3cebf817347cdc",
+    "requirements.txt": "930831b72230abe2d926b8997a6db20e38e0cede91918dbbf81d3e7a3a9a3108",
+    "run.py": "cd1bf2a03ccd36e2a39002335ecdb16a9fe1b99893e11af498e7ed3039c7d26f",
+    "sam_flow/__init__.py": "90bca6f0bc50ba753d7ded889799433f397172d2151546a867af33d9a7145d32",
+    "sam_flow/flowedit_flux.py": "6c09e66760d6c42946ce6aabbf9bb20994e826e89cb46acdaa1cb2b903428b6e",
+    "sam_flow/flowedit_sd3.py": "795672de6b6329b02f0a56097a06d10d78a77f97d6bf7b560425df41b27f5075",
+    "sam_flow/flowedit_utils.py": "ded202a0c644b7cbe78eb26be02ccc646c944b041dbe0c98842b1a36d489503a",
+    "sam_flow/project_utils.py": "c8b8f5da3f5fc311041da26b5162828781f5e86ff2428a131fd483db8845e7c7",
+    "sam_flow/sam_flow_flux.py": "06bddea81e5ec293309a5abc116b0a83b1b1cebd3e2d7cae85f50f54c08c397c",
+    "sam_flow/sam_flow_sd3.py": "31d5889e9e05e63abb24fe028793b288bf01a5d2b880df0ed970a9203aae10bf"
+  },
+  "images": {
+    "000000000088": "955b5fb5c2ae7486cdfb311a476af7d36f23e8ae02ee10f180ac4e278d2be57a",
+    "000000000003": "b9518227800b718430fd381e8e293357cfa23b366ef35f9c99ada3117132ab12",
+    "000000000044": "a99232f280a0349d8ca738bff33670410b563f3bf817ea22fe388790777108ff",
+    "000000000014": "62954b0f379d6e2867d71ca27d941726d2c15f0c1c0c7d65b4d83f16173d1b94",
+    "122000000009": "607735c41eb9fffc511949b4a1b971e2f93ff8f88a366046d1d68f21ec894955",
+    "113000000006": "2a0686dc8527730063d182fb103576bf7e35b45668b079be7b7c10213ff395bc",
+    "123000000007": "eb3f3f252cd394bc78895be385448d55553666d158901098e5029c1abba35214",
+    "112000000009": "31b68e476e398960a519cecb12283df2cb224d701f557c689fc1e234238f33dc",
+    "114000000004": "29e087f29280b50f27fd41416fce3eb1bcbd39601ce5bdd0ed0dc080696be043",
+    "213000000005": "22ca0a5356c2cea8bd0d1b8c6abe7e336b123f270a38ff747f8ce9f6f7e28f6b",
+    "211000000000": "63265751eebd69b5c6f43c023dc6c3483773f027c270115b70334fb047b98a18",
+    "224000000002": "972978525927a48a195ef0ad15e0926b602c46b54dd12e36f00ed59297eb2d47",
+    "221000000003": "4e6ad5b8513a3ecf1873025b37f4fba9489c561b24a6ba184305ec795bdc1129",
+    "213000000008": "8adc5f4465ab4ad278d5913a0f962a5774635052ac41ff9d3b098dcfc620183d",
+    "314000000006": "b4cd47c93eb3e0eca30073f9e1dd70af6a35bb8e561d0e9077091a1fad97ad2d",
+    "322000000002": "65218032d600a96c6ab12a27af3f955b52294950610b09be10fef064d851b8c2",
+    "311000000002": "d58fbf213e984bc0bfbde59f53a2dde65bde7dbdfc80753e18d605340e2d0d40",
+    "324000000008": "9af2757164464eb6615c96b121d814bb2f0da03900e72cfe1f29191a3b005739",
+    "322000000004": "c47aa032e2e20f04a3ae2460cbeca83d9793020c527cc5a204d87294e49adc55",
+    "422000000001": "3d6a3f70a08c8362fd5ab30e3d9da524681c36779831cf10f2ea92b904331df8",
+    "412000000004": "ff04c20210bcc75e5c65ceb3017383ab199243f91b03966ce6a9540488ad3dcc",
+    "413000000002": "1226230a9f217846e6a79fb8af4c7bd4b886411566bc8d23292efd8a4dc9cfd2",
+    "423000000001": "781ee16be4e7349953ffdb33486d1e2776f58053370338f65a295d12c7ce2990",
+    "524000000004": "5ea91496e85ad969668bdef2735b849afd3a458d7c55c4d910a36071b83c127a",
+    "511000000000": "02050b3945b6799f787de382128714d165342a16f0e4af9664d4480e90dd8df8",
+    "523000000003": "30d267ed7782d3bad7d2aa3b0951f221650746797a0ca524ad04c2f2f07cdc2f",
+    "513000000001": "45855ab9cc322a5990e1107b5d24cd3728777e8f3ffa8ff983f6bab27cf9ae01",
+    "611000000001": "60180501be45c3625441ad718479fc41e6f01b54b9f8482e02c3cef5e31f8757",
+    "624000000003": "76f4976d3ea663c402a9f65d8ad38c00906071ceca4b7f6b5b23b657ededde1f",
+    "622000000003": "1cefd3e55b6d3d25f3d9fde5832899a8d39c86664ebd8f35f4442214aa364128",
+    "623000000002": "c33e8fac84964ff9b72c5623105f140c6ad2117e5e41ef78ca76fe9aa8954b35",
+    "622000000002": "de003a2cf8239b4db3dd8648783c0d41159f2cf79904d7054e665b98a406bd0c",
+    "714000000000": "630ecb2818ad6f2d9287f8cc544c1c6cd3cdff6bfae97bd282c8f0cdd996d6c9",
+    "712000000004": "9e0bc8dce92bd9738792cd3c91645f6afdd6ddd155d0128006eedbc10cfadd90",
+    "713000000001": "0a58e02b7189884fbea02fa65cfc0afb76de767108269166e6d6a9c24ecb6018",
+    "712000000001": "992ad846d7bf272a788e69ae9c559a7b36937812d03490bd237ed382879bff3e",
+    "722000000000": "b1129d51e9e3a2148d5ea2689a8ce0e6589747a7b6cbbadf4d5c2f90c0b0520e",
+    "812000000002": "82d2bd5298f459ba81729cbaafff3ede263de1447d91166c399a02b85ab375f0",
+    "813000000002": "6af7a6a38b80dae01c2cf050bfd4d2617d4a5f3a4f99401063bdab0850d50895",
+    "824000000007": "e07f3a8b68c544bee197d918f0d5380297520de7513d0fc47ad26e0912a5ae8a",
+    "811000000004": "991e15f51dc9a1f71db16364f2ab5e08ded2ff4db9145523f510b410e0c12595",
+    "911000000007": "bac18032576e04d7ce7cbc14b6b3275a14d0121fe3464704258c00e1a3a17109"
+  },
+  "model": {
+    "model_path": "/root/autodl-tmp/local-models/FLUX.1-dev",
+    "shards": {
+      "transformer": 3,
+      "vae": 1,
+      "text_encoder": 1,
+      "text_encoder_2": 2
+    },
+    "files": [
+      {
+        "path": "model_index.json",
+        "bytes": 536,
+        "mtime_ns": 1794535573815400495,
+        "sha256": "24946df21ff25e210486b5f6b14208983a90c9c73f8d48cfa724c0e4e03f7201"
+      },
+      {
+        "path": "scheduler/scheduler_config.json",
+        "bytes": 273,
+        "mtime_ns": 1794535573839401395,
+        "sha256": "63b6d2fa93579e383a308009bfd5ae12e61f8950017dd749302f8d54bb3520b6"
+      },
+      {
+        "path": "text_encoder/config.json",
+        "bytes": 613,
+        "mtime_ns": 1794535573819400645,
+        "sha256": "d79d5c8c6ce85112a923d621a5412886ddbbb0636210fc0f72f450582e675542"
+      },
+      {
+        "path": "text_encoder/model.safetensors",
+        "bytes": 246144352,
+        "mtime_ns": 1794535573771398845
+      },
+      {
+        "path": "text_encoder_2/config.json",
+        "bytes": 782,
+        "mtime_ns": 1794535573603392546,
+        "sha256": "9001e5a8ae0571a362f806b87b6105dd1a15c33dca237b606d2561164109beeb"
+      },
+      {
+        "path": "text_encoder_2/model-00001-of-00002.safetensors",
+        "bytes": 4994582224,
+        "mtime_ns": 1794536572290739941
+      },
+      {
+        "path": "text_encoder_2/model-00002-of-00002.safetensors",
+        "bytes": 4530066360,
+        "mtime_ns": 1794536088907229826
+      },
+      {
+        "path": "text_encoder_2/model.safetensors.index.json",
+        "bytes": 19885,
+        "mtime_ns": 1794535573835401245,
+        "sha256": "3bacec0f0cf392399d4a385908f67dd73df99c9e9cfee669f148858ba9fbdb0a"
+      },
+      {
+        "path": "tokenizer/merges.txt",
+        "bytes": 524619,
+        "mtime_ns": 1794535573915404245,
+        "sha256": "9fd691f7c8039210e0fced15865466c65820d09b63988b0174bfe25de299051a"
+      },
+      {
+        "path": "tokenizer/special_tokens_map.json",
+        "bytes": 588,
+        "mtime_ns": 1794535574267417445,
+        "sha256": "2cdb3b8331a60c92fc1e55a13e9fd61fd2293c5a51275fdcccd62b780052530e"
+      },
+      {
+        "path": "tokenizer/tokenizer_config.json",
+        "bytes": 705,
+        "mtime_ns": 1794535574139412645,
+        "sha256": "6bdcee9ccce2a16ca2b4c0c5ed00b42c50ea225f4472a8c4c1e963a2902c2881"
+      },
+      {
+        "path": "tokenizer/vocab.json",
+        "bytes": 1059962,
+        "mtime_ns": 1794535574343420295,
+        "sha256": "e089ad92ba36837a0d31433e555c8f45fe601ab5c221d4f607ded32d9f7a4349"
+      },
+      {
+        "path": "tokenizer_2/special_tokens_map.json",
+        "bytes": 2543,
+        "mtime_ns": 1794535574183414295,
+        "sha256": "7a1985a994c41886db38c719d2a3d2f40606663cc19d7c5d6a85d349320e06d2"
+      },
+      {
+        "path": "tokenizer_2/spiece.model",
+        "bytes": 791656,
+        "mtime_ns": 1794535589619993750,
+        "sha256": "d60acb128cf7b7f2536e8f38a5b18a05535c9e14c7a355904270e15b0945ea86"
+      },
+      {
+        "path": "tokenizer_2/tokenizer.json",
+        "bytes": 2424235,
+        "mtime_ns": 1794535574219415645,
+        "sha256": "f5dfec163765e18e270537fe896c49f5fad74db1525641d9b255a3008b999596"
+      },
+      {
+        "path": "tokenizer_2/tokenizer_config.json",
+        "bytes": 20817,
+        "mtime_ns": 1794535575387459447,
+        "sha256": "1a3d2db64215ed77854dd4208aac5f8361c1b5471cabd19c0ef1472d1a895eb0"
+      },
+      {
+        "path": "transformer/config.json",
+        "bytes": 378,
+        "mtime_ns": 1794535574715434245,
+        "sha256": "4f601e115ed85ab891646f03d17dca39d61278eca4b618e8c642cad71495fee8"
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00001-of-00003.safetensors",
+        "bytes": 9983040304,
+        "mtime_ns": 1794537405729337434
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00002-of-00003.safetensors",
+        "bytes": 9949328904,
+        "mtime_ns": 1794537440839145397
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model-00003-of-00003.safetensors",
+        "bytes": 3870584832,
+        "mtime_ns": 1794536745543121870
+      },
+      {
+        "path": "transformer/diffusion_pytorch_model.safetensors.index.json",
+        "bytes": 121262,
+        "mtime_ns": 1794535575791474599,
+        "sha256": "780ee2abafdd8abcb64d97be0154f1481f51e3cce1899fbad98723e4fb6c15e0"
+      },
+      {
+        "path": "vae/config.json",
+        "bytes": 820,
+        "mtime_ns": 1794535576175489003,
+        "sha256": "ad6f0acb584ceb3d136d1e32b684dec65db24bffe9223df2bac0b45539d4e6b5"
+      },
+      {
+        "path": "vae/diffusion_pytorch_model.safetensors",
+        "bytes": 167666902,
+        "mtime_ns": 1794536064754283262
+      }
+    ],
+    "weight_identity": "resolved local path, size and mtime_ns; configuration/tokenizer content SHA256"
+  },
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "torchvision": "0.23.0+cu128",
+    "diffusers": "0.35.1",
+    "transformers": "4.56.2",
+    "accelerate": "1.10.1",
+    "numpy": "1.26.4",
+    "Pillow": "11.3.0",
+    "PyYAML": "6.0.2",
+    "einops": "0.8.1",
+    "sentencepiece": "0.2.1",
+    "protobuf": "5.29.5",
+    "safetensors": "0.6.2",
+    "huggingface-hub": "0.34.4",
+    "tokenizers": "0.22.0",
+    "tqdm": "4.67.1",
+    "packaging": "25.0",
+    "regex": "2025.9.1",
+    "requests": "2.32.5",
+    "filelock": "3.19.1",
+    "fsspec": "2025.9.0",
+    "typing_extensions": "4.15.0",
+    "importlib_metadata": "8.7.0",
+    "zipp": "3.23.0",
+    "psutil": "7.0.0",
+    "certifi": "2025.8.3",
+    "charset-normalizer": "3.4.3",
+    "idna": "3.10",
+    "urllib3": "2.5.0",
+    "scipy": "1.13.1"
+  },
+  "dtype": "bfloat16",
+  "offload": "model",
+  "resolved_environment": {
+    "torch": "2.8.0+cu128",
+    "diffusers": "0.35.1",
+    "transformers": "4.56.2",
+    "dtype": "bfloat16",
+    "offload": "model",
+    "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+    "upstream_commit": "8167978666e6df11e987a453934b89ec422bd3a4"
+  }
+}
